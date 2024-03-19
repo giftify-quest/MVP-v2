@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./style.module.scss";
+import styles from "./styles.module.scss";
 import classNames from "classnames";
 
 type Variant = "purple" | "green";
