@@ -1,0 +1,11 @@
+$purple-color: #9747FF;
+$green-color: #4CCFA8;
+$white-color: #FFFFFF;
+$grey-color: #B6B5B1;
+ 
+:export {
+  purpleColor: $purple-color;
+  greenColor: $green-color;
+  whiteColor: $white-color;
+  greyColor: $grey-color;
+}
