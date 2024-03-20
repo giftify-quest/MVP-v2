@@ -1,9 +1,7 @@
-import Image from "next/image";
-import styles from "./page.module.scss";
-import { SectionTitle } from "@/components/section-title/SectionTitle";
+"use client";
 
 export default function Home() {
   return (
-    <main className={styles.main}>{/* <SectionTitle></SectionTitle> */}</main>
+    <main style={{ background: "#F6F5DE", padding: "20px 40px" }}>welcome</main>
   );
 }
