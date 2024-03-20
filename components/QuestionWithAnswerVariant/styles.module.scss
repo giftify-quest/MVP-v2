@@ -1,0 +1,25 @@
+@import "/app/variables.scss";
+
+.wrapper {
+    width: 88rem;
+    height: 45rem;
+    background-image: url('../../public/testImage/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    padding-top: 2rem;
+    
+}
+
+
+.variants {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+   
+}

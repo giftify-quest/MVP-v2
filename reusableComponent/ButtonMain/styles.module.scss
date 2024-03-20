@@ -1,0 +1,21 @@
+@import "/app//variables.scss";
+
+.button_main {
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 33px;
+  padding: 24px 34px;
+  border-radius: 40px;
+  color: $white-color;
+  cursor: pointer;
+}
+
+@media (max-width: 1366px) {
+  .button_main {
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 33px;
+    padding: 16px 24px;
+    border-radius: 30px;
+  }
+}
