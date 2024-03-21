@@ -1,0 +1,26 @@
+@import "/app/variables.scss";
+
+
+.wrapper {
+    width: 20rem;
+    height: 8.75rem;
+    background: $purple-color;
+    color: $white-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    text-align: center;
+    font-size: 20px;
+    padding: 2rem;
+   
+    font-weight: 800;
+}
+
+.selected {
+    background: $green-color;
+}
+
+
+
+
