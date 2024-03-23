@@ -28,18 +28,19 @@ interface VariantQuestionProps {
   buttonText: string;
   wrongAnswerText: string;
   wrongAnswerButton: string;
+  multipleVariant:boolean
 
 }
 
 
 
 export const VariantQuestion: React.FC<VariantQuestionProps> = ({ title, bgImage, gift, giftText, 
-  questionText, answer1, answer2, buttonText, wrongAnswerText, wrongAnswerButton }) => {
+  questionText, answer1, answer2, buttonText, wrongAnswerText, wrongAnswerButton, multipleVariant}) => {
 
   const [isShowVariants, setIsShowVariants] = useState(false);
   const [isCorrectChoose, setIsCorrectChoose] = useState(true);
   const [selectedAnswerText, setSelectedAnswerText] = useState(buttonText);
-  const [selectedAnswerId, setSelectedAnswerId] = useState<null | string>(null);
+  const [selectedAnswerId, setSelectedAnswerId] = useState<null | string[]>(null);
   const [showFinalComponent, setShowFinalComponent] = useState(false);
   const [correctDate, setCorrectDate] = useState("");
   const [scrollAllowed, setScrollAllowed] = useState(false);
@@ -48,6 +49,7 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({ title, bgImage
   const handleShowVariants = () => {
     setIsShowVariants((prev) => !prev);
   };
+
 
   const handleCheckVariant = () => {
     if (selectedAnswerId) {
@@ -63,11 +65,16 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({ title, bgImage
         console.log('wrong')
         setSelectedAnswerText("wrong");
         setIsCorrectChoose(false);
+        setSelectedAnswerId(null)
       }
     } else {
       setShowFinalComponent(false);
     }
   };
+
+
+  
+  
 
   const handleChooseVariant = (id: string, correct: boolean, date: string) => {
 
@@ -80,6 +87,40 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({ title, bgImage
   };
 
 
+  const handleCheckMultipleVariant = () => {
+    if (selectedAnswerId && selectedAnswerId.length > 0) {
+      const allSelectedAreCorrect = selectedAnswerId.every(id =>
+        answer1.concat(answer2).find(answer => answer.id === id)?.isCorrect
+      );
+  
+      if (allSelectedAreCorrect) {
+        console.log('correct');
+        setSelectedAnswerText(wrongAnswerButton);
+        setShowFinalComponent(true);
+      } else {
+        console.log('wrong');
+        setSelectedAnswerText("wrong");
+        setSelectedAnswerId(null)
+      }
+    } else {
+      setShowFinalComponent(false);
+    }
+  };
+
+  const handleChooseMultipleVariant = (id: string, correct: boolean, date: string) => {
+    if (selectedAnswerId === null) {
+      setSelectedAnswerId([id]);
+    } else {
+      setSelectedAnswerId([...selectedAnswerId, id]);
+
+    }
+  
+    setIsCorrectChoose(correct);
+    setCorrectDate(date);
+    setSelectedAnswerText(buttonText);
+  };
+  
+  
 
   return (
 
@@ -105,8 +146,9 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({ title, bgImage
                     correct: el.isCorrect,
                     text: el.text
                   }}
-                  isSelected={el.id === selectedAnswerId}
-                  onChooseVariant={handleChooseVariant} />
+                  isSelected={selectedAnswerId && selectedAnswerId.includes(el.id)}
+
+                  onChooseVariant={ multipleVariant ? handleChooseMultipleVariant : handleChooseVariant } />
               ))}
             </div>
             <div style={{ display: 'flex', marginLeft: '1rem', gap: '4rem', }} >
@@ -118,8 +160,8 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({ title, bgImage
                     correct: el.isCorrect,
                     text: el.text
                   }}
-                  isSelected={el.id === selectedAnswerId}
-                  onChooseVariant={handleChooseVariant} />
+                  isSelected={selectedAnswerId && selectedAnswerId.includes(el.id)}
+                  onChooseVariant={  multipleVariant ? handleChooseMultipleVariant : handleChooseVariant    } />
               ))}
             </div>
             {!isShowVariants && 
@@ -132,9 +174,7 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({ title, bgImage
         )}
 
 
-           
-
-        <ButtonMain title={buttonText} onClick={handleCheckVariant} />
+        <ButtonMain title={buttonText} onClick={ multipleVariant ? handleCheckMultipleVariant : handleCheckVariant } />
       </div>
     </div>
 

@@ -17,5 +17,6 @@ export interface VariantQuestionInterface {
         }>,
     buttonText:string,
     wrongAnswerText:string,
-    wrongAnswerButtonText:string
+    wrongAnswerButtonText:string,
+    multipleVariant:boolean
 }
