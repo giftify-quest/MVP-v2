@@ -1,8 +1,8 @@
-import { TextFieldInfo } from "@/reusableComponent/TextFieldInfo/TextFieldInfo";
 import styles from "./styles.module.scss";
-import { WrapperWithBackground } from "../../WrapperWithBackground/WrapperWithBackground";
-import { FramedPhoto } from "@/components/FramedPhoto/FramedPhoto";
-import { ConfettiIcon } from "@/components/ConfettiIcon/ConfettiIcon";
+import { WrapperWithBackground } from "../../reusableComponent/WrapperWithBackground/WrapperWithBackground";
+import { FramedPhoto } from "@/components/reusableComponent/FramedPhoto/FramedPhoto";
+import { ConfettiIcon } from "@/components/reusableComponent/ConfettiIcon/ConfettiIcon";
+import { TextFieldInfo } from "@/components/reusableComponent/TextFieldInfo/TextFieldInfo";
 
 interface IAnswerWithPicture {
   successText: string;

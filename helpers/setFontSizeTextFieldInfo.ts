@@ -1,4 +1,4 @@
-import { TextFieldInfoVariantType } from "@/reusableComponent/TextFieldInfo/TextFieldInfo";
+import { TextFieldInfoVariantType } from "@/components/reusableComponent/TextFieldInfo/TextFieldInfo";
 
 export const setFontSizeTextFieldInfo = (value: string, variant: TextFieldInfoVariantType): number => {
   if (typeof window === "undefined") {

@@ -1,6 +1,6 @@
 import { TextFieldInfo } from "@/reusableComponent/TextFieldInfo/TextFieldInfo";
 import styles from "./styles.module.scss";
-import { WrapperWithBackground } from "../../WrapperWithBackground/WrapperWithBackground";
+import { WrapperWithBackground } from "../../reusableComponent/WrapperWithBackground/WrapperWithBackground";
 
 interface IAnswerWithOutPicture {
   successText: string;
