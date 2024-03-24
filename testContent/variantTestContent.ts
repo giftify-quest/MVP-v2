@@ -3,10 +3,10 @@ import { VariantQuestionInterface } from "@/types/answer/VariantAsnwerType";
 
 export const testContent:VariantQuestionInterface = {
 
-    bgImage: '@/public/testImage/background.png',
+    bgImage: 'testImage/background.png',
     title:"Hello",
     questionText:"Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше ",
-    answer1: [
+    answers: [
         {
             id:'1',
             text: "Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше ",
@@ -17,9 +17,6 @@ export const testContent:VariantQuestionInterface = {
             text: "Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше ",
             isCorrect:false
         },
-       
-    ],
-    answer2: [
         {
             id:'3',
             text: "Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше ",
@@ -30,6 +27,7 @@ export const testContent:VariantQuestionInterface = {
             text: "Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше ",
             isCorrect:false
         },
+       
     ],
     buttonText:"Я Уверена",
     wrongAnswerText:"Podumaj jeshe",

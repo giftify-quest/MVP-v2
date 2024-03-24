@@ -4,7 +4,7 @@
     width: 88rem;
     height: 45rem;
     position: relative;
-    background-image: url('../../public/testImage/background.png');
+  
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -17,6 +17,18 @@
     
 }
 
+.title {
+    padding-bottom: 2rem;
+}
+
+.header {
+    width: 80%;
+}
+
+.wrongText {
+    position: absolute;
+    right: 1rem;
+}
 
 .variants {
     display: flex;
@@ -24,3 +36,5 @@
     gap: 2rem;
    
 }
+
+
