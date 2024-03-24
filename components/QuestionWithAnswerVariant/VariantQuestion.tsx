@@ -1,54 +1,91 @@
 'use client'
 
-import { QuestionInterface } from "@/types/question/QuestionInterface";
+import { TextFieldInfo } from "@/components/reusableComponent/TextFieldInfo/TextFieldInfo";
+import { SectionTitle } from "@/components/reusableComponent/section-title/SectionTitle";
+import { VariantQuestionInterface } from "@/types/answer/VariantAsnwerType";
+import { useState } from "react";
+import { ButtonConfirm } from "../reusableComponent/ButtonConfirm/ButtonConfirm";
+import { VariantAnswersField } from "../reusableComponent/VariantsAnswerField/VariantAnswersField";
 import styles from "./styles.module.scss";
-import classNames from "classnames";
-import { QuestionType } from "@/types/question/QuestionType";
-import { TextFieldInfo } from "@/reusableComponent/TextFieldInfo/TextFieldInfo";
-import { TextField } from "@/reusableComponent/TextField/TextField";
-import { ChangeEvent } from "react";
-import VariantTextField from "@/reusableComponent/VariantsTextField/VariantTextField";
-import { ButtonMain } from "@/reusableComponent/ButtonMain/ButtonMain";
-import { SectionTitle } from "@/reusableComponent/section-title/SectionTitle";
 
 
 
+export const VariantQuestion: React.FC<VariantQuestionInterface> = ({ title, bgImage, gift, giftText, 
+  questionText, answers, buttonText, wrongAnswerText, wrongAnswerButtonText }) => {
+
+  const [isShowVariants, setIsShowVariants] = useState(false);
+  const [isCorrectChoose, setIsCorrectChoose] = useState(true);
+  const [selectedAnswerText, setSelectedAnswerText] = useState(buttonText);
+  const [selectedAnswerId, setSelectedAnswerId] = useState<null | string>(null);
+  const [showFinalComponent, setShowFinalComponent] = useState(false);
+  const [correctDate, setCorrectDate] = useState("");
+  const [scrollAllowed, setScrollAllowed] = useState(false);
 
 
-export const VariantQuestion: React.FC = () => {
+  const handleShowVariants = () => {
+    setIsShowVariants((prev) => !prev);
+  };
+
+  const handleCheckVariant = () => {
+    if (selectedAnswerId) {
+
+      setIsCorrectChoose(true);
+      if (isCorrectChoose) {
+        console.log('correct')
+        setSelectedAnswerText(wrongAnswerButtonText);
+        setIsCorrectChoose(true);
+        setShowFinalComponent(true);
+
+      } else {
+        console.log('wrong')
+        setSelectedAnswerText("wrong");
+        setIsCorrectChoose(false);
+      }
+    } else {
+      setShowFinalComponent(false);
+    }
+  };
+
+  const handleChooseVariant = (id: string, correct: boolean, date: string) => {
+
+    setSelectedAnswerId(id);
+    setIsCorrectChoose(correct);
+    setCorrectDate(date);
+    if (!isCorrectChoose) {
+      setSelectedAnswerText(buttonText);
+    }
+
+  };
+
+
   return (
-    <div >
-    <div style={{paddingBottom:'2rem'}}>
-   
-    <SectionTitle mainWord={"Hello"} variant={"green"}/>
-    </div>
-    <div className={styles.wrapper} >
-      <div style={{width:'80%'}}>
-      <TextFieldInfo mainText={"Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше "} variant={"question"} secondaryText={"Pavel"} />
+
+    <div>
+      <div className={styles.title}>
+        <SectionTitle mainWord={title} variant={"green"} />
       </div>
-      <div className={styles.variants}>
-        <div style={{display:'flex', marginLeft:'1rem', gap:'4rem', rotate:'2deg'}} >
-          <VariantTextField text={"08л04р20211цу"} isSelected={false} onChooseVariant={function (id: string, correct: boolean, text: string): void {
-            throw new Error("Function not implemented.");
-          } } />
-          <VariantTextField text={"Очень хорошо. Теперь попробую угадать, какое, из твоих фото"} isSelected={false} onChooseVariant={function (id: string, correct: boolean, text: string): void {
-            throw new Error("Function not implemented.");
-          } } />
+      <div className={styles.wrapper} style={{ backgroundImage: `url(${bgImage})` }}>
+        <div className={styles.header}>
+          <TextFieldInfo mainText={questionText} variant={"question"} secondaryText={"Pavel"} />
         </div>
-        <div style={{display:'flex', marginLeft:'1rem', gap:'4rem',rotate:'-2deg'}} >
-          <VariantTextField text={"Очень хорошо. Теперь попробую угадать от"} isSelected={false} onChooseVariant={function (id: string, correct: boolean, text: string): void {
-            throw new Error("Function not implemented.");
-          } } />
-          <VariantTextField text={"Очень хорошо. Теперь попробую угадать от"} isSelected={false} onChooseVariant={function (id: string, correct: boolean, text: string): void {
-            throw new Error("Function not implemented.");
-          } } />
-        </div>
+        {!isShowVariants && (
+          <div className={styles.variants}>
+             <VariantAnswersField answers={answers} 
+             isSelected={selectedAnswerId}
+             onChooseVariant={handleChooseVariant}/>
+            {!isShowVariants && 
+                selectedAnswerText === "wrong" ? (
+                  <div className={styles.wrongText}>
+                    <TextFieldInfo mainText={wrongAnswerText} variant={"errorMessage"}/>
+                  </div>
+                ): ""}
+          </div>
+        )}
+        <ButtonConfirm title={buttonText} onClick={handleCheckVariant} isActive={false} isDisabled={false} />
       </div>
-      <ButtonMain title={"Я Уверена"} onClick={function (): void {
-        throw new Error("Function not implemented.");
-      }} />
     </div>
-    </div>
+
+
   );
 };
 
