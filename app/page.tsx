@@ -22,6 +22,7 @@ export default function Home() {
         title={testContent.title}
         questionText={testContent.questionText}
         answers={testContent.answers}
+        
         buttonText={testContent.buttonText}
         wrongAnswerText={testContent.wrongAnswerText}
         wrongAnswerButtonText={testContent.wrongAnswerButtonText}
