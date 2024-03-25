@@ -10,7 +10,7 @@ import styles from "./styles.module.scss";
 
 
 
-export const VariantQuestion: React.FC<VariantQuestionInterface> = ({ title, bgImage, gift, giftText, 
+export const VariantQuestion: React.FC<VariantQuestionInterface> = ({ title, bgImage, gift, giftText,
   questionText, answers, buttonText, wrongAnswerText, wrongAnswerButtonText }) => {
 
   const [isShowVariants, setIsShowVariants] = useState(false);
@@ -19,7 +19,7 @@ export const VariantQuestion: React.FC<VariantQuestionInterface> = ({ title, bgI
   const [selectedAnswerId, setSelectedAnswerId] = useState<null | string>(null);
   const [showFinalComponent, setShowFinalComponent] = useState(false);
   const [correctDate, setCorrectDate] = useState("");
-  const [scrollAllowed, setScrollAllowed] = useState(false);
+
 
 
   const handleShowVariants = () => {
@@ -28,34 +28,34 @@ export const VariantQuestion: React.FC<VariantQuestionInterface> = ({ title, bgI
 
   const handleCheckVariant = () => {
     if (selectedAnswerId) {
-
-      setIsCorrectChoose(true);
-      if (isCorrectChoose) {
-        console.log('correct')
-        setSelectedAnswerText(wrongAnswerButtonText);
-        setIsCorrectChoose(true);
-        setShowFinalComponent(true);
-
-      } else {
-        console.log('wrong')
-        setSelectedAnswerText("wrong");
-        setIsCorrectChoose(false);
-      }
+        const selectedAnswer = answers.find(answer => answer.id === selectedAnswerId);
+        if (selectedAnswer) {
+            setIsCorrectChoose(selectedAnswer.isCorrect);
+            if (selectedAnswer.isCorrect) {
+                setSelectedAnswerText(wrongAnswerButtonText);
+                setShowFinalComponent(true);
+            } else {
+              setIsCorrectChoose(false)
+                setSelectedAnswerText("wrong");
+            }
+        }
     } else {
-      setShowFinalComponent(false);
+      setIsCorrectChoose(false)
+        setShowFinalComponent(false);
     }
-  };
+   
+};
 
-  const handleChooseVariant = (id: string, correct: boolean, date: string) => {
 
-    setSelectedAnswerId(id);
-    setIsCorrectChoose(correct);
-    setCorrectDate(date);
-    if (!isCorrectChoose) {
-      setSelectedAnswerText(buttonText);
-    }
 
-  };
+const handleChooseVariant = (id: string, correct: boolean, date: string) => {
+  setSelectedAnswerId(id);
+  setIsCorrectChoose(true)
+  setCorrectDate(date);
+  setSelectedAnswerText(buttonText);
+};
+
+
 
 
   return (
@@ -68,19 +68,22 @@ export const VariantQuestion: React.FC<VariantQuestionInterface> = ({ title, bgI
         <div className={styles.header}>
           <TextFieldInfo mainText={questionText} variant={"question"} secondaryText={"Pavel"} />
         </div>
+
         {!isShowVariants && (
           <div className={styles.variants}>
-             <VariantAnswersField answers={answers} 
-             isSelected={selectedAnswerId}
-             onChooseVariant={handleChooseVariant}/>
-            {!isShowVariants && 
-                selectedAnswerText === "wrong" ? (
-                  <div className={styles.wrongText}>
-                    <TextFieldInfo mainText={wrongAnswerText} variant={"errorMessage"}/>
-                  </div>
-                ): ""}
+            <VariantAnswersField answers={answers}
+              isSelected={selectedAnswerId}
+              onChooseVariant={handleChooseVariant}
+              isCorrectChoose={isCorrectChoose} />
+            {!isShowVariants &&
+              selectedAnswerText === "wrong" ? (
+              <div className={styles.wrongText}>
+                <TextFieldInfo mainText={wrongAnswerText} variant={"errorMessage"} />
+              </div>
+            ) : ""}
           </div>
         )}
+
         <ButtonConfirm title={buttonText} onClick={handleCheckVariant} isActive={false} isDisabled={false} />
       </div>
     </div>
