@@ -12,12 +12,12 @@ interface VariantAnswersFields {
 
 interface testProps {
     answers: VariantAnswersFields[],
-    isSelected:string | null,
+    selectedAnswerId : string[] | null,
     onChooseVariant: (id: string, correct: boolean, date: string) => void
 }
 
 
-export const VariantAnswersField:React.FC<testProps> = ({answers,isSelected, onChooseVariant})=> {
+export const VariantAnswersField:React.FC<testProps> = ({answers,selectedAnswerId, onChooseVariant})=> {
     return (
        <div className={styles.wrapper}>
 
@@ -29,7 +29,7 @@ export const VariantAnswersField:React.FC<testProps> = ({answers,isSelected, onC
                    correct: el.isCorrect,
                    text: el.text
                  }}
-                 isSelected={el.id === isSelected}
+                 isSelected={selectedAnswerId && selectedAnswerId.includes(el.id)}
                  onChooseVariant={onChooseVariant} />
              ))}
 
