@@ -1,0 +1,13 @@
+@import "/app//variables.scss";
+
+.wrapper_icon {
+  width: 214px;
+  height: 214px;
+  border-radius: 50%;
+  border: 0.85px solid rgba(0, 0, 0, 0.15);
+  box-shadow: -3px -9px 0px 0px rgba(0, 0, 0, 0.1) inset;
+  background: $white-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

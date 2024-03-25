@@ -1,0 +1,13 @@
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 20rem;
+    gap: 4rem;
+    width: 50%; 
+}
+
+.wrapper > div {
+    flex: 1 1 calc(50% - 2rem);
+}
+
+
