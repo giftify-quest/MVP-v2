@@ -6,6 +6,7 @@ import VariantTextField from "@/components/reusableComponent/VariantsTextField/V
 import { SectionTitle } from "@/components/reusableComponent/section-title/SectionTitle";
 import styles from "./styles.module.scss";
 import { useState } from "react";
+import { ButtonConfirm } from "../reusableComponent/ButtonConfirm/ButtonConfirm";
 
 
 interface VariantsType {
@@ -23,19 +24,19 @@ interface VariantQuestionProps {
   giftText?: string;
   title: string;
   questionText: string;
-  answer1: VariantsType[],
-  answer2: VariantsType[],
+  answers: VariantsType[],
+
   buttonText: string;
   wrongAnswerText: string;
   wrongAnswerButton: string;
-  multipleVariant:boolean
+  multipleVariant: boolean
 
 }
 
 
 
-export const VariantQuestion: React.FC<VariantQuestionProps> = ({ title, bgImage, gift, giftText, 
-  questionText, answer1, answer2, buttonText, wrongAnswerText, wrongAnswerButton, multipleVariant}) => {
+export const VariantQuestion: React.FC<VariantQuestionProps> = ({ title, bgImage, gift, giftText,
+  questionText, answers, buttonText, wrongAnswerText, wrongAnswerButton, multipleVariant }) => {
 
   const [isShowVariants, setIsShowVariants] = useState(false);
   const [isCorrectChoose, setIsCorrectChoose] = useState(true);
@@ -73,8 +74,8 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({ title, bgImage
   };
 
 
-  
-  
+
+
 
   const handleChooseVariant = (id: string, correct: boolean, date: string) => {
 
@@ -90,9 +91,9 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({ title, bgImage
   const handleCheckMultipleVariant = () => {
     if (selectedAnswerId && selectedAnswerId.length > 0) {
       const allSelectedAreCorrect = selectedAnswerId.every(id =>
-        answer1.concat(answer2).find(answer => answer.id === id)?.isCorrect
+        answers.find(answer => answer.id === id)?.isCorrect
       );
-  
+
       if (allSelectedAreCorrect) {
         console.log('correct');
         setSelectedAnswerText(wrongAnswerButton);
@@ -114,13 +115,13 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({ title, bgImage
       setSelectedAnswerId([...selectedAnswerId, id]);
 
     }
-  
+
     setIsCorrectChoose(correct);
     setCorrectDate(date);
     setSelectedAnswerText(buttonText);
   };
-  
-  
+
+
 
   return (
 
@@ -138,43 +139,21 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({ title, bgImage
         {!isShowVariants && (
           <div className={styles.variants}>
             <div style={{ display: 'flex', marginLeft: '1rem', gap: '4rem', }} >
-              {answer1.map((el) => (
-                <VariantTextField
-                  key={el.id}
-                  answer={{
-                    id: el.id,
-                    correct: el.isCorrect,
-                    text: el.text
-                  }}
-                  isSelected={selectedAnswerId && selectedAnswerId.includes(el.id)}
-
-                  onChooseVariant={ multipleVariant ? handleChooseMultipleVariant : handleChooseVariant } />
-              ))}
+              <VariantAnswersField answers={answers}
+                isSelected={selectedAnswerId}
+                onChooseVariant={handleChooseVariant} />
             </div>
-            <div style={{ display: 'flex', marginLeft: '1rem', gap: '4rem', }} >
-              {answer2.map((el) => (
-                <VariantTextField
-                  key={el.id}
-                  answer={{
-                    id: el.id,
-                    correct: el.isCorrect,
-                    text: el.text
-                  }}
-                  isSelected={selectedAnswerId && selectedAnswerId.includes(el.id)}
-                  onChooseVariant={  multipleVariant ? handleChooseMultipleVariant : handleChooseVariant    } />
-              ))}
-            </div>
-            {!isShowVariants && 
-                selectedAnswerText === "wrong" ? (
-                  <div style={{position:'absolute', right:'1rem'}}>
-                    <TextFieldInfo mainText={wrongAnswerText} variant={"errorMessage"}/>
-                  </div>
-                ): ""}
+            {!isShowVariants &&
+              selectedAnswerText === "wrong" ? (
+              <div style={{ position: 'absolute', right: '1rem' }}>
+                <TextFieldInfo mainText={wrongAnswerText} variant={"errorMessage"} />
+              </div>
+            ) : ""}
           </div>
         )}
 
 
-        <ButtonMain title={buttonText} onClick={ multipleVariant ? handleCheckMultipleVariant : handleCheckVariant } />
+        <ButtonConfirm title={buttonText} onClick={handleCheckVariant} isActive={false} isDisabled={false} />
       </div>
     </div>
 
