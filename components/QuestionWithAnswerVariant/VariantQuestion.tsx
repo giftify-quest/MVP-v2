@@ -75,8 +75,6 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({ title, bgImage
 
 
 
-
-
   const handleChooseVariant = (id: string, correct: boolean, date: string) => {
 
     setSelectedAnswerId(id);
@@ -141,7 +139,7 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({ title, bgImage
             <div style={{ display: 'flex', marginLeft: '1rem', gap: '4rem', }} >
               <VariantAnswersField answers={answers}
                 isSelected={selectedAnswerId}
-                onChooseVariant={handleChooseVariant} />
+                onChooseVariant={multipleVariant ? handleCheckMultipleVariant : handleChooseVariant} />
             </div>
             {!isShowVariants &&
               selectedAnswerText === "wrong" ? (
@@ -153,7 +151,7 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({ title, bgImage
         )}
 
 
-        <ButtonConfirm title={buttonText} onClick={handleCheckVariant} isActive={false} isDisabled={false} />
+        <ButtonConfirm title={buttonText} onClick={multipleVariant ? handleCheckMultipleVariant : handleCheckVariant} isActive={false} isDisabled={false} />
       </div>
     </div>
 

@@ -21,8 +21,7 @@ export default function Home() {
         answers={testContent.answers}
         buttonText={testContent.buttonText}
         wrongAnswerText={testContent.wrongAnswerText}
-        wrongAnswerButtonText={testContent.wrongAnswerButtonText}
-      />
+        wrongAnswerButton={testContent.wrongAnswerButtonText} multipleVariant={false} />
 
     </main>
   );
