@@ -9,15 +9,10 @@ export interface VariantQuestionInterface {
         text: string,
         isCorrect:boolean
     }>,
-    answers: Array< {
-        id:string,
-        text: string,
-        isCorrect:boolean
-    }>,
     buttonText:string,
     wrongAnswerText:string,
     wrongAnswerButtonText:string,
     gift?:string,
     giftText?:string,
-    multipleAnswer:boolean,
+    multipleAnswer:boolean
 }

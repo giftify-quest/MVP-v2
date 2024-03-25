@@ -5,8 +5,11 @@ import { SectionTitle } from "@/components/reusableComponent/section-title/Secti
 import { VariantQuestionInterface } from "@/types/answer/VariantAsnwerType";
 import { useState } from "react";
 import { ButtonConfirm } from "../reusableComponent/ButtonConfirm/ButtonConfirm";
-import styles from "./styles.module.scss";
 import { VariantAnswersField } from "../reusableComponent/VariantsAnswerField/VariantAnswersField";
+import styles from "./styles.module.scss";
+
+
+
 
 
 
@@ -33,6 +36,7 @@ export const VariantQuestion: React.FC<VariantQuestionInterface> = ({ title, bgI
       setIsCorrectChoose(true);
       if (isCorrectChoose) {
         console.log('correct')
+        setSelectedAnswerText(wrongAnswerButtonText);
         setSelectedAnswerText(wrongAnswerButtonText);
         setIsCorrectChoose(true);
         setShowFinalComponent(true);
@@ -98,11 +102,15 @@ export const VariantQuestion: React.FC<VariantQuestionInterface> = ({ title, bgI
 
 
   return (
-
+<div>
+    <div>
+      <div className={styles.title}>
     <div>
       <div className={styles.title}>
         <SectionTitle mainWord={title} variant={"green"} />
       </div>
+      <div className={styles.wrapper} style={{ backgroundImage: `url(${bgImage})` }}>
+        <div className={styles.header}>
       <div className={styles.wrapper} style={{ backgroundImage: `url(${bgImage})` }}>
         <div className={styles.header}>
           <TextFieldInfo mainText={questionText} variant={"question"} secondaryText={"Pavel"} />
@@ -116,6 +124,7 @@ export const VariantQuestion: React.FC<VariantQuestionInterface> = ({ title, bgI
             {!isShowVariants && 
                 selectedAnswerText === "wrong" ? (
                   <div className={styles.wrongText}>
+                  <div className={styles.wrongText}>
                     <TextFieldInfo mainText={wrongAnswerText} variant={"errorMessage"}/>
                   </div>
                 ): ""}
@@ -125,7 +134,7 @@ export const VariantQuestion: React.FC<VariantQuestionInterface> = ({ title, bgI
       </div>
     </div>
 
-
+    </div>
   );
 };
 

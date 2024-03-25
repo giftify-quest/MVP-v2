@@ -13,16 +13,19 @@ export default function Home() {
         justifyContent: "center",
         padding: "20px 40px",
       }}
-    > <VariantQuestion
-       
+    >
+      <VariantQuestion
         bgImage={testContent.bgImage}
+ 
+       
+     
         title={testContent.title}
         questionText={testContent.questionText}
         answers={testContent.answers}
         buttonText={testContent.buttonText}
         wrongAnswerText={testContent.wrongAnswerText}
-        wrongAnswerButtonText={testContent.wrongAnswerButtonText} 
-        multipleAnswer={testContent.multipleAnswer}/>
+        wrongAnswerButtonText={testContent.wrongAnswerButtonText}
+         multipleAnswer={false}    />
     </main>
   );
 }
