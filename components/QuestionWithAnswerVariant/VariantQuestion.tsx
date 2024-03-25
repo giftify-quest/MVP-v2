@@ -5,21 +5,13 @@ import { SectionTitle } from "@/components/reusableComponent/section-title/Secti
 import { VariantQuestionInterface } from "@/types/answer/VariantAsnwerType";
 import { useState } from "react";
 import { ButtonConfirm } from "../reusableComponent/ButtonConfirm/ButtonConfirm";
-import { VariantAnswersField } from "../reusableComponent/VariantsAnswerField/VariantAnswersField";
 import styles from "./styles.module.scss";
-
-
-
-<<<<<<< HEAD
+import { VariantAnswersField } from "../reusableComponent/VariantsAnswerField/VariantAnswersField";
 
 
 
 export const VariantQuestion: React.FC<VariantQuestionInterface> = ({ title, bgImage, gift, giftText, 
   questionText, answers, buttonText, wrongAnswerText, wrongAnswerButtonText, multipleAnswer }) => {
-=======
-export const VariantQuestion: React.FC<VariantQuestionInterface> = ({ title, bgImage, gift, giftText, 
-  questionText, answers, buttonText, wrongAnswerText, wrongAnswerButtonText }) => {
->>>>>>> main
 
   const [isShowVariants, setIsShowVariants] = useState(false);
   const [isCorrectChoose, setIsCorrectChoose] = useState(true);
@@ -42,10 +34,6 @@ export const VariantQuestion: React.FC<VariantQuestionInterface> = ({ title, bgI
       if (isCorrectChoose) {
         console.log('correct')
         setSelectedAnswerText(wrongAnswerButtonText);
-<<<<<<< HEAD
-        setSelectedAnswerText(wrongAnswerButtonText);
-=======
->>>>>>> main
         setIsCorrectChoose(true);
         setShowFinalComponent(true);
 
@@ -71,7 +59,6 @@ export const VariantQuestion: React.FC<VariantQuestionInterface> = ({ title, bgI
     if (!isCorrectChoose) {
       setSelectedAnswerText(buttonText);
     }
-<<<<<<< HEAD
 
   };
 
@@ -111,33 +98,17 @@ export const VariantQuestion: React.FC<VariantQuestionInterface> = ({ title, bgI
 
 
   return (
-<div>
-    <div>
-      <div className={styles.title}>
-=======
 
-  };
-
-
-  return (
-
->>>>>>> main
     <div>
       <div className={styles.title}>
         <SectionTitle mainWord={title} variant={"green"} />
       </div>
       <div className={styles.wrapper} style={{ backgroundImage: `url(${bgImage})` }}>
         <div className={styles.header}>
-<<<<<<< HEAD
-      <div className={styles.wrapper} style={{ backgroundImage: `url(${bgImage})` }}>
-        <div className={styles.header}>
-=======
->>>>>>> main
           <TextFieldInfo mainText={questionText} variant={"question"} secondaryText={"Pavel"} />
         </div>
         {!isShowVariants && (
           <div className={styles.variants}>
-<<<<<<< HEAD
              <VariantAnswersField answers={answers}
 
             onChooseVariant={multipleAnswer ? handleChooseMultipleVariant : handleChooseVariant}
@@ -145,31 +116,17 @@ export const VariantQuestion: React.FC<VariantQuestionInterface> = ({ title, bgI
             {!isShowVariants && 
                 selectedAnswerText === "wrong" ? (
                   <div className={styles.wrongText}>
-                  <div className={styles.wrongText}>
-=======
-             <VariantAnswersField answers={answers} 
-             isSelected={selectedAnswerId}
-             onChooseVariant={handleChooseVariant}/>
-            {!isShowVariants && 
-                selectedAnswerText === "wrong" ? (
-                  <div className={styles.wrongText}>
->>>>>>> main
                     <TextFieldInfo mainText={wrongAnswerText} variant={"errorMessage"}/>
                   </div>
                 ): ""}
           </div>
         )}
-<<<<<<< HEAD
         <ButtonConfirm title={buttonText} onClick={multipleAnswer ? handleCheckMultipleVariant : handleCheckVariant} isActive={false} isDisabled={false} />
-=======
-        <ButtonConfirm title={buttonText} onClick={handleCheckVariant} isActive={false} isDisabled={false} />
->>>>>>> main
       </div>
     </div>
 
-    </div>
+
   );
 };
-
 
 
