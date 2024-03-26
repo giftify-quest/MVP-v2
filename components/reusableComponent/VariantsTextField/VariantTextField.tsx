@@ -9,7 +9,6 @@ import classNames from "classnames";
 interface VariantTextFieldProps {
     answer: { id: string, correct: boolean, text: string },
     isSelected: boolean | null;
-    isSelected: boolean,
     isCorrectChoose:boolean
     onChooseVariant: (id: string, correct: boolean, text: string) => void
 }
@@ -20,15 +19,14 @@ export const VariantTextField: React.FC<VariantTextFieldProps> = ({ answer, isSe
     const divClass = classNames(styles.column);
     const textClass = classNames(styles.text, {
         [styles.selected]: isSelected,
-     
-        [styles.wrong]: isSelected && !isCorrectChoose
+        [styles.wrong]: isSelected && !isCorrectChoose 
     });
 
     return (
         <button
             className={`${styles.wrapper} ${divClass} ${isSelected ? styles.selected : ''} ${textClass}`}
             onClick={() => { onChooseVariant(answer.id, answer.correct, answer.text) }}>
-            <div >
+            <div>
                 {answer.text}
             </div>
         </button>
