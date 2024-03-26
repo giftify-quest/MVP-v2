@@ -1,0 +1,17 @@
+@import "/app/variables.scss";
+
+.wrapper {
+  background: $white-color;
+  width: 600px;
+  border-radius: 20px;
+  color: rgba(0, 0, 0, 1);
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+}
