@@ -16,13 +16,17 @@ export default function Home() {
     >
       <VariantQuestion
         bgImage={testContent.bgImage}
+ 
+       
+     
         title={testContent.title}
         questionText={testContent.questionText}
         answers={testContent.answers}
+        
         buttonText={testContent.buttonText}
         wrongAnswerText={testContent.wrongAnswerText}
         wrongAnswerButtonText={testContent.wrongAnswerButtonText}
-      />
+         multipleAnswer={testContent.multipleAnswer}    />
     </main>
   );
 }

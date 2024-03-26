@@ -10,7 +10,7 @@ export const testContent:VariantQuestionInterface = {
         {
             id:'1',
             text: "Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше ",
-            isCorrect:false
+            isCorrect:true
         },
         {
             id:'2',
@@ -32,5 +32,6 @@ export const testContent:VariantQuestionInterface = {
     buttonText:"Я Уверена",
     wrongAnswerText:"Podumaj jeshe",
     wrongAnswerButtonText:'Teperto4no' ,
+    multipleAnswer:true
 
 }

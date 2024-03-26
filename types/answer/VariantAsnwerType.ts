@@ -13,5 +13,6 @@ export interface VariantQuestionInterface {
     wrongAnswerText:string,
     wrongAnswerButtonText:string,
     gift?:string,
-    giftText?:string
+    giftText?:string,
+    multipleAnswer:boolean
 }
