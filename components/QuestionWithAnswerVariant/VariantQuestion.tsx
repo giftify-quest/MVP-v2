@@ -63,32 +63,35 @@ const handleChoseOneVariant = (id: string, correct: boolean, date: string) => {
 
   const handleCheckMultipleVariant = () => {
     if (selectedAnswerId && selectedAnswerId.length > 0) {
-      const allSelectedAreCorrect = selectedAnswerId.every(id =>
-        answers.find(answer => answer.id === id)?.isCorrect
+      const totalCorrectAnswers = answers.filter(answer => answer.isCorrect).length;
+      const selectedCorrectAnswers = selectedAnswerId.filter(id =>
+        answers.find(answer => answer.id === id && answer.isCorrect)
+      ).length;
+  
+      const hasIncorrectAnswer = selectedAnswerId.some(id =>
+        answers.find(answer => answer.id === id && !answer.isCorrect)
       );
-
-      if (allSelectedAreCorrect) {
-       
+  
+      if (selectedCorrectAnswers === totalCorrectAnswers && !hasIncorrectAnswer) {
+        console.log('correct');
         setSelectedAnswerText(wrongAnswerButtonText);
         setShowFinalComponent(true);
         setIsCorrectChoose(true);
         setShowExplanatoryText(false);
-
       } else {
-
-      
+        console.log('wrong');
+        setSelectedAnswerText("wrong");
         setShowExplanatoryText(true);
         setIsCorrectChoose(false);
-        setClearSelectedAfterCheck(true)
-
       }
     } else {
-     
       setShowExplanatoryText(true);
       setIsCorrectChoose(false);
       setShowFinalComponent(false);
     }
   };
+  
+  
 
 
 
