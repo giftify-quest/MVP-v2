@@ -4,7 +4,6 @@
     width: 88rem;
     height: 45rem;
     position: relative;
-  
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -27,7 +26,9 @@
 
 .wrongText {
     position: absolute;
-    right: 1rem;
+    right: 2rem;
+    top: 12rem;
+    rotate: 5deg;
 }
 
 .variants {

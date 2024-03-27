@@ -16,6 +16,8 @@ interface VariantTextFieldProps {
 export const VariantTextField: React.FC<VariantTextFieldProps> = ({ answer, isSelected, onChooseVariant, isCorrectChoose }) => {
     const shouldDisplayAsColumn = answer.text.length > 20;
 
+
+
     const divClass = classNames(styles.column);
     const textClass = classNames(styles.text, {
         [styles.selected]: isSelected,
@@ -32,6 +34,7 @@ export const VariantTextField: React.FC<VariantTextFieldProps> = ({ answer, isSe
         </button>
     );
 };
+
 
 
 
