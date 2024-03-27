@@ -9,7 +9,7 @@ import classNames from "classnames";
 interface VariantTextFieldProps {
     answer: { id: string, correct: boolean, text: string },
     isSelected: boolean | null;
-    isCorrectChoose:boolean
+    isCorrectChoose:boolean | null;
     onChooseVariant: (id: string, correct: boolean, text: string) => void
 }
 
