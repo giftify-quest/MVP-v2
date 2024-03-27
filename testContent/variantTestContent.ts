@@ -3,7 +3,7 @@ import { VariantQuestionInterface } from "@/types/answer/VariantAsnwerType";
 
 export const testContent:VariantQuestionInterface = {
 
-    bgImage: 'testImage/background.png',
+    bgImage: '/testImage/background.png',
     title:"Hello",
     questionText:"Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше ",
     answers: [

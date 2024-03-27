@@ -3,14 +3,15 @@
 import { TextFieldInfo } from "@/components/reusableComponent/TextFieldInfo/TextFieldInfo";
 import { SectionTitle } from "@/components/reusableComponent/section-title/SectionTitle";
 import { VariantQuestionInterface } from "@/types/answer/VariantAsnwerType";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ButtonConfirm } from "../reusableComponent/ButtonConfirm/ButtonConfirm";
 import styles from "./styles.module.scss";
 import { VariantAnswersField } from "../reusableComponent/VariantsAnswerField/VariantAnswersField";
+import { WrapperWithBackground } from "../reusableComponent/WrapperWithBackground/WrapperWithBackground";
 
 
 
-export const VariantQuestion: React.FC<VariantQuestionInterface> = ({ title, bgImage, gift, giftText, 
+export const VariantQuestion: React.FC<VariantQuestionInterface> = ({ title, bgImage, gift, giftText,
   questionText, answers, buttonText, wrongAnswerText, wrongAnswerButtonText, multipleAnswer }) => {
 
   const [isShowVariants, setIsShowVariants] = useState(false);
@@ -18,83 +19,81 @@ export const VariantQuestion: React.FC<VariantQuestionInterface> = ({ title, bgI
   const [selectedAnswerText, setSelectedAnswerText] = useState(buttonText);
   const [selectedAnswerId, setSelectedAnswerId] = useState<null | string[]>(null);
   const [showFinalComponent, setShowFinalComponent] = useState(false);
+  const [showExplanatoryText, setShowExplanatoryText] = useState(false);
   const [correctDate, setCorrectDate] = useState("");
-  const [scrollAllowed, setScrollAllowed] = useState(false);
+  const [clearSelectedAfterCheck, setClearSelectedAfterCheck] = useState(false);
+  const [isActiveButton , setIsActiveButton] = useState(false)
+  const [isDisabledButton, setIsDisabledButtton] = useState (true)
 
+    /* //если выбирать только один вариант то работает как надо 
+const handleChoseOneVariant = (id: string, correct: boolean, date: string) => {
 
-  const handleShowVariants = () => {
-    setIsShowVariants((prev) => !prev);
-  };
+  setSelectedAnswerId([id]);
+  setIsCorrectChoose(true);
+  setShowExplanatoryText(true);
+  setCorrectDate(date);
+  setSelectedAnswerText(buttonText);
 
-
-  const handleCheckVariant = () => {
-    if (selectedAnswerId) {
-
-      setIsCorrectChoose(true);
-      if (isCorrectChoose) {
-        console.log('correct')
-        setSelectedAnswerText(wrongAnswerButtonText);
-        setIsCorrectChoose(true);
-        setShowFinalComponent(true);
-
-      } else {
-        console.log('wrong')
-        setSelectedAnswerText("wrong");
-        setIsCorrectChoose(false);
-        setSelectedAnswerId(null)
-      }
-    } else {
-      setShowFinalComponent(false);
-    }
-  };
-
-
-
-  const handleChooseVariant = (id: string, correct: boolean, date: string) => {
-
-
-    setSelectedAnswerId(id);
-    setIsCorrectChoose(correct);
-    setCorrectDate(date);
-    if (!isCorrectChoose) {
-      setSelectedAnswerText(buttonText);
-    }
-
-  };
-
-  const handleCheckMultipleVariant = () => {
-    if (selectedAnswerId && selectedAnswerId.length > 0) {
-      const allSelectedAreCorrect = selectedAnswerId.every(id =>
-        answers.find(answer => answer.id === id)?.isCorrect
-      );
-
-      if (allSelectedAreCorrect) {
-        console.log('correct');
-        setSelectedAnswerText(wrongAnswerButtonText);
-        setShowFinalComponent(true);
-      } else {
-        console.log('wrong');
-        setSelectedAnswerText("wrong");
-        setSelectedAnswerId(null)
-      }
-    } else {
-      setShowFinalComponent(false);
-    }
-  };
+}; */
 
   const handleChooseMultipleVariant = (id: string, correct: boolean, date: string) => {
-    if (selectedAnswerId === null) {
+    if (clearSelectedAfterCheck) {
       setSelectedAnswerId([id]);
+      setClearSelectedAfterCheck(false)
+      setIsDisabledButtton(true)
+     
     } else {
-      setSelectedAnswerId([...selectedAnswerId, id]);
-
+      setIsDisabledButtton(true)
+      if (!isCorrectChoose && selectedAnswerId) {
+        setSelectedAnswerId(selectedAnswerId.map(item => (item === id ? item : null)) as string[]);
+      }
+      setSelectedAnswerId(prevSelected =>
+        prevSelected && prevSelected.includes(id) && !isCorrectChoose
+          ? prevSelected.filter(item => item !== id)
+          : [...(prevSelected || []), id]
+      );
     }
-
-    setIsCorrectChoose(correct);
+    setIsDisabledButtton(false)
+    setIsActiveButton(true)
+    setIsCorrectChoose(true);
     setCorrectDate(date);
     setSelectedAnswerText(buttonText);
   };
   
+
+  const handleCheckMultipleVariant = () => {
+    if (selectedAnswerId && selectedAnswerId.length > 0) {
+      const totalCorrectAnswers = answers.filter(answer => answer.isCorrect).length;
+      const selectedCorrectAnswers = selectedAnswerId.filter(id =>
+        answers.find(answer => answer.id === id && answer.isCorrect)
+      ).length;
+  
+      const hasIncorrectAnswer = selectedAnswerId.some(id =>
+        answers.find(answer => answer.id === id && !answer.isCorrect)
+      );
+  
+      if (selectedCorrectAnswers === totalCorrectAnswers && !hasIncorrectAnswer) {
+        console.log('correct');
+        setSelectedAnswerText(wrongAnswerButtonText);
+        setShowFinalComponent(true);
+        setIsCorrectChoose(true);
+        setShowExplanatoryText(false);
+      } else {
+        console.log('wrong');
+        setSelectedAnswerText("wrong");
+        setShowExplanatoryText(true);
+        setIsCorrectChoose(false);
+      }
+    } else {
+      setShowExplanatoryText(true);
+      setIsCorrectChoose(false);
+      setShowFinalComponent(false);
+    }
+  };
+  
+  
+
+
 
 
   return (
@@ -103,28 +102,29 @@ export const VariantQuestion: React.FC<VariantQuestionInterface> = ({ title, bgI
       <div className={styles.title}>
         <SectionTitle mainWord={title} variant={"green"} />
       </div>
-      <div className={styles.wrapper} style={{ backgroundImage: `url(${bgImage})` }}>
-        <div className={styles.header}>
-          <TextFieldInfo mainText={questionText} variant={"question"} secondaryText={"Pavel"} />
-        </div>
-        {!isShowVariants && (
-          <div className={styles.variants}>
-             <VariantAnswersField answers={answers}
-
-            onChooseVariant={multipleAnswer ? handleChooseMultipleVariant : handleChooseVariant}
-             selectedAnswerId={selectedAnswerId}/>
-            {!isShowVariants && 
-                selectedAnswerText === "wrong" ? (
-                  <div className={styles.wrongText}>
-                    <TextFieldInfo mainText={wrongAnswerText} variant={"errorMessage"}/>
-                  </div>
-                ): ""}
+      <WrapperWithBackground bgSrc={bgImage}>
+        <div className={styles.wrapper}>
+          <div className={styles.header}>
+            <TextFieldInfo mainText={questionText} variant={"question"} secondaryText={"Pavel"} />
           </div>
-        )}
-        <ButtonConfirm title={buttonText} onClick={multipleAnswer ? handleCheckMultipleVariant : handleCheckVariant} isActive={false} isDisabled={false} />
-      </div>
+          {!isShowVariants && (
+            <div className={styles.variants}>
+              <VariantAnswersField
+                answers={answers}
+                onChooseVariant={handleChooseMultipleVariant}
+                selectedAnswerId={selectedAnswerId}
+                isCorrectChoose={isCorrectChoose} />
+            </div>
+          )}
+          {showExplanatoryText &&
+            <div className={styles.wrongText}>
+              <TextFieldInfo mainText={wrongAnswerText} variant={"errorMessage"} />
+            </div>
+          }
+          <ButtonConfirm title={buttonText} onClick={handleCheckMultipleVariant} isActive={isActiveButton} isDisabled={isDisabledButton} />
+        </div>
+      </WrapperWithBackground>
     </div>
-
 
   );
 };
