@@ -1,6 +1,8 @@
 "use client";
 
 import { VariantQuestion } from "@/components/QuestionWithAnswerVariant/VariantQuestion";
+import { FramedPhoto } from "@/components/reusableComponent/FramedPhoto/FramedPhoto";
+import { VariantQuestionSections } from "@/components/sections/VariantsQustionSections/VariantsQuestionSection";
 import { testContent } from "@/testContent/variantTestContent";
 
 export default function Home() {
@@ -14,19 +16,18 @@ export default function Home() {
         padding: "20px 40px",
       }}
     >
-      <VariantQuestion
-        bgImage={testContent.bgImage}
- 
-       
-     
-        title={testContent.title}
-        questionText={testContent.questionText}
-        answers={testContent.answers}
-        
-        buttonText={testContent.buttonText}
-        wrongAnswerText={testContent.wrongAnswerText}
-        wrongAnswerButtonText={testContent.wrongAnswerButtonText}
-         multipleAnswer={testContent.multipleAnswer}    />
+   
+      <VariantQuestionSections
+            bgImage={testContent.bgImage}
+            title={testContent.title}
+            questionText={testContent.questionText}
+            answers={testContent.answers}
+            buttonText={testContent.buttonText}
+            wrongAnswerText={testContent.wrongAnswerText}
+            wrongAnswerButtonText={testContent.wrongAnswerButtonText}
+            multipleAnswer={testContent.multipleAnswer} />
+
+      <FramedPhoto imageSrc={""} text={""}/>
     </main>
   );
 }

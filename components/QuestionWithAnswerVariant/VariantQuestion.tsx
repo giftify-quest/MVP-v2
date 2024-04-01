@@ -3,11 +3,11 @@
 import { TextFieldInfo } from "@/components/reusableComponent/TextFieldInfo/TextFieldInfo";
 import { SectionTitle } from "@/components/reusableComponent/section-title/SectionTitle";
 import { VariantQuestionInterface } from "@/types/answer/VariantAsnwerType";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ButtonConfirm } from "../reusableComponent/ButtonConfirm/ButtonConfirm";
-import styles from "./styles.module.scss";
 import { VariantAnswersField } from "../reusableComponent/VariantsAnswerField/VariantAnswersField";
 import { WrapperWithBackground } from "../reusableComponent/WrapperWithBackground/WrapperWithBackground";
+import styles from "./styles.module.scss";
 
 
 
@@ -91,9 +91,6 @@ const handleChoseOneVariant = (id: string, correct: boolean, date: string) => {
     }
   };
   
-  
-
-
 
 
   return (
