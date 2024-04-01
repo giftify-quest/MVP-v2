@@ -31,7 +31,7 @@ export default function Home() {
         id={SectionFreeInputTestContent.id}
         nextSectionId={SectionFreeInputTestContent.nextSectionId}
         underSectionImage={SectionFreeInputTestContent.underSectionImage}
-      /> */}
+      />
     </main>
   );
 }
