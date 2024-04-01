@@ -1,9 +1,10 @@
 "use client";
 
-import { VariantQuestion } from "@/components/QuestionWithAnswerVariant/VariantQuestion";
-import { FramedPhoto } from "@/components/reusableComponent/FramedPhoto/FramedPhoto";
 import { VariantQuestionSections } from "@/components/sections/VariantsQustionSections/VariantsQuestionSection";
-import { testContent } from "@/testContent/variantTestContent";
+import { testAnswerContent } from "@/testContent/variantAnswerTestContent";
+import { variantSectionTestContent } from "@/testContent/variantSectionTest";
+
+
 
 export default function Home() {
   return (
@@ -16,18 +17,15 @@ export default function Home() {
         padding: "20px 40px",
       }}
     >
-   
-      <VariantQuestionSections
-            bgImage={testContent.bgImage}
-            title={testContent.title}
-            questionText={testContent.questionText}
-            answers={testContent.answers}
-            buttonText={testContent.buttonText}
-            wrongAnswerText={testContent.wrongAnswerText}
-            wrongAnswerButtonText={testContent.wrongAnswerButtonText}
-            multipleAnswer={testContent.multipleAnswer} />
 
-      <FramedPhoto imageSrc={""} text={""}/>
+      <VariantQuestionSections id={testAnswerContent.id}
+        answer={variantSectionTestContent.answer}
+        nextSectionId={""}
+        underSectionImage={variantSectionTestContent.underSectionImage}
+        title={""}
+        question={variantSectionTestContent.question} />
+
+        
     </main>
   );
 }

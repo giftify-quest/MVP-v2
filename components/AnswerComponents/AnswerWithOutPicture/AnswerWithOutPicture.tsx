@@ -1,11 +1,12 @@
-import { TextFieldInfo } from "@/reusableComponent/TextFieldInfo/TextFieldInfo";
+
 import styles from "./styles.module.scss";
 import { WrapperWithBackground } from "../../reusableComponent/WrapperWithBackground/WrapperWithBackground";
+import { TextFieldInfo } from "@/components/reusableComponent/TextFieldInfo/TextFieldInfo";
 
 interface IAnswerWithOutPicture {
   successText: string;
   secondaryText?: string;
-  bgSrc: string;
+  bgSrc: string ;
 }
 
 export const AnswerWithOutPicture: React.FC<IAnswerWithOutPicture> = ({

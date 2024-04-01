@@ -32,6 +32,7 @@ export const testContent:VariantQuestionInterface = {
     buttonText:"Я Уверена",
     wrongAnswerText:"Podumaj jeshe",
     wrongAnswerButtonText:'Teperto4no' ,
+    
     multipleAnswer:true
 
 }
