@@ -4,13 +4,15 @@ import { useState } from "react";
 import { PhotosSection } from "@/components/reusableComponent/PhotosSection/PhotosSection";
 import { SectionFreeInputProps } from "@/testContent/sectionFreeInput";
 import { AnswerWithOutPicture } from "@/components/AnswerComponents/AnswerWithOutPicture/AnswerWithOutPicture";
+import { QuestionWithFreeInput } from "./QuestionWithFreeInput/QuestionWithFreeInput";
+import { useState } from "react";
+import { PhotosSection } from "@/components/reusableComponent/PhotosSection/PhotosSection";
+import { SectionFreeInputProps } from "@/testContent/sectionFreeInput";
+import { AnswerWithOutPicture } from "@/components/AnswerComponents/AnswerWithOutPicture/AnswerWithOutPicture";
 
 export const SectionFreeInput: React.FC<SectionFreeInputProps> = ({
   question,
   answer,
-  underSectionImage,
-  id,
-  nextSectionId,
 }) => {
   const [isReady, setIsReady] = useState(false);
   return (
