@@ -3,6 +3,9 @@ import { VariantQuestionInterface } from "./answer/VariantAsnwerType";
 import { Params } from "./Params";
 import { QuestionInterface } from "./question/QuestionInterface";
 
+export interface IAnswerProps {
+    onReady: () => void;
+  }
 export interface Section {
     id:string;
     answer:Answer;
