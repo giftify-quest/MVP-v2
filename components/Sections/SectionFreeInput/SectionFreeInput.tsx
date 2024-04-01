@@ -13,6 +13,9 @@ import { AnswerWithOutPicture } from "@/components/AnswerComponents/AnswerWithOu
 export const SectionFreeInput: React.FC<SectionFreeInputProps> = ({
   question,
   answer,
+  underSectionImage,
+  id,
+  nextSectionId,
 }) => {
   const [isReady, setIsReady] = useState(false);
   return (
