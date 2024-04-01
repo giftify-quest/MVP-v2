@@ -1,15 +1,10 @@
-import { TextFieldInfo } from "@/reusableComponent/TextFieldInfo/TextFieldInfo";
 import styles from "./styles.module.scss";
 import { WrapperWithBackground } from "../../reusableComponent/WrapperWithBackground/WrapperWithBackground";
-
-interface IAnswerWithOutPicture {
-  successText: string;
-  secondaryText?: string;
-  bgSrc: string;
-}
+import { TextFieldInfo } from "@/components/reusableComponent/TextFieldInfo/TextFieldInfo";
+import { IAnswerWithOutPicture } from "@/testContent/sectionFreeInput";
 
 export const AnswerWithOutPicture: React.FC<IAnswerWithOutPicture> = ({
-  bgSrc,
+  bgSrcAnswer: bgSrc,
   successText,
   secondaryText,
 }) => {
@@ -20,7 +15,7 @@ export const AnswerWithOutPicture: React.FC<IAnswerWithOutPicture> = ({
           mainText={successText}
           secondaryText={secondaryText}
           variant="question"
-          rotate={2.53}
+          rotate={-2.53}
         />
       </div>
     </WrapperWithBackground>
