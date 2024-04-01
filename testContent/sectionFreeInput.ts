@@ -16,9 +16,20 @@ export interface IAnswerWithOutPicture {
 export interface SectionFreeInputProps {
   question: IQuestionWithFreeInput;
   answer: IAnswerWithOutPicture;
+  id: string;
+  nextSectionId: string;
+  underSectionImage: {
+    path: string;
+  }[];
 }
 
 export const SectionFreeInputTestContent: SectionFreeInputProps = {
+  id: "1222",
+  nextSectionId: "Нужно обсудить???",
+  underSectionImage: [
+    { path: "/assets/component-photos.jpg" },
+    { path: "/assets/component-photos.jpg" },
+  ],
   question: {
     bgSrcQuestion: "/assets/bg-answer-with-present.jpg",
     questionText: "Do you speak English?",

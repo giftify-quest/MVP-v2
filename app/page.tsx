@@ -33,6 +33,9 @@ export default function Home() {
       <SectionFreeInput
         question={SectionFreeInputTestContent.question}
         answer={SectionFreeInputTestContent.answer}
+        id={SectionFreeInputTestContent.id}
+        nextSectionId={SectionFreeInputTestContent.nextSectionId}
+        underSectionImage={SectionFreeInputTestContent.underSectionImage}
       />
     </main>
   );
