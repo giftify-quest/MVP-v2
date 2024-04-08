@@ -1,6 +1,9 @@
 "use client";
 
 import { VariantQuestion } from "@/components/QuestionWithAnswerVariant/VariantQuestion";
+import { SectionFreeInput } from "@/components/Sections/SectionFreeInput/SectionFreeInput";
+import { TextField } from "@/components/reusableComponent/TextField/TextField";
+import { SectionFreeInputTestContent } from "@/testContent/sectionFreeInput";
 import { testContent } from "@/testContent/variantTestContent";
 
 export default function Home() {
@@ -14,7 +17,7 @@ export default function Home() {
         padding: "20px 40px",
       }}
     >
-      <VariantQuestion
+      {/* <VariantQuestion
         bgImage={testContent.bgImage}
  
        
@@ -26,7 +29,14 @@ export default function Home() {
         buttonText={testContent.buttonText}
         wrongAnswerText={testContent.wrongAnswerText}
         wrongAnswerButtonText={testContent.wrongAnswerButtonText}
-         multipleAnswer={testContent.multipleAnswer}    />
+         multipleAnswer={testContent.multipleAnswer}    /> */}
+      <SectionFreeInput
+        question={SectionFreeInputTestContent.question}
+        answer={SectionFreeInputTestContent.answer}
+        id={SectionFreeInputTestContent.id}
+        nextSectionId={SectionFreeInputTestContent.nextSectionId}
+        underSectionImage={SectionFreeInputTestContent.underSectionImage}
+      />
     </main>
   );
 }

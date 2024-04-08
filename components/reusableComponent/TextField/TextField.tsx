@@ -1,12 +1,13 @@
 import classNames from "classnames";
 import styles from "./styles.module.scss";
-import { ChangeEvent } from "react";
+import { ChangeEvent, KeyboardEvent } from "react";
 
 interface ITextField {
   value: string;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   isError: boolean;
   placeholder?: string;
+  onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void;
 }
 
 export const TextField: React.FC<ITextField> = ({
@@ -14,6 +15,7 @@ export const TextField: React.FC<ITextField> = ({
   onChange,
   isError,
   placeholder = "Твой ответ",
+  onKeyDown,
 }) => {
   return (
     <input
@@ -24,6 +26,7 @@ export const TextField: React.FC<ITextField> = ({
       className={classNames(styles.input, {
         [styles.error_input]: isError,
       })}
+      onKeyDown={onKeyDown}
     />
   );
 };

@@ -2,6 +2,9 @@ import { Answer } from "./answer/Answer";
 import { Params } from "./Params";
 import { QuestionInterface } from "./question/QuestionInterface";
 
+export interface IAnswerProps {
+    onReady: () => void;
+  }
 export interface Section {
     id:string;
     answer:Answer;
