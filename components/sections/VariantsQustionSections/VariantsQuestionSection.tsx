@@ -24,7 +24,7 @@ export const VariantQuestionSections: React.FC<Section> = ({ question, answer, u
                 :
                 <AnswerWithOutPicture
                     successText={answer.answer.text}
-                    bgSrc={answer.bgImage} />
+                    bgSrcAnswer={answer.bgImage} />
             }
             <PhotosSection photos={underSectionImage} />
         </div>
