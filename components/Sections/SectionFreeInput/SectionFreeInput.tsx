@@ -22,7 +22,7 @@ export const SectionFreeInput: React.FC<SectionFreeInputProps> = ({
       />
       {isReady ? (
         <AnswerWithOutPicture
-          bgSrcAnswer={answer.bgSrcAnswer}
+          bgSrc={answer.bgSrcAnswer}
           successText={answer.successText}
           secondaryText={answer.secondaryText}
         />

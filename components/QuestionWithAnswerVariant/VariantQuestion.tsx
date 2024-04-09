@@ -7,25 +7,82 @@ import { ButtonConfirm } from "../reusableComponent/ButtonConfirm/ButtonConfirm"
 import { VariantAnswersField } from "../reusableComponent/VariantsAnswerField/VariantAnswersField";
 import { WrapperWithBackground } from "../reusableComponent/WrapperWithBackground/WrapperWithBackground";
 import styles from "./styles.module.scss";
+import { useState } from "react";
 
 
 interface VariantQuestionProps {
   question: VariantQuestionInterface,
-  isCorrectChoose: boolean;
-  selectedAnswerId: string[] | null;
-  showExplanatoryText: boolean;
-  isActiveButton: boolean;
-  isDisabledButton: boolean
-  handleChooseMultipleVariant: (id: string, correct: boolean, date: string) => void,
-  handleCheckMultipleVariant: () => void
-
+  isReady: ()=>void
 }
 
-export const VariantQuestion: React.FC<VariantQuestionProps> = ({ question,
-  isCorrectChoose, selectedAnswerId, showExplanatoryText, isActiveButton, isDisabledButton,
-  handleCheckMultipleVariant, handleChooseMultipleVariant }) => {
+export const VariantQuestion: React.FC<VariantQuestionProps> = ({ question, isReady}) => {
 
 
+  const [isCorrectChoose, setIsCorrectChoose] = useState(true);
+  const [selectedAnswerText, setSelectedAnswerText] = useState(question.buttonText);
+  const [selectedAnswerId, setSelectedAnswerId] = useState<null | string[]>(null);
+  const [showFinalComponent, setShowFinalComponent] = useState(false);
+  const [showExplanatoryText, setShowExplanatoryText] = useState(false);
+  const [clearSelectedAfterCheck, setClearSelectedAfterCheck] = useState(false);
+  const [isActiveButton, setIsActiveButton] = useState(false);
+  const [isDisabledButton, setIsDisabledButton] = useState(true);
+
+
+
+  const handleChooseMultipleVariant = (id: string, correct: boolean, date: string) => {
+      if (clearSelectedAfterCheck) {
+          setSelectedAnswerId([id]);
+          setClearSelectedAfterCheck(false)
+          setIsDisabledButton(true)
+
+      } else {
+          setIsDisabledButton(true)
+          if (!isCorrectChoose && selectedAnswerId) {
+              setSelectedAnswerId(selectedAnswerId.map(item => (item === id ? item : null)) as string[]);
+          }
+          setSelectedAnswerId(prevSelected =>
+              prevSelected && prevSelected.includes(id) && !isCorrectChoose
+                  ? prevSelected.filter(item => item !== id)
+                  : [...(prevSelected || []), id]
+          );
+      }
+      setIsDisabledButton(false)
+      setIsActiveButton(true)
+      setIsCorrectChoose(true);
+      setSelectedAnswerText(question.buttonText);
+  };
+
+
+  const handleCheckMultipleVariant = () => {
+      if (selectedAnswerId && selectedAnswerId.length > 0) {
+          const totalCorrectAnswers = question.answers.filter(answer => answer.isCorrect).length;
+         
+          const selectedCorrectAnswers = selectedAnswerId.filter(id =>
+              question.answers.find(answer => answer.id === id && answer.isCorrect)
+          ).length;
+
+          const hasIncorrectAnswer = selectedAnswerId.some(id =>
+              question.answers.find(answer => answer.id === id && !answer.isCorrect)
+          );
+
+          if (selectedCorrectAnswers === totalCorrectAnswers && !hasIncorrectAnswer) {
+              console.log('correct');
+              setSelectedAnswerText(question.wrongAnswerButtonText);
+              isReady()
+              setIsCorrectChoose(true);
+              setShowExplanatoryText(false);
+          } else {
+              console.log('wrong');
+              setSelectedAnswerText("wrong");
+              setShowExplanatoryText(true);
+              setIsCorrectChoose(false);
+          }
+      } else {
+          setShowExplanatoryText(true);
+          setIsCorrectChoose(false);
+          setShowFinalComponent(false);
+      }
+  };
 
   return (
 
