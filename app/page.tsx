@@ -36,7 +36,7 @@ export default function Home() {
       <FeedPhotoSection title={feedSectionTestContent.title} subtitle={feedSectionTestContent.subtitle} 
       collage={feedSectionTestContent.collage}/>
 
-<Collage collage={feedSectionTestContent.collage}/>
+
     </main>
   );
 }

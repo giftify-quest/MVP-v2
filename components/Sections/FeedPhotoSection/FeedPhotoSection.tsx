@@ -1,11 +1,9 @@
-import Collage from "@/components/CollageComponents/CollageComponents"
+import Collage from "@/components/CollageComponents/CollageComponents";
 import { SectionTitle } from "@/components/reusableComponent/section-title/SectionTitle";
-import styles from "./style.module.scss";
 import heartImg from '@/public/assets/heart.png';
-import Image from 'next/image';
 import { FeedPhotoSectionProps } from "@/types/feedPhotoSectionProps/feedPhotoSectionProps";
-import { TextField } from "@/components/reusableComponent/TextField/TextField";
-import { ChangeEvent } from "react";
+import Image from 'next/image';
+import styles from "./style.module.scss";
 
 
 

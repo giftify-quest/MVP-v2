@@ -13,7 +13,7 @@ interface CollageInterface {
   }[]
 }
 
-const Collage:React.FC<CollageInterface> = ({ collage }) => {
+const CollageComponents:React.FC<CollageInterface> = ({ collage }) => {
 
   const breakpoints = [1080, 640, 384, 256, 128, 96, 64, 48];
 
@@ -34,10 +34,10 @@ const Collage:React.FC<CollageInterface> = ({ collage }) => {
 
   return (
     <div className={style.masonryLayout}>
-      <PhotoAlbum layout="columns" spacing={10} columns={3} photos={collage} />
+      <PhotoAlbum layout="columns" spacing={10} columns={3} photos={photos} />
     </div>
   );
 };
 
 
-export default Collage;
+export default CollageComponents;
