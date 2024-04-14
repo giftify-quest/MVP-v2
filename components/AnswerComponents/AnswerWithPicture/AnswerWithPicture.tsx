@@ -24,7 +24,7 @@ export const AnswerWithPicture: React.FC<IAnswerWithPicture> = ({
           <TextFieldInfo
             mainText={successText}
             secondaryText={secondaryText}
-            variant="question"
+            variant="text"
             rotate={-2.53}
           />
         </div>

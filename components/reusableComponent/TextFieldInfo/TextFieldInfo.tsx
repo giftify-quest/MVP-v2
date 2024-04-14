@@ -2,13 +2,13 @@ import { setFontSizeTextFieldInfo } from "@/helpers/setFontSizeTextFieldInfo";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
 
-export type TextFieldInfoVariantType = "question" | "errorMessage";
+export type TextFieldInfoVariantType = "text" | "errorMessage";
 
 export interface ITextFieldInfo {
   mainText: string;
   variant: TextFieldInfoVariantType;
   secondaryText?: string;
-  rotate?: -4.3 | 1.8 | 2.34 | 2.53 | 3.6 | -2.53;
+  rotate?: -4.3 | -1.8 | 2.34 | 2.53 | 3.6 | -2.53 | -3.6;
 }
 
 export const TextFieldInfo: React.FC<ITextFieldInfo> = ({
@@ -21,7 +21,7 @@ export const TextFieldInfo: React.FC<ITextFieldInfo> = ({
     <div
       style={{ rotate: `${rotate}deg` }}
       className={classNames(styles.wrapper, {
-        [styles.question]: variant === "question",
+        [styles.question]: variant === "text",
         [styles.error_message]: variant === "errorMessage",
       })}
     >

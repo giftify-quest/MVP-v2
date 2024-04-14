@@ -5,7 +5,7 @@ interface IButtonConfirm {
   title: string;
   isActive: boolean;
   onClick: () => void;
-  isDisabled: boolean;
+  isDisabled?: boolean;
 }
 
 export const ButtonConfirm: React.FC<IButtonConfirm> = ({
