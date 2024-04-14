@@ -1,15 +1,10 @@
 import styles from "./styles.module.scss";
 import { WrapperWithBackground } from "../../reusableComponent/WrapperWithBackground/WrapperWithBackground";
 import { TextFieldInfo } from "@/components/reusableComponent/TextFieldInfo/TextFieldInfo";
-
-interface IAnswerWithOutPicture {
-  successText: string;
-  secondaryText?: string;
-  bgSrc: string;
-}
+import { IAnswerWithOutPicture } from "@/testContent/sectionFreeInput";
 
 export const AnswerWithOutPicture: React.FC<IAnswerWithOutPicture> = ({
-  bgSrc,
+  bgSrcAnswer: bgSrc,
   successText,
   secondaryText,
 }) => {
