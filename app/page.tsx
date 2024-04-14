@@ -31,6 +31,7 @@ export default function Home() {
         question={SectionFreeInputTestContent.question}
         answer={SectionFreeInputTestContent.answer}
         id={SectionFreeInputTestContent.id}
+        blockImage={SectionFreeInputTestContent.blockImage}
         nextSectionId={SectionFreeInputTestContent.nextSectionId}
         underSectionImage={SectionFreeInputTestContent.underSectionImage}
       /> */}
