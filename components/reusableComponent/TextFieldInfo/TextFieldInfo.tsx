@@ -8,7 +8,7 @@ export interface ITextFieldInfo {
   mainText: string;
   variant: TextFieldInfoVariantType;
   secondaryText?: string;
-  rotate?: -4.3 | -1.8 | 1.8 | 2.34 | 2.53 | 3.6 | -2.53 | -3.6;
+  rotate?: -4.3 | -1.8 | 2.34 | 2.53 | 3.6 | -2.53 | -3.6;
 }
 
 export const TextFieldInfo: React.FC<ITextFieldInfo> = ({

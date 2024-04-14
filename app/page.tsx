@@ -13,11 +13,15 @@ import { TextField } from "@/components/reusableComponent/TextField/TextField";
 import { feedSectionTestContent } from "@/testContent/collage";
 import { SectionFreeInputTestContent } from "@/testContent/sectionFreeInput";
 import { variantSectionTestContent } from "@/testContent/variantSectionTest";
-import { testContent } from "@/testContent/variantTestContent";
+import { SectionFinalSurprise } from "@/components/Sections/SectionFinalSurprise/SectionFinalSurprise";
+import { testContent, variantTestContent } from "@/testContent/variantTestContent";
 import {SectionImageQuestionTestContent} from '@/testContent/imagequestionsection'
+import SectionVariantQuestion from "@/components/Sections/SectionVariantQuestion";
+import { sectionFinalSurprise } from "@/testContent/sectionFinalSurprise";
 
 export default function Home() {
   return (
+   
     <main className="page">
       <SectionFreeInput
         question={SectionFreeInputTestContent.question}
@@ -25,8 +29,17 @@ export default function Home() {
         id={SectionFreeInputTestContent.id}
         blockImage={SectionFreeInputTestContent.blockImage}
         nextSectionId={SectionFreeInputTestContent.nextSectionId}
-        underSectionImage={SectionFreeInputTestContent.underSectionImage}
-      /> */}
+        title={SectionFreeInputTestContent.title}
+      />
+      <SectionVariantQuestion
+        question={variantTestContent.question}
+        answer={variantTestContent.answer}
+        id={variantTestContent.id}
+        blockImage={variantTestContent.blockImage}
+        nextSectionId={variantTestContent.nextSectionId}
+        title={variantTestContent.title}
+      />
+      <SectionFinalSurprise wishers={SectionFinalSurprise}      />
 
  {/*      <FeedPhotoSection title={feedSectionTestContent.title} subtitle={feedSectionTestContent.subtitle} 
       collage={feedSectionTestContent.collage}/> */}
