@@ -18,15 +18,7 @@ import {SectionImageQuestionTestContent} from '@/testContent/imagequestionsectio
 
 export default function Home() {
   return (
-<main
-
-    >
-{/*       <VariantQuestionSections id={""}
-       answer={variantSectionTestContent.answer}
-        nextSectionId={""}
-         underSectionImage={variantSectionTestContent.underSectionImage}
-          title={variantSectionTestContent.title}
-           question={variantSectionTestContent.question}/>
+    <main className="page">
       <SectionFreeInput
         question={SectionFreeInputTestContent.question}
         answer={SectionFreeInputTestContent.answer}
