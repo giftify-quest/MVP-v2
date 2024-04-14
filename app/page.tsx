@@ -1,42 +1,35 @@
 "use client";
 
-import { VariantQuestion } from "@/components/QuestionWithAnswerVariant/VariantQuestion";
-import { SectionFinalSurprise } from "@/components/Sections/SectionFinalSurprise/SectionFinalSurprise";
+import { SectionFinalSurprise } from "@/components/Sections/SectionFinalSurprise/section/SectionFinalSurprise";
+import SectionFreeInput from "@/components/Sections/SectionFreeInput";
+import { SectionVariantQuestion } from "@/components/Sections/SectionVariantQuestion/section/SectionVariantQuestion";
+import { sectionFinalSurprise } from "@/testContent/sectionFinalSurprise";
 
-import MasonryLayout from "@/components/CollageComponents/CollageComponents";
-import Collage from "@/components/CollageComponents/CollageComponents";
-import CollageComponent from "@/components/CollageComponents/CollageComponents";
-import { FeedPhotoSection } from "@/components/Sections/FeedPhotoSection/FeedPhotoSection";
-import { SectionFreeInput } from "@/components/Sections/SectionFreeInput/SectionFreeInput";
-import { VariantQuestionSections } from "@/components/Sections/VariantsQustionSections/VariantsQuestionSection";
-import { TextField } from "@/components/reusableComponent/TextField/TextField";
-import { feedSectionTestContent } from "@/testContent/collage";
 import { SectionFreeInputTestContent } from "@/testContent/sectionFreeInput";
-import { variantSectionTestContent } from "@/testContent/variantSectionTest";
-import { testContent } from "@/testContent/variantTestContent";
+import { variantTestContent } from "@/testContent/variantTestContent";
 
 export default function Home() {
   return (
-    <main>
-      {/* <SectionFinalSurprise /> */}
-      {/*       <VariantQuestionSections id={""}
-       answer={variantSectionTestContent.answer}
-        nextSectionId={""}
-         underSectionImage={variantSectionTestContent.underSectionImage}
-          title={variantSectionTestContent.title}
-           question={variantSectionTestContent.question}/>
+    <main className="page">
       <SectionFreeInput
         question={SectionFreeInputTestContent.question}
         answer={SectionFreeInputTestContent.answer}
         id={SectionFreeInputTestContent.id}
+        blockImage={SectionFreeInputTestContent.blockImage}
         nextSectionId={SectionFreeInputTestContent.nextSectionId}
-        underSectionImage={SectionFreeInputTestContent.underSectionImage}
-      /> */}
-
-      <FeedPhotoSection
-        title={feedSectionTestContent.title}
-        subtitle={feedSectionTestContent.subtitle}
-        collage={feedSectionTestContent.collage}
+        title={SectionFreeInputTestContent.title}
+      />
+      <SectionVariantQuestion
+        question={variantTestContent.question}
+        answer={variantTestContent.answer}
+        id={variantTestContent.id}
+        blockImage={variantTestContent.blockImage}
+        nextSectionId={variantTestContent.nextSectionId}
+        title={variantTestContent.title}
+      />
+      <SectionFinalSurprise
+        title={sectionFinalSurprise.title}
+        wishersData={sectionFinalSurprise.wishersData}
       />
     </main>
   );

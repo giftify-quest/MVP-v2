@@ -45,3 +45,15 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+.page {
+	width: 88rem;
+	margin: 0 auto;
+}
+
+.section_wrapper {
+	display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}

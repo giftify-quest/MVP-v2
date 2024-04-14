@@ -1,35 +1,25 @@
-export interface IQuestionWithFreeInput {
-  bgSrcQuestion: string;
-  questionText: string;
-  name: string;
-  buttonTitle: string;
-  errorMessage: string;
-  answers: string | string[];
-}
+import {  IQuestionWithFreeInput } from "@/components/Sections/SectionFreeInput/types";
+import { IAnswerWithOutPicture } from "@/types/answer";
+import { SectionQuestionProps } from "@/types/section";
 
-export interface IAnswerWithOutPicture {
-  successText: string;
-  secondaryText?: string;
-  bgSrcAnswer: string;
-}
 
-export interface SectionFreeInputProps {
-  question: IQuestionWithFreeInput;
-  answer: IAnswerWithOutPicture;
-  id: string;
-  nextSectionId: string;
-  underSectionImage: {
-    path: string;
-  }[];
-}
-
-export const SectionFreeInputTestContent: SectionFreeInputProps = {
+export const SectionFreeInputTestContent: SectionQuestionProps<IQuestionWithFreeInput, IAnswerWithOutPicture> = {
   id: "1222",
   nextSectionId: "Нужно обсудить???",
-  underSectionImage: [
+  title: {
+    mainWord: "main words",
+    secondWord: "secondary words",
+  },
+  blockImage: [
     { path: "/assets/component-photos.jpg" },
     { path: "/assets/component-photos.jpg" },
   ],
+  answer: {
+    bgSrcAnswer: "/assets/bg-answer-with-out-present.jpg",
+    successText:
+      "Success text Success text  Success text  Success text  Success text  Success text  Success text",
+    secondaryText: "Fred",
+  },
   question: {
     bgSrcQuestion: "/assets/bg-answer-with-present.jpg",
     questionText: "Do you speak English?",
@@ -39,10 +29,4 @@ export const SectionFreeInputTestContent: SectionFreeInputProps = {
       "error Message error Message error Message error Message error Message error Message error Message",
     answers: "welcome",
   },
-  answer: {
-    bgSrcAnswer: "/assets/bg-answer-with-out-present.jpg",
-    successText:
-      "Success text Success text  Success text  Success text  Success text  Success text  Success text",
-    secondaryText: "Fred",
-  }
 }
