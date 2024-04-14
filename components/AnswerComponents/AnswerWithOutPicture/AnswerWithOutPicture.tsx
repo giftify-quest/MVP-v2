@@ -1,6 +1,6 @@
-import { TextFieldInfo } from "@/reusableComponent/TextFieldInfo/TextFieldInfo";
 import styles from "./styles.module.scss";
 import { WrapperWithBackground } from "../../reusableComponent/WrapperWithBackground/WrapperWithBackground";
+import { TextFieldInfo } from "@/components/reusableComponent/TextFieldInfo/TextFieldInfo";
 
 interface IAnswerWithOutPicture {
   successText: string;
@@ -19,7 +19,7 @@ export const AnswerWithOutPicture: React.FC<IAnswerWithOutPicture> = ({
         <TextFieldInfo
           mainText={successText}
           secondaryText={secondaryText}
-          variant="question"
+          variant="text"
           rotate={2.53}
         />
       </div>
