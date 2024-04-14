@@ -18,6 +18,7 @@ import { testContent, variantTestContent } from "@/testContent/variantTestConten
 import {SectionImageQuestionTestContent} from '@/testContent/imagequestionsection'
 import SectionVariantQuestion from "@/components/Sections/SectionVariantQuestion";
 import { sectionFinalSurprise } from "@/testContent/sectionFinalSurprise";
+import { ImageQuestionSection } from "@/components/Sections/ImageQuestionSection/ImageQuestionSection";
 
 export default function Home() {
   return (
