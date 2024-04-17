@@ -3,13 +3,7 @@ import { WrapperWithBackground } from "../../reusableComponent/WrapperWithBackgr
 import { FramedPhoto } from "@/components/reusableComponent/FramedPhoto/FramedPhoto";
 import { ConfettiIcon } from "@/components/reusableComponent/ConfettiIcon/ConfettiIcon";
 import { TextFieldInfo } from "@/components/reusableComponent/TextFieldInfo/TextFieldInfo";
-
-interface IAnswerWithPicture {
-  successText: string;
-  secondaryText?: string;
-  bgSrc: string;
-  framedPhotoSrc: string;
-}
+import { IAnswerWithPicture } from "@/types/answer";
 
 export const AnswerWithPicture: React.FC<IAnswerWithPicture> = ({
   bgSrc,
@@ -24,7 +18,7 @@ export const AnswerWithPicture: React.FC<IAnswerWithPicture> = ({
           <TextFieldInfo
             mainText={successText}
             secondaryText={secondaryText}
-            variant="question"
+            variant="text"
             rotate={-2.53}
           />
         </div>

@@ -1,9 +1,17 @@
-import { VariantQuestionInterface } from "@/types/answer/VariantAsnwerType";
+import { IQuestionVariant } from "@/components/Sections/SectionVariantQuestion/types";
+import { IAnswerWithOutPicture } from "@/types/answer";
+import { SectionQuestionProps } from "@/types/section";
 
 
-export const testContent:VariantQuestionInterface = {
-
-    bgImage: '/testImage/background.png',
+export const variantTestContent:SectionQuestionProps<IQuestionVariant, IAnswerWithOutPicture> = {
+    id: "949494",
+    nextSectionId: "next",
+    title: {
+        mainWord: "Hello",
+        secondWord: "second word"
+    },
+    question: {
+        bgImage: '/testImage/background.png',
     title:"Hello",
     questionText:"Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше ",
     answers: [
@@ -32,7 +40,16 @@ export const testContent:VariantQuestionInterface = {
     buttonText:"Я Уверена",
     wrongAnswerText:"Podumaj jeshe",
     wrongAnswerButtonText:'Teperto4no' ,
-    
     multipleAnswer:true
-
+    },
+    blockImage: [
+        { path: "/assets/component-photos.jpg" },
+        { path: "/assets/component-photos.jpg" },
+      ],
+      answer: {
+        bgSrcAnswer: "/assets/bg-answer-with-out-present.jpg",
+        successText:
+          "Success text Success text  Success text  Success text  Success text  Success text  Success text",
+        secondaryText: "Fred",
+      },
 }

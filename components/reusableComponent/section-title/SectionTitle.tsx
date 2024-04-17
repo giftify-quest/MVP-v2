@@ -1,16 +1,15 @@
 "use client";
 
+import { ITitleSection } from "@/types";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
 
 type Variant = "purple" | "green";
-interface ISectionTitle {
-  mainWord: string;
-  secondWord?: string;
+interface ITitleSectionProps extends ITitleSection {
   variant: Variant;
 }
 
-export const SectionTitle: React.FC<ISectionTitle> = ({
+export const SectionTitle: React.FC<ITitleSectionProps> = ({
   mainWord,
   secondWord,
   variant,
