@@ -19,9 +19,7 @@ export const PhotosSection: React.FC<IPhotosSection> = ({ photos }) => {
             width={0}
             height={0}
             sizes="100vw"
-            style={{ width: "100%", height: "auto" }}
             className={styles.photos}
-            objectFit="cover"
           />
         );
       })}

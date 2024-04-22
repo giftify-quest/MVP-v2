@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 200px;
+
+  .title_section {
+    width: 100%;
+    display: flex;
+    gap: 36px;
+  }
+
+  .unlock_wrap {
+    display: flex;
+    flex-direction: column;
+  }
+}
