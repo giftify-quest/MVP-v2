@@ -1,7 +1,6 @@
 "use client";
 
 
-
 import MasonryLayout from "@/components/CollageComponents/CollageComponents";
 import Collage from "@/components/CollageComponents/CollageComponents";
 import CollageComponent from "@/components/CollageComponents/CollageComponents";
@@ -22,7 +21,7 @@ import { ImageQuestionSection } from "@/components/Sections/ImageQuestionSection
 
 export default function Home() {
   return (
-   
+
     <main className="page">
       <SectionFreeInput
         question={SectionFreeInputTestContent.question}
@@ -40,6 +39,7 @@ export default function Home() {
         nextSectionId={variantTestContent.nextSectionId}
         title={variantTestContent.title}
       />
+
       <SectionFinalSurprise wishers={SectionFinalSurprise}      />
 
  {/*      <FeedPhotoSection title={feedSectionTestContent.title} subtitle={feedSectionTestContent.subtitle} 
