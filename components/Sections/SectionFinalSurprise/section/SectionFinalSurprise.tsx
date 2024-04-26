@@ -3,7 +3,7 @@ import { OpenFinalSurprise } from "../components/OpenFinalSurprise/OpenFinalSurp
 import { WisherFinalSurprise } from "../components/WishesFinalSurprise/WisherFinalSurprise";
 import styles from "./styles.module.scss";
 import { ISectionFinalSurprise } from "../types";
-import { SectionTitle } from "@/components/reusableComponent/section-title/SectionTitle";
+import { SectionTitle } from "@/components/reusableComponent/SectionTitle/SectionTitle";
 
 export const SectionFinalSurprise: React.FC<ISectionFinalSurprise> = ({
   title,

@@ -1,4 +1,4 @@
-import { SectionTitle } from "@/components/reusableComponent/section-title/SectionTitle";
+import { SectionTitle } from "@/components/reusableComponent/SectionTitle/SectionTitle";
 import { QuestionWithFreeInput } from "../components/QuestionWithFreeInput/QuestionWithFreeInput";
 import { useState } from "react";
 import { PhotosSection } from "@/components/reusableComponent/PhotosSection/PhotosSection";
