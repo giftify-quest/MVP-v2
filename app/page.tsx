@@ -2,6 +2,7 @@
 
 
 
+
 import { ImageQuestionSection } from "@/components/Sections/ImageQuestionSection/section/ImageQuestionSection";
 import SectionFinalSurprise from "@/components/Sections/SectionFinalSurprise";
 import { SectionFreeInput } from "@/components/Sections/SectionFreeInput/section/SectionFreeInput";
@@ -14,6 +15,12 @@ export default function Home() {
   return (
 
     <main className="page">
+      <SectionFirst
+        titlePhoto={sectionFirst.titlePhoto}
+        title={sectionFirst.title}
+        bgImg={sectionFirst.bgImg}
+        buttonTitle={sectionFirst.buttonTitle}
+      />
       <SectionFreeInput
         question={SectionFreeInputTestContent.question}
         answer={SectionFreeInputTestContent.answer}

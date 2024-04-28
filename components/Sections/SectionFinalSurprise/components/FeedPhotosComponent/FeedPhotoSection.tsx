@@ -1,5 +1,5 @@
 import Collage from "@/components/Sections/SectionFinalSurprise/components/CollageComponents/CollageComponents";
-import { SectionTitle } from "@/components/reusableComponent/section-title/SectionTitle";
+import { SectionTitle } from "@/components/reusableComponent/SectionTitle/SectionTitle";
 import heartImg from "@/public/assets/heart.png";
 import Image from "next/image";
 import styles from "./style.module.scss";

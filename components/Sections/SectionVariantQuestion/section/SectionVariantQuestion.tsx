@@ -1,6 +1,6 @@
 import { AnswerWithOutPicture } from "@/components/AnswerComponents/AnswerWithOutPicture/AnswerWithOutPicture";
 import { VariantQuestion } from "@/components/Sections/SectionVariantQuestion/components/QuestionWithAnswerVariant/VariantQuestion";
-import { SectionTitle } from "@/components/reusableComponent/section-title/SectionTitle";
+import { SectionTitle } from "@/components/reusableComponent/SectionTitle/SectionTitle";
 import { SectionQuestionProps } from "@/types/section";
 import { useState } from "react";
 import style from "./styles.module.scss";
