@@ -4,41 +4,100 @@ import { SectionFinalSurprise } from "@/components/Sections/SectionFinalSurprise
 import SectionFirst from "@/components/Sections/SectionFirst";
 import SectionFreeInput from "@/components/Sections/SectionFreeInput";
 import { SectionVariantQuestion } from "@/components/Sections/SectionVariantQuestion/section/SectionVariantQuestion";
-import { sectionFinalSurprise } from "@/testContent/sectionFinalSurprise";
-import { sectionFirst } from "@/testContent/sectionFirst";
+import { questTest } from "@/testContent/questTest";
+import { useState } from "react";
 
-import { SectionFreeInputTestContent } from "@/testContent/sectionFreeInput";
-import { variantTestContent } from "@/testContent/variantTestContent";
+export interface Components {
+  component: (onClick: () => void, key: number) => JSX.Element;
+  isAllowed: boolean;
+}
 
 export default function Home() {
+  const [components, setComponents] = useState<Components[]>([
+    {
+      component: (onClick, key) => {
+        return (
+          <SectionFirst
+            key={key}
+            titlePhoto={questTest.sectionFirst.titlePhoto}
+            title={questTest.sectionFirst.title}
+            bgImg={questTest.sectionFirst.bgImg}
+            buttonTitle={questTest.sectionFirst.buttonTitle}
+            onAllowNextSlide={onClick}
+          />
+        );
+      },
+      isAllowed: true,
+    },
+    {
+      component: (onClick, key) => {
+        return (
+          <SectionVariantQuestion
+            key={key}
+            name={questTest.name}
+            question={questTest.sectionVariantFirstPhoto.question}
+            answer={questTest.sectionVariantFirstPhoto.answer}
+            id={questTest.sectionVariantFirstPhoto.id}
+            blockImage={questTest.sectionVariantFirstPhoto.blockImage}
+            nextSectionId={questTest.sectionVariantFirstPhoto.nextSectionId}
+            title={questTest.sectionVariantFirstPhoto.title}
+            onAllowNextSlide={onClick}
+          />
+        );
+      },
+      isAllowed: true,
+    },
+    {
+      component: (onClick, key) => {
+        return (
+          <SectionFreeInput
+            key={key}
+            name={questTest.name}
+            question={questTest.sectionFreeInputFirstPhoto.question}
+            answer={questTest.sectionFreeInputFirstPhoto.answer}
+            id={questTest.sectionFreeInputFirstPhoto.id}
+            blockImage={questTest.sectionFreeInputFirstPhoto.blockImage}
+            nextSectionId={questTest.sectionFreeInputFirstPhoto.nextSectionId}
+            title={questTest.sectionFreeInputFirstPhoto.title}
+            onAllowNextSlide={onClick}
+          />
+        );
+      },
+      isAllowed: true,
+    },
+    {
+      component: (undefined, key) => {
+        return (
+          <SectionFinalSurprise
+            key={key}
+            name={questTest.name}
+            title={questTest.sectionFinalSurprise.title}
+            wishersData={questTest.sectionFinalSurprise.wishersData}
+          />
+        );
+      },
+      isAllowed: true,
+    },
+  ]);
+
+  const onAllowNextSlide = (componentIndex: number) => {
+    setComponents((prevComponents) =>
+      prevComponents.map((comp, index) =>
+        index === componentIndex
+          ? { ...comp, isAllowed: true, isHideButtonConfirm: true }
+          : comp
+      )
+    );
+  };
+
   return (
     <main className="page">
-      <SectionFirst
-        titlePhoto={sectionFirst.titlePhoto}
-        title={sectionFirst.title}
-        bgImg={sectionFirst.bgImg}
-        buttonTitle={sectionFirst.buttonTitle}
-      />
-      <SectionFreeInput
-        question={SectionFreeInputTestContent.question}
-        answer={SectionFreeInputTestContent.answer}
-        id={SectionFreeInputTestContent.id}
-        blockImage={SectionFreeInputTestContent.blockImage}
-        nextSectionId={SectionFreeInputTestContent.nextSectionId}
-        title={SectionFreeInputTestContent.title}
-      />
-      <SectionVariantQuestion
-        question={variantTestContent.question}
-        answer={variantTestContent.answer}
-        id={variantTestContent.id}
-        blockImage={variantTestContent.blockImage}
-        nextSectionId={variantTestContent.nextSectionId}
-        title={variantTestContent.title}
-      />
-      <SectionFinalSurprise
-        title={sectionFinalSurprise.title}
-        wishersData={sectionFinalSurprise.wishersData}
-      />
+      {components.map((component, index) => {
+        if (component.isAllowed) {
+          return component.component(() => onAllowNextSlide(index + 1), index);
+        }
+        return null;
+      })}
     </main>
   );
 }

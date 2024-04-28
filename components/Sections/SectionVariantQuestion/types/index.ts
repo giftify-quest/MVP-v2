@@ -1,8 +1,8 @@
-import { IQuestionProps } from "@/types/answer"
+import { IQuestionProps } from "@/types/question"
+
 
 export interface IQuestionVariant {
   bgImage:string,
-  title:string,
   questionText:string,
   answers: Array< {
       id:string,

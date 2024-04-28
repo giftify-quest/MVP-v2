@@ -2,12 +2,13 @@ import { useState } from "react";
 import { OpenFinalSurprise } from "../components/OpenFinalSurprise/OpenFinalSurprise";
 import { WisherFinalSurprise } from "../components/WishesFinalSurprise/WisherFinalSurprise";
 import styles from "./styles.module.scss";
-import { ISectionFinalSurprise } from "../types";
+import { ISectionFinalSurpriseProps } from "../types";
 import { SectionTitle } from "@/components/reusableComponent/SectionTitle/SectionTitle";
 
-export const SectionFinalSurprise: React.FC<ISectionFinalSurprise> = ({
+export const SectionFinalSurprise: React.FC<ISectionFinalSurpriseProps> = ({
   title,
   wishersData,
+  name,
 }) => {
   const [openSlide, setOpenSlide] = useState(false);
   return (
@@ -24,6 +25,7 @@ export const SectionFinalSurprise: React.FC<ISectionFinalSurprise> = ({
             bgSrc={wishersData.bgSrc}
             wishers={wishersData.wishers}
             feedPhotos={wishersData.feedPhotos}
+            name={name}
           />
         </>
       ) : (

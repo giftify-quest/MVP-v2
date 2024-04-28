@@ -14,14 +14,21 @@ export interface ISectionFinalSurprise {
   wishersData: IWishesFinalSurprise,
 }
 
+export interface ISectionFinalSurpriseProps extends ISectionFinalSurprise {
+  name: string;
+}
+
 export interface IWishesFinalSurprise {
   textConfirmButton: string;
   bgSrc: string;
   wishers: {
     wisher: string;
-    name: string;
   }[];
   feedPhotos: IFeedPhotosComponent
+}
+
+export interface IWishesFinalSurpriseProps extends IWishesFinalSurprise {
+  name: string;
 }
 
 export interface IFeedPhotosComponent {

@@ -1,9 +1,9 @@
-import { IQuestionProps } from "@/types/answer";
+import { IQuestionProps } from "@/types/question";
+
 
 export interface IQuestionWithFreeInput {
   bgSrcQuestion: string;
   questionText: string;
-  name: string;
   buttonTitle: string;
   errorMessage: string;
   answers: string | string[];

@@ -11,6 +11,8 @@ import { VariantQuestionProps } from "../../types";
 export const VariantQuestion: React.FC<VariantQuestionProps> = ({
   question,
   onReady,
+  name,
+  onAllowNextSlide,
 }) => {
   const [isCorrectChoose, setIsCorrectChoose] = useState(true);
   const [selectedAnswerText, setSelectedAnswerText] = useState(
@@ -99,7 +101,7 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
             <TextFieldInfo
               mainText={question.questionText}
               variant={"text"}
-              secondaryText={"Pavel"}
+              secondaryText={name}
             />
           </div>
 
@@ -117,6 +119,7 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
               <TextFieldInfo
                 mainText={question.wrongAnswerText}
                 variant={"errorMessage"}
+                secondaryText={name}
               />
             </div>
           )}

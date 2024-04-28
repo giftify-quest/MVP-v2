@@ -10,6 +10,11 @@
   .error_block {
     position: absolute;
     bottom: 370px;
-    left: 100px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
+
+  .question {
+    width: 80%;
   }
 }

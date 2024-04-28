@@ -10,7 +10,3 @@ export interface IAnswerWithPicture {
   bgSrc: string;
   framedPhotoSrc: string;
 }
-
-export interface IQuestionProps {
-  onReady: () => void;
-}

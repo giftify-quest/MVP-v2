@@ -4,13 +4,14 @@ import { TitlePhoto } from "../components/TitlePhoto/TitlePhoto";
 import { ButtonConfirm } from "@/components/reusableComponent/ButtonConfirm/ButtonConfirm";
 import Image from "next/image";
 import styles from "./styles.module.scss";
-import { ISectionFirst } from "../types";
+import { ISectionFirst, ISectionFirstProps } from "../types";
 
-export const SectionFirst: React.FC<ISectionFirst> = ({
+export const SectionFirst: React.FC<ISectionFirstProps> = ({
   titlePhoto,
   title,
   bgImg,
   buttonTitle,
+  onAllowNextSlide,
 }) => {
   return (
     <div className={styles.wrapper}>
@@ -38,7 +39,9 @@ export const SectionFirst: React.FC<ISectionFirst> = ({
             isActive
             title={buttonTitle}
             onClick={() => {
-              console.log("GOGOGO");
+              if (onAllowNextSlide) {
+                onAllowNextSlide();
+              }
             }}
           />
         </div>

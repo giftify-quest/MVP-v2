@@ -4,13 +4,22 @@ import { useState } from "react";
 import { PhotosSection } from "@/components/reusableComponent/PhotosSection/PhotosSection";
 import { AnswerWithOutPicture } from "@/components/AnswerComponents/AnswerWithOutPicture/AnswerWithOutPicture";
 import { IQuestionWithFreeInput } from "../types/index";
-import { SectionQuestionProps } from "@/types/section";
+import { ISection, ISectionProps } from "@/types/section";
 import styles from "./styles.module.scss";
 import { IAnswerWithOutPicture } from "@/types/answer";
 
 export const SectionFreeInput: React.FC<
-  SectionQuestionProps<IQuestionWithFreeInput, IAnswerWithOutPicture>
-> = ({ question, answer, blockImage, title, id, nextSectionId }) => {
+  ISectionProps<IQuestionWithFreeInput, IAnswerWithOutPicture>
+> = ({
+  question,
+  answer,
+  blockImage,
+  title,
+  id,
+  nextSectionId,
+  name,
+  onAllowNextSlide,
+}) => {
   const [isReady, setIsReady] = useState(false);
   return (
     <div className={styles.section}>
@@ -23,12 +32,14 @@ export const SectionFreeInput: React.FC<
         <AnswerWithOutPicture
           bgSrcAnswer={answer.bgSrcAnswer}
           successText={answer.successText}
-          secondaryText={answer.secondaryText}
+          secondaryText={name}
         />
       ) : (
         <QuestionWithFreeInput
           onReady={() => setIsReady(true)}
           question={question}
+          name={name}
+          onAllowNextSlide={onAllowNextSlide}
         />
       )}
       <PhotosSection photos={blockImage} />

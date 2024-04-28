@@ -15,3 +15,7 @@ export interface ISectionFirst {
   bgImg: string;
   buttonTitle: string;
 }
+
+export interface ISectionFirstProps extends ISectionFirst {
+  onAllowNextSlide?: () => void;
+}

@@ -4,13 +4,14 @@ import styles from "./styles.module.scss";
 import { ButtonConfirm } from "@/components/reusableComponent/ButtonConfirm/ButtonConfirm";
 import { useEffect, useRef, useState } from "react";
 import { FeedPhotosComponents } from "../FeedPhotosComponent/FeedPhotoSection";
-import { IWishesFinalSurprise } from "../../types";
+import { IWishesFinalSurpriseProps } from "../../types";
 
-export const WisherFinalSurprise: React.FC<IWishesFinalSurprise> = ({
+export const WisherFinalSurprise: React.FC<IWishesFinalSurpriseProps> = ({
   bgSrc,
   wishers,
   textConfirmButton,
   feedPhotos,
+  name,
 }) => {
   const [isOpenCollage, setIsOpenCollage] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -31,7 +32,7 @@ export const WisherFinalSurprise: React.FC<IWishesFinalSurprise> = ({
                 key={wisher.wisher}
                 variant="text"
                 mainText={wisher.wisher}
-                secondaryText={wisher.name}
+                secondaryText={name}
                 rotate={-3.6}
               />
             ))}

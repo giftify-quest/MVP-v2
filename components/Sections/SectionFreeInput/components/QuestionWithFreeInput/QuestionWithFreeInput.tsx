@@ -9,6 +9,8 @@ import styles from "./styles.module.scss";
 export const QuestionWithFreeInput: React.FC<IQuestionWithFreeInputProps> = ({
   question,
   onReady,
+  onAllowNextSlide,
+  name,
 }) => {
   const [textValue, setTextValue] = useState<string>("");
   const [isErrorMessage, setIsErrorMessage] = useState<boolean>(false);
@@ -45,6 +47,9 @@ export const QuestionWithFreeInput: React.FC<IQuestionWithFreeInputProps> = ({
     const check = checkAnswer(question.answers);
     if (check) {
       onReady();
+      if (onAllowNextSlide) {
+        onAllowNextSlide();
+      }
     } else {
       setIsErrorMessage(!check);
       setIsTextFieldError(!check);
@@ -65,16 +70,18 @@ export const QuestionWithFreeInput: React.FC<IQuestionWithFreeInputProps> = ({
             <TextFieldInfo
               variant="errorMessage"
               mainText={question.errorMessage}
-              secondaryText={question.name}
+              secondaryText={name}
               rotate={-1.8}
             />
           </div>
         )}
-        <TextFieldInfo
-          variant="text"
-          mainText={question.questionText}
-          secondaryText={question.name}
-        />
+        <div className={styles.question}>
+          <TextFieldInfo
+            variant="text"
+            mainText={question.questionText}
+            secondaryText={name}
+          />
+        </div>
         <TextField
           value={textValue}
           onChange={onChangeValue}

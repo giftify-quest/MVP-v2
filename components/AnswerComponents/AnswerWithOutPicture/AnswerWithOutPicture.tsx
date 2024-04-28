@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss";
 import { WrapperWithBackground } from "../../reusableComponent/WrapperWithBackground/WrapperWithBackground";
 import { TextFieldInfo } from "@/components/reusableComponent/TextFieldInfo/TextFieldInfo";
-import { IAnswerWithOutPicture } from "@/testContent/sectionFreeInput";
+import { IAnswerWithOutPicture } from "@/types/answer";
 
 export const AnswerWithOutPicture: React.FC<IAnswerWithOutPicture> = ({
   bgSrcAnswer: bgSrc,
