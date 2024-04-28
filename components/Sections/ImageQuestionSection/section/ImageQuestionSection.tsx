@@ -1,12 +1,13 @@
 import { AnswerWithOutPicture } from "@/components/AnswerComponents/AnswerWithOutPicture/AnswerWithOutPicture";
 import { ImageQuestion } from "@/components/Sections/ImageQuestionSection/components/ImageQuestions/ImageQuestion";
 import { PhotosSection } from "@/components/reusableComponent/PhotosSection/PhotosSection";
-import { SectionTitle } from "@/components/reusableComponent/section-title/SectionTitle";
+
 
 import { useState } from "react";
 import { SectionImageQuestion } from "../types";
 import { SectionQuestionProps } from "@/types/section";
 import { IAnswerWithOutPicture } from "@/types/answer";
+import { SectionTitle } from "@/components/reusableComponent/SectionTitle/SectionTitle";
 
 
 
