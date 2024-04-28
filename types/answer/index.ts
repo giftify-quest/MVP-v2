@@ -1,4 +1,5 @@
 export interface IAnswerWithOutPicture {
+  bgImage: string;
   successText: string;
   secondaryText?: string;
   bgSrcAnswer: string;

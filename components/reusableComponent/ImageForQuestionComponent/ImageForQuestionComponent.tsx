@@ -13,9 +13,8 @@ export const ImageForQuestionComponent = ({
   isCorrect: boolean;
 }) => {
 
-	console.log("isSelected:", isSelected);
-	console.log(image.id)
-	console.log("isCorrect:", isCorrect);
+
+  
   return (
     <div 
       className={`${style.imageWrapper} ${isSelected ? style.chosen: ''} ${isCorrect ? style.incorrect : ''}`}

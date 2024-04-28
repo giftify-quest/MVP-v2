@@ -9,7 +9,7 @@ interface IAnswerWithOutPicture {
 }
 
 export const AnswerWithOutPicture: React.FC<IAnswerWithOutPicture> = ({
-  bgSrcAnswer: bgSrc,
+  bgSrc: bgSrc,
   successText,
   secondaryText,
 }) => {

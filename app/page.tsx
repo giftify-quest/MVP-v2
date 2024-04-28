@@ -1,23 +1,14 @@
 "use client";
 
 
-import MasonryLayout from "@/components/CollageComponents/CollageComponents";
-import Collage from "@/components/CollageComponents/CollageComponents";
-import CollageComponent from "@/components/CollageComponents/CollageComponents";
-import { FeedPhotoSection } from "@/components/Sections/FeedPhotoSection/FeedPhotoSection";
-import { ImageQuestionSection } from "@/components/Sections/ImageQuestionSection/ImageQuestionSection";
-import { SectionFreeInput } from "@/components/Sections/SectionFreeInput/SectionFreeInput";
-import { VariantQuestionSections } from "@/components/Sections/VariantsQustionSections/VariantsQuestionSection";
-import { TextField } from "@/components/reusableComponent/TextField/TextField";
-import { feedSectionTestContent } from "@/testContent/collage";
-import { SectionFreeInputTestContent } from "@/testContent/sectionFreeInput";
-import { variantSectionTestContent } from "@/testContent/variantSectionTest";
-import { SectionFinalSurprise } from "@/components/Sections/SectionFinalSurprise/SectionFinalSurprise";
-import { testContent, variantTestContent } from "@/testContent/variantTestContent";
-import {SectionImageQuestionTestContent} from '@/testContent/imagequestionsection'
+
+import { ImageQuestionSection } from "@/components/Sections/ImageQuestionSection/section/ImageQuestionSection";
+import SectionFinalSurprise from "@/components/Sections/SectionFinalSurprise";
+import { SectionFreeInput } from "@/components/Sections/SectionFreeInput/section/SectionFreeInput";
 import SectionVariantQuestion from "@/components/Sections/SectionVariantQuestion";
-import { sectionFinalSurprise } from "@/testContent/sectionFinalSurprise";
-import { ImageQuestionSection } from "@/components/Sections/ImageQuestionSection/ImageQuestionSection";
+import { SectionImageQuestionTestContent } from '@/testContent/imagequestionsection';
+import { SectionFreeInputTestContent } from "@/testContent/sectionFreeInput";
+import { variantTestContent } from "@/testContent/variantTestContent";
 
 export default function Home() {
   return (
@@ -40,12 +31,16 @@ export default function Home() {
         title={variantTestContent.title}
       />
 
-      <SectionFinalSurprise wishers={SectionFinalSurprise}      />
+      {/*   <SectionFinalSurprise wishers={SectionFinalSurprise}      /> */}
 
- {/*      <FeedPhotoSection title={feedSectionTestContent.title} subtitle={feedSectionTestContent.subtitle} 
+      {/*      <FeedPhotoSection title={feedSectionTestContent.title} subtitle={feedSectionTestContent.subtitle} 
       collage={feedSectionTestContent.collage}/> */}
-    <ImageQuestionSection id={""} nextSectionId={""} underSectionImage={SectionImageQuestionTestContent.underSectionImage} question={SectionImageQuestionTestContent.question}
-     answer={SectionImageQuestionTestContent.answer}/>
+      <ImageQuestionSection id={""}
+       question={SectionImageQuestionTestContent.question}
+        answer={SectionImageQuestionTestContent.answer}
+         nextSectionId={""}
+          title={SectionImageQuestionTestContent.title} 
+          blockImage={SectionImageQuestionTestContent.underSectionImage}      />
 
     </main>
   );

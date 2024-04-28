@@ -1,17 +1,20 @@
 import { AnswerWithOutPicture } from "@/components/AnswerComponents/AnswerWithOutPicture/AnswerWithOutPicture";
-import { ImageQuestion } from "@/components/ImageQuestions/ImageQuestion";
+import { ImageQuestion } from "@/components/Sections/ImageQuestionSection/components/ImageQuestions/ImageQuestion";
 import { PhotosSection } from "@/components/reusableComponent/PhotosSection/PhotosSection";
 import { SectionTitle } from "@/components/reusableComponent/section-title/SectionTitle";
-import { SectionImageQuestion } from "@/testContent/imagequestionsection";
+
 import { useState } from "react";
+import { SectionImageQuestion } from "../types";
+import { SectionQuestionProps } from "@/types/section";
+import { IAnswerWithOutPicture } from "@/types/answer";
 
 
 
 
-export const ImageQuestionSection: React.FC<SectionImageQuestion> = ({
+export const ImageQuestionSection: React.FC<SectionQuestionProps<SectionImageQuestion,IAnswerWithOutPicture>> = ({
     question,
     answer,
-    underSectionImage,
+    blockImage,
     id,
     nextSectionId,
 }) => {
@@ -25,19 +28,19 @@ export const ImageQuestionSection: React.FC<SectionImageQuestion> = ({
 
             {isReady ? (<AnswerWithOutPicture
                 successText={answer.successText}
-                bgSrcAnswer={answer.bgImage} />)
+                bgSrc={answer.bgImage} />)
                 : (
-                    <ImageQuestion bgSrcQuestion={question.bgSrcQuestion}
-                    questionText={question.questionText}
-                    name={question.name}
-                    buttonTitle={question.buttonTitle}
-                    errorMessage={question.errorMessage}
+                    <ImageQuestion bgSrcQuestion={question.question.bgSrcQuestion}
+                    questionText={question.question.questionText}
+                    name={question.question.name}
+                    buttonTitle={question.question.buttonTitle}
+                    errorMessage={question.question.errorMessage}
                     images={question.images}
                      onReady={()=>setIsReady(true)} />
                 )
 
             }
-            <PhotosSection photos={underSectionImage}/>
+            <PhotosSection photos={blockImage}/>
         </div>
     )
 

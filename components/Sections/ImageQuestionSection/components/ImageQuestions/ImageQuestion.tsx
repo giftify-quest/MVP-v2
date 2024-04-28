@@ -1,15 +1,16 @@
-import { ImageQuestionType } from "@/testContent/imagequestionsection";
-import { WrapperWithBackground } from "../reusableComponent/WrapperWithBackground/WrapperWithBackground";
-import { IAnswerProps } from "@/types/Section";
-import { use, useState } from "react";
-import { TextFieldInfo } from "../reusableComponent/TextFieldInfo/TextFieldInfo";
-import { ImageForQuestionComponent } from "../reusableComponent/ImageForQuestionComponent/ImageForQuestionComponent";
-import { ButtonConfirm } from "../reusableComponent/ButtonConfirm/ButtonConfirm";
+
+import { WrapperWithBackground } from "../../../../reusableComponent/WrapperWithBackground/WrapperWithBackground";
+
+import { useState } from "react";
+import { ButtonConfirm } from "../../../../reusableComponent/ButtonConfirm/ButtonConfirm";
+import { ImageForQuestionComponent } from "../../../../reusableComponent/ImageForQuestionComponent/ImageForQuestionComponent";
+import { TextFieldInfo } from "../../../../reusableComponent/TextFieldInfo/TextFieldInfo";
+import { ImageQuestionType } from "../../types";
 import style from './styles.module.scss';
 
-interface ImageQuestionProps extends IAnswerProps, ImageQuestionType {}
 
-export const ImageQuestion: React.FC<ImageQuestionProps> = ({
+
+export const ImageQuestion: React.FC<ImageQuestionType> = ({
   bgSrcQuestion,
   questionText,
   name,
@@ -52,7 +53,7 @@ export const ImageQuestion: React.FC<ImageQuestionProps> = ({
       <WrapperWithBackground bgSrc={bgSrcQuestion}>
         <div className={style.wrapper}>
           <div className={style.header}>
-            <TextFieldInfo mainText={questionText} variant={"question"} secondaryText={"Pavel"} />
+            <TextFieldInfo mainText={questionText} secondaryText={"Pavel"} variant={"text"} />
           </div>
           {isExplanationShown && (
             <div className={style.wrongText}>
