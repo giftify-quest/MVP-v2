@@ -22,7 +22,7 @@ export const SectionVariantQuestion: React.FC<
       ) : (
         <AnswerWithOutPicture
           successText={answer.successText}
-          bgSrcAnswer={answer.bgSrcAnswer}
+          bgSrc={answer.bgSrcAnswer}
         />
       )}
       <PhotosSection photos={blockImage} />
