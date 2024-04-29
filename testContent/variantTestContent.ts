@@ -47,9 +47,10 @@ export const variantTestContent:SectionQuestionProps<IQuestionVariant, IAnswerWi
         { path: "/assets/component-photos.jpg" },
       ],
       answer: {
-        bgSrcAnswer: "/assets/bg-answer-with-out-present.jpg",
+        bgImage: "/assets/bg-answer-with-out-present.jpg",
         successText:
           "Success text Success text  Success text  Success text  Success text  Success text  Success text",
         secondaryText: "Fred",
+        bgSrcAnswer:"/assets/bg-answer-with-out-present.jpg",
       },
 }

@@ -15,13 +15,8 @@ export default function Home() {
   return (
 
     <main className="page">
-      <SectionFirst
-        titlePhoto={sectionFirst.titlePhoto}
-        title={sectionFirst.title}
-        bgImg={sectionFirst.bgImg}
-        buttonTitle={sectionFirst.buttonTitle}
-      />
-      <SectionFreeInput
+
+     {/*  <SectionFreeInput
         question={SectionFreeInputTestContent.question}
         answer={SectionFreeInputTestContent.answer}
         id={SectionFreeInputTestContent.id}
@@ -36,18 +31,19 @@ export default function Home() {
         blockImage={variantTestContent.blockImage}
         nextSectionId={variantTestContent.nextSectionId}
         title={variantTestContent.title}
-      />
+      /> */}
 
       {/*   <SectionFinalSurprise wishers={SectionFinalSurprise}      /> */}
 
       {/*      <FeedPhotoSection title={feedSectionTestContent.title} subtitle={feedSectionTestContent.subtitle} 
       collage={feedSectionTestContent.collage}/> */}
       <ImageQuestionSection id={""}
+
+      blockImage={SectionImageQuestionTestContent.blockImage}
        question={SectionImageQuestionTestContent.question}
         answer={SectionImageQuestionTestContent.answer}
          nextSectionId={""}
-          title={SectionImageQuestionTestContent.title} 
-          blockImage={SectionImageQuestionTestContent.underSectionImage}      />
+          title={SectionImageQuestionTestContent.title}/>
 
     </main>
   );

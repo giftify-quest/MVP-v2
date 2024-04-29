@@ -5,18 +5,13 @@ import { useState } from "react";
 import { ButtonConfirm } from "../../../../reusableComponent/ButtonConfirm/ButtonConfirm";
 import { ImageForQuestionComponent } from "../../../../reusableComponent/ImageForQuestionComponent/ImageForQuestionComponent";
 import { TextFieldInfo } from "../../../../reusableComponent/TextFieldInfo/TextFieldInfo";
-import { ImageQuestionType } from "../../types";
+import { ImageQuestionProps } from "../../types";
 import style from './styles.module.scss';
 
 
 
-export const ImageQuestion: React.FC<ImageQuestionType> = ({
-  bgSrcQuestion,
-  questionText,
-  name,
-  buttonTitle,
-  errorMessage,
-  images,
+export const ImageQuestion: React.FC<ImageQuestionProps> = ({
+  question,
   onReady,
 }) => {
   const [selectedAnswerId, setSelectedAnswerId] = useState<null | string>(null);
@@ -50,18 +45,18 @@ export const ImageQuestion: React.FC<ImageQuestionType> = ({
 
   return (
     <div>
-      <WrapperWithBackground bgSrc={bgSrcQuestion}>
+      <WrapperWithBackground bgSrc={question.bgImage}>
         <div className={style.wrapper}>
           <div className={style.header}>
-            <TextFieldInfo mainText={questionText} secondaryText={"Pavel"} variant={"text"} />
+            <TextFieldInfo mainText={question.questionText} secondaryText={question.name} variant={"text"} />
           </div>
           {isExplanationShown && (
             <div className={style.wrongText}>
-              <TextFieldInfo variant="errorMessage" mainText={errorMessage} secondaryText={name} rotate={1.8} />
+              <TextFieldInfo variant="errorMessage" mainText={question.wrongAnswerText} secondaryText={question.name}  rotate={1.8} />
             </div>
           )}
           <div className={style.imageContainer}>
-            {images?.map((image) => (
+            {question.images?.map((image) => (
               <ImageForQuestionComponent
                 key={image.id}
                 image={image}
@@ -71,7 +66,7 @@ export const ImageQuestion: React.FC<ImageQuestionType> = ({
               />
             ))}
           </div>
-          <ButtonConfirm title={buttonTitle} onClick={handleCheckAnswer} isActive={isActiveButton} isDisabled={isDisabledButton} />
+          <ButtonConfirm title={question.buttonText} onClick={handleCheckAnswer} isActive={isActiveButton} isDisabled={isDisabledButton} />
         </div>
       </WrapperWithBackground>
     </div>
