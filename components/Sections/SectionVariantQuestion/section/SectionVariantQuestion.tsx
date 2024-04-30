@@ -22,20 +22,20 @@ export const SectionVariantQuestion: React.FC<
 }) => {
   const [isReady, setIsReady] = useState(false);
 
+  const onReady = () => {
+    setIsReady(true);
+    onAllowNextSlide();
+  };
+
   return (
     <div className={style.wrapper}>
       <SectionTitle mainWord={title.mainWord} variant={"green"} />
       {!isReady ? (
-        <VariantQuestion
-          question={question}
-          onReady={() => setIsReady(true)}
-          name={name}
-          onAllowNextSlide={onAllowNextSlide}
-        />
+        <VariantQuestion question={question} onReady={onReady} name={name} />
       ) : (
         <AnswerWithOutPicture
           successText={answer.successText}
-          bgSrcAnswer={answer.bgSrcAnswer}
+          bgSrc={answer.bgSrc}
           secondaryText={name}
         />
       )}

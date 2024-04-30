@@ -3,6 +3,7 @@
 import { SectionFinalSurprise } from "@/components/Sections/SectionFinalSurprise/section/SectionFinalSurprise";
 import SectionFirst from "@/components/Sections/SectionFirst";
 import SectionFreeInput from "@/components/Sections/SectionFreeInput";
+import SectionImageQuestion from "@/components/Sections/SectionImageQuestion";
 import { SectionVariantQuestion } from "@/components/Sections/SectionVariantQuestion/section/SectionVariantQuestion";
 import { questTest } from "@/testContent/questTest";
 import { useState } from "react";
@@ -45,7 +46,7 @@ export default function Home() {
           />
         );
       },
-      isAllowed: true,
+      isAllowed: false,
     },
     {
       component: (onClick, key) => {
@@ -63,8 +64,28 @@ export default function Home() {
           />
         );
       },
-      isAllowed: true,
+      isAllowed: false,
     },
+
+    {
+      component: (onClick, key) => {
+        return (
+          <SectionImageQuestion
+            key={key}
+            name={questTest.name}
+            question={questTest.sectionImageQuestion.question}
+            answer={questTest.sectionImageQuestion.answer}
+            id={questTest.sectionImageQuestion.id}
+            blockImage={questTest.sectionImageQuestion.blockImage}
+            nextSectionId={questTest.sectionImageQuestion.nextSectionId}
+            title={questTest.sectionImageQuestion.title}
+            onAllowNextSlide={onClick}
+          />
+        );
+      },
+      isAllowed: false,
+    },
+
     {
       component: (undefined, key) => {
         return (
@@ -76,7 +97,7 @@ export default function Home() {
           />
         );
       },
-      isAllowed: true,
+      isAllowed: false,
     },
   ]);
 

@@ -9,7 +9,6 @@ import styles from "./styles.module.scss";
 export const QuestionWithFreeInput: React.FC<IQuestionWithFreeInputProps> = ({
   question,
   onReady,
-  onAllowNextSlide,
   name,
 }) => {
   const [textValue, setTextValue] = useState<string>("");
@@ -47,9 +46,6 @@ export const QuestionWithFreeInput: React.FC<IQuestionWithFreeInputProps> = ({
     const check = checkAnswer(question.answers);
     if (check) {
       onReady();
-      if (onAllowNextSlide) {
-        onAllowNextSlide();
-      }
     } else {
       setIsErrorMessage(!check);
       setIsTextFieldError(!check);

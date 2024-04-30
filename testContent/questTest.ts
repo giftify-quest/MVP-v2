@@ -1,6 +1,7 @@
 import { ISectionFinalSurprise } from "@/components/Sections/SectionFinalSurprise/types"
 import { ISectionFirst } from "@/components/Sections/SectionFirst/types"
 import { IQuestionWithFreeInput } from "@/components/Sections/SectionFreeInput/types"
+import { IQuestionImage } from "@/components/Sections/SectionImageQuestion/types"
 import { IQuestionVariant } from "@/components/Sections/SectionVariantQuestion/types"
 import { IAnswerWithOutPicture } from "@/types/answer"
 import { ISection } from "@/types/section"
@@ -10,7 +11,8 @@ interface ITest {
   sectionFirst: ISectionFirst,
   sectionVariantFirstPhoto: ISection<IQuestionVariant, IAnswerWithOutPicture>,
   sectionFreeInputFirstPhoto: ISection<IQuestionWithFreeInput, IAnswerWithOutPicture>,
-  sectionFinalSurprise: ISectionFinalSurprise
+  sectionFinalSurprise: ISectionFinalSurprise,
+  sectionImageQuestion: ISection<IQuestionImage, IAnswerWithOutPicture>
 }
 
 export const questTest: ITest = {
@@ -72,7 +74,7 @@ export const questTest: ITest = {
         { path: "/assets/component-photos.jpg" },
       ],
       answer: {
-        bgSrcAnswer: "/assets/bg-answer-with-out-present.jpg",
+        bgSrc: "/assets/bg-answer-with-out-present.jpg",
         successText:
           "Success text Success text  Success text  Success text  Success text  Success text  Success text",
       },
@@ -89,7 +91,7 @@ export const questTest: ITest = {
     { path: "/assets/component-photos.jpg" },
   ],
   answer: {
-    bgSrcAnswer: "/assets/bg-answer-with-out-present.jpg",
+    bgSrc: "/assets/bg-answer-with-out-present.jpg",
     successText:
       "Ну и память! Поищи свой следующий подарок в тумбе  у кровати)"
   },
@@ -102,6 +104,39 @@ export const questTest: ITest = {
     answers: "welcome",
   },
   },
+
+  sectionImageQuestion: {
+    title: {
+      mainWord: "Первый",
+      secondWord: "провокационный вопрос!",
+    },
+    id: '1111',
+    nextSectionId: '123',
+    blockImage: [
+        { path: "/assets/component-photos.jpg" },
+        { path: "/assets/component-photos.jpg" },
+    ],
+    question: {
+        bgImage: "/assets/bg-answer-with-present.jpg",
+        title:'hello',
+        questionText: "Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы фото?",
+        buttonText: "Не могу уже ждать ",
+        wrongAnswerText: "error Message error Message error Message error Message error Message error Message error Message",
+        wrongAnswerButtonText: "error",
+        images: [
+            { id: '1', path: '/assets/testImage/image2.png', width: 300, height: 340, correct: false },
+            { id: '2', path: '/assets/testImage/image1.png', width: 300, height: 340, correct: false },
+            { id: '3', path: '/assets/testImage/image3.png', width: 300, height: 340, correct: true }
+        ],
+     
+    },
+    answer: {
+        successText: "hello",
+        secondaryText: "Fred",
+        bgSrc: '/assets/bg-answer-with-out-present.jpg',
+    },
+   
+},
   // !
   sectionFinalSurprise: {
     title: {

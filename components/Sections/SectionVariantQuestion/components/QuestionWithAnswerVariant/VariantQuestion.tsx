@@ -12,7 +12,6 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
   question,
   onReady,
   name,
-  onAllowNextSlide,
 }) => {
   const [isCorrectChoose, setIsCorrectChoose] = useState(true);
   const [selectedAnswerText, setSelectedAnswerText] = useState(

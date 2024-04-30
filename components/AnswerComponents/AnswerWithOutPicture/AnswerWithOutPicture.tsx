@@ -4,7 +4,7 @@ import { TextFieldInfo } from "@/components/reusableComponent/TextFieldInfo/Text
 import { IAnswerWithOutPicture } from "@/types/answer";
 
 export const AnswerWithOutPicture: React.FC<IAnswerWithOutPicture> = ({
-  bgSrcAnswer: bgSrc,
+  bgSrc,
   successText,
   secondaryText,
 }) => {

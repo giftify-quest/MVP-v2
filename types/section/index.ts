@@ -13,6 +13,6 @@ export interface ISection<TQuestion, TAnswer> {
 
 
 export interface ISectionProps<TQuestion, TAnswer> extends ISection<TQuestion, TAnswer> {
-  onAllowNextSlide?: () => void;
+  onAllowNextSlide: () => void;
   name: string;
 }

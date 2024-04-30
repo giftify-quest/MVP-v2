@@ -21,6 +21,12 @@ export const SectionFreeInput: React.FC<
   onAllowNextSlide,
 }) => {
   const [isReady, setIsReady] = useState(false);
+
+  const onReady = () => {
+    setIsReady(true);
+    onAllowNextSlide();
+  };
+
   return (
     <div className={styles.section}>
       <SectionTitle
@@ -30,16 +36,15 @@ export const SectionFreeInput: React.FC<
       />
       {isReady ? (
         <AnswerWithOutPicture
-          bgSrcAnswer={answer.bgSrcAnswer}
+          bgSrc={answer.bgSrc}
           successText={answer.successText}
           secondaryText={name}
         />
       ) : (
         <QuestionWithFreeInput
-          onReady={() => setIsReady(true)}
+          onReady={onReady}
           question={question}
           name={name}
-          onAllowNextSlide={onAllowNextSlide}
         />
       )}
       <PhotosSection photos={blockImage} />

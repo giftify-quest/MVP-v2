@@ -1,7 +1,7 @@
 export interface IAnswerWithOutPicture {
   successText: string;
   secondaryText?: string;
-  bgSrcAnswer: string;
+  bgSrc: string;
 }
 
 export interface IAnswerWithPicture {
