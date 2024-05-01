@@ -6,7 +6,7 @@ export const setFontSizeTextFieldInfo = (value: string, variant: TextFieldInfoVa
   }
   const sizeScreen = window.innerWidth;
 
-  if (sizeScreen >= 1366 && variant === "question") {
+  if (sizeScreen >= 1366 && variant === "text") {
     if (value.length <= 97) {
       return 32
     }
@@ -15,7 +15,7 @@ export const setFontSizeTextFieldInfo = (value: string, variant: TextFieldInfoVa
     }
   }
 
-  if (sizeScreen <= 1366 && variant === "question") {
+  if (sizeScreen <= 1366 && variant === "text") {
     if (value.length <= 97) {
       return 24
     }
