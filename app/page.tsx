@@ -13,7 +13,7 @@ export interface Components {
   isAllowed: boolean;
 }
 
-export default function Home() {
+export default function Home(): JSX.Element {
   const [components, setComponents] = useState<Components[]>([
     {
       component: (onClick, key) => {
