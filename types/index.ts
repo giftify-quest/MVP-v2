@@ -1,4 +1,4 @@
 export interface ITitleSection {
   mainWord: string;
-  secondWord?: string
+  secondWord?: string;
 }

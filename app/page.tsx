@@ -87,7 +87,7 @@ export default function Home() {
     },
 
     {
-      component: (undefined, key) => {
+      component: (onClick, key) => {
         return (
           <SectionFinalSurprise
             key={key}
@@ -106,8 +106,8 @@ export default function Home() {
       prevComponents.map((comp, index) =>
         index === componentIndex
           ? { ...comp, isAllowed: true, isHideButtonConfirm: true }
-          : comp
-      )
+          : comp,
+      ),
     );
   };
 

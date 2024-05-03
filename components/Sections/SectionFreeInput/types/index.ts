@@ -1,6 +1,5 @@
 import { IQuestionProps } from "@/types/question";
 
-
 export interface IQuestionWithFreeInput {
   bgSrcQuestion: string;
   questionText: string;
@@ -9,8 +8,6 @@ export interface IQuestionWithFreeInput {
   answers: string | string[];
 }
 
-export interface IQuestionWithFreeInputProps
-  extends IQuestionProps {
-    question: IQuestionWithFreeInput
-  }
-
+export interface IQuestionWithFreeInputProps extends IQuestionProps {
+  question: IQuestionWithFreeInput;
+}

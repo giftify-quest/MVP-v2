@@ -21,7 +21,7 @@ export const QuestionWithFreeInput: React.FC<IQuestionWithFreeInputProps> = ({
       result = value.some(
         (item) =>
           item.replace(/[^\p{L}\s]/gu, "").toLowerCase() ===
-          textValue.replace(/[^\p{L}\s]/gu, "").toLowerCase()
+          textValue.replace(/[^\p{L}\s]/gu, "").toLowerCase(),
       );
     }
     if (typeof value === "string") {

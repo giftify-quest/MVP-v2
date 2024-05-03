@@ -11,7 +11,7 @@ export interface ICollage {
 
 export interface ISectionFinalSurprise {
   title: ITitleSection;
-  wishersData: IWishesFinalSurprise,
+  wishersData: IWishesFinalSurprise;
 }
 
 export interface ISectionFinalSurpriseProps extends ISectionFinalSurprise {
@@ -24,7 +24,7 @@ export interface IWishesFinalSurprise {
   wishers: {
     wisher: string;
   }[];
-  feedPhotos: IFeedPhotosComponent
+  feedPhotos: IFeedPhotosComponent;
 }
 
 export interface IWishesFinalSurpriseProps extends IWishesFinalSurprise {
@@ -32,12 +32,12 @@ export interface IWishesFinalSurpriseProps extends IWishesFinalSurprise {
 }
 
 export interface IFeedPhotosComponent {
-  title: string,
-  subTitle: string,
+  title: string;
+  subTitle: string;
   collage: {
-      id: string,
-      src: string,
-      width: number,
-      height: number
-  }[]
+    id: string;
+    src: string;
+    width: number;
+    height: number;
+  }[];
 }

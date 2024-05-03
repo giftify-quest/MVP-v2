@@ -1,4 +1,4 @@
-import { ITitleSection } from '../index';
+import { ITitleSection } from "../index";
 
 export interface ISection<TQuestion, TAnswer> {
   id: string;
@@ -7,12 +7,12 @@ export interface ISection<TQuestion, TAnswer> {
   nextSectionId: string;
   title: ITitleSection;
   blockImage: {
-      path: string;
-    }[];
+    path: string;
+  }[];
 }
 
-
-export interface ISectionProps<TQuestion, TAnswer> extends ISection<TQuestion, TAnswer> {
+export interface ISectionProps<TQuestion, TAnswer>
+  extends ISection<TQuestion, TAnswer> {
   onAllowNextSlide: () => void;
   name: string;
 }

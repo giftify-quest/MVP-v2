@@ -15,10 +15,10 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
 }) => {
   const [isCorrectChoose, setIsCorrectChoose] = useState(true);
   const [selectedAnswerText, setSelectedAnswerText] = useState(
-    question.buttonText
+    question.buttonText,
   );
   const [selectedAnswerId, setSelectedAnswerId] = useState<null | string[]>(
-    null
+    null,
   );
   const [showFinalComponent, setShowFinalComponent] = useState(false);
   const [showExplanatoryText, setShowExplanatoryText] = useState(false);
@@ -29,7 +29,7 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
   const handleChooseMultipleVariant = (
     id: string,
     correct: boolean,
-    date: string
+    date: string,
   ) => {
     if (clearSelectedAfterCheck) {
       setSelectedAnswerId([id]);
@@ -40,14 +40,14 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
       if (!isCorrectChoose && selectedAnswerId) {
         setSelectedAnswerId(
           selectedAnswerId.map((item) =>
-            item === id ? item : null
-          ) as string[]
+            item === id ? item : null,
+          ) as string[],
         );
       }
       setSelectedAnswerId((prevSelected) =>
         prevSelected && prevSelected.includes(id) && !isCorrectChoose
           ? prevSelected.filter((item) => item !== id)
-          : [...(prevSelected || []), id]
+          : [...(prevSelected || []), id],
       );
     }
     setIsDisabledButton(false);
@@ -59,15 +59,17 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
   const handleCheckMultipleVariant = () => {
     if (selectedAnswerId && selectedAnswerId.length > 0) {
       const totalCorrectAnswers = question.answers.filter(
-        (answer) => answer.isCorrect
+        (answer) => answer.isCorrect,
       ).length;
 
       const selectedCorrectAnswers = selectedAnswerId.filter((id) =>
-        question.answers.find((answer) => answer.id === id && answer.isCorrect)
+        question.answers.find((answer) => answer.id === id && answer.isCorrect),
       ).length;
 
       const hasIncorrectAnswer = selectedAnswerId.some((id) =>
-        question.answers.find((answer) => answer.id === id && !answer.isCorrect)
+        question.answers.find(
+          (answer) => answer.id === id && !answer.isCorrect,
+        ),
       );
 
       if (

@@ -1,22 +1,21 @@
-import { IQuestionProps } from "@/types/question"
-
+import { IQuestionProps } from "@/types/question";
 
 export interface IQuestionVariant {
-  bgImage:string,
-  questionText:string,
-  answers: Array< {
-      id:string,
-      text: string,
-      isCorrect:boolean
-  }>,
-  buttonText:string,
-  wrongAnswerText:string,
-  wrongAnswerButtonText:string,
-  gift?:string,
-  giftText?:string,
-  multipleAnswer:boolean
+  bgImage: string;
+  questionText: string;
+  answers: Array<{
+    id: string;
+    text: string;
+    isCorrect: boolean;
+  }>;
+  buttonText: string;
+  wrongAnswerText: string;
+  wrongAnswerButtonText: string;
+  gift?: string;
+  giftText?: string;
+  multipleAnswer: boolean;
 }
 
 export interface VariantQuestionProps extends IQuestionProps {
-  question: IQuestionVariant
+  question: IQuestionVariant;
 }
