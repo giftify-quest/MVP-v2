@@ -13,7 +13,7 @@ export interface Components {
   isAllowed: boolean;
 }
 
-export default function Home() {
+export default function Home(): JSX.Element {
   const [components, setComponents] = useState<Components[]>([
     {
       component: (onClick, key) => {
@@ -87,7 +87,7 @@ export default function Home() {
     },
 
     {
-      component: (undefined, key) => {
+      component: (onClick, key) => {
         return (
           <SectionFinalSurprise
             key={key}
@@ -106,8 +106,8 @@ export default function Home() {
       prevComponents.map((comp, index) =>
         index === componentIndex
           ? { ...comp, isAllowed: true, isHideButtonConfirm: true }
-          : comp
-      )
+          : comp,
+      ),
     );
   };
 

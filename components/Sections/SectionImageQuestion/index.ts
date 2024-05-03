@@ -1,3 +1,3 @@
 import { SectionImageQuestion } from "./section/SectionImageQuestion";
 
-export default SectionImageQuestion
+export default SectionImageQuestion;
