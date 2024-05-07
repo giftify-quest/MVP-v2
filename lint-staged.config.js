@@ -9,10 +9,7 @@ module.exports = {
   "**/*.(ts|tsx)": () => "tsc -p tsconfig.json --noEmit",
 
   // This will lint and format TypeScript and                                             //JavaScript files
-  "**/*.(ts|tsx|js)": (filenames) => [
-    // `npm run lint ${filenames.join(" ")}`,
-    `npm run format ${filenames.join(" ")}`,
-  ],
+  "**/*.(ts|tsx|js)": (filenames) => [`npm run lint`, `npm run format`],
 
   // this will Format MarkDown and JSON
   "**/*.(md|json|css|scss)": (filenames) =>
