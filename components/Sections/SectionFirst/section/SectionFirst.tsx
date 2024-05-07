@@ -4,7 +4,7 @@ import { TitlePhoto } from "../components/TitlePhoto/TitlePhoto";
 import { ButtonConfirm } from "@/components/reusableComponent/ButtonConfirm/ButtonConfirm";
 import Image from "next/image";
 import styles from "./styles.module.scss";
-import { ISectionFirst, ISectionFirstProps } from "../types";
+import { ISectionFirstProps } from "../types";
 
 export const SectionFirst: React.FC<ISectionFirstProps> = ({
   titlePhoto,

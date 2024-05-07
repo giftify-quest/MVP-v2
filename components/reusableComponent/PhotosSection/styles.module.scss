@@ -1,10 +1,11 @@
 .wrapper_photos {
   display: flex;
-  gap: 16px;
+  gap: 20px;
 }
 
 .photos {
-  width: 100%;
+  width: calc(50% - 10px);
   height: auto;
   object-fit: cover;
+  flex: 1;
 }

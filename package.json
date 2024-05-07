@@ -6,9 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "format": "prettier --write '*/**/*.{js,jsx,ts,tsx,json,css,md}'",
-    "lint-staged": "lint-staged",
+    "check-types": "tsc --noemit",
+    "lint": "npm run check-types && next lint",
+    "format": "prettier --write '*/**/*.{js,jsx,ts,tsx,json,scss,css,md}'",
     "prepare": "husky"
   },
   "dependencies": {
