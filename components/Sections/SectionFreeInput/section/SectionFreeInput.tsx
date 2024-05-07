@@ -4,7 +4,7 @@ import { useState } from "react";
 import { PhotosSection } from "@/components/reusableComponent/PhotosSection/PhotosSection";
 import { AnswerWithOutPicture } from "@/components/AnswerComponents/AnswerWithOutPicture/AnswerWithOutPicture";
 import { IQuestionWithFreeInput } from "../types/index";
-import { ISection, ISectionProps } from "@/types/section";
+import { ISectionProps } from "@/types/section";
 import styles from "./styles.module.scss";
 import { IAnswerWithOutPicture } from "@/types/answer";
 

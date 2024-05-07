@@ -42,47 +42,45 @@ export const ImageQuestion: React.FC<ImageQuestionProps> = ({
   };
 
   return (
-    <div>
-      <WrapperWithBackground bgSrc={question.bgImage}>
-        <div className={style.wrapper}>
-          <div className={style.header}>
-            <TextFieldInfo
-              mainText={question.questionText}
-              secondaryText={name}
-              variant={"text"}
-            />
-          </div>
-          {isExplanationShown && (
-            <div className={style.wrongText}>
-              <TextFieldInfo
-                variant="errorMessage"
-                mainText={question.wrongAnswerText}
-                secondaryText={name}
-                rotate={1.8}
-              />
-            </div>
-          )}
-          <div className={style.imageContainer}>
-            {question.images?.map((image) => (
-              <ImageForQuestionComponent
-                key={image.id}
-                image={image}
-                onChooseVariant={() =>
-                  handleChooseVariant(image.id, image.correct)
-                }
-                isSelected={image.id === selectedAnswerId}
-                isCorrect={isCorrectAnswer}
-              />
-            ))}
-          </div>
-          <ButtonConfirm
-            title={question.buttonText}
-            onClick={handleCheckAnswer}
-            isActive={isActiveButton}
-            isDisabled={isDisabledButton}
+    <WrapperWithBackground bgSrc={question.bgImage}>
+      <div className={style.wrapper}>
+        <div className={style.header}>
+          <TextFieldInfo
+            mainText={question.questionText}
+            secondaryText={name}
+            variant={"text"}
           />
         </div>
-      </WrapperWithBackground>
-    </div>
+        {isExplanationShown && (
+          <div className={style.wrongText}>
+            <TextFieldInfo
+              variant="errorMessage"
+              mainText={question.wrongAnswerText}
+              secondaryText={name}
+              rotate={1.8}
+            />
+          </div>
+        )}
+        <div className={style.imageContainer}>
+          {question.images?.map((image) => (
+            <ImageForQuestionComponent
+              key={image.id}
+              image={image}
+              onChooseVariant={() =>
+                handleChooseVariant(image.id, image.correct)
+              }
+              isSelected={image.id === selectedAnswerId}
+              isCorrect={isCorrectAnswer}
+            />
+          ))}
+        </div>
+        <ButtonConfirm
+          title={question.buttonText}
+          onClick={handleCheckAnswer}
+          isActive={isActiveButton}
+          isDisabled={isDisabledButton}
+        />
+      </div>
+    </WrapperWithBackground>
   );
 };
