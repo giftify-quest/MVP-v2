@@ -4,23 +4,16 @@
     "es2021": true,
     "browser": true
   },
-  "globals": {
-    "React": true
-  },
+  "plugins": [
+    "@typescript-eslint",
+    "prettier"
+  ],
   "extends": [
     "next/core-web-vitals",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
-  "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint",
-    "prettier"
-  ],
-  "parserOptions": {
-    "project": "./tsconfig.json"
-  },
   "rules": {
     "no-console": "warn",
     "@typescript-eslint/no-unused-vars": "warn",
