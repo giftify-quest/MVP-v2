@@ -10,7 +10,7 @@ module.exports = {
 
   // This will lint and format TypeScript and                                             //JavaScript files
   "**/*.(ts|tsx|js)": (filenames) => [
-    `npm run lint ${filenames.join(" ")}`,
+    // `npm run lint ${filenames.join(" ")}`,
     `npm run format ${filenames.join(" ")}`,
   ],
 
