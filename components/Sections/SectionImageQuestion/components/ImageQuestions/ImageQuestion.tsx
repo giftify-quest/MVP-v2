@@ -44,7 +44,7 @@ export const ImageQuestion: React.FC<ImageQuestionProps> = ({
   return (
     <WrapperWithBackground bgSrc={question.bgImage}>
       <div className={style.wrapper}>
-        <div className={style.header}>
+        <div className={style.question}>
           <TextFieldInfo
             mainText={question.questionText}
             secondaryText={name}

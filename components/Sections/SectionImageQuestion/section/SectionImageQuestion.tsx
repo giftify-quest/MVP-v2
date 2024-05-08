@@ -38,6 +38,7 @@ export const SectionImageQuestion: React.FC<
       {isReady ? (
         <AnswerWithOutPicture
           successText={answer.successText}
+          secondaryText={name}
           bgSrc={answer.bgSrc}
         />
       ) : (

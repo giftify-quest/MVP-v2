@@ -20,17 +20,12 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
   const [selectedAnswerId, setSelectedAnswerId] = useState<null | string[]>(
     null,
   );
-  const [showFinalComponent, setShowFinalComponent] = useState(false);
   const [showExplanatoryText, setShowExplanatoryText] = useState(false);
   const [clearSelectedAfterCheck, setClearSelectedAfterCheck] = useState(false);
   const [isActiveButton, setIsActiveButton] = useState(false);
   const [isDisabledButton, setIsDisabledButton] = useState(true);
 
-  const handleChooseMultipleVariant = (
-    id: string,
-    correct: boolean,
-    date: string,
-  ) => {
+  const handleChooseMultipleVariant = (id: string) => {
     if (clearSelectedAfterCheck) {
       setSelectedAnswerId([id]);
       setClearSelectedAfterCheck(false);
@@ -76,13 +71,11 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
         selectedCorrectAnswers === totalCorrectAnswers &&
         !hasIncorrectAnswer
       ) {
-        console.log("correct");
         setSelectedAnswerText(question.wrongAnswerButtonText);
         onReady();
         setIsCorrectChoose(true);
         setShowExplanatoryText(false);
       } else {
-        console.log("wrong");
         setSelectedAnswerText("wrong");
         setShowExplanatoryText(true);
         setIsCorrectChoose(false);
@@ -90,7 +83,6 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
     } else {
       setShowExplanatoryText(true);
       setIsCorrectChoose(false);
-      setShowFinalComponent(false);
     }
   };
 
@@ -114,7 +106,6 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
               isCorrectChoose={isCorrectChoose}
             />
           </div>
-
           {showExplanatoryText && (
             <div className={styles.wrongText}>
               <TextFieldInfo

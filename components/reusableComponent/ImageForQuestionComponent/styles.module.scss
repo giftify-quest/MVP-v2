@@ -3,9 +3,11 @@
 }
 
 .chosen {
-  box-shadow: 0 0 10px 5px #fe4da2; /* додаємо тінь замість бордера */
+    box-shadow: 0 0 10px 5px #FE4DA2; 
+    
 }
 
 .incorrect {
-  box-shadow: 0 0 10px 5px red; /* також можна додати тінь для неправильних варіантів */
+    border: 1px solid red;
+    box-shadow: 0 0 10px 5px red;
 }

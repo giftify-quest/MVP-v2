@@ -156,8 +156,9 @@ export const questTest: ITest = {
       ],
     },
     answer: {
-      successText: "hello",
-      secondaryText: "Fred",
+      successText:
+        "Ну и память! Поищи свой следующий подарок в тумбе  у кровати)",
+
       bgSrc: "/assets/bg-answer-with-out-present.jpg",
     },
   },
