@@ -8,6 +8,7 @@ import { IWishesFinalSurpriseProps } from "../../types";
 
 export const WisherFinalSurprise: React.FC<IWishesFinalSurpriseProps> = ({
   bgSrc,
+  bgMobileSrc,
   wishers,
   textConfirmButton,
   feedPhotos,
@@ -24,7 +25,7 @@ export const WisherFinalSurprise: React.FC<IWishesFinalSurpriseProps> = ({
   return (
     <>
       <audio ref={audioRef} src="/assets/music/musicLove.mp3" autoPlay></audio>
-      <WrapperWithBackground bgSrc={bgSrc}>
+      <WrapperWithBackground bgSrc={bgSrc} bgMobileSrc={bgMobileSrc}>
         <div className={styles.wrapper}>
           <div className={styles.wrap_wishers}>
             {wishers.map((wisher) => (

@@ -276,6 +276,7 @@ export const questTest: ITest = {
           },
         ],
       },
+      bgMobileSrc: "/assets/adaptiveQuestionBckgImg.png",
     },
   },
 };

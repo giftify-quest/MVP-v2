@@ -26,7 +26,7 @@ export const SectionFirst: React.FC<ISectionFirstProps> = ({
           thirdText={title.thirdText}
         />
       </div>
-      <WrapperWithBackground bgSrc={bgImg}>
+      <WrapperWithBackground bgSrc={bgImg} bgMobileSrc={""}>
         <div className={styles.unlock_wrap}>
           <Image
             src="/assets/section-first/lock.png"
