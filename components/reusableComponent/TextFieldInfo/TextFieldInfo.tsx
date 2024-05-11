@@ -8,6 +8,7 @@ export interface ITextFieldInfo {
   mainText: string;
   variant: TextFieldInfoVariantType;
   secondaryText?: string;
+  isMobileAnswer?: boolean;
   rotate?: -4.3 | -1.8 | 1.8 | 2.34 | 2.53 | 3.6 | -2.53 | -3.6;
 }
 
@@ -15,13 +16,17 @@ export const TextFieldInfo: React.FC<ITextFieldInfo> = ({
   mainText,
   secondaryText,
   variant,
+  isMobileAnswer,
   rotate = 0,
 }) => {
   return (
     <div
       style={{ rotate: `${rotate}deg` }}
-      className={classNames(styles.wrapper, {
-        [styles.question]: variant === "text",
+      className={classNames({
+        [styles.wrapper_mobile]: isMobileAnswer,
+        [styles.wrapper]: !isMobileAnswer,
+        [styles.mobile_answer]: isMobileAnswer && variant === "text",
+        [styles.question]: !isMobileAnswer && variant === "text",
         [styles.error_message]: variant === "errorMessage",
       })}
     >

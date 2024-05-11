@@ -9,3 +9,16 @@
 .wrapper > div {
   flex: 1 1 calc(50% - 2rem);
 }
+
+@media (max-width: 768px) {
+
+  .wrapper{
+
+    margin-left: 10px;
+    width: 350px;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr ;
+  }
+
+}

@@ -2,6 +2,7 @@ import { IQuestionProps } from "@/types/question";
 
 export interface IQuestionVariant {
   bgImage: string;
+  bgMobile: string;
   questionText: string;
   answers: Array<{
     id: string;

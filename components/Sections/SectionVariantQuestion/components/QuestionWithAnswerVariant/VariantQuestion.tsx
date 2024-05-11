@@ -87,42 +87,43 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
   };
 
   return (
-    <div>
-      <WrapperWithBackground bgSrc={question.bgImage}>
-        <div className={styles.wrapper}>
-          <div className={styles.header}>
+    <WrapperWithBackground
+      bgSrc={question.bgImage}
+      bgMobileSrc={question.bgMobile}
+    >
+      <div className={styles.wrapper}>
+        <div className={styles.header}>
+          <TextFieldInfo
+            mainText={question.questionText}
+            variant={"text"}
+            secondaryText={name}
+          />
+        </div>
+
+        <div className={styles.variants}>
+          <VariantAnswersField
+            answers={question.answers}
+            onChooseVariant={handleChooseMultipleVariant}
+            selectedAnswerId={selectedAnswerId}
+            isCorrectChoose={isCorrectChoose}
+          />
+        </div>
+        {showExplanatoryText && (
+          <div className={styles.wrongText}>
             <TextFieldInfo
-              mainText={question.questionText}
-              variant={"text"}
+              mainText={question.wrongAnswerText}
+              variant={"errorMessage"}
               secondaryText={name}
             />
           </div>
-
-          <div className={styles.variants}>
-            <VariantAnswersField
-              answers={question.answers}
-              onChooseVariant={handleChooseMultipleVariant}
-              selectedAnswerId={selectedAnswerId}
-              isCorrectChoose={isCorrectChoose}
-            />
-          </div>
-          {showExplanatoryText && (
-            <div className={styles.wrongText}>
-              <TextFieldInfo
-                mainText={question.wrongAnswerText}
-                variant={"errorMessage"}
-                secondaryText={name}
-              />
-            </div>
-          )}
-          <ButtonConfirm
-            title={question.buttonText}
-            onClick={handleCheckMultipleVariant}
-            isActive={isActiveButton}
-            isDisabled={isDisabledButton}
-          />
-        </div>
-      </WrapperWithBackground>
-    </div>
+        )}
+        <ButtonConfirm
+          title={question.buttonText}
+          onClick={handleCheckMultipleVariant}
+          isActive={isActiveButton}
+          isDisabled={isDisabledButton}
+        />
+      </div>
+    </WrapperWithBackground>
   );
 };

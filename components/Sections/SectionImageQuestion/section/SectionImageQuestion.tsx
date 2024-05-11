@@ -40,6 +40,7 @@ export const SectionImageQuestion: React.FC<
           successText={answer.successText}
           secondaryText={name}
           bgSrc={answer.bgSrc}
+          bgMobileSrc={answer.bgMobileSrc}
         />
       ) : (
         <ImageQuestion question={question} onReady={onReady} name={name} />

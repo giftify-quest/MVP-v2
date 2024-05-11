@@ -44,6 +44,7 @@ export const questTest: ITest = {
     },
     question: {
       bgImage: "/assets/testImage/background.png",
+      bgMobile: "/assets/adaptiveQuestionBckgImg.png",
       questionText:
         "Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше ",
       answers: [
@@ -80,6 +81,7 @@ export const questTest: ITest = {
     ],
     answer: {
       bgSrc: "/assets/bg-answer-with-out-present.jpg",
+      bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText:
         "Success text Success text  Success text  Success text  Success text  Success text  Success text",
     },
@@ -97,11 +99,13 @@ export const questTest: ITest = {
     ],
     answer: {
       bgSrc: "/assets/bg-answer-with-out-present.jpg",
+      bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText:
         "Ну и память! Поищи свой следующий подарок в тумбе  у кровати)",
     },
     question: {
       bgSrcQuestion: "/assets/bg-answer-with-present.jpg",
+      bgMobile: "/assets/adaptiveQuestionBckgImg.png",
       questionText:
         "Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше первое фото?",
       buttonTitle: "Не могу уже ждать ",
@@ -124,6 +128,7 @@ export const questTest: ITest = {
     ],
     question: {
       bgImage: "/assets/bg-answer-with-present.jpg",
+      bgMobile: "/assets/adaptiveQuestionBckgImg.png",
       title: "hello",
       questionText:
         "Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы фото?",
@@ -158,7 +163,7 @@ export const questTest: ITest = {
     answer: {
       successText:
         "Ну и память! Поищи свой следующий подарок в тумбе  у кровати)",
-
+      bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       bgSrc: "/assets/bg-answer-with-out-present.jpg",
     },
   },

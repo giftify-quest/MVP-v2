@@ -40,3 +40,27 @@
     line-height: 54px;
   }
 }
+
+
+@media (max-width: 768px) {
+  .wrapper {
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 500;
+
+    .mainWord{
+      color: #FE4DA2;
+      border-radius: none;
+      padding: 8px;
+    }
+    .second_word{
+      color: #FE4DA2;
+      padding: 8px 0;
+    }
+    .bg_green,
+    .bg_purple {
+      background-color: transparent;
+    }
+   
+  }
+}

@@ -3,3 +3,13 @@
   flex-direction: column;
   gap: 2rem;
 }
+
+
+@media (max-width: 768px) {
+  .wrapper {
+    width: 393px;
+    height: 1246px;
+    
+  }
+}
+
