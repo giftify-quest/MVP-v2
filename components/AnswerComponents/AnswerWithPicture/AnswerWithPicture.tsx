@@ -7,12 +7,13 @@ import { IAnswerWithPicture } from "@/types/answer";
 
 export const AnswerWithPicture: React.FC<IAnswerWithPicture> = ({
   bgSrc,
+  bgMobileSrc,
   successText,
   secondaryText,
   framedPhotoSrc,
 }) => {
   return (
-    <WrapperWithBackground bgSrc={bgSrc}>
+    <WrapperWithBackground bgSrc={bgSrc} bgMobileSrc={bgMobileSrc}>
       <div className={styles.wrapper_content}>
         <div>
           <TextFieldInfo

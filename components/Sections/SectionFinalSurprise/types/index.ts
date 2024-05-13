@@ -21,6 +21,7 @@ export interface ISectionFinalSurpriseProps extends ISectionFinalSurprise {
 export interface IWishesFinalSurprise {
   textConfirmButton: string;
   bgSrc: string;
+  bgMobileSrc: string;
   wishers: {
     wisher: string;
   }[];

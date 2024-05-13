@@ -36,6 +36,7 @@ export const SectionVariantQuestion: React.FC<
         <AnswerWithOutPicture
           successText={answer.successText}
           bgSrc={answer.bgSrc}
+          bgMobileSrc={answer.bgMobileSrc}
           secondaryText={name}
         />
       )}

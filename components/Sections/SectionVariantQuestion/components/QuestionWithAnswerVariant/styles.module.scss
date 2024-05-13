@@ -26,11 +26,39 @@
   position: absolute;
   right: 2rem;
   top: 12rem;
-  rotate: 5deg;
+  transform: rotate(5deg);
 }
 
 .variants {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+
+@media (max-width: 768px) {
+
+
+  .wrapper{
+    
+    padding-top: 0;
+    gap: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header{
+    width: 100%;
+  }
+  .variants{
+    padding-top: 8rem;
+  }
+  .wrongText{
+    top: 10rem;
+    left: 1rem;
+    text-align:left;
+    transform: rotate(-1.25deg);
+   
+  }
 }

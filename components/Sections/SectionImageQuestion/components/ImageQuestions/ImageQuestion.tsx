@@ -42,7 +42,10 @@ export const ImageQuestion: React.FC<ImageQuestionProps> = ({
   };
 
   return (
-    <WrapperWithBackground bgSrc={question.bgImage}>
+    <WrapperWithBackground
+      bgSrc={question.bgImage}
+      bgMobileSrc={question.bgMobile}
+    >
       <div className={style.wrapper}>
         <div className={style.question}>
           <TextFieldInfo

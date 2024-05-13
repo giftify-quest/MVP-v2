@@ -59,7 +59,10 @@ export const QuestionWithFreeInput: React.FC<IQuestionWithFreeInputProps> = ({
   }, [isTextFieldError]);
 
   return (
-    <WrapperWithBackground bgSrc={question.bgSrcQuestion}>
+    <WrapperWithBackground
+      bgSrc={question.bgSrcQuestion}
+      bgMobileSrc={question.bgMobile}
+    >
       <div className={styles.wrapper}>
         {isErrorMessage && (
           <div className={styles.error_block}>

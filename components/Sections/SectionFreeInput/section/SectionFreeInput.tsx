@@ -39,6 +39,7 @@ export const SectionFreeInput: React.FC<
           bgSrc={answer.bgSrc}
           successText={answer.successText}
           secondaryText={name}
+          bgMobileSrc={answer.bgMobileSrc}
         />
       ) : (
         <QuestionWithFreeInput
