@@ -2,7 +2,7 @@ import styles from "./styles.module.scss";
 import { WrapperWithBackground } from "../../reusableComponent/WrapperWithBackground/WrapperWithBackground";
 import { TextFieldInfo } from "@/components/reusableComponent/TextFieldInfo/TextFieldInfo";
 import { IAnswerWithOutPicture } from "@/types/answer";
-import { useIsMobile } from "@/hooks/setIsMobile";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 export const AnswerWithOutPicture: React.FC<IAnswerWithOutPicture> = ({
   bgSrc,

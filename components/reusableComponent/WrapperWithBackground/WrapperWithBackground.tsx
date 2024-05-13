@@ -1,4 +1,4 @@
-import { useIsMobile } from "@/hooks/setIsMobile";
+import { useIsMobile } from "@/hooks/useIsMobile";
 import Image from "next/image";
 import styles from "./styles.module.scss";
 

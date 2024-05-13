@@ -136,3 +136,10 @@ table {
   flex-direction: column;
   gap: 2rem;
 }
+
+
+@media (max-width:768px){
+  .page{
+    width: 24.563rem;
+  }
+}
