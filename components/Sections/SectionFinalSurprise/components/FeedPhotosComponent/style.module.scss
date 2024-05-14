@@ -35,19 +35,22 @@
     top: 15rem;
   }
 
-  .emoji_6{
+  .emoji_6 {
     position: absolute;
     left: 70rem;
     top: 15rem;
   }
 }
 
-
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .wrapper {
-    .emoji_1, .emoji_2, .emoji_3, .emoji_4, .emoji_5, .emoji_6 {
+    .emoji_1,
+    .emoji_2,
+    .emoji_3,
+    .emoji_4,
+    .emoji_5,
+    .emoji_6 {
       display: none;
     }
   }
-  
 }

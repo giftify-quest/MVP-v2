@@ -17,15 +17,12 @@
   }
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .wrapper {
     gap: 0;
-    .title_section{
+    .title_section {
       display: flex;
       flex-direction: column;
     }
   }
-  
 }
-
-

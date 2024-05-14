@@ -10,15 +10,12 @@
   flex: 1;
 }
 
-
 @media (max-width: 768px) {
   .wrapper_photos {
     position: relative;
     transform: rotate(-6deg);
-   
   }
   .photos {
-
     border-radius: 15%;
   }
 }
