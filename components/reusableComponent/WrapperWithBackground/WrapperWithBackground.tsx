@@ -13,10 +13,11 @@ export const WrapperWithBackground: React.FC<IWrapperWithBackground> = ({
   bgMobileSrc,
   children,
 }) => {
+  const isMobile = useIsMobile();
   return (
     <div className={styles.wrapper}>
       <Image
-        src={useIsMobile() ? bgMobileSrc : bgSrc}
+        src={isMobile ? bgMobileSrc : bgSrc}
         alt="background"
         fill
         className={styles.bg_img}

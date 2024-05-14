@@ -1,7 +1,7 @@
 export interface TitleProps {
   mainText: string;
   secondaryText: string;
-  thirdText: string;
+  thirdText?: string;
 }
 
 export interface TitlePhotoProps {
@@ -14,6 +14,7 @@ export interface ISectionFirst {
   title: TitleProps;
   bgImg: string;
   buttonTitle: string;
+  bgMobileSrc: string;
 }
 
 export interface ISectionFirstProps extends ISectionFirst {
