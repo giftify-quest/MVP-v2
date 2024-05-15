@@ -137,9 +137,9 @@ table {
   gap: 2rem;
 }
 
-
-@media (max-width:768px){
-  .page{
-    width: 24.563rem;
+@media (max-width: 768px) {
+  .page {
+    width: 100%;
+    margin: 0;
   }
 }

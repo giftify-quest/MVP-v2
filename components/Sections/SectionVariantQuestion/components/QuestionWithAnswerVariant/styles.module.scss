@@ -35,12 +35,8 @@
   gap: 2rem;
 }
 
-
 @media (max-width: 768px) {
-
-
-  .wrapper{
-    
+  .wrapper {
     padding-top: 0;
     gap: 60px;
     display: flex;
@@ -48,17 +44,16 @@
     justify-content: center;
   }
 
-  .header{
+  .header {
     width: 100%;
   }
-  .variants{
+  .variants {
     padding-top: 8rem;
   }
-  .wrongText{
+  .wrongText {
     top: 10rem;
     left: 1rem;
-    text-align:left;
+    text-align: left;
     transform: rotate(-1.25deg);
-   
   }
 }

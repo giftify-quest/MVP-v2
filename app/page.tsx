@@ -23,6 +23,7 @@ export default function Home(): JSX.Element {
             titlePhoto={questTest.sectionFirst.titlePhoto}
             title={questTest.sectionFirst.title}
             bgImg={questTest.sectionFirst.bgImg}
+            bgMobileSrc={questTest.sectionFirst.bgMobileSrc}
             buttonTitle={questTest.sectionFirst.buttonTitle}
             onAllowNextSlide={onClick}
           />
@@ -97,7 +98,7 @@ export default function Home(): JSX.Element {
           />
         );
       },
-      isAllowed: false,
+      isAllowed: true,
     },
   ]);
 

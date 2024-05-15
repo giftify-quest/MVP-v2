@@ -28,3 +28,19 @@
     align-items: flex-end;
   }
 }
+
+@media (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+    .image_confetti {
+      display: none;
+    }
+
+    .wrap_date {
+      line-height: 30px;
+      font-size: 70px;
+      top: 74px;
+      right: 10px;
+    }
+  }
+}
