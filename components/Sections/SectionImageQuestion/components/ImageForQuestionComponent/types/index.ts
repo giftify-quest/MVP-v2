@@ -9,4 +9,5 @@ export interface ImageForQuestionComponentProps {
   onChooseVariant: (id: string, correct: boolean, text: string) => void;
   isSelected: boolean;
   isCorrect: boolean;
+  position?: "left" | "center" | "right";
 }

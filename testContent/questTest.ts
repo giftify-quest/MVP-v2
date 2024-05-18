@@ -140,21 +140,21 @@ export const questTest: ITest = {
       images: [
         {
           id: "1",
-          path: "/assets/testImage/image2.png",
+          path: "/test.jpeg",
           width: 300,
           height: 340,
           correct: false,
         },
         {
           id: "2",
-          path: "/assets/testImage/image1.png",
+          path: "/test.png",
           width: 300,
           height: 340,
           correct: false,
         },
         {
           id: "3",
-          path: "/assets/testImage/image3.png",
+          path: "/test.webp",
           width: 300,
           height: 340,
           correct: true,

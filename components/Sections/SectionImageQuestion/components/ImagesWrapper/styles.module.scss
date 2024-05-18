@@ -1,0 +1,19 @@
+.imageContainerDesktop {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+}
+
+.swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  background: transparent;
+  border: 1px solid #68b8ff;
+  opacity: 1;
+}
+
+.custom_swiper {
+  width: 80%;
+  background-color: red;
+  height: 300px;
+}

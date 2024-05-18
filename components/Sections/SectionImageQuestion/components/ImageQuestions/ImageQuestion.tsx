@@ -2,10 +2,10 @@ import { WrapperWithBackground } from "../../../../reusableComponent/WrapperWith
 
 import { useState } from "react";
 import { ButtonConfirm } from "../../../../reusableComponent/ButtonConfirm/ButtonConfirm";
-import { ImageForQuestionComponent } from "../../../../reusableComponent/ImageForQuestionComponent/ImageForQuestionComponent";
 import { TextFieldInfo } from "../../../../reusableComponent/TextFieldInfo/TextFieldInfo";
 import { ImageQuestionProps } from "../../types";
 import style from "./styles.module.scss";
+import { ImagesWrapper } from "../ImagesWrapper/ImagesWrapper";
 
 export const ImageQuestion: React.FC<ImageQuestionProps> = ({
   question,
@@ -13,8 +13,7 @@ export const ImageQuestion: React.FC<ImageQuestionProps> = ({
   name,
 }) => {
   const [selectedAnswerId, setSelectedAnswerId] = useState<null | string>(null);
-  const [isCorrectAnswer, setIsCorrectAnswer] = useState(false);
-  const [checkAnswer, setCheckAnswer] = useState(false);
+  const [isCorrectAnswer, setIsCorrectAnswer] = useState<null | boolean>(null);
   const [isCorrectChoose, setIsCorrectChoose] = useState(true);
   const [isExplanationShown, setIsExplanationShown] = useState(false);
   const [isDisabledButton, setIsDisabledButton] = useState(true);
@@ -23,11 +22,9 @@ export const ImageQuestion: React.FC<ImageQuestionProps> = ({
   const handleCheckAnswer = () => {
     if (isCorrectChoose) {
       setIsCorrectAnswer(true);
-      setCheckAnswer(true);
       onReady();
     } else {
       setIsCorrectAnswer(false);
-      setCheckAnswer(true);
       setIsExplanationShown(true);
       setIsDisabledButton(true);
       setIsActiveButton(false);
@@ -35,6 +32,7 @@ export const ImageQuestion: React.FC<ImageQuestionProps> = ({
   };
 
   const handleChooseVariant = (imageId: string, correct: boolean) => {
+    setIsCorrectAnswer(null);
     setIsDisabledButton(false);
     setIsActiveButton(true);
     setSelectedAnswerId(imageId);
@@ -64,19 +62,12 @@ export const ImageQuestion: React.FC<ImageQuestionProps> = ({
             />
           </div>
         )}
-        <div className={style.imageContainer}>
-          {question.images?.map((image) => (
-            <ImageForQuestionComponent
-              key={image.id}
-              image={image}
-              onChooseVariant={() =>
-                handleChooseVariant(image.id, image.correct)
-              }
-              isSelected={image.id === selectedAnswerId}
-              isCorrect={isCorrectAnswer}
-            />
-          ))}
-        </div>
+        <ImagesWrapper
+          images={question.images}
+          handleChooseVariant={handleChooseVariant}
+          isCorrectAnswer={isCorrectAnswer}
+          selectedAnswerId={selectedAnswerId}
+        />
         <ButtonConfirm
           title={question.buttonText}
           onClick={handleCheckAnswer}
