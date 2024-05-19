@@ -1,15 +1,14 @@
-import { AnswerWithOutPicture } from "@/components/AnswerComponents/AnswerWithOutPicture/AnswerWithOutPicture";
 import { ImageQuestion } from "@/components/Sections/SectionImageQuestion/components/ImageQuestions/ImageQuestion";
 import { PhotosSection } from "@/components/reusableComponent/PhotosSection/PhotosSection";
-
 import { SectionTitle } from "@/components/reusableComponent/SectionTitle/SectionTitle";
-import { IAnswerWithOutPicture } from "@/types/answer";
 import { ISectionProps } from "@/types/section";
 import { useState } from "react";
 import { IQuestionImage } from "../types";
+import { AnswerWithPicture } from "@/components/AnswerComponents/AnswerWithPicture/AnswerWithPicture";
+import { IAnswerWithPicture } from "@/types/answer";
 
 export const SectionImageQuestion: React.FC<
-  ISectionProps<IQuestionImage, IAnswerWithOutPicture>
+  ISectionProps<IQuestionImage, IAnswerWithPicture>
 > = ({
   question,
   answer,
@@ -36,11 +35,13 @@ export const SectionImageQuestion: React.FC<
       />
 
       {isReady ? (
-        <AnswerWithOutPicture
+        <AnswerWithPicture
           successText={answer.successText}
           secondaryText={name}
           bgSrc={answer.bgSrc}
           bgMobileSrc={answer.bgMobileSrc}
+          framedPhotoSrc={answer.framedPhotoSrc}
+          framedPhotoText={answer.framedPhotoText}
         />
       ) : (
         <ImageQuestion question={question} onReady={onReady} name={name} />

@@ -11,4 +11,5 @@ export interface IAnswerWithPicture {
   bgSrc: string;
   bgMobileSrc: string;
   framedPhotoSrc: string;
+  framedPhotoText: string;
 }
