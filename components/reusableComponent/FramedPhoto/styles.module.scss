@@ -15,3 +15,13 @@
   gap: 12px;
   padding: 20px;
 }
+
+@media (max-width: 768px) {
+  .wrapper {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 900;
+    width: 350px;
+    transform: rotate(7deg);
+  }
+}

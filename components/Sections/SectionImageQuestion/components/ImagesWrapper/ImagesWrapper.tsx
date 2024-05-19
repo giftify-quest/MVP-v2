@@ -6,6 +6,7 @@ import { Pagination } from "swiper/modules";
 import { Images } from "../../types";
 import { ImageForQuestionComponent } from "../ImageForQuestionComponent/ImageForQuestionComponent";
 import styles from "./styles.module.scss";
+import classNames from "classnames";
 
 interface ImagesWrapperProps {
   images: Images[];
@@ -25,47 +26,45 @@ export const ImagesWrapper: React.FC<ImagesWrapperProps> = ({
   return (
     <>
       {isMobile ? (
-        // <div>
-        <Swiper
-          className={styles.custom_swiper}
-          spaceBetween={20}
-          slidesPerView={"auto"}
-          loop
-          modules={[Pagination]}
-          pagination={{
-            clickable: true,
-          }}
-          breakpoints={{
-            512: {
-              slidesPerView: 2,
-              spaceBetween: 8,
-            },
-            768: {
-              width: 732,
-              slidesPerView: 2,
-              spaceBetween: 8,
-            },
-          }}
-        >
-          {images.map((image) => (
-            <SwiperSlide key={image.id} style={{ width: "260px" }}>
-              <ImageForQuestionComponent
-                image={image}
-                onChooseVariant={() =>
-                  handleChooseVariant(image.id, image.correct)
-                }
-                isSelected={image.id === selectedAnswerId}
-                isCorrect={
-                  image.id === selectedAnswerId &&
-                  typeof isCorrectAnswer === "boolean" &&
-                  !isCorrectAnswer
-                }
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        <div className={styles.imageContainerMobile}>
+          <Swiper
+            className={styles.custom_swiper}
+            spaceBetween={20}
+            slidesPerView={"auto"}
+            loop
+            modules={[Pagination]}
+            pagination={{
+              el: ".swiper-pagination",
+              type: "bullets",
+              clickable: true,
+              bulletClass: styles.swiper_pagination_bullet,
+              bulletActiveClass: styles.swiper_pagination_bullet_active,
+            }}
+          >
+            {images.map((image) => (
+              <SwiperSlide key={image.id} style={{ width: "270px" }}>
+                <ImageForQuestionComponent
+                  image={image}
+                  onChooseVariant={() =>
+                    handleChooseVariant(image.id, image.correct)
+                  }
+                  isSelected={image.id === selectedAnswerId}
+                  isCorrect={
+                    image.id === selectedAnswerId &&
+                    typeof isCorrectAnswer === "boolean" &&
+                    !isCorrectAnswer
+                  }
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div className={styles.wrapper_pagination}>
+            <div
+              className={classNames("swiper-pagination", styles.pagination)}
+            ></div>
+          </div>
+        </div>
       ) : (
-        // </div>
         <div className={styles.imageContainerDesktop}>
           {images.map((image, index) => (
             <ImageForQuestionComponent

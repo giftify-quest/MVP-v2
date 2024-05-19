@@ -3,7 +3,7 @@ import { ISectionFirst } from "@/components/Sections/SectionFirst/types";
 import { IQuestionWithFreeInput } from "@/components/Sections/SectionFreeInput/types";
 import { IQuestionImage } from "@/components/Sections/SectionImageQuestion/types";
 import { IQuestionVariant } from "@/components/Sections/SectionVariantQuestion/types";
-import { IAnswerWithOutPicture } from "@/types/answer";
+import { IAnswerWithOutPicture, IAnswerWithPicture } from "@/types/answer";
 import { ISection } from "@/types/section";
 
 interface ITest {
@@ -15,7 +15,7 @@ interface ITest {
     IAnswerWithOutPicture
   >;
   sectionFinalSurprise: ISectionFinalSurprise;
-  sectionImageQuestion: ISection<IQuestionImage, IAnswerWithOutPicture>;
+  sectionImageQuestion: ISection<IQuestionImage, IAnswerWithPicture>;
 }
 
 export const questTest: ITest = {
@@ -140,23 +140,17 @@ export const questTest: ITest = {
       images: [
         {
           id: "1",
-          path: "/test.jpeg",
-          width: 300,
-          height: 340,
+          path: "/assets/testImage/image1.png",
           correct: false,
         },
         {
           id: "2",
-          path: "/test.png",
-          width: 300,
-          height: 340,
+          path: "/assets/testImage/image2.png",
           correct: false,
         },
         {
           id: "3",
-          path: "/test.webp",
-          width: 300,
-          height: 340,
+          path: "/assets/testImage/image3.png",
           correct: true,
         },
       ],
@@ -166,6 +160,8 @@ export const questTest: ITest = {
         "Ну и память! Поищи свой следующий подарок в тумбе  у кровати)",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       bgSrc: "/assets/bg-answer-with-out-present.jpg",
+      framedPhotoSrc: "/assets/testImage/image3.png",
+      framedPhotoText: "12.12.2012",
     },
   },
   // !

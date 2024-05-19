@@ -3,8 +3,6 @@ import { IQuestionProps } from "@/types/question";
 export interface Images {
   path: string;
   id: string;
-  width: number;
-  height: number;
   correct: boolean;
 }
 

@@ -2,10 +2,12 @@ import Image from "next/image";
 import style from "./styles.module.scss";
 import { ImageForQuestionComponentProps } from "./types";
 import classNames from "classnames";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 export const ImageForQuestionComponent: React.FC<
   ImageForQuestionComponentProps
 > = ({ image, onChooseVariant, isSelected, isCorrect, position }) => {
+  const isMobile = useIsMobile();
   return (
     <div
       className={classNames(style.container, {
@@ -20,8 +22,8 @@ export const ImageForQuestionComponent: React.FC<
       <Image
         src={image.path}
         alt={"photo"}
-        width={250}
-        height={250}
+        width={isMobile ? 250 : 300}
+        height={isMobile ? 250 : 340}
         className={style.imageWrapper}
       />
     </div>
