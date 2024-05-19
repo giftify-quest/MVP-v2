@@ -98,7 +98,7 @@ export default function Home(): JSX.Element {
           />
         );
       },
-      isAllowed: true,
+      isAllowed: false,
     },
   ]);
 
