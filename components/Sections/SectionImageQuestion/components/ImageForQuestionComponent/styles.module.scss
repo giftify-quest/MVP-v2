@@ -1,0 +1,43 @@
+@import "/app/variables.scss";
+
+.container {
+  padding: 10px 10px 40px 10px;
+  border-radius: 25px;
+  background: $white-color;
+  cursor: pointer;
+  border: 5px solid transparent;
+
+  .imageWrapper {
+    border-radius: 25px;
+    object-fit: cover;
+  }
+}
+
+.chosen {
+  box-shadow: 0 0 10px 5px $orange-color;
+  border: 5px solid $orange-color;
+}
+
+.incorrect {
+  border: 5px solid red;
+  box-shadow: 0 0 10px 5px red;
+}
+
+.rotate_center {
+  transform: rotate(0);
+}
+
+.rotate_left {
+  transform: rotate(-5.55deg);
+}
+
+.rotate_right {
+  transform: rotate(5.55deg);
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 270px;
+    padding: 5px;
+  }
+}

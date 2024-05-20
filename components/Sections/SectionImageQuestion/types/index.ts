@@ -1,17 +1,17 @@
 import { IQuestionProps } from "@/types/question";
 
+export interface Images {
+  path: string;
+  id: string;
+  correct: boolean;
+}
+
 export interface IQuestionImage {
   bgImage: string;
   bgMobile: string;
   title: string;
   questionText: string;
-  images: Array<{
-    path: string;
-    id: string;
-    width: number;
-    height: number;
-    correct: boolean;
-  }>;
+  images: Images[];
   buttonText: string;
   wrongAnswerText: string;
   wrongAnswerButtonText: string;

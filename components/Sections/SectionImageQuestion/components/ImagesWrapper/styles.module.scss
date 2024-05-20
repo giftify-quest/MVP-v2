@@ -1,0 +1,51 @@
+@import "/app/variables.scss";
+
+.imageContainerDesktop {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+}
+
+.imageContainerMobile {
+  position: relative;
+  .custom_swiper {
+    width: 400px;
+    height: 300px;
+  }
+}
+
+.swiper_pagination_bullet {
+  width: 6px;
+  height: 6px;
+  background: $white-color;
+  opacity: 1;
+  border-radius: 50%;
+}
+
+.swiper_pagination_bullet_active {
+  width: 8px;
+  height: 8px;
+  background: $pink-color;
+  border-radius: 50%;
+}
+
+.wrapper_pagination {
+  position: absolute;
+  bottom: 0px;
+  left: 20px;
+  width: 100%;
+  height: 20px;
+}
+
+.pagination {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 400px) {
+  .custom_swiper {
+    width: 340px;
+  }
+}
