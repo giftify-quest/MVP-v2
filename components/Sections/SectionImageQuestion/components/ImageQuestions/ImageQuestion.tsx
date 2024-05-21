@@ -62,6 +62,7 @@ export const ImageQuestion: React.FC<ImageQuestionProps> = ({
             />
           </div>
         )}
+
         <div className={style.imageButtonWrapper}>
           <ImagesWrapper
             images={question.images}
@@ -76,6 +77,7 @@ export const ImageQuestion: React.FC<ImageQuestionProps> = ({
             isDisabled={isDisabledButton}
           />
         </div>
+
       </div>
     </WrapperWithBackground>
   );
