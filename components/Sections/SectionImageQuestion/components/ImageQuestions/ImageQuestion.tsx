@@ -1,5 +1,4 @@
 import { WrapperWithBackground } from "../../../../reusableComponent/WrapperWithBackground/WrapperWithBackground";
-
 import { useState } from "react";
 import { ButtonConfirm } from "../../../../reusableComponent/ButtonConfirm/ButtonConfirm";
 import { TextFieldInfo } from "../../../../reusableComponent/TextFieldInfo/TextFieldInfo";
@@ -77,7 +76,6 @@ export const ImageQuestion: React.FC<ImageQuestionProps> = ({
             isDisabled={isDisabledButton}
           />
         </div>
-
       </div>
     </WrapperWithBackground>
   );

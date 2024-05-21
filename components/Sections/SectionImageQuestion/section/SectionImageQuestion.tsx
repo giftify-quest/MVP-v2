@@ -8,7 +8,6 @@ import { AnswerWithPicture } from "@/components/AnswerComponents/AnswerWithPictu
 import { IAnswerWithPicture } from "@/types/answer";
 import style from "./styles.module.scss";
 
-
 export const SectionImageQuestion: React.FC<
   ISectionProps<IQuestionImage, IAnswerWithPicture>
 > = ({
