@@ -20,6 +20,7 @@ export const AnswerWithPicture: React.FC<IAnswerWithPicture> = ({
       <div className={styles.wrapper_content}>
         <div>
           <TextFieldInfo
+            isMobileAnswer={useIsMobile()}
             mainText={successText}
             secondaryText={secondaryText}
             variant="text"

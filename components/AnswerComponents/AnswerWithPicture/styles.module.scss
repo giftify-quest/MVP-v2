@@ -9,3 +9,10 @@
     left: -25px;
   }
 }
+
+@media (max-width: 768px) {
+  .wrapper_content {
+    margin-bottom: 18rem;
+    gap: 2rem;
+  }
+}
