@@ -31,7 +31,10 @@ export const TextFieldInfo: React.FC<ITextFieldInfo> = ({
       })}
     >
       <div
-        className={styles.main_text}
+        className={classNames({
+          [styles.main_text]: variant === "text",
+          [styles.error_message]: variant === "errorMessage",
+        })}
         style={{ fontSize: `${setFontSizeTextFieldInfo(mainText, variant)}px` }}
       >
         {mainText}

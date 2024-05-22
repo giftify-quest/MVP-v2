@@ -1,5 +1,4 @@
 import { WrapperWithBackground } from "../../../../reusableComponent/WrapperWithBackground/WrapperWithBackground";
-
 import { useState } from "react";
 import { ButtonConfirm } from "../../../../reusableComponent/ButtonConfirm/ButtonConfirm";
 import { TextFieldInfo } from "../../../../reusableComponent/TextFieldInfo/TextFieldInfo";
@@ -62,18 +61,21 @@ export const ImageQuestion: React.FC<ImageQuestionProps> = ({
             />
           </div>
         )}
-        <ImagesWrapper
-          images={question.images}
-          handleChooseVariant={handleChooseVariant}
-          isCorrectAnswer={isCorrectAnswer}
-          selectedAnswerId={selectedAnswerId}
-        />
-        <ButtonConfirm
-          title={question.buttonText}
-          onClick={handleCheckAnswer}
-          isActive={isActiveButton}
-          isDisabled={isDisabledButton}
-        />
+
+        <div className={style.imageButtonWrapper}>
+          <ImagesWrapper
+            images={question.images}
+            handleChooseVariant={handleChooseVariant}
+            isCorrectAnswer={isCorrectAnswer}
+            selectedAnswerId={selectedAnswerId}
+          />
+          <ButtonConfirm
+            title={question.buttonText}
+            onClick={handleCheckAnswer}
+            isActive={isActiveButton}
+            isDisabled={isDisabledButton}
+          />
+        </div>
       </div>
     </WrapperWithBackground>
   );

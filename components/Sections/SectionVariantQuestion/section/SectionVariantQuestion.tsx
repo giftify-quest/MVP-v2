@@ -29,7 +29,9 @@ export const SectionVariantQuestion: React.FC<
 
   return (
     <div className={style.wrapper}>
-      <SectionTitle mainWord={title.mainWord} variant={"green"} />
+      <div>
+        <SectionTitle mainWord={title.mainWord} variant={"green"} />
+      </div>
       {!isReady ? (
         <VariantQuestion question={question} onReady={onReady} name={name} />
       ) : (

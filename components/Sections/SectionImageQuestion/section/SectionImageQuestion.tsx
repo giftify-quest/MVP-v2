@@ -6,6 +6,7 @@ import { useState } from "react";
 import { IQuestionImage } from "../types";
 import { AnswerWithPicture } from "@/components/AnswerComponents/AnswerWithPicture/AnswerWithPicture";
 import { IAnswerWithPicture } from "@/types/answer";
+import style from "./styles.module.scss";
 
 export const SectionImageQuestion: React.FC<
   ISectionProps<IQuestionImage, IAnswerWithPicture>
@@ -27,13 +28,14 @@ export const SectionImageQuestion: React.FC<
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
-      <SectionTitle
-        mainWord={title.mainWord}
-        secondWord={title.secondWord}
-        variant={"purple"}
-      />
-
+    <div className={style.wrapper}>
+      <div>
+        <SectionTitle
+          mainWord={title.mainWord}
+          secondWord={title.secondWord}
+          variant={"purple"}
+        />
+      </div>
       {isReady ? (
         <AnswerWithPicture
           successText={answer.successText}

@@ -15,11 +15,13 @@ export const SectionFinalSurprise: React.FC<ISectionFinalSurpriseProps> = ({
     <div className={styles.section}>
       {openSlide ? (
         <>
-          <SectionTitle
-            variant="green"
-            mainWord={title.mainWord}
-            secondWord={title.secondWord}
-          />
+          <div>
+            <SectionTitle
+              variant="green"
+              mainWord={title.mainWord}
+              secondWord={title.secondWord}
+            />
+          </div>
           <WisherFinalSurprise
             textConfirmButton={wishersData.textConfirmButton}
             bgSrc={wishersData.bgSrc}

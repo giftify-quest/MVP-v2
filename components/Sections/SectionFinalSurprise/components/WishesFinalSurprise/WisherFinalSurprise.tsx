@@ -5,6 +5,7 @@ import { ButtonConfirm } from "@/components/reusableComponent/ButtonConfirm/Butt
 import { useEffect, useRef, useState } from "react";
 import { FeedPhotosComponents } from "../FeedPhotosComponent/FeedPhotoSection";
 import { IWishesFinalSurpriseProps } from "../../types";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 export const WisherFinalSurprise: React.FC<IWishesFinalSurpriseProps> = ({
   bgSrc,
@@ -16,7 +17,7 @@ export const WisherFinalSurprise: React.FC<IWishesFinalSurpriseProps> = ({
 }) => {
   const [isOpenCollage, setIsOpenCollage] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-
+  const isMobile = useIsMobile();
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.play();
@@ -30,6 +31,7 @@ export const WisherFinalSurprise: React.FC<IWishesFinalSurpriseProps> = ({
           <div className={styles.wrap_wishers}>
             {wishers.map((wisher) => (
               <TextFieldInfo
+                isMobileAnswer={isMobile}
                 key={wisher.wisher}
                 variant="text"
                 mainText={wisher.wisher}

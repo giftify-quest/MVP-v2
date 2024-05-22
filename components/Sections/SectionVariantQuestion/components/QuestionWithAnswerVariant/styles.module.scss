@@ -37,11 +37,12 @@
 
 @media (max-width: 768px) {
   .wrapper {
-    padding-top: 0;
+    padding-bottom: 470px;
     gap: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
   }
 
   .header {
@@ -51,8 +52,8 @@
     padding-top: 8rem;
   }
   .wrongText {
-    top: 10rem;
-    left: 1rem;
+    top: -4rem;
+    left: 3rem;
     text-align: left;
     transform: rotate(-1.25deg);
   }

@@ -26,11 +26,26 @@
   gap: 5rem;
 }
 
+.imageButtonWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 @media (max-width: 768px) {
   .wrapper {
+    padding-bottom: 470px;
+    gap: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     .wrongText {
-      top: 17rem;
-      rotate: 1deg;
+      top: 4rem;
+      width: 1rem;
+      left: 3rem;
+      text-align: left;
+      transform: rotate(-2.8deg);
     }
   }
 }

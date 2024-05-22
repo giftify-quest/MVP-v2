@@ -29,11 +29,13 @@ export const SectionFreeInput: React.FC<
 
   return (
     <div className={styles.section}>
-      <SectionTitle
-        variant="purple"
-        mainWord={title.mainWord}
-        secondWord={title.secondWord}
-      />
+      <div>
+        <SectionTitle
+          variant="purple"
+          mainWord={title.mainWord}
+          secondWord={title.secondWord}
+        />
+      </div>
       {isReady ? (
         <AnswerWithOutPicture
           bgSrc={answer.bgSrc}
