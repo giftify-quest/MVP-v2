@@ -6,10 +6,11 @@ import { useState } from "react";
 import style from "./styles.module.scss";
 import { PhotosSection } from "@/components/reusableComponent/PhotosSection/PhotosSection";
 import { IQuestionVariant } from "../types";
-import { IAnswerWithOutPicture } from "@/types/answer";
+import { IAnswerWithOutPicture, IAnswerWithPicture } from "@/types/answer";
+import { AnswerWithPicture } from "@/components/AnswerComponents/AnswerWithPicture/AnswerWithPicture";
 
 export const SectionVariantQuestion: React.FC<
-  ISectionProps<IQuestionVariant, IAnswerWithOutPicture>
+  ISectionProps<IQuestionVariant, IAnswerWithPicture>
 > = ({
   question,
   answer,
@@ -30,16 +31,22 @@ export const SectionVariantQuestion: React.FC<
   return (
     <div className={style.wrapper}>
       <div>
-        <SectionTitle mainWord={title.mainWord} variant={"green"} />
+        <SectionTitle
+          mainWord={title.mainWord}
+          secondWord={title.secondWord}
+          variant={"green"}
+        />
       </div>
       {!isReady ? (
         <VariantQuestion question={question} onReady={onReady} name={name} />
       ) : (
-        <AnswerWithOutPicture
+        <AnswerWithPicture
           successText={answer.successText}
           bgSrc={answer.bgSrc}
           bgMobileSrc={answer.bgMobileSrc}
           secondaryText={name}
+          framedPhotoSrc={answer.framedPhotoSrc}
+          framedPhotoText={""}
         />
       )}
       <PhotosSection photos={blockImage} />

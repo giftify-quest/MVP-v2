@@ -14,9 +14,6 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
   name,
 }) => {
   const [isCorrectChoose, setIsCorrectChoose] = useState(true);
-  const [selectedAnswerText, setSelectedAnswerText] = useState(
-    question.buttonText,
-  );
   const [selectedAnswerId, setSelectedAnswerId] = useState<null | string[]>(
     null,
   );
@@ -48,7 +45,6 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
     setIsDisabledButton(false);
     setIsActiveButton(true);
     setIsCorrectChoose(true);
-    setSelectedAnswerText(question.buttonText);
   };
 
   const handleCheckMultipleVariant = () => {
@@ -71,16 +67,15 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
         selectedCorrectAnswers === totalCorrectAnswers &&
         !hasIncorrectAnswer
       ) {
-        setSelectedAnswerText(question.wrongAnswerButtonText);
         onReady();
         setIsCorrectChoose(true);
         setShowExplanatoryText(false);
       } else {
-        setSelectedAnswerText("wrong");
         setShowExplanatoryText(true);
         setIsCorrectChoose(false);
       }
     } else {
+      setSelectedAnswerId([]);
       setShowExplanatoryText(true);
       setIsCorrectChoose(false);
     }
