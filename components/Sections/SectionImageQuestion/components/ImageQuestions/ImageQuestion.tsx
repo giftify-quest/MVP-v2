@@ -69,12 +69,14 @@ export const ImageQuestion: React.FC<ImageQuestionProps> = ({
             isCorrectAnswer={isCorrectAnswer}
             selectedAnswerId={selectedAnswerId}
           />
-          <ButtonConfirm
-            title={question.buttonText}
-            onClick={handleCheckAnswer}
-            isActive={isActiveButton}
-            isDisabled={isDisabledButton}
-          />
+          <div style={{ marginTop: "2rem" }}>
+            <ButtonConfirm
+              title={question.buttonText}
+              onClick={handleCheckAnswer}
+              isActive={isActiveButton}
+              isDisabled={isDisabledButton}
+            />
+          </div>
         </div>
       </div>
     </WrapperWithBackground>

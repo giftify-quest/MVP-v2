@@ -20,14 +20,23 @@ export const QuestionWithFreeInput: React.FC<IQuestionWithFreeInputProps> = ({
     if (Array.isArray(value)) {
       result = value.some(
         (item) =>
-          item.replace(/[^\p{L}\s]/gu, "").toLowerCase() ===
+          item
+            .trim()
+            .replace(/[^\p{L}\s]/gu, "")
+            .toLowerCase() ===
           textValue.replace(/[^\p{L}\s]/gu, "").toLowerCase(),
       );
     }
     if (typeof value === "string") {
       result =
-        textValue.replace(/[^\p{L}\s]/gu, "").toLowerCase() ===
-        value.replace(/[^\p{L}\s]/gu, "").toLowerCase();
+        textValue
+          .trim()
+          .replace(/[^\p{L}\s]/gu, "")
+          .toLowerCase() ===
+        value
+          .trim()
+          .replace(/[^\p{L}\s]/gu, "")
+          .toLowerCase();
     }
     return result;
   };

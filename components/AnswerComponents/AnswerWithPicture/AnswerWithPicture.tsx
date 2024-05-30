@@ -5,6 +5,8 @@ import { ConfettiIcon } from "@/components/reusableComponent/ConfettiIcon/Confet
 import { TextFieldInfo } from "@/components/reusableComponent/TextFieldInfo/TextFieldInfo";
 import { IAnswerWithPicture } from "@/types/answer";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import scrollDownImg from "/public/assets/scrollDownImg/arrowScrollDown.png";
+import Image from "next/image";
 
 export const AnswerWithPicture: React.FC<IAnswerWithPicture> = ({
   bgSrc,
@@ -18,7 +20,7 @@ export const AnswerWithPicture: React.FC<IAnswerWithPicture> = ({
   return (
     <WrapperWithBackground bgSrc={bgSrc} bgMobileSrc={bgMobileSrc}>
       <div className={styles.wrapper_content}>
-        <div>
+        <div style={{ width: "80%" }}>
           <TextFieldInfo
             isMobileAnswer={useIsMobile()}
             mainText={successText}
@@ -33,6 +35,14 @@ export const AnswerWithPicture: React.FC<IAnswerWithPicture> = ({
             <ConfettiIcon />
           </div>
         )}
+        <div className={styles.scrollImage}>
+          <Image
+            src={scrollDownImg}
+            width={isMobile ? 150 : 250}
+            height={isMobile ? 100 : 200}
+            alt="scrollDown"
+          />
+        </div>
       </div>
     </WrapperWithBackground>
   );

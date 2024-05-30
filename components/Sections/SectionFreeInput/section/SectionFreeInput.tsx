@@ -6,10 +6,11 @@ import { AnswerWithOutPicture } from "@/components/AnswerComponents/AnswerWithOu
 import { IQuestionWithFreeInput } from "../types/index";
 import { ISectionProps } from "@/types/section";
 import styles from "./styles.module.scss";
-import { IAnswerWithOutPicture } from "@/types/answer";
+import { IAnswerWithPicture } from "@/types/answer";
+import { AnswerWithPicture } from "@/components/AnswerComponents/AnswerWithPicture/AnswerWithPicture";
 
 export const SectionFreeInput: React.FC<
-  ISectionProps<IQuestionWithFreeInput, IAnswerWithOutPicture>
+  ISectionProps<IQuestionWithFreeInput, IAnswerWithPicture>
 > = ({
   question,
   answer,
@@ -37,11 +38,13 @@ export const SectionFreeInput: React.FC<
         />
       </div>
       {isReady ? (
-        <AnswerWithOutPicture
+        <AnswerWithPicture
           bgSrc={answer.bgSrc}
           successText={answer.successText}
           secondaryText={name}
           bgMobileSrc={answer.bgMobileSrc}
+          framedPhotoSrc={answer.framedPhotoSrc}
+          framedPhotoText={""}
         />
       ) : (
         <QuestionWithFreeInput
