@@ -5,7 +5,7 @@ import { ConfettiIcon } from "@/components/reusableComponent/ConfettiIcon/Confet
 import { TextFieldInfo } from "@/components/reusableComponent/TextFieldInfo/TextFieldInfo";
 import { IAnswerWithPicture } from "@/types/answer";
 import { useIsMobile } from "@/hooks/useIsMobile";
-import scrollDownImg from "/public/assets/scrollDownImg/arrowScrollDown.png";
+import scrollDownImg from "/public/assets/scrollDownImg/arrowScrollDownENG.png";
 import Image from "next/image";
 
 export const AnswerWithPicture: React.FC<IAnswerWithPicture> = ({
@@ -38,8 +38,8 @@ export const AnswerWithPicture: React.FC<IAnswerWithPicture> = ({
         <div className={styles.scrollImage}>
           <Image
             src={scrollDownImg}
-            width={isMobile ? 150 : 250}
-            height={isMobile ? 100 : 200}
+            width={isMobile ? 150 : 169}
+            height={isMobile ? 100 : 163}
             alt="scrollDown"
           />
         </div>

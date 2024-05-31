@@ -83,7 +83,7 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
 
   return (
     <WrapperWithBackground
-      bgSrc={question.bgImage}
+      bgSrc={question.bgSrcQuestion}
       bgMobileSrc={question.bgMobile}
     >
       <div className={styles.wrapper}>

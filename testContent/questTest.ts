@@ -44,7 +44,7 @@ export const questTest: ITest = {
       secondWord: "провокационный вопрос!",
     },
     question: {
-      bgImage: "/assets/testImage/background.png",
+      bgSrcQuestion: "/assets/testImage/background.png",
       bgMobile: "/assets/adaptiveQuestionBckgImg.png",
       questionText:
         "Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше ",
@@ -128,7 +128,7 @@ export const questTest: ITest = {
       { path: "/assets/component-photos.jpg" },
     ],
     question: {
-      bgImage: "/assets/bg-answer-with-present.jpg",
+      bgSrcQuestion: "/assets/bg-answer-with-present.jpg",
       bgMobile: "/assets/adaptiveQuestionBckgImg.png",
       title: "hello",
       questionText:
