@@ -6,8 +6,9 @@ import SectionFreeInput from "@/components/Sections/SectionFreeInput";
 import SectionImageQuestion from "@/components/Sections/SectionImageQuestion";
 import { SectionVariantQuestion } from "@/components/Sections/SectionVariantQuestion/section/SectionVariantQuestion";
 import { questTest } from "@/testContent/questTest";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { firstQuest } from "@/testContent/firstQuest";
+import { assignRandomImages } from "@/hooks/setRandomBackground";
 
 export interface Components {
   component: (onClick: () => void, key: number) => JSX.Element;
@@ -15,6 +16,10 @@ export interface Components {
 }
 
 export default function Home(): JSX.Element {
+  useEffect(() => {
+    assignRandomImages(firstQuest);
+  }, []);
+
   const [components, setComponents] = useState<Components[]>([
     {
       component: (onClick, key) => {
@@ -37,7 +42,7 @@ export default function Home(): JSX.Element {
         return (
           <SectionVariantQuestion
             key={key}
-            name={questTest.name}
+            name={firstQuest.name}
             question={firstQuest.sectionVariantFirstPhoto.question}
             answer={firstQuest.sectionVariantFirstPhoto.answer}
             id={firstQuest.sectionVariantFirstPhoto.id}
@@ -74,7 +79,7 @@ export default function Home(): JSX.Element {
         return (
           <SectionImageQuestion
             key={key}
-            name={questTest.name}
+            name={firstQuest.name}
             question={firstQuest.sectionImageQuestion.question}
             answer={firstQuest.sectionImageQuestion.answer}
             id={firstQuest.sectionImageQuestion.id}
@@ -110,7 +115,7 @@ export default function Home(): JSX.Element {
         return (
           <SectionVariantQuestion
             key={key}
-            name={questTest.name}
+            name={firstQuest.name}
             question={firstQuest.sectionVariantRelationShip.question}
             answer={firstQuest.sectionVariantRelationShip.answer}
             id={firstQuest.sectionVariantRelationShip.id}
@@ -128,7 +133,7 @@ export default function Home(): JSX.Element {
         return (
           <SectionVariantQuestion
             key={key}
-            name={questTest.name}
+            name={firstQuest.name}
             question={firstQuest.sectionVariantTheMost.question}
             answer={firstQuest.sectionVariantTheMost.answer}
             id={firstQuest.sectionVariantTheMost.id}
@@ -146,7 +151,7 @@ export default function Home(): JSX.Element {
         return (
           <SectionVariantQuestion
             key={key}
-            name={questTest.name}
+            name={firstQuest.name}
             question={firstQuest.sectionVariantMomentsTogether.question}
             answer={firstQuest.sectionVariantMomentsTogether.answer}
             id={firstQuest.sectionVariantMomentsTogether.id}
@@ -166,7 +171,7 @@ export default function Home(): JSX.Element {
         return (
           <SectionVariantQuestion
             key={key}
-            name={questTest.name}
+            name={firstQuest.name}
             question={firstQuest.sectionVariantAdventuresTogether.question}
             answer={firstQuest.sectionVariantAdventuresTogether.answer}
             id={firstQuest.sectionVariantAdventuresTogether.id}
@@ -186,7 +191,7 @@ export default function Home(): JSX.Element {
         return (
           <SectionVariantQuestion
             key={key}
-            name={questTest.name}
+            name={firstQuest.name}
             question={firstQuest.sectionVariantTogetherWeCan.question}
             answer={firstQuest.sectionVariantTogetherWeCan.answer}
             id={firstQuest.sectionVariantTogetherWeCan.id}
@@ -204,7 +209,7 @@ export default function Home(): JSX.Element {
         return (
           <SectionVariantQuestion
             key={key}
-            name={questTest.name}
+            name={firstQuest.name}
             question={firstQuest.sectionVariantFinal.question}
             answer={firstQuest.sectionVariantFinal.answer}
             id={firstQuest.sectionVariantFinal.id}
@@ -229,7 +234,7 @@ export default function Home(): JSX.Element {
           />
         );
       },
-      isAllowed: true,
+      isAllowed: false,
     },
   ]);
 

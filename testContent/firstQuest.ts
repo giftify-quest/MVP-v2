@@ -6,7 +6,7 @@ import { IQuestionVariant } from "@/components/Sections/SectionVariantQuestion/t
 import { IAnswerWithOutPicture, IAnswerWithPicture } from "@/types/answer";
 import { ISection } from "@/types/section";
 
-interface ITest {
+export interface ITest {
   name: string;
   sectionFirst: ISectionFirst;
   sectionVariantFirstPhoto: ISection<IQuestionVariant, IAnswerWithPicture>;
@@ -29,10 +29,10 @@ interface ITest {
 }
 
 export const firstQuest: ITest = {
-  name: "Михаил",
+  name: "Anya",
   sectionFirst: {
     titlePhoto: {
-      imgSrc: "/assets/testImage/testFirstTest.png",
+      imgSrc: "/firstQuest/firstVariant/photo1.jpg",
       dateEvent: "09.06.24",
     },
     title: {
@@ -54,7 +54,7 @@ export const firstQuest: ITest = {
       secondWord: "provocative question",
     },
     question: {
-      bgImage: "/assets/testImage/background.png",
+      bgSrcQuestion: "",
       bgMobile: "/assets/adaptiveQuestionBckgImg.png",
       questionText: "When did you write me for the first time?",
       answers: [
@@ -113,14 +113,14 @@ export const firstQuest: ITest = {
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText:
         "Right, and I wish to we explore much more new destinations together!",
-      framedPhotoSrc: "/firstQuest/secondQuestion/answerPhotoGermany.jpg",
+      framedPhotoSrc: "/firstQuest/secondQuestion/answerPhotoGermany.png",
       framedPhotoText: "",
     },
     question: {
       bgSrcQuestion: "/assets/bg-answer-with-present.jpg",
       bgMobile: "/assets/adaptiveQuestionBckgImg.png",
       questionText: "Remember how we chose a hotel near the forest in .. ?",
-      buttonTitle: "Не могу уже ждать ",
+      buttonTitle: "Check",
       errorMessage: "Not there  😅 ",
       answers: "Germany",
     },
@@ -129,7 +129,7 @@ export const firstQuest: ITest = {
   sectionImageQuestion: {
     title: {
       mainWord: "What",
-      secondWord: "is my favourite photo ?",
+      secondWord: "fruit did you bring to our first picnic in Napoleon park?",
     },
     id: "1111",
     nextSectionId: "123",
@@ -138,7 +138,7 @@ export const firstQuest: ITest = {
       { path: "/firstQuest/thirdQuestion/photo6.jpg" },
     ],
     question: {
-      bgImage: "/assets/bg-answer-with-present.jpg",
+      bgSrcQuestion: "/assets/bg-answer-with-present.jpg",
       bgMobile: "/assets/adaptiveQuestionBckgImg.png",
       title: "hello",
       questionText:
@@ -177,8 +177,8 @@ export const firstQuest: ITest = {
     id: "1222",
     nextSectionId: "Нужно обсудить???",
     title: {
-      mainWord: "Where",
-      secondWord: "did we go on our first trip?",
+      mainWord: "Food",
+      secondWord: "",
     },
     blockImage: [
       { path: "/firstQuest/fourthQuestion/photo7.jpg" },
@@ -205,11 +205,11 @@ export const firstQuest: ITest = {
     id: "949494",
     nextSectionId: "next",
     title: {
-      mainWord: "First",
-      secondWord: "provocative question",
+      mainWord: "Our",
+      secondWord: "relationship is..",
     },
     question: {
-      bgImage: "/assets/testImage/background.png",
+      bgSrcQuestion: "/assets/testImage/background.png",
       bgMobile: "/assets/adaptiveQuestionBckgImg.png",
       questionText: "Guess how would I describe our relationship in 3 words…",
       answers: [
@@ -259,7 +259,7 @@ export const firstQuest: ITest = {
       secondWord: "...",
     },
     question: {
-      bgImage: "/assets/testImage/background.png",
+      bgSrcQuestion: "/assets/testImage/background.png",
       bgMobile: "/assets/adaptiveQuestionBckgImg.png",
       questionText: "The most I love in you...",
       answers: [
@@ -310,7 +310,7 @@ export const firstQuest: ITest = {
       secondWord: "together",
     },
     question: {
-      bgImage: "/assets/testImage/background.png",
+      bgSrcQuestion: "/assets/testImage/background.png",
       bgMobile: "/assets/adaptiveQuestionBckgImg.png",
       questionText:
         "If we could go back in time, what moment of our history do you think I would choose? ",
@@ -358,11 +358,11 @@ export const firstQuest: ITest = {
     id: "949494",
     nextSectionId: "next",
     title: {
-      mainWord: "Moments",
+      mainWord: "Adventures",
       secondWord: "together",
     },
     question: {
-      bgImage: "/assets/testImage/background.png",
+      bgSrcQuestion: "/assets/testImage/background.png",
       bgMobile: "/assets/adaptiveQuestionBckgImg.png",
       questionText:
         "What is the most unusual adventure we have been through together?",
@@ -388,7 +388,7 @@ export const firstQuest: ITest = {
           isCorrect: false,
         },
       ],
-      buttonText: "Check",
+      buttonText: "I'm sure",
       wrongAnswerText: "New day - new adventure, but it’s not what i mean 😆",
       wrongAnswerButtonText: "Teperto4no???",
       multipleAnswer: true,
@@ -414,7 +414,7 @@ export const firstQuest: ITest = {
       secondWord: "we can everything",
     },
     question: {
-      bgImage: "/assets/testImage/background.png",
+      bgSrcQuestion: "/assets/testImage/background.png",
       bgMobile: "/assets/adaptiveQuestionBckgImg.png",
       questionText:
         "What goals we will definitely achieve together in the future?",
@@ -466,7 +466,7 @@ export const firstQuest: ITest = {
       secondWord: "question",
     },
     question: {
-      bgImage: "/assets/testImage/background.png",
+      bgSrcQuestion: "/assets/testImage/background.png",
       bgMobile: "/assets/adaptiveQuestionBckgImg.png",
       questionText:
         "If you could only choose ONE ‘bulochka’ for the rest of your life, it would be …  ",
@@ -492,7 +492,7 @@ export const firstQuest: ITest = {
           isCorrect: true,
         },
       ],
-      buttonText: "Check",
+      buttonText: "I'm sure",
       wrongAnswerText: "No, you’re on diet 😆",
       wrongAnswerButtonText: "Teperto4no???",
       multipleAnswer: true,
@@ -512,7 +512,8 @@ export const firstQuest: ITest = {
   // !
   sectionFinalSurprise: {
     title: {
-      mainWord: "",
+      mainWord: "Final",
+      secondWord: "question",
     },
     wishersData: {
       textConfirmButton: "Thank you ❤️",
@@ -528,8 +529,9 @@ export const firstQuest: ITest = {
         },
       ],
       feedPhotos: {
-        title: "Look",
-        subTitle: "How many moments we have? ❤️",
+        title: "Look 🥰",
+        subTitle:
+          "Do you want to see how many beautiful moments and memories we have together?",
         collage: [
           {
             id: "1",

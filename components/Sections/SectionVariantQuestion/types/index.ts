@@ -1,7 +1,7 @@
 import { IQuestionProps } from "@/types/question";
 
 export interface IQuestionVariant {
-  bgImage: string;
+  bgSrcQuestion: string;
   bgMobile: string;
   questionText: string;
   answers: Array<{

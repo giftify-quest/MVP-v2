@@ -13,8 +13,8 @@ export const FramedPhoto: React.FC<IFramedPhoto> = ({ imageSrc, text }) => {
       <Image
         src={imageSrc}
         alt="photo"
-        width={isMobile ? 330 : 750}
-        height={isMobile ? 200 : 500}
+        width={isMobile ? 330 : 584}
+        height={isMobile ? 200 : 328}
         objectFit="contain"
       />
       <p>{text}</p>

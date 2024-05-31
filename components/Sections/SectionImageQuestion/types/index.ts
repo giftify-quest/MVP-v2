@@ -7,7 +7,7 @@ export interface Images {
 }
 
 export interface IQuestionImage {
-  bgImage: string;
+  bgSrcQuestion: string;
   bgMobile: string;
   title: string;
   questionText: string;
