@@ -5,7 +5,7 @@ import { ConfettiIcon } from "@/components/reusableComponent/ConfettiIcon/Confet
 import { TextFieldInfo } from "@/components/reusableComponent/TextFieldInfo/TextFieldInfo";
 import { IAnswerWithPicture } from "@/types/answer";
 import { useIsMobile } from "@/hooks/useIsMobile";
-import scrollDownImg from "/public/assets/scrollDownImg/arrowScrollDownENG.png";
+import scrollDownImg from "/assets/scrollDownImg/arrowScrollDownEng.png";
 import Image from "next/image";
 
 export const AnswerWithPicture: React.FC<IAnswerWithPicture> = ({
