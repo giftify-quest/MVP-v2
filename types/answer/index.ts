@@ -1,17 +1,15 @@
 export interface IAnswerWithOutPicture {
-  bgImage: string;
   successText: string;
   secondaryText?: string;
-  bgSrcAnswer: string;
+  bgSrc: string;
+  bgMobileSrc: string;
 }
 
 export interface IAnswerWithPicture {
   successText: string;
   secondaryText?: string;
   bgSrc: string;
+  bgMobileSrc: string;
   framedPhotoSrc: string;
-}
-
-export interface IQuestionProps {
-  onReady: () => void;
+  framedPhotoText: string;
 }

@@ -1,10 +1,31 @@
 .wrapper_photos {
   display: flex;
-  gap: 16px;
+  gap: 20px;
 }
 
 .photos {
-  width: 100%;
+  width: calc(50% - 10px);
+  border-radius: 21.25px;
   height: auto;
   object-fit: cover;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .wrapper_photos {
+    position: absolute;
+    width: 120%;
+    background-color: white;
+    overflow-x: hidden;
+    top: 55rem;
+
+    transform: rotate(-6deg);
+    padding: 10px;
+    gap: 10px;
+    box-shadow: 0 50px 30px -30px rgba(0, 0, 0, 0.2);
+  }
+  .photos {
+    border-radius: 15%;
+    width: 208px;
+  }
 }

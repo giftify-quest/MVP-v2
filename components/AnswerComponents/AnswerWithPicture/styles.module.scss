@@ -8,5 +8,35 @@
     position: absolute;
     left: -25px;
   }
+  .scrollImage {
+    position: absolute;
+    right: -50px;
+    top: 500px;
+    animation: pulse 2s infinite;
+  }
 }
 
+@media (max-width: 768px) {
+  .wrapper_content {
+    margin-bottom: 30rem;
+    gap: 2rem;
+    .scrollImage {
+      position: absolute;
+      right: 55px;
+      top: 500px;
+      animation: pulse 2s infinite;
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

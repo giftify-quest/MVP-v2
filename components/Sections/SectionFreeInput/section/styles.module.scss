@@ -2,5 +2,13 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin-top: 20px;
+  // margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .section {
+    width: 100%;
+    position: relative;
+    align-items: center;
+  }
 }

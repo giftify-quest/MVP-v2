@@ -1,50 +1,261 @@
 "use client";
 
+import { SectionFinalSurprise } from "@/components/Sections/SectionFinalSurprise/section/SectionFinalSurprise";
+import SectionFirst from "@/components/Sections/SectionFirst";
+import SectionFreeInput from "@/components/Sections/SectionFreeInput";
+import SectionImageQuestion from "@/components/Sections/SectionImageQuestion";
+import { SectionVariantQuestion } from "@/components/Sections/SectionVariantQuestion/section/SectionVariantQuestion";
+import { questTest } from "@/testContent/questTest";
+import { useEffect, useState } from "react";
+import { firstQuest } from "@/testContent/firstQuest";
+import { assignRandomImages } from "@/hooks/setRandomBackground";
 
+export interface Components {
+  component: (onClick: () => void, key: number) => JSX.Element;
+  isAllowed: boolean;
+}
 
+export default function Home(): JSX.Element {
+  useEffect(() => {
+    assignRandomImages(firstQuest);
+  }, []);
 
-import { ImageQuestionSection } from "@/components/Sections/ImageQuestionSection/section/ImageQuestionSection";
-import SectionFinalSurprise from "@/components/Sections/SectionFinalSurprise";
-import { SectionFreeInput } from "@/components/Sections/SectionFreeInput/section/SectionFreeInput";
-import SectionVariantQuestion from "@/components/Sections/SectionVariantQuestion";
-import { SectionImageQuestionTestContent } from '@/testContent/imagequestionsection';
-import { SectionFreeInputTestContent } from "@/testContent/sectionFreeInput";
-import { variantTestContent } from "@/testContent/variantTestContent";
+  const [components, setComponents] = useState<Components[]>([
+    {
+      component: (onClick, key) => {
+        return (
+          <SectionFirst
+            key={key}
+            titlePhoto={firstQuest.sectionFirst.titlePhoto}
+            title={firstQuest.sectionFirst.title}
+            bgImg={questTest.sectionFirst.bgImg}
+            bgMobileSrc={firstQuest.sectionFirst.bgMobileSrc}
+            buttonTitle={firstQuest.sectionFirst.buttonTitle}
+            onAllowNextSlide={onClick}
+          />
+        );
+      },
+      isAllowed: true,
+    },
+    {
+      component: (onClick, key) => {
+        return (
+          <SectionVariantQuestion
+            key={key}
+            name={firstQuest.name}
+            question={firstQuest.sectionVariantFirstPhoto.question}
+            answer={firstQuest.sectionVariantFirstPhoto.answer}
+            id={firstQuest.sectionVariantFirstPhoto.id}
+            blockImage={firstQuest.sectionVariantFirstPhoto.blockImage}
+            nextSectionId={firstQuest.sectionVariantFirstPhoto.nextSectionId}
+            title={firstQuest.sectionVariantFirstPhoto.title}
+            onAllowNextSlide={onClick}
+          />
+        );
+      },
+      isAllowed: false,
+    },
+    {
+      component: (onClick, key) => {
+        return (
+          <SectionFreeInput
+            key={key}
+            name={firstQuest.name}
+            question={firstQuest.sectionFreeInputFirstPhoto.question}
+            answer={firstQuest.sectionFreeInputFirstPhoto.answer}
+            id={firstQuest.sectionFreeInputFirstPhoto.id}
+            blockImage={firstQuest.sectionFreeInputFirstPhoto.blockImage}
+            nextSectionId={firstQuest.sectionFreeInputFirstPhoto.nextSectionId}
+            title={firstQuest.sectionFreeInputFirstPhoto.title}
+            onAllowNextSlide={onClick}
+          />
+        );
+      },
+      isAllowed: false,
+    },
 
-export default function Home() {
+    {
+      component: (onClick, key) => {
+        return (
+          <SectionImageQuestion
+            key={key}
+            name={firstQuest.name}
+            question={firstQuest.sectionImageQuestion.question}
+            answer={firstQuest.sectionImageQuestion.answer}
+            id={firstQuest.sectionImageQuestion.id}
+            blockImage={firstQuest.sectionImageQuestion.blockImage}
+            nextSectionId={firstQuest.sectionImageQuestion.nextSectionId}
+            title={firstQuest.sectionImageQuestion.title}
+            onAllowNextSlide={onClick}
+          />
+        );
+      },
+      isAllowed: false,
+    },
+    {
+      component: (onClick, key) => {
+        return (
+          <SectionFreeInput
+            key={key}
+            name={firstQuest.name}
+            question={firstQuest.sectionInputFood.question}
+            answer={firstQuest.sectionInputFood.answer}
+            id={firstQuest.sectionInputFood.id}
+            blockImage={firstQuest.sectionInputFood.blockImage}
+            nextSectionId={firstQuest.sectionInputFood.nextSectionId}
+            title={firstQuest.sectionInputFood.title}
+            onAllowNextSlide={onClick}
+          />
+        );
+      },
+      isAllowed: false,
+    },
+    {
+      component: (onClick, key) => {
+        return (
+          <SectionVariantQuestion
+            key={key}
+            name={firstQuest.name}
+            question={firstQuest.sectionVariantRelationShip.question}
+            answer={firstQuest.sectionVariantRelationShip.answer}
+            id={firstQuest.sectionVariantRelationShip.id}
+            blockImage={firstQuest.sectionVariantRelationShip.blockImage}
+            nextSectionId={firstQuest.sectionVariantRelationShip.nextSectionId}
+            title={firstQuest.sectionVariantRelationShip.title}
+            onAllowNextSlide={onClick}
+          />
+        );
+      },
+      isAllowed: false,
+    },
+    {
+      component: (onClick, key) => {
+        return (
+          <SectionVariantQuestion
+            key={key}
+            name={firstQuest.name}
+            question={firstQuest.sectionVariantTheMost.question}
+            answer={firstQuest.sectionVariantTheMost.answer}
+            id={firstQuest.sectionVariantTheMost.id}
+            blockImage={firstQuest.sectionVariantTheMost.blockImage}
+            nextSectionId={firstQuest.sectionVariantTheMost.nextSectionId}
+            title={firstQuest.sectionVariantTheMost.title}
+            onAllowNextSlide={onClick}
+          />
+        );
+      },
+      isAllowed: false,
+    },
+    {
+      component: (onClick, key) => {
+        return (
+          <SectionVariantQuestion
+            key={key}
+            name={firstQuest.name}
+            question={firstQuest.sectionVariantMomentsTogether.question}
+            answer={firstQuest.sectionVariantMomentsTogether.answer}
+            id={firstQuest.sectionVariantMomentsTogether.id}
+            blockImage={firstQuest.sectionVariantMomentsTogether.blockImage}
+            nextSectionId={
+              firstQuest.sectionVariantMomentsTogether.nextSectionId
+            }
+            title={firstQuest.sectionVariantMomentsTogether.title}
+            onAllowNextSlide={onClick}
+          />
+        );
+      },
+      isAllowed: false,
+    },
+    {
+      component: (onClick, key) => {
+        return (
+          <SectionVariantQuestion
+            key={key}
+            name={firstQuest.name}
+            question={firstQuest.sectionVariantAdventuresTogether.question}
+            answer={firstQuest.sectionVariantAdventuresTogether.answer}
+            id={firstQuest.sectionVariantAdventuresTogether.id}
+            blockImage={firstQuest.sectionVariantAdventuresTogether.blockImage}
+            nextSectionId={
+              firstQuest.sectionVariantAdventuresTogether.nextSectionId
+            }
+            title={firstQuest.sectionVariantAdventuresTogether.title}
+            onAllowNextSlide={onClick}
+          />
+        );
+      },
+      isAllowed: false,
+    },
+    {
+      component: (onClick, key) => {
+        return (
+          <SectionVariantQuestion
+            key={key}
+            name={firstQuest.name}
+            question={firstQuest.sectionVariantTogetherWeCan.question}
+            answer={firstQuest.sectionVariantTogetherWeCan.answer}
+            id={firstQuest.sectionVariantTogetherWeCan.id}
+            blockImage={firstQuest.sectionVariantTogetherWeCan.blockImage}
+            nextSectionId={firstQuest.sectionVariantTogetherWeCan.nextSectionId}
+            title={firstQuest.sectionVariantTogetherWeCan.title}
+            onAllowNextSlide={onClick}
+          />
+        );
+      },
+      isAllowed: false,
+    },
+    {
+      component: (onClick, key) => {
+        return (
+          <SectionVariantQuestion
+            key={key}
+            name={firstQuest.name}
+            question={firstQuest.sectionVariantFinal.question}
+            answer={firstQuest.sectionVariantFinal.answer}
+            id={firstQuest.sectionVariantFinal.id}
+            blockImage={firstQuest.sectionVariantFinal.blockImage}
+            nextSectionId={firstQuest.sectionVariantFinal.nextSectionId}
+            title={firstQuest.sectionVariantFinal.title}
+            onAllowNextSlide={onClick}
+          />
+        );
+      },
+      isAllowed: false,
+    },
+
+    {
+      component: (onClick, key) => {
+        return (
+          <SectionFinalSurprise
+            key={key}
+            name={firstQuest.name}
+            title={firstQuest.sectionFinalSurprise.title}
+            wishersData={firstQuest.sectionFinalSurprise.wishersData}
+          />
+        );
+      },
+      isAllowed: false,
+    },
+  ]);
+
+  const onAllowNextSlide = (componentIndex: number) => {
+    setComponents((prevComponents) =>
+      prevComponents.map((comp, index) =>
+        index === componentIndex
+          ? { ...comp, isAllowed: true, isHideButtonConfirm: true }
+          : comp,
+      ),
+    );
+  };
+
   return (
-
     <main className="page">
-
-     {/*  <SectionFreeInput
-        question={SectionFreeInputTestContent.question}
-        answer={SectionFreeInputTestContent.answer}
-        id={SectionFreeInputTestContent.id}
-        blockImage={SectionFreeInputTestContent.blockImage}
-        nextSectionId={SectionFreeInputTestContent.nextSectionId}
-        title={SectionFreeInputTestContent.title}
-      />
-      <SectionVariantQuestion
-        question={variantTestContent.question}
-        answer={variantTestContent.answer}
-        id={variantTestContent.id}
-        blockImage={variantTestContent.blockImage}
-        nextSectionId={variantTestContent.nextSectionId}
-        title={variantTestContent.title}
-      /> */}
-
-      {/*   <SectionFinalSurprise wishers={SectionFinalSurprise}      /> */}
-
-      {/*      <FeedPhotoSection title={feedSectionTestContent.title} subtitle={feedSectionTestContent.subtitle} 
-      collage={feedSectionTestContent.collage}/> */}
-      <ImageQuestionSection id={""}
-
-      blockImage={SectionImageQuestionTestContent.blockImage}
-       question={SectionImageQuestionTestContent.question}
-        answer={SectionImageQuestionTestContent.answer}
-         nextSectionId={""}
-          title={SectionImageQuestionTestContent.title}/>
-
+      {components.map((component, index) => {
+        if (component.isAllowed) {
+          return component.component(() => onAllowNextSlide(index + 1), index);
+        }
+        return null;
+      })}
     </main>
   );
 }

@@ -4,31 +4,53 @@ import { useState } from "react";
 import { PhotosSection } from "@/components/reusableComponent/PhotosSection/PhotosSection";
 import { AnswerWithOutPicture } from "@/components/AnswerComponents/AnswerWithOutPicture/AnswerWithOutPicture";
 import { IQuestionWithFreeInput } from "../types/index";
-import { SectionQuestionProps } from "@/types/section";
+import { ISectionProps } from "@/types/section";
 import styles from "./styles.module.scss";
-import { IAnswerWithOutPicture } from "@/types/answer";
+import { IAnswerWithPicture } from "@/types/answer";
+import { AnswerWithPicture } from "@/components/AnswerComponents/AnswerWithPicture/AnswerWithPicture";
 
 export const SectionFreeInput: React.FC<
-  SectionQuestionProps<IQuestionWithFreeInput, IAnswerWithOutPicture>
-> = ({ question, answer, blockImage, title, id, nextSectionId }) => {
+  ISectionProps<IQuestionWithFreeInput, IAnswerWithPicture>
+> = ({
+  question,
+  answer,
+  blockImage,
+  title,
+  id,
+  nextSectionId,
+  name,
+  onAllowNextSlide,
+}) => {
   const [isReady, setIsReady] = useState(false);
+
+  const onReady = () => {
+    setIsReady(true);
+    onAllowNextSlide();
+  };
+
   return (
     <div className={styles.section}>
-      <SectionTitle
-        variant="purple"
-        mainWord={title.mainWord}
-        secondWord={title.secondWord}
-      />
+      <div>
+        <SectionTitle
+          variant="purple"
+          mainWord={title.mainWord}
+          secondWord={title.secondWord}
+        />
+      </div>
       {isReady ? (
-        <AnswerWithOutPicture
-          bgSrc={answer.bgSrcAnswer}
+        <AnswerWithPicture
+          bgSrc={answer.bgSrc}
           successText={answer.successText}
-          secondaryText={answer.secondaryText}
+          secondaryText={name}
+          bgMobileSrc={answer.bgMobileSrc}
+          framedPhotoSrc={answer.framedPhotoSrc}
+          framedPhotoText={""}
         />
       ) : (
         <QuestionWithFreeInput
-          onReady={() => setIsReady(true)}
+          onReady={onReady}
           question={question}
+          name={name}
         />
       )}
       <PhotosSection photos={blockImage} />

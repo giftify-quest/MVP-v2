@@ -1,8 +1,6 @@
 @import "/app/variables.scss";
 
 .wrapper {
-  background: $white-color;
-  width: 600px;
   border-radius: 20px;
   color: rgba(0, 0, 0, 1);
   font-size: 30px;
@@ -14,4 +12,14 @@
   align-items: center;
   gap: 12px;
   padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 900;
+    width: 350px;
+    transform: rotate(7deg);
+  }
 }

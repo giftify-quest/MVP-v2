@@ -14,7 +14,7 @@ export const TextField: React.FC<ITextField> = ({
   value,
   onChange,
   isError,
-  placeholder = "Твой ответ",
+  placeholder = "Your answer",
   onKeyDown,
 }) => {
   return (

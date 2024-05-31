@@ -1,3 +1,5 @@
+@import "/app/variables.scss";
+
 .wrapper {
   width: 50%;
   color: rgba(0, 0, 0, 1);
@@ -21,14 +23,65 @@
   .pink_heart {
     position: absolute;
     bottom: 100px;
-    right: 320px;
+    right: 250px;
     z-index: 100;
   }
 
   .white_heart {
     position: absolute;
     bottom: 40px;
-    right: 150px;
+    right: 90px;
+  }
+
+  .line_mobile {
+    display: none;
   }
 }
 
+@media (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+    padding: 20px;
+    margin-top: 0px;
+    gap: 18px;
+    .line {
+      display: none;
+    }
+    .pink_heart {
+      display: none;
+    }
+    .white_heart {
+      display: none;
+    }
+    .mainText {
+      font-size: 35px;
+      line-height: 42px;
+      font-weight: 900;
+    }
+    .secondaryText {
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 24px;
+    }
+    .line_mobile {
+      display: flex;
+      position: relative;
+      justify-content: flex-end;
+
+      .block_text {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 32px;
+        right: 34px;
+        rotate: -10deg;
+        span {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 19.5px;
+          color: $pink-color;
+        }
+      }
+    }
+  }
+}

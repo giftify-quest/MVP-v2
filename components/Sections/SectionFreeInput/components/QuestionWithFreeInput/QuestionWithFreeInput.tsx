@@ -9,6 +9,7 @@ import styles from "./styles.module.scss";
 export const QuestionWithFreeInput: React.FC<IQuestionWithFreeInputProps> = ({
   question,
   onReady,
+  name,
 }) => {
   const [textValue, setTextValue] = useState<string>("");
   const [isErrorMessage, setIsErrorMessage] = useState<boolean>(false);
@@ -19,14 +20,23 @@ export const QuestionWithFreeInput: React.FC<IQuestionWithFreeInputProps> = ({
     if (Array.isArray(value)) {
       result = value.some(
         (item) =>
-          item.replace(/[^\p{L}\s]/gu, "").toLowerCase() ===
-          textValue.replace(/[^\p{L}\s]/gu, "").toLowerCase()
+          item
+            .trim()
+            .replace(/[^\p{L}\s]/gu, "")
+            .toLowerCase() ===
+          textValue.replace(/[^\p{L}\s]/gu, "").toLowerCase(),
       );
     }
     if (typeof value === "string") {
       result =
-        textValue.replace(/[^\p{L}\s]/gu, "").toLowerCase() ===
-        value.replace(/[^\p{L}\s]/gu, "").toLowerCase();
+        textValue
+          .trim()
+          .replace(/[^\p{L}\s]/gu, "")
+          .toLowerCase() ===
+        value
+          .trim()
+          .replace(/[^\p{L}\s]/gu, "")
+          .toLowerCase();
     }
     return result;
   };
@@ -58,23 +68,28 @@ export const QuestionWithFreeInput: React.FC<IQuestionWithFreeInputProps> = ({
   }, [isTextFieldError]);
 
   return (
-    <WrapperWithBackground bgSrc={question.bgSrcQuestion}>
+    <WrapperWithBackground
+      bgSrc={question.bgSrcQuestion}
+      bgMobileSrc={question.bgMobile}
+    >
       <div className={styles.wrapper}>
         {isErrorMessage && (
           <div className={styles.error_block}>
             <TextFieldInfo
               variant="errorMessage"
               mainText={question.errorMessage}
-              secondaryText={question.name}
+              secondaryText={name}
               rotate={-1.8}
             />
           </div>
         )}
-        <TextFieldInfo
-          variant="text"
-          mainText={question.questionText}
-          secondaryText={question.name}
-        />
+        <div className={styles.question}>
+          <TextFieldInfo
+            variant="text"
+            mainText={question.questionText}
+            secondaryText={name}
+          />
+        </div>
         <TextField
           value={textValue}
           onChange={onChangeValue}

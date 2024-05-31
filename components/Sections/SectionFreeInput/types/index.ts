@@ -1,16 +1,14 @@
-import { IQuestionProps } from "@/types/answer";
+import { IQuestionProps } from "@/types/question";
 
 export interface IQuestionWithFreeInput {
   bgSrcQuestion: string;
+  bgMobile: string;
   questionText: string;
-  name: string;
   buttonTitle: string;
   errorMessage: string;
   answers: string | string[];
 }
 
-export interface IQuestionWithFreeInputProps
-  extends IQuestionProps {
-    question: IQuestionWithFreeInput
-  }
-
+export interface IQuestionWithFreeInputProps extends IQuestionProps {
+  question: IQuestionWithFreeInput;
+}

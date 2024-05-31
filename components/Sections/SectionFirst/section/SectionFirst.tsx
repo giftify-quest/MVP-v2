@@ -4,14 +4,18 @@ import { TitlePhoto } from "../components/TitlePhoto/TitlePhoto";
 import { ButtonConfirm } from "@/components/reusableComponent/ButtonConfirm/ButtonConfirm";
 import Image from "next/image";
 import styles from "./styles.module.scss";
-import { ISectionFirst } from "../types";
+import { ISectionFirstProps } from "../types";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
-export const SectionFirst: React.FC<ISectionFirst> = ({
+export const SectionFirst: React.FC<ISectionFirstProps> = ({
   titlePhoto,
   title,
   bgImg,
   buttonTitle,
+  onAllowNextSlide,
+  bgMobileSrc,
 }) => {
+  const isMobile = useIsMobile();
   return (
     <div className={styles.wrapper}>
       <div className={styles.title_section}>
@@ -25,20 +29,21 @@ export const SectionFirst: React.FC<ISectionFirst> = ({
           thirdText={title.thirdText}
         />
       </div>
-      <WrapperWithBackground bgSrc={bgImg}>
+      <WrapperWithBackground bgSrc={bgImg} bgMobileSrc={bgMobileSrc}>
         <div className={styles.unlock_wrap}>
           <Image
             src="/assets/section-first/lock.png"
             alt="lock"
-            width={380}
-            height={380}
-            style={{ zIndex: 100 }}
+            width={isMobile ? 261 : 380}
+            height={isMobile ? 261 : 380}
           />
           <ButtonConfirm
             isActive
             title={buttonTitle}
             onClick={() => {
-              console.log("GOGOGO");
+              if (onAllowNextSlide) {
+                onAllowNextSlide();
+              }
             }}
           />
         </div>

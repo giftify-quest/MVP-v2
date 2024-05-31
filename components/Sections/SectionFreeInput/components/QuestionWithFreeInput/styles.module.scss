@@ -10,6 +10,35 @@
   .error_block {
     position: absolute;
     bottom: 370px;
-    left: 100px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
+
+  .question {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding-bottom: 470px;
+    gap: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .header {
+    width: 100%;
+  }
+
+  .error_block {
+    top: 10rem;
+    left: 3rem;
+    z-index: -1;
+    margin-bottom: 20px;
+    text-align: left;
+    transform: rotate(-1.25deg);
   }
 }

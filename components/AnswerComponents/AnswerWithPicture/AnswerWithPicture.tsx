@@ -4,27 +4,44 @@ import { FramedPhoto } from "@/components/reusableComponent/FramedPhoto/FramedPh
 import { ConfettiIcon } from "@/components/reusableComponent/ConfettiIcon/ConfettiIcon";
 import { TextFieldInfo } from "@/components/reusableComponent/TextFieldInfo/TextFieldInfo";
 import { IAnswerWithPicture } from "@/types/answer";
+import { useIsMobile } from "@/hooks/useIsMobile";
+import scrollDownImg from "/public/assets/scrollDownImg/arrowScrollDownENG.png";
+import Image from "next/image";
 
 export const AnswerWithPicture: React.FC<IAnswerWithPicture> = ({
   bgSrc,
+  bgMobileSrc,
   successText,
   secondaryText,
   framedPhotoSrc,
+  framedPhotoText,
 }) => {
+  const isMobile = useIsMobile();
   return (
-    <WrapperWithBackground bgSrc={bgSrc}>
+    <WrapperWithBackground bgSrc={bgSrc} bgMobileSrc={bgMobileSrc}>
       <div className={styles.wrapper_content}>
-        <div>
+        <div style={{ width: "80%" }}>
           <TextFieldInfo
+            isMobileAnswer={useIsMobile()}
             mainText={successText}
             secondaryText={secondaryText}
             variant="text"
             rotate={-2.53}
           />
         </div>
-        <FramedPhoto text="12.04.2009" imageSrc={framedPhotoSrc} />
-        <div className={styles.icon}>
-          <ConfettiIcon />
+        <FramedPhoto text={framedPhotoText} imageSrc={framedPhotoSrc} />
+        {!isMobile && (
+          <div className={styles.icon}>
+            <ConfettiIcon />
+          </div>
+        )}
+        <div className={styles.scrollImage}>
+          <Image
+            src={scrollDownImg}
+            width={isMobile ? 150 : 169}
+            height={isMobile ? 100 : 163}
+            alt="scrollDown"
+          />
         </div>
       </div>
     </WrapperWithBackground>

@@ -19,22 +19,22 @@ export const FeedPhotosComponents: React.FC<IFeedPhotosComponent> = ({
           secondWord={subTitle}
         />
 
-        <div style={{ position: "absolute", left: "60rem", top: "12rem" }}>
+        <div className={styles.emoji_1}>
           <Image src={heartImg} alt={"emoji"} width={70} />
         </div>
-        <div style={{ position: "absolute", left: "55rem", top: "15rem" }}>
+        <div className={styles.emoji_2}>
           <Image src={heartImg} alt={"emoji"} width={70} />
         </div>
-        <div style={{ position: "absolute", left: "50rem", top: "15rem" }}>
+        <div className={styles.emoji_3}>
           <Image src={heartImg} alt={"emoji"} width={45} />
         </div>
-        <div style={{ position: "absolute", left: "45rem", top: "15rem" }}>
+        <div className={styles.emoji_4}>
           <Image src={heartImg} alt={"emoji"} width={35} />
         </div>
-        <div style={{ position: "absolute", left: "65rem", top: "15rem" }}>
+        <div className={styles.emoji_5}>
           <Image src={heartImg} alt={"emoji"} width={25} />
         </div>
-        <div style={{ position: "absolute", left: "70rem", top: "15rem" }}>
+        <div className={styles.emoji_6}>
           <Image src={heartImg} alt={"emoji"} width={50} />
         </div>
       </div>
