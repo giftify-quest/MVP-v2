@@ -10,6 +10,12 @@ export const TitlePhoto: React.FC<TitlePhotoProps> = ({
 }) => {
   return (
     <div className={styles.wrapper}>
+      <div>
+        <span className={styles.dating_date_minutes}>1 051 200 minutes</span>
+        <span className={styles.dating_date_hours}>17 520 hours</span>
+        <span className={styles.dating_date_days}>730 days</span>
+        <span className={styles.dating_date_years}>2 years </span>
+      </div>
       <Image
         src={imgSrc}
         alt="photo"

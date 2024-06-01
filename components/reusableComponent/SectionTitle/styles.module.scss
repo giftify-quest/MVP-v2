@@ -32,6 +32,10 @@
   .bg_purple {
     background-color: $purple-color;
   }
+
+  .no_border {
+    border: none;
+  }
 }
 
 @media (max-width: 1366px) {

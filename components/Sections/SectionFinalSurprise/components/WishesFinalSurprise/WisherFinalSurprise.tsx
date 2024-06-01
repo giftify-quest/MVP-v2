@@ -25,7 +25,7 @@ export const WisherFinalSurprise: React.FC<IWishesFinalSurpriseProps> = ({
   }, []);
   return (
     <>
-      <audio ref={audioRef} src="/assets/music/musicLove.mp3" autoPlay></audio>
+      <audio ref={audioRef} src="/firstQuest/music/music.mp3" autoPlay></audio>
       <WrapperWithBackground bgSrc={bgSrc} bgMobileSrc={bgMobileSrc}>
         <div className={styles.wrapper}>
           <div className={styles.wrap_wishers}>

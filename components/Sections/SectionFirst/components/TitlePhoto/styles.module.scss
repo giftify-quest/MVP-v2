@@ -1,6 +1,64 @@
+@import "/app/variables.scss";
+
 .wrapper {
   width: 50%;
   position: relative;
+
+  .dating_date_minutes {
+    position: absolute;
+    top: 150.46px;
+    left: -12.77px;
+    transform: rotate(5deg);
+    font-weight: 500;
+    color: $white-color;
+    font-size: 34px;
+    padding: 15px;
+    border-radius: 59.5px;
+    line-height: 89px;
+    background-color: $green-color;
+  }
+
+  .dating_date_hours {
+    position: absolute;
+    top: 348.75px;
+    left: -10px;
+    transform: rotate(-8.53deg);
+    font-weight: 500;
+    color: $white-color;
+    font-size: 34px;
+    padding: 15px;
+    border-radius: 59.5px;
+    line-height: 89px;
+    background-color: $pink-color;
+  }
+
+  .dating_date_days {
+    position: absolute;
+    top: 535.72px;
+    left: -10.17px;
+    transform: rotate(7.84deg);
+    font-weight: 500;
+    color: $white-color;
+    font-size: 34px;
+    padding: 15px;
+    border-radius: 59.5px;
+    line-height: 89px;
+    background-color: $purple-color;
+  }
+
+  .dating_date_years {
+    position: absolute;
+    top: 690px;
+    left: -20px;
+    transform: rotate(-6.02deg);
+    font-weight: 500;
+    color: $white-color;
+    font-size: 34px;
+    padding: 15px;
+    border-radius: 59.5px;
+    line-height: 89px;
+    background-color: $pink-color;
+  }
 
   .photo {
     height: auto;
@@ -20,7 +78,7 @@
     line-height: 170px;
     font-weight: 700;
     color: white;
-    top: 200px;
+    top: 330px;
     right: 0;
     display: flex;
     flex-direction: column;
@@ -32,6 +90,7 @@
 @media (max-width: 768px) {
   .wrapper {
     width: 100%;
+
     .image_confetti {
       display: none;
     }
