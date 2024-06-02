@@ -4,7 +4,6 @@ const images = [
   "/assets/bgSrcQuestion/bgSrcQuestion1.png",
   "/assets/bgSrcQuestion/bgSrcQuestion2.png",
   "/assets/bgSrcQuestion/bgSrcQuestion3.png",
-  "/assets/bgSrcQuestion/bgSrcQuestion4.png",
   "/assets/bgSrcQuestion/bgSrcQuestion5.png",
   "/assets/bgSrcQuestion/bgSrcQuestion6.png",
   "/assets/bgSrcQuestion/bgSrcQuestion7.png",

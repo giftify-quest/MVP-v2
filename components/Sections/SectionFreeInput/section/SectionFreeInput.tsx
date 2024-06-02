@@ -1,6 +1,6 @@
 import { SectionTitle } from "@/components/reusableComponent/SectionTitle/SectionTitle";
 import { QuestionWithFreeInput } from "../components/QuestionWithFreeInput/QuestionWithFreeInput";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { PhotosSection } from "@/components/reusableComponent/PhotosSection/PhotosSection";
 import { AnswerWithOutPicture } from "@/components/AnswerComponents/AnswerWithOutPicture/AnswerWithOutPicture";
 import { IQuestionWithFreeInput } from "../types/index";
@@ -23,13 +23,21 @@ export const SectionFreeInput: React.FC<
 }) => {
   const [isReady, setIsReady] = useState(false);
 
-  const onReady = () => {
-    setIsReady(true);
-    onAllowNextSlide();
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  const onReady = (isCorrect: boolean) => {
+    setIsReady(isCorrect);
+    if (isCorrect) {
+      onAllowNextSlide();
+    }
+
+    if (sectionRef.current) {
+      sectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
-    <div className={styles.section}>
+    <div className={styles.section} id={id} ref={sectionRef}>
       <div>
         <SectionTitle
           variant="purple"

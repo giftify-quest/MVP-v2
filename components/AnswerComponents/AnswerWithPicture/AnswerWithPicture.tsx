@@ -19,31 +19,61 @@ export const AnswerWithPicture: React.FC<IAnswerWithPicture> = ({
   const isMobile = useIsMobile();
   return (
     <WrapperWithBackground bgSrc={bgSrc} bgMobileSrc={bgMobileSrc}>
-      <div className={styles.wrapper_content}>
-        <div style={{ width: "80%" }}>
-          <TextFieldInfo
-            isMobileAnswer={useIsMobile()}
-            mainText={successText}
-            secondaryText={secondaryText}
-            variant="text"
-            rotate={-2.53}
-          />
-        </div>
-        <FramedPhoto text={framedPhotoText} imageSrc={framedPhotoSrc} />
-        {!isMobile && (
-          <div className={styles.icon}>
-            <ConfettiIcon />
+      {isMobile ? (
+        <div className={styles.wrapper_content}>
+          <div className={styles.mobilePhotoWrapper}>
+            <FramedPhoto text={framedPhotoText} imageSrc={framedPhotoSrc} />
           </div>
-        )}
-        <div className={styles.scrollImage}>
-          <Image
-            src={scrollDownImg}
-            width={isMobile ? 150 : 169}
-            height={isMobile ? 100 : 163}
-            alt="scrollDown"
-          />
+          <div className={styles.textFieldMobile}>
+            <TextFieldInfo
+              isMobileAnswer={isMobile}
+              mainText={successText}
+              secondaryText={secondaryText}
+              variant="text"
+              rotate={-2.53}
+            />
+          </div>
+          {!isMobile && (
+            <div className={styles.icon}>
+              <ConfettiIcon />
+            </div>
+          )}
+          <div className={styles.scrollImage}>
+            <Image
+              src={scrollDownImg}
+              width={isMobile ? 250 : 169}
+              height={isMobile ? 200 : 163}
+              alt="scrollDown"
+            />
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className={styles.wrapper_content}>
+          <div style={{ width: "80%" }}>
+            <TextFieldInfo
+              isMobileAnswer={isMobile}
+              mainText={successText}
+              secondaryText={secondaryText}
+              variant="text"
+              rotate={-2.53}
+            />
+          </div>
+          <FramedPhoto text={framedPhotoText} imageSrc={framedPhotoSrc} />
+          {!isMobile && (
+            <div className={styles.icon}>
+              <ConfettiIcon />
+            </div>
+          )}
+          <div className={styles.scrollImage}>
+            <Image
+              src={scrollDownImg}
+              width={isMobile ? 250 : 169}
+              height={isMobile ? 200 : 163}
+              alt="scrollDown"
+            />
+          </div>
+        </div>
+      )}
     </WrapperWithBackground>
   );
 };

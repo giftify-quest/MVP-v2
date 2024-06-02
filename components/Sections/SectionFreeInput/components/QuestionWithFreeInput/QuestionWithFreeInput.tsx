@@ -54,10 +54,11 @@ export const QuestionWithFreeInput: React.FC<IQuestionWithFreeInputProps> = ({
   const onConfirm = () => {
     const check = checkAnswer(question.answers);
     if (check) {
-      onReady();
+      onReady(true);
     } else {
       setIsErrorMessage(!check);
       setIsTextFieldError(!check);
+      onReady(false);
     }
   };
 

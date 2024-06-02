@@ -98,8 +98,23 @@
     .wrap_date {
       line-height: 30px;
       font-size: 70px;
-      top: 74px;
+      top: 23rem;
       right: 10px;
     }
+  }
+  .dating_date_minutes {
+    display: none;
+  }
+  .dating_date_hours {
+    display: none;
+  }
+  .dating_date_days {
+    display: none;
+  }
+  .dating_date_minutes {
+    display: none;
+  }
+  .dating_date_years {
+    display: none;
   }
 }

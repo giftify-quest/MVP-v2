@@ -6,7 +6,8 @@
   justify-content: center;
   .icon {
     position: absolute;
-    left: -25px;
+    left: 13rem;
+    top: 12rem;
   }
   .scrollImage {
     position: absolute;
@@ -22,10 +23,17 @@
     gap: 2rem;
     .scrollImage {
       position: absolute;
-      right: 55px;
-      top: 500px;
+      right: -40px;
+      top: 8rem;
       animation: pulse 2s infinite;
     }
+  }
+  .mobilePhotoWrapper {
+    position: absolute;
+    bottom: 12rem;
+  }
+  .textFieldMobile {
+    width: 80%;
   }
 }
 
