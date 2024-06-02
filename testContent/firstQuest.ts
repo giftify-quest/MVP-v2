@@ -93,7 +93,7 @@ export const firstQuest: ITest = {
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText:
         "You have a good memory me love! Your small prize is waiting under the pillow. By the way, it was your first message, crazy man.",
-      framedPhotoSrc: "/firstQuest/firstVariant/answerPhotoFirst.jpg",
+      framedPhotoSrc: "/firstQuest/firstVariant/answerPhotoFirst.png",
       framedPhotoText: "12.12.12",
     },
   },
@@ -129,7 +129,7 @@ export const firstQuest: ITest = {
   sectionImageQuestion: {
     title: {
       mainWord: "What",
-      secondWord: "fruit did you bring to our first picnic in Napoleon park?",
+      secondWord: "is my favorite photo?",
     },
     id: "1111",
     nextSectionId: "123",
@@ -169,7 +169,7 @@ export const firstQuest: ITest = {
         "It was the most delicious stolen lemon in my life 😂🍋 The second gift you can find in the shelf next to bed. ",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       bgSrc: "/assets/bg-answer-with-out-present.jpg",
-      framedPhotoSrc: "/firstQuest/thirdQuestion/answerPhotoLemon.jpg",
+      framedPhotoSrc: "/firstQuest/thirdQuestion/answerPhotoLemon.png",
       framedPhotoText: "",
     },
   },
@@ -188,7 +188,7 @@ export const firstQuest: ITest = {
       bgSrc: "/assets/bg-answer-with-out-present.jpg",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText: "Yes! It was sooo romantic!",
-      framedPhotoSrc: "/firstQuest/fourthQuestion/answerPhotoFood.jpg",
+      framedPhotoSrc: "/firstQuest/fourthQuestion/answerPhotoFood.png",
       framedPhotoText: "",
     },
     question: {
@@ -202,7 +202,7 @@ export const firstQuest: ITest = {
     },
   },
   sectionVariantRelationShip: {
-    id: "949494",
+    id: "1212123123",
     nextSectionId: "next",
     title: {
       mainWord: "Our",
@@ -247,7 +247,7 @@ export const firstQuest: ITest = {
       bgSrc: "/assets/bg-answer-with-out-present.jpg",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText: "It is correct mon amour!",
-      framedPhotoSrc: "/firstQuest/fivethQuestion/answerPhotoOur.jpg",
+      framedPhotoSrc: "/firstQuest/fivethQuestion/answerPhotoOur.png",
       framedPhotoText: "",
     },
   },
@@ -298,12 +298,12 @@ export const firstQuest: ITest = {
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText:
         "Of course this is the correct answer. You are the most wonderful person I have ever met in my life ❤️️",
-      framedPhotoSrc: "/firstQuest/sixQUestion/answerPhotoTheMost.jpg",
+      framedPhotoSrc: "/firstQuest/sixQUestion/answerPhotoTheMost.png",
       framedPhotoText: "",
     },
   },
   sectionVariantMomentsTogether: {
-    id: "949494",
+    id: "12312111",
     nextSectionId: "next",
     title: {
       mainWord: "Moments",
@@ -350,12 +350,12 @@ export const firstQuest: ITest = {
       bgSrc: "/assets/bg-answer-with-out-present.jpg",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText: "Yes, because I love each second together.",
-      framedPhotoSrc: "firstQuest/sevenQuestion/answerPhotoMomentTogether.jpg",
+      framedPhotoSrc: "firstQuest/sevenQuestion/answerPhotoMomentTogether.png",
       framedPhotoText: "",
     },
   },
   sectionVariantAdventuresTogether: {
-    id: "949494",
+    id: "11222555",
     nextSectionId: "next",
     title: {
       mainWord: "Adventures",
@@ -407,7 +407,7 @@ export const firstQuest: ITest = {
     },
   },
   sectionVariantTogetherWeCan: {
-    id: "949494",
+    id: "111155522",
     nextSectionId: "next",
     title: {
       mainWord: "Together",
@@ -454,12 +454,12 @@ export const firstQuest: ITest = {
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText:
         "Yes, our whole life is in front of us, and I am sure we will make it as we dream.",
-      framedPhotoSrc: "/firstQuest/togetherWeCan/answerPhotoWeCan.jpg",
+      framedPhotoSrc: "/firstQuest/togetherWeCan/answerPhotoWeCan.png",
       framedPhotoText: "",
     },
   },
   sectionVariantFinal: {
-    id: "949494",
+    id: "1230990977",
     nextSectionId: "next",
     title: {
       mainWord: "Final",
@@ -505,7 +505,7 @@ export const firstQuest: ITest = {
       bgSrc: "/assets/bg-answer-with-out-present.jpg",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText: "Haha, good job! You can find a small surprise in my bag.",
-      framedPhotoSrc: "/firstQuest/nineQUestion/answerPhotoFinal.jpg",
+      framedPhotoSrc: "/firstQuest/nineQUestion/answerPhotoFinal.png",
       framedPhotoText: "",
     },
   },

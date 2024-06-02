@@ -1,4 +1,4 @@
 export interface IQuestionProps {
-  onReady: () => void;
+  onReady: (isCorrect: boolean) => void;
   name: string;
 }

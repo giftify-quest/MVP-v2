@@ -21,20 +21,19 @@
 
 @media (max-width: 768px) {
   .wrapper {
-    padding-bottom: 470px;
+    padding-bottom: 600px;
     gap: 10rem;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-  }
-
-  .header {
-    width: 100%;
+    .question {
+      width: 100%;
+    }
   }
 
   .error_block {
-    top: 10rem;
+    top: 7rem;
     left: 3rem;
     z-index: -1;
     margin-bottom: 20px;

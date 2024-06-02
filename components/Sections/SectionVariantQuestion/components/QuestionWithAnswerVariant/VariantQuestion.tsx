@@ -1,9 +1,7 @@
-"use client";
-
 import { TextFieldInfo } from "@/components/reusableComponent/TextFieldInfo/TextFieldInfo";
-import { ButtonConfirm } from "../../../../reusableComponent/ButtonConfirm/ButtonConfirm";
-import { VariantAnswersField } from "../../../../reusableComponent/VariantsAnswerField/VariantAnswersField";
-import { WrapperWithBackground } from "../../../../reusableComponent/WrapperWithBackground/WrapperWithBackground";
+import { ButtonConfirm } from "@/components/reusableComponent/ButtonConfirm/ButtonConfirm";
+import { VariantAnswersField } from "@/components/reusableComponent/VariantsAnswerField/VariantAnswersField";
+import { WrapperWithBackground } from "@/components/reusableComponent/WrapperWithBackground/WrapperWithBackground";
 import styles from "./styles.module.scss";
 import { useState } from "react";
 import { VariantQuestionProps } from "../../types";
@@ -63,21 +61,17 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
         ),
       );
 
-      if (
-        selectedCorrectAnswers === totalCorrectAnswers &&
-        !hasIncorrectAnswer
-      ) {
-        onReady();
-        setIsCorrectChoose(true);
-        setShowExplanatoryText(false);
-      } else {
-        setShowExplanatoryText(true);
-        setIsCorrectChoose(false);
-      }
+      const isCorrect =
+        selectedCorrectAnswers === totalCorrectAnswers && !hasIncorrectAnswer;
+
+      setIsCorrectChoose(isCorrect);
+      setShowExplanatoryText(!isCorrect);
+      onReady(isCorrect);
     } else {
       setSelectedAnswerId([]);
       setShowExplanatoryText(true);
       setIsCorrectChoose(false);
+      onReady(false);
     }
   };
 

@@ -21,8 +21,9 @@ export const ImageQuestion: React.FC<ImageQuestionProps> = ({
   const handleCheckAnswer = () => {
     if (isCorrectChoose) {
       setIsCorrectAnswer(true);
-      onReady();
+      onReady(true);
     } else {
+      onReady(false);
       setIsCorrectAnswer(false);
       setIsExplanationShown(true);
       setIsDisabledButton(true);
