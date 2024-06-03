@@ -34,6 +34,8 @@ export const questTest: ITest = {
     bgImg: "/assets/bg-answer-with-present-photo.jpg",
     buttonTitle: "Не могу уже ждать!",
     bgMobileSrc: "/assets/section-first/bg-mobile-section-first.png",
+    id: "",
+    nextId: "",
   },
   // !
   sectionVariantFirstPhoto: {
@@ -272,8 +274,10 @@ export const questTest: ITest = {
             height: 609,
           },
         ],
+        id: "",
       },
       bgMobileSrc: "/assets/adaptiveQuestionBckgImg.png",
+      nextId: "",
     },
   },
 };
