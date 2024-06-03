@@ -44,7 +44,7 @@ export const Title: React.FC<TitleProps> = ({
         />
         <div className={styles.block_text}>
           <span>Just scroll down</span>
-          <span>and answer the question</span>
+          <span>and answer the questions</span>
         </div>
       </div>
     </div>

@@ -31,6 +31,8 @@ export interface ITest {
 export const firstQuest: ITest = {
   name: "Anya",
   sectionFirst: {
+    id: "section1",
+    nextId: "949494",
     titlePhoto: {
       imgSrc: "/firstQuest/firstVariant/photo1.jpg",
       dateEvent: "09.06.24",
@@ -402,7 +404,7 @@ export const firstQuest: ITest = {
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText:
         "Great, you are moving towards the finish line successfully.",
-      framedPhotoSrc: "/firstQuest/eightsQuestion/answerPhotoAdventures.jpg",
+      framedPhotoSrc: "/firstQuest/eightsQuestion/answerPhotoAdventures.png",
       framedPhotoText: "",
     },
   },
@@ -513,9 +515,10 @@ export const firstQuest: ITest = {
   sectionFinalSurprise: {
     title: {
       mainWord: "Final",
-      secondWord: "question",
+      secondWord: "surprise",
     },
     wishersData: {
+      nextId: "collage",
       textConfirmButton: "Thank you ❤️",
       bgSrc: "/assets/bg-answer-with-present.jpg",
       wishers: [
@@ -529,6 +532,7 @@ export const firstQuest: ITest = {
         },
       ],
       feedPhotos: {
+        id: "collage",
         title: "Look 🥰",
         subTitle:
           "Do you want to see how many beautiful moments and memories we have together?",

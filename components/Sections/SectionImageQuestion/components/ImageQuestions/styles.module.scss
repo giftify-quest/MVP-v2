@@ -17,7 +17,6 @@
     z-index: 100;
   }
   .question {
-    width: 80%;
   }
 }
 
@@ -42,9 +41,8 @@
     justify-content: center;
     width: 100%;
     .wrongText {
-      top: 4rem;
-      width: 1rem;
-      left: 3rem;
+      top: 6rem;
+      left: 6.5rem;
       text-align: left;
       transform: rotate(-2.8deg);
     }

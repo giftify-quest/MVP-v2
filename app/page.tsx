@@ -32,6 +32,8 @@ export default function Home(): JSX.Element {
             bgMobileSrc={firstQuest.sectionFirst.bgMobileSrc}
             buttonTitle={firstQuest.sectionFirst.buttonTitle}
             onAllowNextSlide={onClick}
+            id={firstQuest.sectionFirst.id}
+            nextId={firstQuest.sectionFirst.nextId}
           />
         );
       },

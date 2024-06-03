@@ -1,6 +1,6 @@
 import { ICollage } from "../../types";
 import style from "./styles.module.scss";
-import PhotoAlbum from "react-photo-album";
+import PhotoAlbum, { Photo, RenderPhotoProps } from "react-photo-album";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
 const CollageComponents: React.FC<ICollage> = ({ collage }) => {
@@ -21,6 +21,25 @@ const CollageComponents: React.FC<ICollage> = ({ collage }) => {
     }),
   }));
 
+  const renderPhoto = ({ photo, wrapperStyle }: RenderPhotoProps<Photo>) => (
+    <div
+      style={{
+        ...wrapperStyle,
+        borderRadius: "20px",
+      }}
+    >
+      <img
+        src={photo.src}
+        alt=""
+        style={{
+          width: "100%",
+          height: "100%",
+          borderRadius: "20px",
+        }}
+      />
+    </div>
+  );
+
   return (
     <div className={style.masonryLayout}>
       <PhotoAlbum
@@ -28,6 +47,7 @@ const CollageComponents: React.FC<ICollage> = ({ collage }) => {
         spacing={10}
         columns={isMobile ? 2 : 3}
         photos={photos}
+        renderPhoto={renderPhoto}
       />
     </div>
   );
