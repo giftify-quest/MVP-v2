@@ -29,6 +29,7 @@ export const SectionFinalSurprise: React.FC<ISectionFinalSurpriseProps> = ({
             feedPhotos={wishersData.feedPhotos}
             name={name}
             bgMobileSrc={wishersData.bgMobileSrc}
+            nextId={wishersData.nextId}
           />
         </>
       ) : (

@@ -10,6 +10,8 @@ export interface TitlePhotoProps {
 }
 
 export interface ISectionFirst {
+  id: string;
+  nextId: string;
   titlePhoto: TitlePhotoProps;
   title: TitleProps;
   bgImg: string;

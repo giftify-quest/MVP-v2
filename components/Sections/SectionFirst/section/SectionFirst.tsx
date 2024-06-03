@@ -14,8 +14,20 @@ export const SectionFirst: React.FC<ISectionFirstProps> = ({
   buttonTitle,
   onAllowNextSlide,
   bgMobileSrc,
+  id,
+  nextId,
 }) => {
   const isMobile = useIsMobile();
+
+  const handleClick = () => {
+    if (onAllowNextSlide) {
+      onAllowNextSlide();
+    }
+    setTimeout(() => {
+      const variantElement = document.getElementById(nextId);
+      variantElement?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  };
   return (
     <div className={styles.wrapper}>
       <div className={styles.title_section}>
@@ -37,15 +49,7 @@ export const SectionFirst: React.FC<ISectionFirstProps> = ({
             width={isMobile ? 261 : 380}
             height={isMobile ? 261 : 380}
           />
-          <ButtonConfirm
-            isActive
-            title={buttonTitle}
-            onClick={() => {
-              if (onAllowNextSlide) {
-                onAllowNextSlide();
-              }
-            }}
-          />
+          <ButtonConfirm isActive title={buttonTitle} onClick={handleClick} />
         </div>
       </WrapperWithBackground>
     </div>

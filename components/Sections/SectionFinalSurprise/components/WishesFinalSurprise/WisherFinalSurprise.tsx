@@ -14,15 +14,28 @@ export const WisherFinalSurprise: React.FC<IWishesFinalSurpriseProps> = ({
   textConfirmButton,
   feedPhotos,
   name,
+  nextId,
 }) => {
   const [isOpenCollage, setIsOpenCollage] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const isMobile = useIsMobile();
+  const collageRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.play();
     }
   }, []);
+
+  const handleClick = () => {
+    setIsOpenCollage(true);
+    setTimeout(() => {
+      if (collageRef.current) {
+        collageRef.current.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
+
   return (
     <>
       <audio ref={audioRef} src="/firstQuest/music/music.mp3" autoPlay></audio>
@@ -40,19 +53,24 @@ export const WisherFinalSurprise: React.FC<IWishesFinalSurpriseProps> = ({
               />
             ))}
           </div>
-          <ButtonConfirm
-            title={textConfirmButton}
-            onClick={() => setIsOpenCollage(true)}
-            isActive={true}
-          />
+          <div className={styles.buttonWrapper}>
+            <ButtonConfirm
+              title={textConfirmButton}
+              onClick={handleClick}
+              isActive={true}
+            />
+          </div>
         </div>
       </WrapperWithBackground>
       {isOpenCollage && (
-        <FeedPhotosComponents
-          title={feedPhotos.title}
-          subTitle={feedPhotos.subTitle}
-          collage={feedPhotos.collage}
-        />
+        <div ref={collageRef}>
+          <FeedPhotosComponents
+            title={feedPhotos.title}
+            subTitle={feedPhotos.subTitle}
+            collage={feedPhotos.collage}
+            id={feedPhotos.id}
+          />
+        </div>
       )}
     </>
   );

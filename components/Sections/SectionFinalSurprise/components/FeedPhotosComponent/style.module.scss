@@ -27,7 +27,7 @@
   .emoji_4 {
     position: absolute;
     left: 45rem;
-    top: 15rem;
+    top: 13rem;
   }
 
   .emoji_5 {
@@ -45,6 +45,10 @@
 
 @media (max-width: 768px) {
   .wrapper {
+    margin-top: -12rem;
+    align-items: center;
+    text-align: center;
+    font-size: 45px;
     .emoji_1,
     .emoji_2,
     .emoji_3,

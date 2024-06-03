@@ -19,6 +19,7 @@ export interface ISectionFinalSurpriseProps extends ISectionFinalSurprise {
 }
 
 export interface IWishesFinalSurprise {
+  nextId: string;
   textConfirmButton: string;
   bgSrc: string;
   bgMobileSrc: string;
@@ -33,6 +34,7 @@ export interface IWishesFinalSurpriseProps extends IWishesFinalSurprise {
 }
 
 export interface IFeedPhotosComponent {
+  id: string;
   title: string;
   subTitle: string;
   collage: {

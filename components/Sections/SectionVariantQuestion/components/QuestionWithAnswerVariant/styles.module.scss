@@ -1,7 +1,7 @@
 @import "/app/variables.scss";
 
 .wrapper {
-  height: 45rem;
+  height: 85%;
   position: relative;
   border-radius: 30px;
   display: flex;
@@ -44,8 +44,8 @@
     padding-top: 8rem;
   }
   .wrongText {
-    top: -4rem;
-    left: 3rem;
+    top: 5rem;
+    left: 6rem;
     text-align: left;
     transform: rotate(-1.25deg);
   }

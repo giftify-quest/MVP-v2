@@ -15,7 +15,19 @@
 }
 
 @media (max-width: 768px) {
-  .wrap_wishers {
-    width: 100%;
+  .wrapper {
+    position: relative;
+    height: 75rem;
+    .wrap_wishers {
+      display: flex;
+      flex-direction: column;
+      gap: 8rem;
+      width: 100%;
+      margin-bottom: 35rem;
+    }
+    .buttonWrapper {
+      position: absolute;
+      top: 50rem;
+    }
   }
 }

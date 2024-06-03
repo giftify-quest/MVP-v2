@@ -8,6 +8,7 @@ type Variant = "purple" | "green";
 interface ITitleSectionProps extends ITitleSection {
   variant: Variant;
   isFirstQuest?: boolean;
+  isMobileTitleSection?: boolean;
 }
 
 export const SectionTitle: React.FC<ITitleSectionProps> = ({
