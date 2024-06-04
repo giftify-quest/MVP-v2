@@ -4,6 +4,7 @@ import { WisherFinalSurprise } from "../components/WishesFinalSurprise/WisherFin
 import styles from "./styles.module.scss";
 import { ISectionFinalSurpriseProps } from "../types";
 import { SectionTitle } from "@/components/reusableComponent/SectionTitle/SectionTitle";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 export const SectionFinalSurprise: React.FC<ISectionFinalSurpriseProps> = ({
   title,
@@ -11,16 +12,21 @@ export const SectionFinalSurprise: React.FC<ISectionFinalSurpriseProps> = ({
   name,
 }) => {
   const [openSlide, setOpenSlide] = useState(false);
+  const isMobile = useIsMobile();
   return (
     <div className={styles.section}>
       {openSlide ? (
         <>
           <div>
-            <SectionTitle
-              variant="green"
-              mainWord={title.mainWord}
-              secondWord={title.secondWord}
-            />
+            {isMobile && openSlide ? (
+              ""
+            ) : (
+              <SectionTitle
+                variant="green"
+                mainWord={title.mainWord}
+                secondWord={title.secondWord}
+              />
+            )}
           </div>
           <WisherFinalSurprise
             textConfirmButton={wishersData.textConfirmButton}

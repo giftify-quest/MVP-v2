@@ -3,11 +3,21 @@ import style from "./styles.module.scss";
 import { ImageForQuestionComponentProps } from "./types";
 import classNames from "classnames";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import { useEffect } from "react";
 
 export const ImageForQuestionComponent: React.FC<
   ImageForQuestionComponentProps
 > = ({ image, onChooseVariant, isSelected, isCorrect, position }) => {
   const isMobile = useIsMobile();
+  useEffect(() => {
+    if (isSelected && !isCorrect) {
+      const timer = setTimeout(() => {
+        onChooseVariant(image.id, image.correct, image.path);
+      }, 450);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isSelected, isCorrect, image, onChooseVariant]);
   return (
     <div
       className={classNames(style.container, {

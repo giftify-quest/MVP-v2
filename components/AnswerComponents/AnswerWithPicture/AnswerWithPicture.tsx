@@ -41,8 +41,8 @@ export const AnswerWithPicture: React.FC<IAnswerWithPicture> = ({
           <div className={styles.scrollImage}>
             <Image
               src={scrollDownImg}
-              width={isMobile ? 250 : 169}
-              height={isMobile ? 200 : 163}
+              width={isMobile ? 250 : 350}
+              height={isMobile ? 250 : 200}
               alt="scrollDown"
             />
           </div>
@@ -67,8 +67,8 @@ export const AnswerWithPicture: React.FC<IAnswerWithPicture> = ({
           <div className={styles.scrollImage}>
             <Image
               src={scrollDownImg}
-              width={isMobile ? 250 : 169}
-              height={isMobile ? 200 : 163}
+              width={isMobile ? 350 : 169}
+              height={isMobile ? 350 : 163}
               alt="scrollDown"
             />
           </div>

@@ -8,7 +8,6 @@
     background: $bg-button-confirm;
     outline: none;
     border: none;
-    border: 2px solid transparent;
   }
   &:disabled {
     background: transparent;
@@ -20,5 +19,4 @@
   background: $bg-button-confirm;
   outline: none;
   border: none;
-  border: 2px solid transparent;
 }

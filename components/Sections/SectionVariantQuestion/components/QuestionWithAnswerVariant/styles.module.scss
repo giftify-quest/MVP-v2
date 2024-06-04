@@ -16,6 +16,7 @@
 
 .wrongText {
   position: absolute;
+  width: 15rem;
   right: 2rem;
   top: 12rem;
   transform: rotate(5deg);
@@ -29,7 +30,7 @@
 
 @media (max-width: 768px) {
   .wrapper {
-    padding-bottom: 470px;
+    padding-bottom: 550px;
     gap: 60px;
     display: flex;
     align-items: center;
@@ -44,8 +45,8 @@
     padding-top: 8rem;
   }
   .wrongText {
-    top: 5rem;
-    left: 6rem;
+    top: 2rem;
+    left: 5rem;
     text-align: left;
     transform: rotate(-1.25deg);
   }

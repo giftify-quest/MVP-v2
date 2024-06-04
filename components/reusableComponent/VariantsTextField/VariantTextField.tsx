@@ -1,5 +1,4 @@
-"use client";
-
+import React, { useEffect } from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
 
@@ -16,17 +15,24 @@ export const VariantTextField: React.FC<VariantTextFieldProps> = ({
   onChooseVariant,
   isCorrectChoose,
 }) => {
-  const shouldDisplayAsColumn = answer.text.length > 20;
-
-  const divClass = classNames(styles.column);
   const textClass = classNames(styles.text, {
     [styles.selected]: isSelected,
     [styles.wrong]: isSelected && !isCorrectChoose,
   });
 
+  useEffect(() => {
+    if (isSelected && !isCorrectChoose) {
+      const timer = setTimeout(() => {
+        onChooseVariant(answer.id, answer.correct, answer.text);
+      }, 2000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isSelected, isCorrectChoose, answer, onChooseVariant]);
+
   return (
     <button
-      className={`${styles.wrapper} ${divClass} ${isSelected ? styles.selected : ""} ${textClass}`}
+      className={`${styles.wrapper} ${textClass}`}
       onClick={() => {
         onChooseVariant(answer.id, answer.correct, answer.text);
       }}

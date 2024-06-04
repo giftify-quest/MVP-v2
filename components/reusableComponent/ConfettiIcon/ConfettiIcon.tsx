@@ -7,8 +7,8 @@ interface ConfettiIconProps {
 }
 
 export const ConfettiIcon: React.FC<ConfettiIconProps> = ({
-  width = 214,
-  height = 214,
+  width = 115,
+  height = 115,
 }) => {
   return (
     <div className={styles.wrapper_icon}>

@@ -623,7 +623,7 @@ export const firstQuest: ITest = {
           },
         ],
       },
-      bgMobileSrc: "/assets/adaptiveQuestionBckgImg.png",
+      bgMobileSrc: "/assets/finalSurpriseMobeliBg.png",
     },
   },
 };
