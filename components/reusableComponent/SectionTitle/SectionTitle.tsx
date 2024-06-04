@@ -20,10 +20,10 @@ export const SectionTitle: React.FC<ITitleSectionProps> = ({
   return (
     <>
       {isFirstQuest ? (
-        <>
+        <div>
           <div
             style={{
-              fontSize: "60px",
+              fontSize: "24px",
               color: "#b6b5b1",
               fontWeight: "600",
               alignSelf: "center",
@@ -41,7 +41,7 @@ export const SectionTitle: React.FC<ITitleSectionProps> = ({
               <div className={styles.content}>{mainWord}</div>
             </div>
           </div>
-        </>
+        </div>
       ) : (
         <>
           <div className={styles.wrapper}>

@@ -18,16 +18,19 @@
   .wrapper {
     position: relative;
     height: 75rem;
+    margin-bottom: 200px;
+
     .wrap_wishers {
       display: flex;
+      align-items: center;
+      align-self: center;
       flex-direction: column;
-      gap: 8rem;
       width: 100%;
       margin-bottom: 35rem;
     }
     .buttonWrapper {
       position: absolute;
-      top: 50rem;
+      top: 45rem;
     }
   }
 }
