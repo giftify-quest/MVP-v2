@@ -10,10 +10,10 @@ export const ImageForQuestionComponent: React.FC<
 > = ({ image, onChooseVariant, isSelected, isCorrect, position }) => {
   const isMobile = useIsMobile();
   useEffect(() => {
-    if (isSelected && !isCorrect) {
+    if (isSelected && isCorrect) {
       const timer = setTimeout(() => {
         onChooseVariant(image.id, image.correct, image.path);
-      }, 450);
+      }, 2000);
 
       return () => clearTimeout(timer);
     }

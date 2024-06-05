@@ -1,62 +1,50 @@
-@import "/app/variables.scss";
+@import "/app//variables.scss";
 
 .wrapper {
   width: 50%;
   position: relative;
 
-  .dating_date_minutes {
+  .dating_date_minutes,
+  .dating_date_hours,
+  .dating_date_days,
+  .dating_date_years {
     position: absolute;
+    align-items: center;
+    display: flex;
+    height: 50px;
+    font-weight: 500;
+    color: $white-color;
+    font-size: 34px;
+    padding: 35px;
+    border-radius: 59.5px;
+    line-height: 89px;
+  }
+
+  .dating_date_minutes {
     top: 150.46px;
     left: 2px;
     transform: rotate(5deg);
-    font-weight: 500;
-    color: $white-color;
-    font-size: 25px;
-    padding: 2px;
-    border-radius: 59.5px;
-    line-height: 89px;
     background-color: $green-color;
   }
 
   .dating_date_hours {
-    position: absolute;
     top: 348.75px;
     left: 2px;
     transform: rotate(-8.53deg);
-    font-weight: 500;
-    color: $white-color;
-    font-size: 25px;
-    padding: 2px;
-    border-radius: 59.5px;
-    line-height: 89px;
     background-color: $pink-color;
   }
 
   .dating_date_days {
-    position: absolute;
     top: 535.72px;
     left: 2px;
     transform: rotate(7.84deg);
-    font-weight: 500;
-    color: $white-color;
-    font-size: 25px;
-    padding: 2px;
-    border-radius: 59.5px;
-    line-height: 89px;
     background-color: $purple-color;
   }
 
   .dating_date_years {
-    position: absolute;
     top: 690px;
     left: 2px;
     transform: rotate(-6.02deg);
-    font-weight: 500;
-    color: $white-color;
-    font-size: 25px;
-    padding: 2px;
-    border-radius: 59.5px;
-    line-height: 89px;
     background-color: $pink-color;
   }
 
@@ -101,20 +89,12 @@
       top: 20rem;
       right: 10px;
     }
-  }
-  .dating_date_minutes {
-    display: none;
-  }
-  .dating_date_hours {
-    display: none;
-  }
-  .dating_date_days {
-    display: none;
-  }
-  .dating_date_minutes {
-    display: none;
-  }
-  .dating_date_years {
-    display: none;
+
+    .dating_date_minutes,
+    .dating_date_hours,
+    .dating_date_days,
+    .dating_date_years {
+      display: none;
+    }
   }
 }

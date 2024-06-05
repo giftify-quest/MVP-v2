@@ -18,15 +18,11 @@ export const SectionFinalSurprise: React.FC<ISectionFinalSurpriseProps> = ({
       {openSlide ? (
         <>
           <div>
-            {isMobile && openSlide ? (
-              ""
-            ) : (
-              <SectionTitle
-                variant="green"
-                mainWord={title.mainWord}
-                secondWord={title.secondWord}
-              />
-            )}
+            <SectionTitle
+              variant="green"
+              mainWord={title.mainWord}
+              secondWord={title.secondWord}
+            />
           </div>
           <WisherFinalSurprise
             textConfirmButton={wishersData.textConfirmButton}

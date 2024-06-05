@@ -11,10 +11,18 @@ export const TitlePhoto: React.FC<TitlePhotoProps> = ({
   return (
     <div className={styles.wrapper}>
       <div>
-        <span className={styles.dating_date_minutes}>1 051 200 minutes</span>
-        <span className={styles.dating_date_hours}>17 520 hours</span>
-        <span className={styles.dating_date_days}>730 days</span>
-        <span className={styles.dating_date_years}>2 years </span>
+        <div className={styles.dating_date_minutes}>
+          <span>1 051 200 minutes</span>
+        </div>
+        <div className={styles.dating_date_hours}>
+          <span>17 520 hours</span>
+        </div>
+        <div className={styles.dating_date_days}>
+          <span>730 days</span>
+        </div>
+        <div className={styles.dating_date_years}>
+          <span>2 years</span>
+        </div>
       </div>
       <Image
         src={imgSrc}
@@ -25,7 +33,7 @@ export const TitlePhoto: React.FC<TitlePhotoProps> = ({
         sizes="100vw"
       />
       <div className={styles.image_confetti}>
-        <ConfettiIcon width={174} height={174} />
+        <ConfettiIcon width={124} height={124} />
       </div>
       <div className={styles.wrap_date}>
         {transformDate(dateEvent).map((item) => {

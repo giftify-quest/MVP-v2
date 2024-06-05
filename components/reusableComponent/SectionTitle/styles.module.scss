@@ -38,6 +38,14 @@
   }
 }
 
+.mobileSecondWordUpper {
+  font-size: 34px;
+  color: $grey-color;
+  align-self: center;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
 @media (max-width: 1366px) {
   .wrapper {
     font-size: 44px;
@@ -64,5 +72,9 @@
     .bg_purple {
       background-color: transparent;
     }
+  }
+  .mobileSecondWordUpper {
+    font-size: 20px;
+    margin-bottom: 0;
   }
 }

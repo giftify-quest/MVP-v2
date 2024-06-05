@@ -12,15 +12,13 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
   name,
 }) => {
   const [isCorrectChoose, setIsCorrectChoose] = useState(true);
-  const [selectedAnswerId, setSelectedAnswerId] = useState<null | string[]>(
-    null,
-  );
+  const [selectedAnswerId, setSelectedAnswerId] = useState<null | string>(null);
   const [showExplanatoryText, setShowExplanatoryText] = useState(false);
   const [clearSelectedAfterCheck, setClearSelectedAfterCheck] = useState(false);
   const [isActiveButton, setIsActiveButton] = useState(false);
   const [isDisabledButton, setIsDisabledButton] = useState(true);
 
-  const handleChooseMultipleVariant = (id: string) => {
+  /* const handleChooseMultipleVariant = (id: string) => {
     if (clearSelectedAfterCheck) {
       setSelectedAnswerId([id]);
       setClearSelectedAfterCheck(false);
@@ -43,9 +41,19 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
     setIsDisabledButton(false);
     setIsActiveButton(true);
     setIsCorrectChoose(true);
+  }; */
+
+  const handleChooseVariant = (id: string) => {
+    setSelectedAnswerId(id);
+    setIsDisabledButton(false);
+    setIsActiveButton(true);
+    setIsCorrectChoose(true);
+    if (!isCorrectChoose) {
+      setSelectedAnswerId(null);
+    }
   };
 
-  const handleCheckMultipleVariant = () => {
+  /*   const handleCheckMultipleVariant = () => {
     if (selectedAnswerId && selectedAnswerId.length > 0) {
       const totalCorrectAnswers = question.answers.filter(
         (answer) => answer.isCorrect,
@@ -73,8 +81,24 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
       setIsCorrectChoose(false);
       onReady(false);
     }
-  };
+  }; */
 
+  const handleCheckVariant = () => {
+    if (selectedAnswerId) {
+      const selectedAnswer = question.answers.find(
+        (answer) => answer.id === selectedAnswerId,
+      );
+      const isCorrect = selectedAnswer ? selectedAnswer.isCorrect : false;
+
+      setIsCorrectChoose(isCorrect);
+      setShowExplanatoryText(!isCorrect);
+      onReady(isCorrect);
+    } else {
+      setShowExplanatoryText(true);
+      setIsCorrectChoose(false);
+      onReady(false);
+    }
+  };
   return (
     <WrapperWithBackground
       bgSrc={question.bgSrcQuestion}
@@ -92,7 +116,7 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
         <div className={styles.variants}>
           <VariantAnswersField
             answers={question.answers}
-            onChooseVariant={handleChooseMultipleVariant}
+            onChooseVariant={handleChooseVariant}
             selectedAnswerId={selectedAnswerId}
             isCorrectChoose={isCorrectChoose}
           />
@@ -108,7 +132,7 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
         )}
         <ButtonConfirm
           title={question.buttonText}
-          onClick={handleCheckMultipleVariant}
+          onClick={handleCheckVariant}
           isActive={isActiveButton}
           isDisabled={isDisabledButton}
         />

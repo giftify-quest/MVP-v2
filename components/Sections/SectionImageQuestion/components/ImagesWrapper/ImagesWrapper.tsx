@@ -22,6 +22,7 @@ export const ImagesWrapper: React.FC<ImagesWrapperProps> = ({
   isCorrectAnswer,
 }) => {
   const isMobile = useIsMobile();
+
   return (
     <>
       {isMobile ? (

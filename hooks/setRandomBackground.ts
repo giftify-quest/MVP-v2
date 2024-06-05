@@ -11,9 +11,23 @@ const images = [
   "/assets/bgSrcQuestion/bgSrcQuestion9.png",
 ];
 
-function getRandomImage() {
-  const randomIndex = Math.floor(Math.random() * images.length);
-  return images[randomIndex];
+const mobileImages = [
+  "/assets/bgSrcMobileQuestion/bgmobile1.png",
+  "/assets/bgSrcMobileQuestion/bgmobile2.png",
+  "/assets/bgSrcMobileQuestion/bgmobile3.png",
+  "/assets/bgSrcMobileQuestion/bgmobile4.png",
+  "/assets/bgSrcMobileQuestion/bgmobile5.png",
+  "/assets/bgSrcMobileQuestion/bgmobile6.png",
+  "/assets/bgSrcMobileQuestion/bgmobile7.png",
+  "/assets/bgSrcMobileQuestion/bgmobile8.png",
+  "/assets/bgSrcMobileQuestion/bgmobile9.png",
+  "/assets/bgSrcMobileQuestion/bgmobile10.png",
+  "/assets/bgSrcMobileQuestion/bgmobile11.png",
+];
+
+function getRandomImage(imagesArray: string[]) {
+  const randomIndex = Math.floor(Math.random() * imagesArray.length);
+  return imagesArray[randomIndex];
 }
 
 type SectionKey =
@@ -45,7 +59,8 @@ export const assignRandomImages = (testObject: ITest) => {
   sections.forEach((section) => {
     const sectionObj = testObject[section];
     if (sectionObj && sectionObj.question) {
-      sectionObj.question.bgSrcQuestion = getRandomImage();
+      sectionObj.question.bgSrcQuestion = getRandomImage(images);
+      sectionObj.question.bgMobile = getRandomImage(mobileImages);
     }
   });
 };

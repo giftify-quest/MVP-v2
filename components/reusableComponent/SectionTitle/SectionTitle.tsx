@@ -21,16 +21,7 @@ export const SectionTitle: React.FC<ITitleSectionProps> = ({
     <>
       {isFirstQuest ? (
         <div>
-          <div
-            style={{
-              fontSize: "24px",
-              color: "#b6b5b1",
-              fontWeight: "600",
-              alignSelf: "center",
-            }}
-          >
-            {secondWord}
-          </div>
+          <div className={styles.mobileSecondWordUpper}>{secondWord}</div>
           <div className={styles.wrapper}>
             <div
               className={classNames(styles.mainWord, {
