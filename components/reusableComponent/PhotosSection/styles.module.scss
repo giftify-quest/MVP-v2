@@ -14,19 +14,22 @@
 @media (max-width: 768px) {
   .wrapper_photos {
     position: absolute;
+    align-items: center;
     width: 120%;
     border-radius: 30px;
     background-color: white;
     overflow-x: hidden;
     top: 55rem;
-
+    height: 290px;
     transform: rotate(-6deg);
-    padding: 25px;
+    padding: 2.5rem;
+    overflow-y: hidden;
     gap: 8px;
     box-shadow: 0 50px 30px -30px rgba(0, 0, 0, 0.2);
   }
   .photos {
     border-radius: 15%;
     width: 208px;
+    height: 270.9px;
   }
 }

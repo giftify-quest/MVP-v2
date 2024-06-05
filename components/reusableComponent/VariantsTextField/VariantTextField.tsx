@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 interface VariantTextFieldProps {
   answer: { id: string; correct: boolean; text: string };
-  isSelected: boolean | null;
+  isSelected: boolean;
   isCorrectChoose: boolean | null;
   onChooseVariant: (id: string, correct: boolean, text: string) => void;
 }
@@ -24,7 +24,7 @@ export const VariantTextField: React.FC<VariantTextFieldProps> = ({
     if (isSelected && !isCorrectChoose) {
       const timer = setTimeout(() => {
         onChooseVariant(answer.id, answer.correct, answer.text);
-      }, 2000);
+      }, 1000);
 
       return () => clearTimeout(timer);
     }
