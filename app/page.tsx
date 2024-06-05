@@ -92,7 +92,7 @@ export default function Home(): JSX.Element {
           />
         );
       },
-      isAllowed: true,
+      isAllowed: false,
     },
     {
       component: (onClick, key) => {
@@ -236,7 +236,7 @@ export default function Home(): JSX.Element {
           />
         );
       },
-      isAllowed: true,
+      isAllowed: false,
     },
   ]);
 
