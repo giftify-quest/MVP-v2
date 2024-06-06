@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
 
 interface VariantTextFieldProps {
   answer: { id: string; correct: boolean; text: string };
-  isSelected: boolean;
+  isSelected: boolean | undefined;
   isCorrectChoose: boolean | null;
-  onChooseVariant: (id: string, correct: boolean, text: string) => void;
+  onChooseVariant: (id: string) => void;
 }
 
 export const VariantTextField: React.FC<VariantTextFieldProps> = ({
@@ -15,6 +15,8 @@ export const VariantTextField: React.FC<VariantTextFieldProps> = ({
   onChooseVariant,
   isCorrectChoose,
 }) => {
+  const [isAnimating, setIsAnimating] = useState(false);
+
   const textClass = classNames(styles.text, {
     [styles.selected]: isSelected,
     [styles.wrong]: isSelected && !isCorrectChoose,
@@ -22,8 +24,10 @@ export const VariantTextField: React.FC<VariantTextFieldProps> = ({
 
   useEffect(() => {
     if (isSelected && !isCorrectChoose) {
+      setIsAnimating(true);
       const timer = setTimeout(() => {
-        onChooseVariant(answer.id, answer.correct, answer.text);
+        onChooseVariant(answer.id);
+        setIsAnimating(false);
       }, 1000);
 
       return () => clearTimeout(timer);
@@ -34,8 +38,11 @@ export const VariantTextField: React.FC<VariantTextFieldProps> = ({
     <button
       className={`${styles.wrapper} ${textClass}`}
       onClick={() => {
-        onChooseVariant(answer.id, answer.correct, answer.text);
+        if (!isAnimating) {
+          onChooseVariant(answer.id);
+        }
       }}
+      disabled={isAnimating}
     >
       <div>{answer.text}</div>
     </button>

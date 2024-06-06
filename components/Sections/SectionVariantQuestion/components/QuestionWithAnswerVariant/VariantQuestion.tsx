@@ -6,66 +6,67 @@ import styles from "./styles.module.scss";
 import { useState } from "react";
 import { VariantQuestionProps } from "../../types";
 
+type SelectedAnswer = {
+  id: string;
+  isCorrect: boolean | undefined;
+};
+
 export const VariantQuestion: React.FC<VariantQuestionProps> = ({
   question,
   onReady,
   name,
 }) => {
   const [isCorrectChoose, setIsCorrectChoose] = useState(true);
-  const [selectedAnswerId, setSelectedAnswerId] = useState<null | string>(null);
+  const [selectedAnswerId, setSelectedAnswerId] = useState<
+    SelectedAnswer[] | null
+  >(null);
   const [showExplanatoryText, setShowExplanatoryText] = useState(false);
   const [clearSelectedAfterCheck, setClearSelectedAfterCheck] = useState(false);
   const [isActiveButton, setIsActiveButton] = useState(false);
   const [isDisabledButton, setIsDisabledButton] = useState(true);
 
-  /* const handleChooseMultipleVariant = (id: string) => {
-    if (clearSelectedAfterCheck) {
-      setSelectedAnswerId([id]);
-      setClearSelectedAfterCheck(false);
-      setIsDisabledButton(true);
-    } else {
-      setIsDisabledButton(true);
-      if (!isCorrectChoose && selectedAnswerId) {
-        setSelectedAnswerId(
-          selectedAnswerId.map((item) =>
-            item === id ? item : null,
-          ) as string[],
-        );
-      }
-      setSelectedAnswerId((prevSelected) =>
-        prevSelected && prevSelected.includes(id) && !isCorrectChoose
-          ? prevSelected.filter((item) => item !== id)
-          : [...(prevSelected || []), id],
-      );
-    }
-    setIsDisabledButton(false);
-    setIsActiveButton(true);
-    setIsCorrectChoose(true);
-  }; */
-
   const handleChooseVariant = (id: string) => {
-    setSelectedAnswerId(id);
+    setSelectedAnswerId((prevSelected) => {
+      const selectedAnswer = question.answers.find(
+        (answer) => answer.id === id,
+      );
+
+      if (clearSelectedAfterCheck) {
+        setClearSelectedAfterCheck(false);
+        setIsDisabledButton(true);
+        return [{ id, isCorrect: selectedAnswer?.isCorrect }];
+      }
+
+      const alreadySelected = prevSelected?.some((answer) => answer.id === id);
+
+      if (alreadySelected) {
+        return prevSelected?.filter((answer) => answer.id !== id) || [];
+      } else {
+        return [
+          ...(prevSelected || []),
+          { id, isCorrect: selectedAnswer?.isCorrect },
+        ];
+      }
+    });
+
     setIsDisabledButton(false);
     setIsActiveButton(true);
     setIsCorrectChoose(true);
-    if (!isCorrectChoose) {
-      setSelectedAnswerId(null);
-    }
   };
 
-  /*   const handleCheckMultipleVariant = () => {
+  const handleCheckVariant = () => {
     if (selectedAnswerId && selectedAnswerId.length > 0) {
       const totalCorrectAnswers = question.answers.filter(
         (answer) => answer.isCorrect,
       ).length;
 
-      const selectedCorrectAnswers = selectedAnswerId.filter((id) =>
-        question.answers.find((answer) => answer.id === id && answer.isCorrect),
+      const selectedCorrectAnswers = selectedAnswerId.filter(
+        (answer) => answer.isCorrect,
       ).length;
 
-      const hasIncorrectAnswer = selectedAnswerId.some((id) =>
-        question.answers.find(
-          (answer) => answer.id === id && !answer.isCorrect,
+      const hasIncorrectAnswer = selectedAnswerId.some((answer) =>
+        question.answers.some(
+          (qAnswer) => qAnswer.id === answer.id && !qAnswer.isCorrect,
         ),
       );
 
@@ -81,24 +82,8 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
       setIsCorrectChoose(false);
       onReady(false);
     }
-  }; */
-
-  const handleCheckVariant = () => {
-    if (selectedAnswerId) {
-      const selectedAnswer = question.answers.find(
-        (answer) => answer.id === selectedAnswerId,
-      );
-      const isCorrect = selectedAnswer ? selectedAnswer.isCorrect : false;
-
-      setIsCorrectChoose(isCorrect);
-      setShowExplanatoryText(!isCorrect);
-      onReady(isCorrect);
-    } else {
-      setShowExplanatoryText(true);
-      setIsCorrectChoose(false);
-      onReady(false);
-    }
   };
+
   return (
     <WrapperWithBackground
       bgSrc={question.bgSrcQuestion}

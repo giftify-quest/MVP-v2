@@ -34,6 +34,7 @@
 
 @media (max-width: 768px) {
   .wrapper {
+    z-index: 999;
     padding-bottom: 520px;
     gap: 8rem;
     display: flex;
