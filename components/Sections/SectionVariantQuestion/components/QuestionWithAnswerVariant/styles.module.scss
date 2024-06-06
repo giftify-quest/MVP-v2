@@ -30,6 +30,7 @@
 
 @media (max-width: 768px) {
   .wrapper {
+    z-index: 999;
     padding-bottom: 550px;
     gap: 60px;
     display: flex;

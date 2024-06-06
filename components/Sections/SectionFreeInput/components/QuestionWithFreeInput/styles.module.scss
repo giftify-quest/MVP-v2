@@ -21,7 +21,8 @@
 
 @media (max-width: 768px) {
   .wrapper {
-    padding-bottom: 750px;
+    z-index: 999;
+    padding-bottom: 700px;
     gap: 10rem;
     display: flex;
     align-items: center;

@@ -1,5 +1,11 @@
+import React from "react";
 import { VariantTextField } from "../VariantsTextField/VariantTextField";
 import styles from "./styles.module.scss";
+
+type SelectedAnswer = {
+  id: string;
+  isCorrect: boolean | undefined;
+};
 
 interface VariantAnswersFields {
   id: string;
@@ -9,7 +15,7 @@ interface VariantAnswersFields {
 
 interface VariantAnswersFieldProps {
   answers: VariantAnswersFields[];
-  selectedAnswerId: string | null;
+  selectedAnswerId: SelectedAnswer[] | null;
   isCorrectChoose: boolean;
   onChooseVariant: (id: string) => void;
 }
@@ -30,7 +36,7 @@ export const VariantAnswersField: React.FC<VariantAnswersFieldProps> = ({
             correct: el.isCorrect,
             text: el.text,
           }}
-          isSelected={selectedAnswerId === el.id}
+          isSelected={selectedAnswerId?.some((answer) => answer.id === el.id)}
           onChooseVariant={onChooseVariant}
           isCorrectChoose={isCorrectChoose}
         />
