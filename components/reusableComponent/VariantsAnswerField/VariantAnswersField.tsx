@@ -18,6 +18,7 @@ interface VariantAnswersFieldProps {
   selectedAnswerId: SelectedAnswer[] | null;
   isCorrectChoose: boolean;
   onChooseVariant: (id: string) => void;
+  isAnimating: boolean;
 }
 
 export const VariantAnswersField: React.FC<VariantAnswersFieldProps> = ({
@@ -25,6 +26,7 @@ export const VariantAnswersField: React.FC<VariantAnswersFieldProps> = ({
   selectedAnswerId,
   onChooseVariant,
   isCorrectChoose,
+  isAnimating,
 }) => {
   return (
     <div className={styles.wrapper}>
@@ -39,6 +41,7 @@ export const VariantAnswersField: React.FC<VariantAnswersFieldProps> = ({
           isSelected={selectedAnswerId?.some((answer) => answer.id === el.id)}
           onChooseVariant={onChooseVariant}
           isCorrectChoose={isCorrectChoose}
+          isAnimating={isAnimating}
         />
       ))}
     </div>

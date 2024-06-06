@@ -24,6 +24,7 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
   const [clearSelectedAfterCheck, setClearSelectedAfterCheck] = useState(false);
   const [isActiveButton, setIsActiveButton] = useState(false);
   const [isDisabledButton, setIsDisabledButton] = useState(true);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const handleChooseVariant = (id: string) => {
     setSelectedAnswerId((prevSelected) => {
@@ -48,13 +49,13 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
         ];
       }
     });
-
     setIsDisabledButton(false);
     setIsActiveButton(true);
     setIsCorrectChoose(true);
   };
 
   const handleCheckVariant = () => {
+    setIsAnimating(true);
     if (selectedAnswerId && selectedAnswerId.length > 0) {
       const totalCorrectAnswers = question.answers.filter(
         (answer) => answer.isCorrect,
@@ -72,15 +73,17 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
 
       const isCorrect =
         selectedCorrectAnswers === totalCorrectAnswers && !hasIncorrectAnswer;
-
       setIsCorrectChoose(isCorrect);
       setShowExplanatoryText(!isCorrect);
       onReady(isCorrect);
+      setTimeout(() => {
+        setIsAnimating(false);
+        if (!isCorrect) {
+          setSelectedAnswerId([]);
+        }
+      }, 1950);
     } else {
-      setSelectedAnswerId([]);
-      setShowExplanatoryText(true);
-      setIsCorrectChoose(false);
-      onReady(false);
+      console.log("hello");
     }
   };
 
@@ -104,6 +107,7 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
             onChooseVariant={handleChooseVariant}
             selectedAnswerId={selectedAnswerId}
             isCorrectChoose={isCorrectChoose}
+            isAnimating={isAnimating}
           />
         </div>
         {showExplanatoryText && (

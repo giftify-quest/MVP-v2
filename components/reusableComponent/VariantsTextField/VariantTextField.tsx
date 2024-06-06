@@ -7,6 +7,7 @@ interface VariantTextFieldProps {
   isSelected: boolean | undefined;
   isCorrectChoose: boolean | null;
   onChooseVariant: (id: string) => void;
+  isAnimating: boolean;
 }
 
 export const VariantTextField: React.FC<VariantTextFieldProps> = ({
@@ -14,9 +15,8 @@ export const VariantTextField: React.FC<VariantTextFieldProps> = ({
   isSelected,
   onChooseVariant,
   isCorrectChoose,
+  isAnimating,
 }) => {
-  const [isAnimating, setIsAnimating] = useState(false);
-
   const textClass = classNames(styles.text, {
     [styles.selected]: isSelected,
     [styles.wrong]: isSelected && !isCorrectChoose,
@@ -24,11 +24,9 @@ export const VariantTextField: React.FC<VariantTextFieldProps> = ({
 
   useEffect(() => {
     if (isSelected && !isCorrectChoose) {
-      setIsAnimating(true);
       const timer = setTimeout(() => {
         onChooseVariant(answer.id);
-        setIsAnimating(false);
-      }, 1000);
+      }, 2000);
 
       return () => clearTimeout(timer);
     }
@@ -38,9 +36,7 @@ export const VariantTextField: React.FC<VariantTextFieldProps> = ({
     <button
       className={`${styles.wrapper} ${textClass}`}
       onClick={() => {
-        if (!isAnimating) {
-          onChooseVariant(answer.id);
-        }
+        onChooseVariant(answer.id);
       }}
       disabled={isAnimating}
     >
