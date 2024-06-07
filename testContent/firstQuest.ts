@@ -94,7 +94,7 @@ export const firstQuest: ITest = {
       bgSrc: "/assets/bg-answer-with-out-present.jpg",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText:
-        "You have a good memory me love! Your small prize is waiting under the pillow. By the way, it was your first message, crazy man.",
+        "You have a good memory my love! Your small prize is waiting under the pillow. By the way, it was your first message, crazy man.",
       framedPhotoSrc: "/firstQuest/firstVariant/answerPhotoFirst.png",
       framedPhotoText: "12.12.12",
     },
