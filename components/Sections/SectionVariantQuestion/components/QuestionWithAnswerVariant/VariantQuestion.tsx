@@ -80,10 +80,16 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
         setIsAnimating(false);
         if (!isCorrect) {
           setSelectedAnswerId([]);
+          setIsDisabledButton(true);
         }
       }, 1950);
     } else {
-      console.log("hello");
+      setIsDisabledButton(true);
+      setSelectedAnswerId([]);
+      setShowExplanatoryText(true);
+      setIsAnimating(false);
+      setIsCorrectChoose(false);
+      onReady(false);
     }
   };
 
