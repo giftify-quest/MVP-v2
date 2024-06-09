@@ -300,7 +300,7 @@ export const firstQuest: ITest = {
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText:
         "Of course this is the correct answer. You are the most wonderful person I have ever met in my life ❤️️",
-      framedPhotoSrc: "/firstQuest/sixQUestion/answerPhotoTheMost.png",
+      framedPhotoSrc: "/firstQuest/sixQuestion/answerPhotoTheMost.png",
       framedPhotoText: "",
     },
   },
