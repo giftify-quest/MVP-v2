@@ -1,4 +1,4 @@
-import { ITest } from "@/testContent/firstQuest";
+import { IFirstQuest } from "@/testContent/firstQuest";
 
 const images = [
   "/assets/bgSrcQuestion/bgSrcQuestion1.png",
@@ -42,7 +42,7 @@ type SectionKey =
   | "sectionVariantTogetherWeCan"
   | "sectionVariantFinal";
 
-export const assignRandomImages = (testObject: ITest) => {
+export const assignRandomImages = (testObject: IFirstQuest): void => {
   const sections: SectionKey[] = [
     "sectionVariantFirstPhoto",
     "sectionFreeInputFirstPhoto",

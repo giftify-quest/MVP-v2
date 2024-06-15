@@ -14,7 +14,7 @@ export const WisherFinalSurprise: React.FC<IWishesFinalSurpriseProps> = ({
   textConfirmButton,
   feedPhotos,
   name,
-  nextId,
+  musicSrc,
 }) => {
   const [isOpenCollage, setIsOpenCollage] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -38,7 +38,7 @@ export const WisherFinalSurprise: React.FC<IWishesFinalSurpriseProps> = ({
 
   return (
     <>
-      <audio ref={audioRef} src="/firstQuest/music/music.mp3" autoPlay></audio>
+      <audio ref={audioRef} src={musicSrc} autoPlay></audio>
       <WrapperWithBackground bgSrc={bgSrc} bgMobileSrc={bgMobileSrc}>
         <div className={styles.wrapper}>
           <div className={styles.wrap_wishers}>

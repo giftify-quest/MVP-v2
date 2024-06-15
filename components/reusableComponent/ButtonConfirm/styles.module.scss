@@ -10,7 +10,7 @@
     border: none;
   }
   &:disabled {
-    background: transparent;
+    background: rgba(99, 99, 99, 0.1);
     border: 2px solid $white-color;
   }
 }

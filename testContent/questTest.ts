@@ -172,6 +172,7 @@ export const questTest: ITest = {
       mainWord: "Смотри",
     },
     wishersData: {
+      musicSrc: "/assets/music/musicLove.mp3",
       textConfirmButton: "Confirm button",
       bgSrc: "/assets/bg-answer-with-present.jpg",
       wishers: [
