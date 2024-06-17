@@ -3,11 +3,12 @@ import { ISectionFirst } from "@/components/Sections/SectionFirst/types";
 import { IQuestionWithFreeInput } from "@/components/Sections/SectionFreeInput/types";
 import { IQuestionImage } from "@/components/Sections/SectionImageQuestion/types";
 import { IQuestionVariant } from "@/components/Sections/SectionVariantQuestion/types";
-import { IAnswerWithOutPicture, IAnswerWithPicture } from "@/types/answer";
+import { IAnswerWithPicture } from "@/types/answer";
 import { ISection } from "@/types/section";
 
-export interface ITest {
+export interface IFirstQuest {
   name: string;
+  land: string;
   sectionFirst: ISectionFirst;
   sectionVariantFirstPhoto: ISection<IQuestionVariant, IAnswerWithPicture>;
   sectionFreeInputFirstPhoto: ISection<
@@ -28,8 +29,9 @@ export interface ITest {
   sectionImageQuestion: ISection<IQuestionImage, IAnswerWithPicture>;
 }
 
-export const firstQuest: ITest = {
+export const firstQuest: IFirstQuest = {
   name: "Anya",
+  land: "English",
   sectionFirst: {
     id: "section1",
     nextId: "949494",
@@ -519,6 +521,7 @@ export const firstQuest: ITest = {
     },
     wishersData: {
       nextId: "collage",
+      musicSrc: "/firstQuest/music/music.mp3",
       textConfirmButton: "Thank you ❤️",
       bgSrc: "/assets/bg-answer-with-present.jpg",
       wishers: [

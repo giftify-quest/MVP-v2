@@ -1,0 +1,102 @@
+@import "/app/variables.scss";
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  font-size: 68px;
+  line-height: 89px;
+  color: $grey-color;
+
+  .mainWord {
+    position: relative;
+    color: $white-color;
+    padding: 8px 14px;
+    border-radius: 60px;
+    width: fit-content;
+    .content {
+      z-index: 10000;
+      position: relative;
+    }
+  }
+
+  .second_word {
+    display: inline-block;
+    padding: 8px 14px;
+  }
+
+  .bg_green {
+    background-color: $green-color;
+  }
+
+  .bg_purple {
+    background-color: $purple-color;
+  }
+
+  .no_border {
+    border: none;
+  }
+
+  .blockImages {
+    // position: relative;
+    .emoji_1 {
+      position: absolute;
+      left: 20rem;
+      bottom: -4rem;
+    }
+
+    .emoji_2 {
+      position: absolute;
+      left: 30rem;
+      bottom: 0;
+    }
+
+    .emoji_3 {
+      position: absolute;
+      left: 40rem;
+      bottom: -3rem;
+    }
+
+    .emoji_4 {
+      position: absolute;
+      left: 45rem;
+      bottom: 2rem;
+    }
+
+    .emoji_5 {
+      position: absolute;
+      left: 55rem;
+      bottom: 5rem;
+    }
+
+    .emoji_6 {
+      position: absolute;
+      left: 65rem;
+      bottom: 4rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    font-size: 18px;
+    line-height: 22px;
+
+    .mainWord {
+      padding: 8px;
+    }
+    .second_word {
+      padding: 8px 0;
+      text-align: left;
+    }
+    .emoji_1,
+    .emoji_2,
+    .emoji_3,
+    .emoji_4,
+    .emoji_5,
+    .emoji_6 {
+      display: none;
+    }
+  }
+}

@@ -27,6 +27,7 @@ export interface IWishesFinalSurprise {
     wisher: string;
   }[];
   feedPhotos: IFeedPhotosComponent;
+  musicSrc: string;
 }
 
 export interface IWishesFinalSurpriseProps extends IWishesFinalSurprise {

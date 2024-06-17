@@ -236,7 +236,7 @@ export default function Home(): JSX.Element {
           />
         );
       },
-      isAllowed: false,
+      isAllowed: true,
     },
   ]);
 

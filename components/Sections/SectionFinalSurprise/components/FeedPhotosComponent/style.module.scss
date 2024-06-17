@@ -5,42 +5,7 @@
   align-items: center;
   position: relative;
   margin-top: 5rem;
-
-  .emoji_1 {
-    position: absolute;
-    left: 20rem;
-    top: 5rem;
-  }
-
-  .emoji_2 {
-    position: absolute;
-    left: 30rem;
-    top: 5rem;
-  }
-
-  .emoji_3 {
-    position: absolute;
-    left: 40rem;
-    top: 4rem;
-  }
-
-  .emoji_4 {
-    position: absolute;
-    left: 45rem;
-    top: 7rem;
-  }
-
-  .emoji_5 {
-    position: absolute;
-    left: 55rem;
-    top: 6rem;
-  }
-
-  .emoji_6 {
-    position: absolute;
-    left: 65rem;
-    top: 5rem;
-  }
+  margin-bottom: 5rem;
 }
 
 @media (max-width: 768px) {
@@ -52,13 +17,6 @@
     justify-content: center;
     font-size: 45px;
     padding: 1rem;
-    .emoji_1,
-    .emoji_2,
-    .emoji_3,
-    .emoji_4,
-    .emoji_5,
-    .emoji_6 {
-      display: none;
-    }
+    margin-bottom: 0;
   }
 }

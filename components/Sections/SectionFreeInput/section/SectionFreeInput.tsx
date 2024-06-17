@@ -2,7 +2,6 @@ import { SectionTitle } from "@/components/reusableComponent/SectionTitle/Sectio
 import { QuestionWithFreeInput } from "../components/QuestionWithFreeInput/QuestionWithFreeInput";
 import { useRef, useState } from "react";
 import { PhotosSection } from "@/components/reusableComponent/PhotosSection/PhotosSection";
-import { AnswerWithOutPicture } from "@/components/AnswerComponents/AnswerWithOutPicture/AnswerWithOutPicture";
 import { IQuestionWithFreeInput } from "../types/index";
 import { ISectionProps } from "@/types/section";
 import styles from "./styles.module.scss";
