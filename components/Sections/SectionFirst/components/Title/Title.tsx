@@ -16,7 +16,7 @@ export const Title: React.FC<TitleProps> = ({
         alt="line"
         className={styles.line}
         width={isMobile ? 0 : 250}
-        height={isMobile ? 0 : 120}
+        height={isMobile ? 0 : 220}
       />
       <div className={styles.mainText}>{mainText}</div>
       <div className={styles.secondaryText}>{secondaryText}</div>

@@ -8,9 +8,15 @@
   flex-direction: column;
   gap: 36px;
   position: relative;
-  margin-top: 125px;
+  margin-top: 225px;
+
+  .line {
+    position: absolute;
+    bottom: 43rem;
+  }
 
   .mainText {
+    font-family: "Montserrat", sans-serif;
     font-size: 108px;
     line-height: 125px;
   }
@@ -22,14 +28,14 @@
 
   .pink_heart {
     position: absolute;
-    bottom: 100px;
+    bottom: 40px;
     right: 250px;
     z-index: 100;
   }
 
   .white_heart {
     position: absolute;
-    bottom: 40px;
+    bottom: 5px;
     right: 90px;
   }
 

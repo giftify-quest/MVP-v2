@@ -11,7 +11,7 @@
     position: absolute;
     align-items: center;
     display: flex;
-    height: 50px;
+    height: 92px;
     font-weight: 500;
     color: $white-color;
     font-size: 34px;
@@ -22,28 +22,28 @@
 
   .dating_date_minutes {
     top: 150.46px;
-    left: 2px;
+    left: -100.77px;
     transform: rotate(5deg);
     background-color: $green-color;
   }
 
   .dating_date_hours {
     top: 348.75px;
-    left: 2px;
+    left: -70.77px;
     transform: rotate(-8.53deg);
     background-color: $pink-color;
   }
 
   .dating_date_days {
     top: 535.72px;
-    left: 2px;
+    left: -50.77px;
     transform: rotate(7.84deg);
     background-color: $purple-color;
   }
 
   .dating_date_years {
     top: 690px;
-    left: 2px;
+    left: -30.77px;
     transform: rotate(-6.02deg);
     background-color: $pink-color;
   }
@@ -52,6 +52,7 @@
     height: auto;
     width: 100%;
     object-fit: cover;
+    border-radius: 25.5px;
   }
 
   .image_confetti {

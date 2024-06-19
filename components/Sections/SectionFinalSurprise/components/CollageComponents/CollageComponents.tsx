@@ -2,6 +2,7 @@ import { ICollage } from "../../types";
 import style from "./styles.module.scss";
 import PhotoAlbum, { Photo, RenderPhotoProps } from "react-photo-album";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import Image from "next/image";
 
 const CollageComponents: React.FC<ICollage> = ({ collage }) => {
   const isMobile = useIsMobile();
@@ -21,20 +22,18 @@ const CollageComponents: React.FC<ICollage> = ({ collage }) => {
     }),
   }));
 
-  const renderPhoto = ({ photo, wrapperStyle }: RenderPhotoProps<Photo>) => (
-    <div
-      style={{
-        ...wrapperStyle,
-        borderRadius: "20px",
-      }}
-    >
+  const renderPhoto = ({
+    imageProps,
+    wrapperStyle,
+  }: RenderPhotoProps<Photo>) => (
+    <div style={{ ...wrapperStyle, borderRadius: "20px", overflow: "hidden" }}>
       <img
-        src={photo.src}
-        alt=""
+        {...imageProps}
         style={{
-          width: "100%",
-          height: "100%",
+          ...imageProps.style,
           borderRadius: "20px",
+          width: "100%",
+          height: "auto",
         }}
       />
     </div>
