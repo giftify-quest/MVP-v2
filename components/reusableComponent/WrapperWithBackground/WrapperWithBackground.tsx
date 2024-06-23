@@ -16,7 +16,7 @@ export const WrapperWithBackground: React.FC<IWrapperWithBackground> = ({
   className,
   children,
 }) => {
-  const isMobile = useIsMobile();
+  const { isMobile } = useIsMobile();
   return (
     <div className={classNames(className, styles.wrapper)}>
       <Image

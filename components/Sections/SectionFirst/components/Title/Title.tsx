@@ -8,7 +8,7 @@ export const Title: React.FC<TitleProps> = ({
   secondaryText,
   thirdText,
 }) => {
-  const isMobile = useIsMobile();
+  const { isMobile } = useIsMobile();
   return (
     <div className={styles.wrapper}>
       <Image
