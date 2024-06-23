@@ -22,14 +22,14 @@
 
   .dating_date_minutes {
     top: 150.46px;
-    left: -100.77px;
+    left: -50.77px;
     transform: rotate(5deg);
     background-color: $green-color;
   }
 
   .dating_date_hours {
-    top: 348.75px;
-    left: -70.77px;
+    top: 380.75px;
+    left: -50.77px;
     transform: rotate(-8.53deg);
     background-color: $pink-color;
   }
@@ -63,15 +63,15 @@
 
   .wrap_date {
     position: absolute;
-    font-size: 215px;
+    font-size: 150px;
     line-height: 170px;
     font-weight: 700;
     color: white;
-    top: 330px;
+    top: 320px;
     right: 0;
     display: flex;
     flex-direction: column;
-    gap: 36px;
+    gap: 25px;
     align-items: flex-end;
   }
 }
@@ -79,6 +79,7 @@
 @media (max-width: 768px) {
   .wrapper {
     width: 100%;
+    padding-right: 2rem;
 
     .image_confetti {
       display: none;
@@ -87,8 +88,8 @@
     .wrap_date {
       line-height: 30px;
       font-size: 70px;
-      top: 20rem;
-      right: 10px;
+      top: 18rem;
+      right: 40px;
     }
 
     .dating_date_minutes,

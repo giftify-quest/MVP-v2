@@ -18,7 +18,6 @@ export const SectionFirst: React.FC<ISectionFirstProps> = ({
   nextId,
 }) => {
   const isMobile = useIsMobile();
-
   const handleClick = () => {
     if (onAllowNextSlide) {
       onAllowNextSlide();
@@ -41,7 +40,11 @@ export const SectionFirst: React.FC<ISectionFirstProps> = ({
           thirdText={title.thirdText}
         />
       </div>
-      <WrapperWithBackground bgSrc={bgImg} bgMobileSrc={bgMobileSrc}>
+      <WrapperWithBackground
+        className={styles.sectionFirstWrapper}
+        bgSrc={bgImg}
+        bgMobileSrc={bgMobileSrc}
+      >
         <div className={styles.unlock_wrap}>
           <Image
             src="/assets/section-first/lock.png"

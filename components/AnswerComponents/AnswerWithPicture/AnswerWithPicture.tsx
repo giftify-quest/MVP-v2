@@ -16,7 +16,7 @@ export const AnswerWithPicture: React.FC<IAnswerWithPicture> = ({
   framedPhotoSrc,
   framedPhotoText,
 }) => {
-  const isMobile = useIsMobile();
+  const { isMobile } = useIsMobile();
   return (
     <WrapperWithBackground bgSrc={bgSrc} bgMobileSrc={bgMobileSrc}>
       {isMobile ? (
@@ -67,8 +67,8 @@ export const AnswerWithPicture: React.FC<IAnswerWithPicture> = ({
           <div className={styles.scrollImage}>
             <Image
               src={scrollDownImg}
-              width={isMobile ? 350 : 169}
-              height={isMobile ? 350 : 163}
+              width={isMobile ? 350 : 269}
+              height={isMobile ? 350 : 263}
               alt="scrollDown"
             />
           </div>
