@@ -22,7 +22,6 @@ const mobileImages = [
   "/assets/bgSrcMobileQuestion/bgmobile8.png",
   "/assets/bgSrcMobileQuestion/bgmobile9.png",
   "/assets/bgSrcMobileQuestion/bgmobile10.png",
-  "/assets/bgSrcMobileQuestion/bgmobile11.png",
 ];
 
 function getRandomImage(imagesArray: string[]) {

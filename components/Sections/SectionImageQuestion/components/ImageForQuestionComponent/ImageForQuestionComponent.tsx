@@ -8,7 +8,7 @@ import { useEffect } from "react";
 export const ImageForQuestionComponent: React.FC<
   ImageForQuestionComponentProps
 > = ({ image, onChooseVariant, isSelected, isCorrect, position }) => {
-  const isMobile = useIsMobile();
+  const { isMobile } = useIsMobile();
   useEffect(() => {
     if (isSelected && isCorrect) {
       const timer = setTimeout(() => {

@@ -5,7 +5,7 @@ import { useIsMobile } from "@/hooks/useIsMobile";
 import Image from "next/image";
 
 const CollageComponents: React.FC<ICollage> = ({ collage }) => {
-  const isMobile = useIsMobile();
+  const { isMobile } = useIsMobile();
   const breakpoints = [1080, 640, 384, 256, 128, 96, 64, 48];
 
   const photos = collage.map((photo) => ({

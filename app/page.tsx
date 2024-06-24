@@ -5,10 +5,11 @@ import SectionFirst from "@/components/Sections/SectionFirst";
 import SectionFreeInput from "@/components/Sections/SectionFreeInput";
 import SectionImageQuestion from "@/components/Sections/SectionImageQuestion";
 import { SectionVariantQuestion } from "@/components/Sections/SectionVariantQuestion/section/SectionVariantQuestion";
-import { assignRandomImages } from "@/hooks/setRandomBackground";
-import { firstQuest } from "@/testContent/firstQuest";
 import { questTest } from "@/testContent/questTest";
 import { useEffect, useState } from "react";
+import { firstQuest } from "@/testContent/firstQuest";
+import { assignRandomImages } from "@/hooks/setRandomBackground";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 export interface Components {
   component: (onClick: () => void, key: number) => JSX.Element;
