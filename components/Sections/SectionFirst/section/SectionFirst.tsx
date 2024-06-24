@@ -17,7 +17,7 @@ export const SectionFirst: React.FC<ISectionFirstProps> = ({
   id,
   nextId,
 }) => {
-  const isMobile = useIsMobile();
+  const { isMobile, isChecking } = useIsMobile();
 
   const handleClick = () => {
     if (onAllowNextSlide) {
@@ -28,6 +28,11 @@ export const SectionFirst: React.FC<ISectionFirstProps> = ({
       variantElement?.scrollIntoView({ behavior: "smooth" });
     }, 100);
   };
+
+  if (isChecking) {
+    return null;
+  }
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.title_section}>
@@ -41,7 +46,11 @@ export const SectionFirst: React.FC<ISectionFirstProps> = ({
           thirdText={title.thirdText}
         />
       </div>
-      <WrapperWithBackground bgSrc={bgImg} bgMobileSrc={bgMobileSrc}>
+      <WrapperWithBackground
+        className={styles.sectionFirstWrapper}
+        bgSrc={bgImg}
+        bgMobileSrc={bgMobileSrc}
+      >
         <div className={styles.unlock_wrap}>
           <Image
             src="/assets/section-first/lock.png"

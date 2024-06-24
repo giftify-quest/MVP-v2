@@ -10,11 +10,12 @@ export const AnswerWithOutPicture: React.FC<IAnswerWithOutPicture> = ({
   successText,
   secondaryText,
 }) => {
+  const { isMobile } = useIsMobile();
   return (
     <WrapperWithBackground bgSrc={bgSrc} bgMobileSrc={bgMobileSrc}>
       <div className={styles.wrapper_content}>
         <TextFieldInfo
-          isMobileAnswer={useIsMobile()}
+          isMobileAnswer={isMobile}
           mainText={successText}
           secondaryText={secondaryText}
           variant="text"

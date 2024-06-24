@@ -18,7 +18,7 @@ export const WisherFinalSurprise: React.FC<IWishesFinalSurpriseProps> = ({
 }) => {
   const [isOpenCollage, setIsOpenCollage] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const isMobile = useIsMobile();
+  const { isMobile } = useIsMobile();
   const collageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
