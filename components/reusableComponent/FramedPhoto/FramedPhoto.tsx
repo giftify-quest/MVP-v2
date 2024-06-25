@@ -7,7 +7,7 @@ interface IFramedPhoto {
   text: string;
 }
 export const FramedPhoto: React.FC<IFramedPhoto> = ({ imageSrc, text }) => {
-  const isMobile = useIsMobile();
+  const { isMobile } = useIsMobile();
   return (
     <div className={styles.wrapper}>
       <Image

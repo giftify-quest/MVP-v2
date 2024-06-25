@@ -9,7 +9,7 @@ interface OpenFinalSurpriseProps {
 export const OpenFinalSurprise: React.FC<OpenFinalSurpriseProps> = ({
   onClick,
 }) => {
-  const isMobile = useIsMobile();
+  const { isMobile } = useIsMobile();
   return (
     <div className={styles.wrapper}>
       <Image
