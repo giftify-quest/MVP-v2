@@ -16,7 +16,11 @@ export const AnswerWithPicture: React.FC<IAnswerWithPicture> = ({
   framedPhotoSrc,
   framedPhotoText,
 }) => {
-  const { isMobile } = useIsMobile();
+  const { isMobile, isChecking } = useIsMobile();
+
+  if (isChecking) {
+    return null;
+  }
   return (
     <WrapperWithBackground bgSrc={bgSrc} bgMobileSrc={bgMobileSrc}>
       {isMobile ? (
