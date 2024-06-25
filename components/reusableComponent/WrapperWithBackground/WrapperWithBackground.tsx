@@ -2,6 +2,7 @@ import { useIsMobile } from "@/hooks/useIsMobile";
 import Image from "next/image";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
+import { useState } from "react";
 
 interface IWrapperWithBackground {
   bgSrc: string;
@@ -17,17 +18,23 @@ export const WrapperWithBackground: React.FC<IWrapperWithBackground> = ({
   children,
 }) => {
   const { isMobile, isChecking } = useIsMobile();
+  const [isLoaded, setIsLoaded] = useState(false);
+
   if (isChecking) {
     return null;
   }
+
   return (
     <div className={classNames(className, styles.wrapper)}>
       <Image
         src={isMobile ? bgMobileSrc : bgSrc}
         alt="background"
         fill
-        className={styles.bg_img}
+        className={classNames(styles.bg_img, {
+          [styles.bg_img_loaded]: isLoaded,
+        })}
         object-fit="cover"
+        onLoadingComplete={() => setIsLoaded(true)}
       />
       {children}
     </div>
