@@ -8,6 +8,12 @@
 
 .bg_img {
   border-radius: 21.25px;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.bg_img_loaded {
+  opacity: 1;
 }
 
 @media (max-width: 768px) {
