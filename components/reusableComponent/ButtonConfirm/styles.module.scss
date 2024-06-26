@@ -3,6 +3,8 @@
 .button_confirm {
   background: transparent;
   border: 2px solid $white-color;
+  backdrop-filter: blur(10px);
+  min-width: 20%;
 
   &:hover {
     background: $bg-button-confirm;
@@ -19,4 +21,10 @@
   background: $bg-button-confirm;
   outline: none;
   border: none;
+}
+
+@media (max-width: 768px) {
+  .button_confirm {
+    min-width: 60%;
+  }
 }
