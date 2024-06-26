@@ -1,11 +1,13 @@
+import { useIsMobile } from "@/hooks/useIsMobile";
+import PhotoAlbum, { Photo, RenderPhotoProps } from "react-photo-album";
 import { ICollage } from "../../types";
 import style from "./styles.module.scss";
-import PhotoAlbum, { Photo, RenderPhotoProps } from "react-photo-album";
-import { useIsMobile } from "@/hooks/useIsMobile";
-import Image from "next/image";
 
 const CollageComponents: React.FC<ICollage> = ({ collage }) => {
-  const { isMobile } = useIsMobile();
+  const { isMobile, isChecking } = useIsMobile();
+  if (isChecking) {
+    return null;
+  }
   const breakpoints = [1080, 640, 384, 256, 128, 96, 64, 48];
 
   const photos = collage.map((photo) => ({
@@ -26,12 +28,12 @@ const CollageComponents: React.FC<ICollage> = ({ collage }) => {
     imageProps,
     wrapperStyle,
   }: RenderPhotoProps<Photo>) => (
-    <div style={{ ...wrapperStyle, borderRadius: "20px", overflow: "hidden" }}>
+    <div style={{ ...wrapperStyle, borderRadius: "12px", overflow: "hidden" }}>
       <img
         {...imageProps}
         style={{
           ...imageProps.style,
-          borderRadius: "20px",
+          borderRadius: "12px",
           width: "100%",
           height: "auto",
         }}
@@ -43,7 +45,7 @@ const CollageComponents: React.FC<ICollage> = ({ collage }) => {
     <div className={style.masonryLayout}>
       <PhotoAlbum
         layout="columns"
-        spacing={10}
+        spacing={isMobile ? 15 : 15}
         columns={isMobile ? 2 : 3}
         photos={photos}
         renderPhoto={renderPhoto}
