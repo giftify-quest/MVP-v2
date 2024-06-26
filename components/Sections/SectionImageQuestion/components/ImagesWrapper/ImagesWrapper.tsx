@@ -42,7 +42,10 @@ export const ImagesWrapper: React.FC<ImagesWrapperProps> = ({
             }}
           >
             {images.map((image) => (
-              <SwiperSlide key={image.id} style={{ width: "270px" }}>
+              <SwiperSlide
+                key={image.id}
+                style={{ width: "270px", marginTop: "15px" }}
+              >
                 <ImageForQuestionComponent
                   image={image}
                   onChooseVariant={() =>
