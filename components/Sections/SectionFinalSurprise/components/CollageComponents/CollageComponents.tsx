@@ -45,7 +45,7 @@ const CollageComponents: React.FC<ICollage> = ({ collage }) => {
     <div className={style.masonryLayout}>
       <PhotoAlbum
         layout="columns"
-        spacing={isMobile ? 15 : 15}
+        spacing={isMobile ? 8 : 15}
         columns={isMobile ? 2 : 3}
         photos={photos}
         renderPhoto={renderPhoto}
