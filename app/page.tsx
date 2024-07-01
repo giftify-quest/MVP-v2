@@ -8,6 +8,7 @@ import { SectionVariantQuestion } from "@/components/Sections/SectionVariantQues
 import { questTest } from "@/testContent/questTest";
 import { useEffect, useState } from "react";
 import { firstQuest } from "@/testContent/firstQuest";
+import { templateQuest } from "@/testContent/templateQuest/templateQuest";
 import { assignRandomImages } from "@/hooks/setRandomBackground";
 
 export interface Components {
@@ -17,7 +18,7 @@ export interface Components {
 
 export default function Home(): JSX.Element {
   useEffect(() => {
-    assignRandomImages(firstQuest);
+    assignRandomImages(templateQuest);
   }, []);
 
   const [components, setComponents] = useState<Components[]>([
@@ -26,14 +27,14 @@ export default function Home(): JSX.Element {
         return (
           <SectionFirst
             key={key}
-            titlePhoto={firstQuest.sectionFirst.titlePhoto}
-            title={firstQuest.sectionFirst.title}
-            bgImg={questTest.sectionFirst.bgImg}
-            bgMobileSrc={firstQuest.sectionFirst.bgMobileSrc}
-            buttonTitle={firstQuest.sectionFirst.buttonTitle}
+            titlePhoto={templateQuest.sectionFirst.titlePhoto}
+            title={templateQuest.sectionFirst.title}
+            bgImg={templateQuest.sectionFirst.bgImg}
+            bgMobileSrc={templateQuest.sectionFirst.bgMobileSrc}
+            buttonTitle={templateQuest.sectionFirst.buttonTitle}
             onAllowNextSlide={onClick}
-            id={firstQuest.sectionFirst.id}
-            nextId={firstQuest.sectionFirst.nextId}
+            id={templateQuest.sectionFirst.id}
+            nextId={templateQuest.sectionFirst.nextId}
           />
         );
       },
@@ -44,13 +45,13 @@ export default function Home(): JSX.Element {
         return (
           <SectionVariantQuestion
             key={key}
-            name={firstQuest.name}
-            question={firstQuest.sectionVariantFirstPhoto.question}
-            answer={firstQuest.sectionVariantFirstPhoto.answer}
-            id={firstQuest.sectionVariantFirstPhoto.id}
-            blockImage={firstQuest.sectionVariantFirstPhoto.blockImage}
-            nextSectionId={firstQuest.sectionVariantFirstPhoto.nextSectionId}
-            title={firstQuest.sectionVariantFirstPhoto.title}
+            name={templateQuest.name}
+            question={templateQuest.sectionVariantFirstPhoto.question}
+            answer={templateQuest.sectionVariantFirstPhoto.answer}
+            id={templateQuest.sectionVariantFirstPhoto.id}
+            blockImage={templateQuest.sectionVariantFirstPhoto.blockImage}
+            nextSectionId={templateQuest.sectionVariantFirstPhoto.nextSectionId}
+            title={templateQuest.sectionVariantFirstPhoto.title}
             onAllowNextSlide={onClick}
           />
         );
@@ -62,13 +63,15 @@ export default function Home(): JSX.Element {
         return (
           <SectionFreeInput
             key={key}
-            name={firstQuest.name}
-            question={firstQuest.sectionFreeInputFirstPhoto.question}
-            answer={firstQuest.sectionFreeInputFirstPhoto.answer}
-            id={firstQuest.sectionFreeInputFirstPhoto.id}
-            blockImage={firstQuest.sectionFreeInputFirstPhoto.blockImage}
-            nextSectionId={firstQuest.sectionFreeInputFirstPhoto.nextSectionId}
-            title={firstQuest.sectionFreeInputFirstPhoto.title}
+            name={templateQuest.name}
+            question={templateQuest.sectionFreeInputFirstPhoto.question}
+            answer={templateQuest.sectionFreeInputFirstPhoto.answer}
+            id={templateQuest.sectionFreeInputFirstPhoto.id}
+            blockImage={templateQuest.sectionFreeInputFirstPhoto.blockImage}
+            nextSectionId={
+              templateQuest.sectionFreeInputFirstPhoto.nextSectionId
+            }
+            title={templateQuest.sectionFreeInputFirstPhoto.title}
             onAllowNextSlide={onClick}
           />
         );
@@ -81,13 +84,13 @@ export default function Home(): JSX.Element {
         return (
           <SectionImageQuestion
             key={key}
-            name={firstQuest.name}
-            question={firstQuest.sectionImageQuestion.question}
-            answer={firstQuest.sectionImageQuestion.answer}
-            id={firstQuest.sectionImageQuestion.id}
-            blockImage={firstQuest.sectionImageQuestion.blockImage}
-            nextSectionId={firstQuest.sectionImageQuestion.nextSectionId}
-            title={firstQuest.sectionImageQuestion.title}
+            name={templateQuest.name}
+            question={templateQuest.sectionImageQuestion.question}
+            answer={templateQuest.sectionImageQuestion.answer}
+            id={templateQuest.sectionImageQuestion.id}
+            blockImage={templateQuest.sectionImageQuestion.blockImage}
+            nextSectionId={templateQuest.sectionImageQuestion.nextSectionId}
+            title={templateQuest.sectionImageQuestion.title}
             onAllowNextSlide={onClick}
           />
         );
@@ -99,13 +102,13 @@ export default function Home(): JSX.Element {
         return (
           <SectionFreeInput
             key={key}
-            name={firstQuest.name}
-            question={firstQuest.sectionInputFood.question}
-            answer={firstQuest.sectionInputFood.answer}
-            id={firstQuest.sectionInputFood.id}
-            blockImage={firstQuest.sectionInputFood.blockImage}
-            nextSectionId={firstQuest.sectionInputFood.nextSectionId}
-            title={firstQuest.sectionInputFood.title}
+            name={templateQuest.name}
+            question={templateQuest.sectionInputFood.question}
+            answer={templateQuest.sectionInputFood.answer}
+            id={templateQuest.sectionInputFood.id}
+            blockImage={templateQuest.sectionInputFood.blockImage}
+            nextSectionId={templateQuest.sectionInputFood.nextSectionId}
+            title={templateQuest.sectionInputFood.title}
             onAllowNextSlide={onClick}
           />
         );
@@ -117,51 +120,15 @@ export default function Home(): JSX.Element {
         return (
           <SectionVariantQuestion
             key={key}
-            name={firstQuest.name}
-            question={firstQuest.sectionVariantRelationShip.question}
-            answer={firstQuest.sectionVariantRelationShip.answer}
-            id={firstQuest.sectionVariantRelationShip.id}
-            blockImage={firstQuest.sectionVariantRelationShip.blockImage}
-            nextSectionId={firstQuest.sectionVariantRelationShip.nextSectionId}
-            title={firstQuest.sectionVariantRelationShip.title}
-            onAllowNextSlide={onClick}
-          />
-        );
-      },
-      isAllowed: false,
-    },
-    {
-      component: (onClick, key) => {
-        return (
-          <SectionVariantQuestion
-            key={key}
-            name={firstQuest.name}
-            question={firstQuest.sectionVariantTheMost.question}
-            answer={firstQuest.sectionVariantTheMost.answer}
-            id={firstQuest.sectionVariantTheMost.id}
-            blockImage={firstQuest.sectionVariantTheMost.blockImage}
-            nextSectionId={firstQuest.sectionVariantTheMost.nextSectionId}
-            title={firstQuest.sectionVariantTheMost.title}
-            onAllowNextSlide={onClick}
-          />
-        );
-      },
-      isAllowed: false,
-    },
-    {
-      component: (onClick, key) => {
-        return (
-          <SectionVariantQuestion
-            key={key}
-            name={firstQuest.name}
-            question={firstQuest.sectionVariantMomentsTogether.question}
-            answer={firstQuest.sectionVariantMomentsTogether.answer}
-            id={firstQuest.sectionVariantMomentsTogether.id}
-            blockImage={firstQuest.sectionVariantMomentsTogether.blockImage}
+            name={templateQuest.name}
+            question={templateQuest.sectionVariantRelationShip.question}
+            answer={templateQuest.sectionVariantRelationShip.answer}
+            id={templateQuest.sectionVariantRelationShip.id}
+            blockImage={templateQuest.sectionVariantRelationShip.blockImage}
             nextSectionId={
-              firstQuest.sectionVariantMomentsTogether.nextSectionId
+              templateQuest.sectionVariantRelationShip.nextSectionId
             }
-            title={firstQuest.sectionVariantMomentsTogether.title}
+            title={templateQuest.sectionVariantRelationShip.title}
             onAllowNextSlide={onClick}
           />
         );
@@ -173,15 +140,33 @@ export default function Home(): JSX.Element {
         return (
           <SectionVariantQuestion
             key={key}
-            name={firstQuest.name}
-            question={firstQuest.sectionVariantAdventuresTogether.question}
-            answer={firstQuest.sectionVariantAdventuresTogether.answer}
-            id={firstQuest.sectionVariantAdventuresTogether.id}
-            blockImage={firstQuest.sectionVariantAdventuresTogether.blockImage}
+            name={templateQuest.name}
+            question={templateQuest.sectionVariantTheMost.question}
+            answer={templateQuest.sectionVariantTheMost.answer}
+            id={templateQuest.sectionVariantTheMost.id}
+            blockImage={templateQuest.sectionVariantTheMost.blockImage}
+            nextSectionId={templateQuest.sectionVariantTheMost.nextSectionId}
+            title={templateQuest.sectionVariantTheMost.title}
+            onAllowNextSlide={onClick}
+          />
+        );
+      },
+      isAllowed: false,
+    },
+    {
+      component: (onClick, key) => {
+        return (
+          <SectionVariantQuestion
+            key={key}
+            name={templateQuest.name}
+            question={templateQuest.sectionVariantMomentsTogether.question}
+            answer={templateQuest.sectionVariantMomentsTogether.answer}
+            id={templateQuest.sectionVariantMomentsTogether.id}
+            blockImage={templateQuest.sectionVariantMomentsTogether.blockImage}
             nextSectionId={
-              firstQuest.sectionVariantAdventuresTogether.nextSectionId
+              templateQuest.sectionVariantMomentsTogether.nextSectionId
             }
-            title={firstQuest.sectionVariantAdventuresTogether.title}
+            title={templateQuest.sectionVariantMomentsTogether.title}
             onAllowNextSlide={onClick}
           />
         );
@@ -193,13 +178,17 @@ export default function Home(): JSX.Element {
         return (
           <SectionVariantQuestion
             key={key}
-            name={firstQuest.name}
-            question={firstQuest.sectionVariantTogetherWeCan.question}
-            answer={firstQuest.sectionVariantTogetherWeCan.answer}
-            id={firstQuest.sectionVariantTogetherWeCan.id}
-            blockImage={firstQuest.sectionVariantTogetherWeCan.blockImage}
-            nextSectionId={firstQuest.sectionVariantTogetherWeCan.nextSectionId}
-            title={firstQuest.sectionVariantTogetherWeCan.title}
+            name={templateQuest.name}
+            question={templateQuest.sectionVariantAdventuresTogether.question}
+            answer={templateQuest.sectionVariantAdventuresTogether.answer}
+            id={templateQuest.sectionVariantAdventuresTogether.id}
+            blockImage={
+              templateQuest.sectionVariantAdventuresTogether.blockImage
+            }
+            nextSectionId={
+              templateQuest.sectionVariantAdventuresTogether.nextSectionId
+            }
+            title={templateQuest.sectionVariantAdventuresTogether.title}
             onAllowNextSlide={onClick}
           />
         );
@@ -211,13 +200,33 @@ export default function Home(): JSX.Element {
         return (
           <SectionVariantQuestion
             key={key}
-            name={firstQuest.name}
-            question={firstQuest.sectionVariantFinal.question}
-            answer={firstQuest.sectionVariantFinal.answer}
-            id={firstQuest.sectionVariantFinal.id}
-            blockImage={firstQuest.sectionVariantFinal.blockImage}
-            nextSectionId={firstQuest.sectionVariantFinal.nextSectionId}
-            title={firstQuest.sectionVariantFinal.title}
+            name={templateQuest.name}
+            question={templateQuest.sectionVariantTogetherWeCan.question}
+            answer={templateQuest.sectionVariantTogetherWeCan.answer}
+            id={templateQuest.sectionVariantTogetherWeCan.id}
+            blockImage={templateQuest.sectionVariantTogetherWeCan.blockImage}
+            nextSectionId={
+              templateQuest.sectionVariantTogetherWeCan.nextSectionId
+            }
+            title={templateQuest.sectionVariantTogetherWeCan.title}
+            onAllowNextSlide={onClick}
+          />
+        );
+      },
+      isAllowed: false,
+    },
+    {
+      component: (onClick, key) => {
+        return (
+          <SectionVariantQuestion
+            key={key}
+            name={templateQuest.name}
+            question={templateQuest.sectionVariantFinal.question}
+            answer={templateQuest.sectionVariantFinal.answer}
+            id={templateQuest.sectionVariantFinal.id}
+            blockImage={templateQuest.sectionVariantFinal.blockImage}
+            nextSectionId={templateQuest.sectionVariantFinal.nextSectionId}
+            title={templateQuest.sectionVariantFinal.title}
             onAllowNextSlide={onClick}
           />
         );
@@ -230,9 +239,9 @@ export default function Home(): JSX.Element {
         return (
           <SectionFinalSurprise
             key={key}
-            name={firstQuest.name}
-            title={firstQuest.sectionFinalSurprise.title}
-            wishersData={firstQuest.sectionFinalSurprise.wishersData}
+            name={templateQuest.name}
+            title={templateQuest.sectionFinalSurprise.title}
+            wishersData={templateQuest.sectionFinalSurprise.wishersData}
           />
         );
       },

@@ -99,7 +99,7 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
       bgMobileSrc={question.bgMobile}
     >
       <div className={styles.wrapper}>
-        <div className={styles.header}>
+        <div className={styles.question}>
           <TextFieldInfo
             mainText={question.questionText}
             variant={"text"}
