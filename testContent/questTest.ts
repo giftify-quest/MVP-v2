@@ -3,11 +3,15 @@ import { ISectionFirst } from "@/components/Sections/SectionFirst/types";
 import { IQuestionWithFreeInput } from "@/components/Sections/SectionFreeInput/types";
 import { IQuestionImage } from "@/components/Sections/SectionImageQuestion/types";
 import { IQuestionVariant } from "@/components/Sections/SectionVariantQuestion/types";
+import { setBackgroundDesktop } from "@/helpers/setBackgroundDesktop";
+import { setBackgroundMobile } from "@/helpers/setBackgroundMobile";
+import { Language } from "@/types";
 import { IAnswerWithOutPicture, IAnswerWithPicture } from "@/types/answer";
 import { ISection } from "@/types/section";
 
 interface ITest {
   name: string;
+  lang: Language;
   sectionFirst: ISectionFirst;
   sectionVariantFirstPhoto: ISection<IQuestionVariant, IAnswerWithOutPicture>;
   sectionFreeInputFirstPhoto: ISection<
@@ -20,6 +24,7 @@ interface ITest {
 
 export const questTest: ITest = {
   name: "Михаил",
+  lang: Language.rus,
   sectionFirst: {
     titlePhoto: {
       imgSrc: "/assets/testImage/testFirstTest.png",
@@ -46,8 +51,8 @@ export const questTest: ITest = {
       secondWord: "провокационный вопрос!",
     },
     question: {
-      bgSrcQuestion: "/assets/testImage/background.png",
-      bgMobile: "/assets/adaptiveQuestionBckgImg.png",
+      bgSrcQuestion: setBackgroundDesktop(1),
+      bgMobile: setBackgroundMobile(1),
       questionText:
         "Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше ",
       answers: [
@@ -107,8 +112,8 @@ export const questTest: ITest = {
         "Ну и память! Поищи свой следующий подарок в тумбе  у кровати)",
     },
     question: {
-      bgSrcQuestion: "/assets/bg-answer-with-present.jpg",
-      bgMobile: "/assets/adaptiveQuestionBckgImg.png",
+      bgSrcQuestion: setBackgroundDesktop(2),
+      bgMobile: setBackgroundMobile(2),
       questionText:
         "Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше первое фото?",
       buttonTitle: "Не могу уже ждать ",
@@ -130,8 +135,8 @@ export const questTest: ITest = {
       { path: "/assets/component-photos.jpg" },
     ],
     question: {
-      bgSrcQuestion: "/assets/bg-answer-with-present.jpg",
-      bgMobile: "/assets/adaptiveQuestionBckgImg.png",
+      bgSrcQuestion: setBackgroundDesktop(3),
+      bgMobile: setBackgroundMobile(3),
       title: "hello",
       questionText:
         "Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы фото?",
