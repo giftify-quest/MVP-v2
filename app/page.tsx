@@ -5,11 +5,8 @@ import SectionFirst from "@/components/Sections/SectionFirst";
 import SectionFreeInput from "@/components/Sections/SectionFreeInput";
 import SectionImageQuestion from "@/components/Sections/SectionImageQuestion";
 import { SectionVariantQuestion } from "@/components/Sections/SectionVariantQuestion/section/SectionVariantQuestion";
-import { questTest } from "@/testContent/questTest";
-import { useEffect, useState } from "react";
-import { firstQuest } from "@/testContent/firstQuest";
+import { useState } from "react";
 import { templateQuest } from "@/testContent/templateQuest/templateQuest";
-import { assignRandomImages } from "@/hooks/setRandomBackground";
 
 export interface Components {
   component: (onClick: () => void, key: number) => JSX.Element;
@@ -17,10 +14,6 @@ export interface Components {
 }
 
 export default function Home(): JSX.Element {
-  useEffect(() => {
-    assignRandomImages(templateQuest);
-  }, []);
-
   const [components, setComponents] = useState<Components[]>([
     {
       component: (onClick, key) => {
@@ -46,6 +39,7 @@ export default function Home(): JSX.Element {
           <SectionVariantQuestion
             key={key}
             name={templateQuest.name}
+            lang={templateQuest.land}
             question={templateQuest.sectionVariantFirstPhoto.question}
             answer={templateQuest.sectionVariantFirstPhoto.answer}
             id={templateQuest.sectionVariantFirstPhoto.id}
@@ -64,6 +58,7 @@ export default function Home(): JSX.Element {
           <SectionFreeInput
             key={key}
             name={templateQuest.name}
+            lang={templateQuest.land}
             question={templateQuest.sectionFreeInputFirstPhoto.question}
             answer={templateQuest.sectionFreeInputFirstPhoto.answer}
             id={templateQuest.sectionFreeInputFirstPhoto.id}
@@ -85,6 +80,7 @@ export default function Home(): JSX.Element {
           <SectionImageQuestion
             key={key}
             name={templateQuest.name}
+            lang={templateQuest.land}
             question={templateQuest.sectionImageQuestion.question}
             answer={templateQuest.sectionImageQuestion.answer}
             id={templateQuest.sectionImageQuestion.id}
@@ -103,6 +99,7 @@ export default function Home(): JSX.Element {
           <SectionFreeInput
             key={key}
             name={templateQuest.name}
+            lang={templateQuest.land}
             question={templateQuest.sectionInputFood.question}
             answer={templateQuest.sectionInputFood.answer}
             id={templateQuest.sectionInputFood.id}
@@ -121,6 +118,7 @@ export default function Home(): JSX.Element {
           <SectionVariantQuestion
             key={key}
             name={templateQuest.name}
+            lang={templateQuest.land}
             question={templateQuest.sectionVariantRelationShip.question}
             answer={templateQuest.sectionVariantRelationShip.answer}
             id={templateQuest.sectionVariantRelationShip.id}
@@ -141,6 +139,7 @@ export default function Home(): JSX.Element {
           <SectionVariantQuestion
             key={key}
             name={templateQuest.name}
+            lang={templateQuest.land}
             question={templateQuest.sectionVariantTheMost.question}
             answer={templateQuest.sectionVariantTheMost.answer}
             id={templateQuest.sectionVariantTheMost.id}
@@ -159,6 +158,7 @@ export default function Home(): JSX.Element {
           <SectionVariantQuestion
             key={key}
             name={templateQuest.name}
+            lang={templateQuest.land}
             question={templateQuest.sectionVariantMomentsTogether.question}
             answer={templateQuest.sectionVariantMomentsTogether.answer}
             id={templateQuest.sectionVariantMomentsTogether.id}
@@ -179,6 +179,7 @@ export default function Home(): JSX.Element {
           <SectionVariantQuestion
             key={key}
             name={templateQuest.name}
+            lang={templateQuest.land}
             question={templateQuest.sectionVariantAdventuresTogether.question}
             answer={templateQuest.sectionVariantAdventuresTogether.answer}
             id={templateQuest.sectionVariantAdventuresTogether.id}
@@ -201,6 +202,7 @@ export default function Home(): JSX.Element {
           <SectionVariantQuestion
             key={key}
             name={templateQuest.name}
+            lang={templateQuest.land}
             question={templateQuest.sectionVariantTogetherWeCan.question}
             answer={templateQuest.sectionVariantTogetherWeCan.answer}
             id={templateQuest.sectionVariantTogetherWeCan.id}
@@ -221,6 +223,7 @@ export default function Home(): JSX.Element {
           <SectionVariantQuestion
             key={key}
             name={templateQuest.name}
+            lang={templateQuest.land}
             question={templateQuest.sectionVariantFinal.question}
             answer={templateQuest.sectionVariantFinal.answer}
             id={templateQuest.sectionVariantFinal.id}

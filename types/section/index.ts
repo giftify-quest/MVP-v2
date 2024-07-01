@@ -1,4 +1,4 @@
-import { ITitleSection } from "../index";
+import { ITitleSection, Language } from "../index";
 
 export interface ISection<TQuestion, TAnswer> {
   id: string;
@@ -15,4 +15,5 @@ export interface ISectionProps<TQuestion, TAnswer>
   extends ISection<TQuestion, TAnswer> {
   onAllowNextSlide: () => void;
   name: string;
+  lang: Language;
 }

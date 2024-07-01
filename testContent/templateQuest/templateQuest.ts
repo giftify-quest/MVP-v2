@@ -3,12 +3,15 @@ import { ISectionFirst } from "@/components/Sections/SectionFirst/types";
 import { IQuestionWithFreeInput } from "@/components/Sections/SectionFreeInput/types";
 import { IQuestionImage } from "@/components/Sections/SectionImageQuestion/types";
 import { IQuestionVariant } from "@/components/Sections/SectionVariantQuestion/types";
+import { setBackgroundDesktop } from "@/helpers/setBackgroundDesktop";
+import { setBackgroundMobile } from "@/helpers/setBackgroundMobile";
+import { Language } from "@/types";
 import { IAnswerWithPicture } from "@/types/answer";
 import { ISection } from "@/types/section";
 
 export interface IFirstQuest {
   name: string;
-  land: string;
+  land: Language;
   sectionFirst: ISectionFirst;
   sectionVariantFirstPhoto: ISection<IQuestionVariant, IAnswerWithPicture>;
   sectionFreeInputFirstPhoto: ISection<
@@ -31,7 +34,7 @@ export interface IFirstQuest {
 
 export const templateQuest: IFirstQuest = {
   name: "Anya",
-  land: "English",
+  land: Language.eng,
   sectionFirst: {
     id: "section1",
     nextId: "949494",
@@ -58,8 +61,8 @@ export const templateQuest: IFirstQuest = {
       secondWord: "provocative question",
     },
     question: {
-      bgSrcQuestion: "",
-      bgMobile: "/assets/adaptiveQuestionBckgImg.png",
+      bgSrcQuestion: setBackgroundDesktop(0),
+      bgMobile: setBackgroundMobile(0),
       questionText: "When did you write me for the first time?",
       answers: [
         {
@@ -121,8 +124,8 @@ export const templateQuest: IFirstQuest = {
       framedPhotoText: "",
     },
     question: {
-      bgSrcQuestion: "/assets/bg-answer-with-present.jpg",
-      bgMobile: "/assets/adaptiveQuestionBckgImg.png",
+      bgSrcQuestion: setBackgroundDesktop(1),
+      bgMobile: setBackgroundMobile(1),
       questionText: "Remember how we chose a hotel near the forest in .. ?",
       buttonTitle: "Check",
       errorMessage: "Not there  😅 ",
@@ -142,8 +145,8 @@ export const templateQuest: IFirstQuest = {
       { path: "/templateQuest/photoGallery/photoGallery6.jpeg" },
     ],
     question: {
-      bgSrcQuestion: "/assets/bg-answer-with-present.jpg",
-      bgMobile: "/assets/adaptiveQuestionBckgImg.png",
+      bgSrcQuestion: setBackgroundDesktop(2),
+      bgMobile: setBackgroundMobile(2),
       title: "hello",
       questionText:
         "Amazing! Now choose one photo that shows our small crime 🤫",
@@ -196,8 +199,8 @@ export const templateQuest: IFirstQuest = {
       framedPhotoText: "",
     },
     question: {
-      bgSrcQuestion: "/assets/bg-answer-with-present.jpg",
-      bgMobile: "/assets/adaptiveQuestionBckgImg.png",
+      bgSrcQuestion: setBackgroundDesktop(3),
+      bgMobile: setBackgroundMobile(3),
       questionText:
         "The main gift is so close… Few more tricky questions.What fruit did you bring to our first picnic in Napoleon park?",
       buttonTitle: "Check",
@@ -213,8 +216,8 @@ export const templateQuest: IFirstQuest = {
       secondWord: "relationship is..",
     },
     question: {
-      bgSrcQuestion: "/assets/testImage/background.png",
-      bgMobile: "/assets/adaptiveQuestionBckgImg.png",
+      bgSrcQuestion: setBackgroundDesktop(4),
+      bgMobile: setBackgroundMobile(4),
       questionText: "Guess how would I describe our relationship in 3 words…",
       answers: [
         {
@@ -263,8 +266,8 @@ export const templateQuest: IFirstQuest = {
       secondWord: "...",
     },
     question: {
-      bgSrcQuestion: "/assets/testImage/background.png",
-      bgMobile: "/assets/adaptiveQuestionBckgImg.png",
+      bgSrcQuestion: setBackgroundDesktop(5),
+      bgMobile: setBackgroundMobile(5),
       questionText: "The most I love in you...",
       answers: [
         {
@@ -314,8 +317,8 @@ export const templateQuest: IFirstQuest = {
       secondWord: "together",
     },
     question: {
-      bgSrcQuestion: "/assets/testImage/background.png",
-      bgMobile: "/assets/adaptiveQuestionBckgImg.png",
+      bgSrcQuestion: setBackgroundDesktop(6),
+      bgMobile: setBackgroundMobile(6),
       questionText:
         "If we could go back in time, what moment of our history do you think I would choose? ",
       answers: [
@@ -366,8 +369,8 @@ export const templateQuest: IFirstQuest = {
       secondWord: "together",
     },
     question: {
-      bgSrcQuestion: "/assets/testImage/background.png",
-      bgMobile: "/assets/adaptiveQuestionBckgImg.png",
+      bgSrcQuestion: setBackgroundDesktop(7),
+      bgMobile: setBackgroundMobile(7),
       questionText:
         "What is the most unusual adventure we have been through together?",
       answers: [
@@ -418,8 +421,8 @@ export const templateQuest: IFirstQuest = {
       secondWord: "we can everything",
     },
     question: {
-      bgSrcQuestion: "/assets/testImage/background.png",
-      bgMobile: "/assets/adaptiveQuestionBckgImg.png",
+      bgSrcQuestion: setBackgroundDesktop(8),
+      bgMobile: setBackgroundMobile(8),
       questionText:
         "What goals we will definitely achieve together in the future?",
       answers: [
@@ -470,8 +473,8 @@ export const templateQuest: IFirstQuest = {
       secondWord: "question",
     },
     question: {
-      bgSrcQuestion: "/assets/testImage/background.png",
-      bgMobile: "/assets/adaptiveQuestionBckgImg.png",
+      bgSrcQuestion: setBackgroundDesktop(0),
+      bgMobile: setBackgroundMobile(9),
       questionText:
         "If you could only choose ONE ‘bulochka’ for the rest of your life, it would be …  ",
       answers: [
