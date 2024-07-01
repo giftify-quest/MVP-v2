@@ -61,7 +61,7 @@ export const templateQuest: IFirstQuest = {
       secondWord: "provocative question",
     },
     question: {
-      bgSrcQuestion: setBackgroundDesktop(0),
+      bgSrcQuestion: setBackgroundDesktop(8),
       bgMobile: setBackgroundMobile(0),
       questionText: "When did you write me for the first time?",
       answers: [
