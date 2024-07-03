@@ -57,6 +57,7 @@ export const SectionFirst: React.FC<ISectionFirstProps> = ({
             alt="lock"
             width={isMobile ? 261 : 380}
             height={isMobile ? 261 : 380}
+            className={styles.lockImage}
           />
           <ButtonConfirm isActive title={buttonTitle} onClick={handleClick} />
         </div>
