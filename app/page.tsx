@@ -39,7 +39,7 @@ export default function Home(): JSX.Element {
           <SectionVariantQuestion
             key={key}
             name={templateQuest.name}
-            lang={templateQuest.land}
+            lang={templateQuest.lang}
             question={templateQuest.sectionVariantFirstPhoto.question}
             answer={templateQuest.sectionVariantFirstPhoto.answer}
             id={templateQuest.sectionVariantFirstPhoto.id}
@@ -58,7 +58,7 @@ export default function Home(): JSX.Element {
           <SectionFreeInput
             key={key}
             name={templateQuest.name}
-            lang={templateQuest.land}
+            lang={templateQuest.lang}
             question={templateQuest.sectionFreeInputFirstPhoto.question}
             answer={templateQuest.sectionFreeInputFirstPhoto.answer}
             id={templateQuest.sectionFreeInputFirstPhoto.id}
@@ -80,7 +80,7 @@ export default function Home(): JSX.Element {
           <SectionImageQuestion
             key={key}
             name={templateQuest.name}
-            lang={templateQuest.land}
+            lang={templateQuest.lang}
             question={templateQuest.sectionImageQuestion.question}
             answer={templateQuest.sectionImageQuestion.answer}
             id={templateQuest.sectionImageQuestion.id}
@@ -99,7 +99,7 @@ export default function Home(): JSX.Element {
           <SectionFreeInput
             key={key}
             name={templateQuest.name}
-            lang={templateQuest.land}
+            lang={templateQuest.lang}
             question={templateQuest.sectionInputFood.question}
             answer={templateQuest.sectionInputFood.answer}
             id={templateQuest.sectionInputFood.id}
@@ -118,7 +118,7 @@ export default function Home(): JSX.Element {
           <SectionVariantQuestion
             key={key}
             name={templateQuest.name}
-            lang={templateQuest.land}
+            lang={templateQuest.lang}
             question={templateQuest.sectionVariantRelationShip.question}
             answer={templateQuest.sectionVariantRelationShip.answer}
             id={templateQuest.sectionVariantRelationShip.id}
@@ -139,7 +139,7 @@ export default function Home(): JSX.Element {
           <SectionVariantQuestion
             key={key}
             name={templateQuest.name}
-            lang={templateQuest.land}
+            lang={templateQuest.lang}
             question={templateQuest.sectionVariantTheMost.question}
             answer={templateQuest.sectionVariantTheMost.answer}
             id={templateQuest.sectionVariantTheMost.id}
@@ -158,7 +158,7 @@ export default function Home(): JSX.Element {
           <SectionVariantQuestion
             key={key}
             name={templateQuest.name}
-            lang={templateQuest.land}
+            lang={templateQuest.lang}
             question={templateQuest.sectionVariantMomentsTogether.question}
             answer={templateQuest.sectionVariantMomentsTogether.answer}
             id={templateQuest.sectionVariantMomentsTogether.id}
@@ -179,7 +179,7 @@ export default function Home(): JSX.Element {
           <SectionVariantQuestion
             key={key}
             name={templateQuest.name}
-            lang={templateQuest.land}
+            lang={templateQuest.lang}
             question={templateQuest.sectionVariantAdventuresTogether.question}
             answer={templateQuest.sectionVariantAdventuresTogether.answer}
             id={templateQuest.sectionVariantAdventuresTogether.id}
@@ -202,7 +202,7 @@ export default function Home(): JSX.Element {
           <SectionVariantQuestion
             key={key}
             name={templateQuest.name}
-            lang={templateQuest.land}
+            lang={templateQuest.lang}
             question={templateQuest.sectionVariantTogetherWeCan.question}
             answer={templateQuest.sectionVariantTogetherWeCan.answer}
             id={templateQuest.sectionVariantTogetherWeCan.id}
@@ -223,7 +223,7 @@ export default function Home(): JSX.Element {
           <SectionVariantQuestion
             key={key}
             name={templateQuest.name}
-            lang={templateQuest.land}
+            lang={templateQuest.lang}
             question={templateQuest.sectionVariantFinal.question}
             answer={templateQuest.sectionVariantFinal.answer}
             id={templateQuest.sectionVariantFinal.id}

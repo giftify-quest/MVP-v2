@@ -11,7 +11,7 @@ import { ISection } from "@/types/section";
 
 export interface IFirstQuest {
   name: string;
-  land: Language;
+  lang: Language;
   sectionFirst: ISectionFirst;
   sectionVariantFirstPhoto: ISection<IQuestionVariant, IAnswerWithPicture>;
   sectionFreeInputFirstPhoto: ISection<
@@ -34,7 +34,7 @@ export interface IFirstQuest {
 
 export const firstQuest: IFirstQuest = {
   name: "Anya",
-  land: Language.eng,
+  lang: Language.eng,
   sectionFirst: {
     id: "section1",
     nextId: "949494",
