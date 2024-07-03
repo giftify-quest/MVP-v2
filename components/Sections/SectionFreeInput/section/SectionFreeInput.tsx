@@ -18,6 +18,7 @@ export const SectionFreeInput: React.FC<
   id,
   nextSectionId,
   name,
+  lang,
   onAllowNextSlide,
 }) => {
   const [isReady, setIsReady] = useState(false);
@@ -58,6 +59,7 @@ export const SectionFreeInput: React.FC<
           onReady={onReady}
           question={question}
           name={name}
+          lang={lang}
         />
       )}
       <PhotosSection photos={blockImage} />

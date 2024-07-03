@@ -1,3 +1,4 @@
+import { Language } from "@/types";
 import { IQuestionProps } from "@/types/question";
 
 export interface IQuestionWithFreeInput {
@@ -11,4 +12,5 @@ export interface IQuestionWithFreeInput {
 
 export interface IQuestionWithFreeInputProps extends IQuestionProps {
   question: IQuestionWithFreeInput;
+  lang: Language;
 }
