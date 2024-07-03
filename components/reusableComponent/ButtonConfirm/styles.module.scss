@@ -23,3 +23,9 @@
   outline: none;
   border: none;
 }
+
+@media (max-width: 768px) {
+  .button_confirm {
+    min-width: 60%;
+  }
+}

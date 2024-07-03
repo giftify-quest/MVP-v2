@@ -8,7 +8,6 @@
 
 .imageContainerMobile {
   position: relative;
-  margin-top: 2rem;
   .custom_swiper {
     width: 400px;
     height: 300px;
@@ -31,9 +30,6 @@
 }
 
 .wrapper_pagination {
-  position: absolute;
-  bottom: 0px;
-  left: 20px;
   width: 100%;
   height: 20px;
 }
@@ -48,5 +44,6 @@
 @media (max-width: 400px) {
   .custom_swiper {
     width: 340px;
+    padding-top: 10px;
   }
 }

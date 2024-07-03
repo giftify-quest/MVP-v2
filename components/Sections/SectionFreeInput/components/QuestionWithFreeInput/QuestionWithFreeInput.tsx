@@ -10,6 +10,7 @@ export const QuestionWithFreeInput: React.FC<IQuestionWithFreeInputProps> = ({
   question,
   onReady,
   name,
+  lang,
 }) => {
   const [textValue, setTextValue] = useState<string>("");
   const [isErrorMessage, setIsErrorMessage] = useState<boolean>(false);
@@ -96,6 +97,7 @@ export const QuestionWithFreeInput: React.FC<IQuestionWithFreeInputProps> = ({
           onChange={onChangeValue}
           isError={isTextFieldError}
           onKeyDown={onKeyDown}
+          lang={lang}
         />
         <ButtonConfirm
           title={question.buttonTitle}
