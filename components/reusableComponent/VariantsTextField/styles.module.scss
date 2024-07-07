@@ -15,6 +15,7 @@
   border: none;
   font-weight: 800;
   transition: background 0.35s ease;
+  cursor: pointer;
   &:hover:not(.selected) {
     background: rgba(108, 39, 199, 1);
   }

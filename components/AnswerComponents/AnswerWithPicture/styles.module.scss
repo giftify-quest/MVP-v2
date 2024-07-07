@@ -9,6 +9,7 @@
     position: absolute;
     left: 18rem;
     top: 15rem;
+    animation: blinkAndGrow 2s infinite;
   }
   .scrollImage {
     position: absolute;
@@ -47,5 +48,17 @@
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+@keyframes blinkAndGrow {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
   }
 }
