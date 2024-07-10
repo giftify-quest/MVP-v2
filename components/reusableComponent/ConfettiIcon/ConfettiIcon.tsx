@@ -13,6 +13,7 @@ export const ConfettiIcon: React.FC<ConfettiIconProps> = ({
   return (
     <div className={styles.wrapper_icon}>
       <Image
+        className={styles.icon}
         src="/assets/confetti.png"
         alt="confetti"
         width={width}
