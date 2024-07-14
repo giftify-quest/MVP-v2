@@ -5,11 +5,11 @@ import { PhotosSection } from "@/components/reusableComponent/PhotosSection/Phot
 import { IQuestionWithFreeInput } from "../types/index";
 import { ISectionProps } from "@/types/section";
 import styles from "./styles.module.scss";
-import { IAnswerWithPicture } from "@/types/answer";
-import { AnswerWithPicture } from "@/components/AnswerComponents/AnswerWithPicture/AnswerWithPicture";
+import { TAnswerComponent } from "@/types/answer";
+import { AnswerComponent } from "@/components/AnswerComponents/AnswerComponent/AnswerComponent";
 
 export const SectionFreeInput: React.FC<
-  ISectionProps<IQuestionWithFreeInput, IAnswerWithPicture>
+  ISectionProps<IQuestionWithFreeInput, TAnswerComponent>
 > = ({
   question,
   answer,
@@ -46,14 +46,7 @@ export const SectionFreeInput: React.FC<
         />
       </div>
       {isReady ? (
-        <AnswerWithPicture
-          bgSrc={answer.bgSrc}
-          successText={answer.successText}
-          secondaryText={name}
-          bgMobileSrc={answer.bgMobileSrc}
-          framedPhotoSrc={answer.framedPhotoSrc}
-          framedPhotoText={""}
-        />
+        <AnswerComponent answer={answer} />
       ) : (
         <QuestionWithFreeInput
           onReady={onReady}

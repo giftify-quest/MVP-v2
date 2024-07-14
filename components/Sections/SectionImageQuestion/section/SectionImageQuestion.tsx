@@ -4,12 +4,12 @@ import { SectionTitle } from "@/components/reusableComponent/SectionTitle/Sectio
 import { ISectionProps } from "@/types/section";
 import { useRef, useState } from "react";
 import { IQuestionImage } from "../types";
-import { AnswerWithPicture } from "@/components/AnswerComponents/AnswerWithPicture/AnswerWithPicture";
-import { IAnswerWithPicture } from "@/types/answer";
+import { TAnswerComponent } from "@/types/answer";
 import style from "./styles.module.scss";
+import { AnswerComponent } from "@/components/AnswerComponents/AnswerComponent/AnswerComponent";
 
 export const SectionImageQuestion: React.FC<
-  ISectionProps<IQuestionImage, IAnswerWithPicture>
+  ISectionProps<IQuestionImage, TAnswerComponent>
 > = ({
   question,
   answer,
@@ -45,14 +45,7 @@ export const SectionImageQuestion: React.FC<
         />
       </div>
       {isReady ? (
-        <AnswerWithPicture
-          successText={answer.successText}
-          secondaryText={name}
-          bgSrc={answer.bgSrc}
-          bgMobileSrc={answer.bgMobileSrc}
-          framedPhotoSrc={answer.framedPhotoSrc}
-          framedPhotoText={answer.framedPhotoText}
-        />
+        <AnswerComponent answer={answer} />
       ) : (
         <ImageQuestion question={question} onReady={onReady} name={name} />
       )}
