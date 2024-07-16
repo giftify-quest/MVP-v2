@@ -1,9 +1,10 @@
 .wrapper {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 200px;
-  padding-inline: 3rem;
   margin-bottom: 4rem;
+  width: 90%;
 
   .title_section {
     width: 100%;
@@ -11,11 +12,17 @@
     gap: 36px;
   }
 
+  .sectionFirstWrapper {
+    padding-inline: 3rem;
+    width: 90%;
+  }
+
   .unlock_wrap {
     display: flex;
     flex-direction: column;
     z-index: 100;
     align-items: center;
+    width: 90%;
   }
   .lockImage {
     animation: pulse 2s infinite;

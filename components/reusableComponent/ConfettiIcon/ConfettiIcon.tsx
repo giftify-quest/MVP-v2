@@ -16,8 +16,7 @@ export const ConfettiIcon: React.FC<ConfettiIconProps> = ({
         className={styles.icon}
         src="/assets/confetti.png"
         alt="confetti"
-        width={width}
-        height={height}
+        layout="fill"
       />
     </div>
   );

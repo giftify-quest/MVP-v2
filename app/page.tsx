@@ -50,7 +50,7 @@ export default function Home(): JSX.Element {
           />
         );
       },
-      isAllowed: false,
+      isAllowed: true,
     },
     {
       component: (onClick, key) => {
@@ -71,7 +71,7 @@ export default function Home(): JSX.Element {
           />
         );
       },
-      isAllowed: false,
+      isAllowed: true,
     },
 
     {
@@ -91,7 +91,7 @@ export default function Home(): JSX.Element {
           />
         );
       },
-      isAllowed: false,
+      isAllowed: true,
     },
     {
       component: (onClick, key) => {
@@ -110,7 +110,7 @@ export default function Home(): JSX.Element {
           />
         );
       },
-      isAllowed: false,
+      isAllowed: true,
     },
     {
       component: (onClick, key) => {

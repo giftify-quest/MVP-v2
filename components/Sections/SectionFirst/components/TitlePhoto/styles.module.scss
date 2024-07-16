@@ -42,6 +42,7 @@
 
 .wrapper {
   width: 50%;
+  height: 100%;
   position: relative;
 
   .dating_date_minutes,
@@ -51,40 +52,40 @@
     position: absolute;
     align-items: center;
     display: flex;
-    height: 92px;
+    height: 10%;
     font-weight: 500;
     color: $white-color;
-    font-size: 34px;
-    padding: 35px;
+    font-size: clamp(16px, 2vw, 34px);
+    padding: clamp(10px, 4vw, 35px);
     border-radius: 59.5px;
-    line-height: 89px;
+    line-height: clamp(20px, 6vw, 89px);
     z-index: 999;
     animation: fadeInOut 7.5s ease-in-out;
   }
 
   .dating_date_minutes {
-    top: 150.46px;
-    left: -50.77px;
+    top: 10%;
+    left: -10%;
     transform: rotate(5deg);
     background-color: $green-color;
   }
 
   .dating_date_hours {
-    top: 380.75px;
-    left: -50.77px;
+    top: 35%;
+    left: -10%;
     transform: rotate(-8.53deg);
     background-color: $pink-color;
   }
 
   .dating_date_days {
-    top: 535.72px;
-    left: -50.77px;
+    top: 60%;
+    left: -10%;
     transform: rotate(7.84deg);
     background-color: $purple-color;
   }
 
   .dating_date_years {
-    top: 690px;
+    top: 80%;
     left: -30.77px;
     transform: rotate(-6.02deg);
     background-color: $pink-color;
@@ -100,22 +101,22 @@
 
   .image_confetti {
     position: absolute;
-    bottom: -106px;
+    bottom: -50px;
     left: 100px;
     animation: slideInTop 1s ease-in-out;
   }
 
   .wrap_date {
     position: absolute;
-    font-size: 150px;
-    line-height: 170px;
+    font-size: clamp(16px, 8vw, 170px);
+    line-height: clamp(30px, 8vw, 150px);
     font-weight: 700;
     color: white;
-    top: 290px;
+    bottom: 0;
     right: 0;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 1rem;
     align-items: flex-end;
     animation: fadeInOut 7s ease-in-out;
   }
