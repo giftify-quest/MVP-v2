@@ -17,6 +17,9 @@
     z-index: 100;
     align-items: center;
   }
+  .lockImage {
+    animation: pulse 2s infinite;
+  }
 }
 
 @media (max-width: 768px) {
@@ -30,5 +33,17 @@
     .sectionFirstWrapper {
       height: 50rem;
     }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateY(20px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(20px);
   }
 }

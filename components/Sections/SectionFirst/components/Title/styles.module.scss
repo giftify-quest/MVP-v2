@@ -1,5 +1,36 @@
 @import "/app/variables.scss";
 
+@keyframes slideIn {
+  from {
+    transform: translateX(600%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInTop {
+  from {
+    transform: translateY(-600%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 .wrapper {
   width: 50%;
   color: rgba(0, 0, 0, 1);
@@ -13,18 +44,20 @@
   .line {
     position: absolute;
     bottom: 36rem;
+    animation: slideIn 0.8s ease-in-out;
   }
 
   .mainText {
     font-family: "Montserrat", sans-serif;
     font-size: 108px;
     line-height: 125px;
-    color: $title-color;
+    animation: slideInTop 1s ease-in-out;
   }
 
   .secondaryText {
     font-size: 42px;
     line-height: 52px;
+    animation: slideIn 1.4s ease-in-out;
   }
 
   .pink_heart {
@@ -32,12 +65,14 @@
     bottom: 40px;
     right: 250px;
     z-index: 100;
+    animation: slideInTop 0.5s ease-in-out;
   }
 
   .white_heart {
     position: absolute;
     bottom: 5px;
     right: 90px;
+    animation: slideInTop 0.5s ease-in-out;
   }
 
   .line_mobile {

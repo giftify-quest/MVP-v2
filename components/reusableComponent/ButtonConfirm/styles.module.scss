@@ -3,11 +3,12 @@
 .button_confirm {
   background: transparent;
   border: 2px solid $white-color;
-  backdrop-filter: blur(10px);
-  min-width: 20%;
+  transition:
+    background 0.3s ease,
+    border 0.3s ease;
 
   &:hover {
-    background: $bg-button-confirm;
+    background: linear-gradient(244.83deg, #fe4d78 43.85%, #fe4dcc 141.27%);
     outline: none;
     border: none;
   }

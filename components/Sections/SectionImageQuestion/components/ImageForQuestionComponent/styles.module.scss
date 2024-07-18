@@ -21,18 +21,45 @@
 .incorrect {
   border: 5px solid red;
   box-shadow: 0 0 10px 5px red;
+  animation: animateElement 0.15s forwards 2;
+  --final-rotation: 0deg;
 }
 
 .rotate_center {
   transform: rotate(0);
+  --final-rotation: 0deg;
 }
 
 .rotate_left {
   transform: rotate(-5.55deg);
+  --final-rotation: -5.55deg;
 }
 
 .rotate_right {
   transform: rotate(5.55deg);
+  --final-rotation: 5.55deg;
+}
+
+@keyframes animateElement {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(10px, 10px) rotate(5deg);
+  }
+
+  50% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  75% {
+    transform: translate(-10px, 10px) rotate(-5deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(var(--final-rotation));
+  }
 }
 
 @media (max-width: 768px) {

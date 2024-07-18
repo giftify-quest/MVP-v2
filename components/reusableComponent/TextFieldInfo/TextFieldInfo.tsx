@@ -1,4 +1,6 @@
+import { useState, useEffect } from "react";
 import { setFontSizeTextFieldInfo } from "@/helpers/setFontSizeTextFieldInfo";
+import Typewriter from "typewriter-effect";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
 
@@ -19,6 +21,12 @@ export const TextFieldInfo: React.FC<ITextFieldInfo> = ({
   isMobileAnswer,
   rotate = 0,
 }) => {
+  const [isTypingComplete, setIsTypingComplete] = useState(false);
+
+  useEffect(() => {
+    setIsTypingComplete(false);
+  }, [mainText]);
+
   return (
     <div
       style={{ rotate: `${rotate}deg` }}
@@ -36,7 +44,22 @@ export const TextFieldInfo: React.FC<ITextFieldInfo> = ({
         })}
         style={{ fontSize: `${setFontSizeTextFieldInfo(mainText, variant)}px` }}
       >
-        {mainText}
+        <Typewriter
+          onInit={(typewriter) => {
+            typewriter
+              .typeString(mainText)
+              .start()
+              .callFunction(() => {
+                setIsTypingComplete(true);
+              });
+          }}
+          options={{
+            autoStart: true,
+            loop: false,
+            deleteSpeed: 0,
+            delay: 1,
+          }}
+        />
       </div>
       {secondaryText && (
         <div className={styles.secondary_text}>{secondaryText}</div>

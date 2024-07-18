@@ -1,5 +1,45 @@
 @import "/app//variables.scss";
 
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInTop {
+  from {
+    transform: translateY(-600%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 .wrapper {
   width: 50%;
   position: relative;
@@ -18,6 +58,8 @@
     padding: 35px;
     border-radius: 59.5px;
     line-height: 89px;
+    z-index: 999;
+    animation: fadeInOut 7.5s ease-in-out;
   }
 
   .dating_date_minutes {
@@ -53,12 +95,14 @@
     width: 100%;
     object-fit: cover;
     border-radius: 25.5px;
+    animation: slideIn 1s ease-in-out;
   }
 
   .image_confetti {
     position: absolute;
     bottom: -106px;
     left: 100px;
+    animation: slideInTop 1s ease-in-out;
   }
 
   .wrap_date {
@@ -67,12 +111,13 @@
     line-height: 170px;
     font-weight: 700;
     color: white;
-    top: 320px;
+    top: 290px;
     right: 0;
     display: flex;
     flex-direction: column;
     gap: 25px;
     align-items: flex-end;
+    animation: fadeInOut 7s ease-in-out;
   }
 }
 
