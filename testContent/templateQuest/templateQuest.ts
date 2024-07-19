@@ -63,7 +63,8 @@ export const templateQuest: IFirstQuest = {
     question: {
       bgSrcQuestion: setBackgroundDesktop(8),
       bgMobile: setBackgroundMobile(1),
-      questionText: "When did you write me for the first time?",
+      questionText:
+        "Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? ",
       answers: [
         {
           id: "1",
