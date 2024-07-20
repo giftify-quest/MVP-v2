@@ -9,6 +9,7 @@ export const ImageForQuestionComponent: React.FC<
   ImageForQuestionComponentProps
 > = ({ image, onChooseVariant, isSelected, isCorrect, position }) => {
   const { isMobile } = useIsMobile();
+
   useEffect(() => {
     if (isSelected && isCorrect) {
       const timer = setTimeout(() => {
@@ -18,6 +19,7 @@ export const ImageForQuestionComponent: React.FC<
       return () => clearTimeout(timer);
     }
   }, [isSelected, isCorrect, image, onChooseVariant]);
+
   return (
     <div
       className={classNames(style.container, {
@@ -29,13 +31,15 @@ export const ImageForQuestionComponent: React.FC<
       })}
       onClick={() => onChooseVariant(image.id, image.correct, image.path)}
     >
-      <Image
-        src={image.path}
-        alt={"photo"}
-        width={isMobile ? 250 : 300}
-        height={isMobile ? 250 : 340}
-        className={style.imageWrapper}
-      />
+      <div className={isMobile ? style.wrapperMobile : style.wrapperDesktop}>
+        <Image
+          src={image.path}
+          alt={"photo"}
+          layout="fill"
+          objectFit="cover"
+          className={style.imageWrapper}
+        />
+      </div>
     </div>
   );
 };

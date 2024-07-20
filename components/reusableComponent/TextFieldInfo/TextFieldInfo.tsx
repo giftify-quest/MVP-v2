@@ -4,7 +4,7 @@ import Typewriter from "typewriter-effect";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
 
-export type TextFieldInfoVariantType = "text" | "errorMessage";
+export type TextFieldInfoVariantType = "text" | "errorMessage" | "variant";
 
 export interface ITextFieldInfo {
   mainText: string;
@@ -42,7 +42,6 @@ export const TextFieldInfo: React.FC<ITextFieldInfo> = ({
         className={classNames({
           [styles.main_text]: variant === "text",
         })}
-        style={{ fontSize: `${setFontSizeTextFieldInfo(mainText, variant)}px` }}
       >
         <Typewriter
           onInit={(typewriter) => {
