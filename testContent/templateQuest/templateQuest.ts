@@ -6,33 +6,33 @@ import { IQuestionVariant } from "@/components/Sections/SectionVariantQuestion/t
 import { setBackgroundDesktop } from "@/helpers/setBackgroundDesktop";
 import { setBackgroundMobile } from "@/helpers/setBackgroundMobile";
 import { Language } from "@/types";
-import { IAnswerWithPicture } from "@/types/answer";
+import { Answer, TAnswerComponent } from "@/types/answer";
 import { ISection } from "@/types/section";
 
-export interface IFirstQuest {
+export interface TemplateQuest {
   name: string;
   lang: Language;
   sectionFirst: ISectionFirst;
-  sectionVariantFirstPhoto: ISection<IQuestionVariant, IAnswerWithPicture>;
+  sectionVariantFirstPhoto: ISection<IQuestionVariant, TAnswerComponent>;
   sectionFreeInputFirstPhoto: ISection<
     IQuestionWithFreeInput,
-    IAnswerWithPicture
+    TAnswerComponent
   >;
-  sectionInputFood: ISection<IQuestionWithFreeInput, IAnswerWithPicture>;
-  sectionVariantRelationShip: ISection<IQuestionVariant, IAnswerWithPicture>;
-  sectionVariantTheMost: ISection<IQuestionVariant, IAnswerWithPicture>;
-  sectionVariantMomentsTogether: ISection<IQuestionVariant, IAnswerWithPicture>;
+  sectionInputFood: ISection<IQuestionWithFreeInput, TAnswerComponent>;
+  sectionVariantRelationShip: ISection<IQuestionVariant, TAnswerComponent>;
+  sectionVariantTheMost: ISection<IQuestionVariant, TAnswerComponent>;
+  sectionVariantMomentsTogether: ISection<IQuestionVariant, TAnswerComponent>;
   sectionVariantAdventuresTogether: ISection<
     IQuestionVariant,
-    IAnswerWithPicture
+    TAnswerComponent
   >;
-  sectionVariantTogetherWeCan: ISection<IQuestionVariant, IAnswerWithPicture>;
-  sectionVariantFinal: ISection<IQuestionVariant, IAnswerWithPicture>;
+  sectionVariantTogetherWeCan: ISection<IQuestionVariant, TAnswerComponent>;
+  sectionVariantFinal: ISection<IQuestionVariant, TAnswerComponent>;
   sectionFinalSurprise: ISectionFinalSurprise;
-  sectionImageQuestion: ISection<IQuestionImage, IAnswerWithPicture>;
+  sectionImageQuestion: ISection<IQuestionImage, TAnswerComponent>;
 }
 
-export const templateQuest: IFirstQuest = {
+export const templateQuest: TemplateQuest = {
   name: "Anya",
   lang: Language.eng,
   sectionFirst: {
@@ -97,6 +97,7 @@ export const templateQuest: IFirstQuest = {
       { path: "/templateQuest/photoGallery/photoGallery2.jpeg" },
     ],
     answer: {
+      type: Answer.answerWithPicture,
       bgSrc: "/assets/bg-answer-with-out-present.jpg",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText:
@@ -117,6 +118,7 @@ export const templateQuest: IFirstQuest = {
       { path: "/templateQuest/photoGallery/photoGallery4.jpeg" },
     ],
     answer: {
+      type: Answer.answerWithPicture,
       bgSrc: "/assets/bg-answer-with-out-present.jpg",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText:
@@ -173,6 +175,7 @@ export const templateQuest: IFirstQuest = {
       ],
     },
     answer: {
+      type: Answer.answerWithPicture,
       successText:
         "It was the most delicious stolen lemon in my life 😂🍋 The second gift you can find in the shelf next to bed. ",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
@@ -193,6 +196,7 @@ export const templateQuest: IFirstQuest = {
       { path: "/templateQuest/photoGallery/photoGallery2.jpeg" },
     ],
     answer: {
+      type: Answer.answerWithPicture,
       bgSrc: "/assets/bg-answer-with-out-present.jpg",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText: "Yes! It was sooo romantic!",
@@ -252,6 +256,7 @@ export const templateQuest: IFirstQuest = {
       { path: "/templateQuest/photoGallery/photoGallery4.jpeg" },
     ],
     answer: {
+      type: Answer.answerWithPicture,
       bgSrc: "/assets/bg-answer-with-out-present.jpg",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText: "It is correct mon amour!",
@@ -302,6 +307,7 @@ export const templateQuest: IFirstQuest = {
       { path: "/templateQuest/photoGallery/photoGallery6.jpeg" },
     ],
     answer: {
+      type: Answer.answerWithPicture,
       bgSrc: "/assets/bg-answer-with-out-present.jpg",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText:
@@ -355,6 +361,7 @@ export const templateQuest: IFirstQuest = {
       { path: "/templateQuest/photoGallery/photoGallery2.jpeg" },
     ],
     answer: {
+      type: Answer.answerWithPicture,
       bgSrc: "/assets/bg-answer-with-out-present.jpg",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText: "Yes, because I love each second together.",
@@ -406,6 +413,7 @@ export const templateQuest: IFirstQuest = {
       { path: "/templateQuest/photoGallery/photoGallery3.jpeg" },
     ],
     answer: {
+      type: Answer.answerWithPicture,
       bgSrc: "/assets/bg-answer-with-out-present.jpg",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText:
@@ -458,6 +466,7 @@ export const templateQuest: IFirstQuest = {
       { path: "/templateQuest/photoGallery/photoGallery6.jpeg" },
     ],
     answer: {
+      type: Answer.answerWithPicture,
       bgSrc: "/assets/bg-answer-with-out-present.jpg",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText:
@@ -510,6 +519,7 @@ export const templateQuest: IFirstQuest = {
       { path: "/templateQuest/photoGallery/photoGallery2.jpeg" },
     ],
     answer: {
+      type: Answer.answerWithPicture,
       bgSrc: "/assets/bg-answer-with-out-present.jpg",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText: "Haha, good job! You can find a small surprise in my bag.",

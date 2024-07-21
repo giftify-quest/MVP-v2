@@ -8,7 +8,7 @@ import { useIsMobile } from "@/hooks/useIsMobile";
 import scrollDownImg from "/public/assets/scrollDownImg/arrowScrollDownEng.png";
 import Image from "next/image";
 
-export const AnswerWithPicture: React.FC<IAnswerWithPicture> = ({
+export const AnswerWithPicture: React.FC<Omit<IAnswerWithPicture, "type">> = ({
   bgSrc,
   bgMobileSrc,
   successText,

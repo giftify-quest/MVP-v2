@@ -4,12 +4,9 @@ import { TextFieldInfo } from "@/components/reusableComponent/TextFieldInfo/Text
 import { IAnswerWithOutPicture } from "@/types/answer";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
-export const AnswerWithOutPicture: React.FC<IAnswerWithOutPicture> = ({
-  bgSrc,
-  bgMobileSrc,
-  successText,
-  secondaryText,
-}) => {
+export const AnswerWithOutPicture: React.FC<
+  Omit<IAnswerWithOutPicture, "type">
+> = ({ bgSrc, bgMobileSrc, successText, secondaryText }) => {
   const { isMobile } = useIsMobile();
   return (
     <WrapperWithBackground bgSrc={bgSrc} bgMobileSrc={bgMobileSrc}>

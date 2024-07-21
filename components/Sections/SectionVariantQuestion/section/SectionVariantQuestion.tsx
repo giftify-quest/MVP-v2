@@ -5,11 +5,11 @@ import { useRef, useState } from "react";
 import style from "./styles.module.scss";
 import { PhotosSection } from "@/components/reusableComponent/PhotosSection/PhotosSection";
 import { IQuestionVariant } from "../types";
-import { IAnswerWithPicture } from "@/types/answer";
-import { AnswerWithPicture } from "@/components/AnswerComponents/AnswerWithPicture/AnswerWithPicture";
+import { TAnswerComponent } from "@/types/answer";
+import { AnswerComponent } from "@/components/AnswerComponents/AnswerComponent/AnswerComponent";
 
 export const SectionVariantQuestion: React.FC<
-  ISectionProps<IQuestionVariant, IAnswerWithPicture>
+  ISectionProps<IQuestionVariant, TAnswerComponent>
 > = ({
   question,
   answer,
@@ -47,14 +47,7 @@ export const SectionVariantQuestion: React.FC<
       {!isReady ? (
         <VariantQuestion question={question} onReady={onReady} name={name} />
       ) : (
-        <AnswerWithPicture
-          successText={answer.successText}
-          bgSrc={answer.bgSrc}
-          bgMobileSrc={answer.bgMobileSrc}
-          secondaryText={name}
-          framedPhotoSrc={answer.framedPhotoSrc}
-          framedPhotoText={""}
-        />
+        <AnswerComponent answer={answer} />
       )}
       <PhotosSection photos={blockImage} />
     </div>
