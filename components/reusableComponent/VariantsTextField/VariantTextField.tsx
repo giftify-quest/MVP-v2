@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
-import { setFontSizeTextFieldInfo } from "@/helpers/setFontSizeTextFieldInfo";
 
 interface VariantTextFieldProps {
   answer: { id: string; correct: boolean; text: string };
@@ -33,8 +32,6 @@ export const VariantTextField: React.FC<VariantTextFieldProps> = ({
     }
   }, [isSelected, isCorrectChoose, answer, onChooseVariant]);
 
-  const fontSize = setFontSizeTextFieldInfo(answer.text, "variant");
-
   return (
     <button
       className={`${styles.wrapper} ${textClass}`}
@@ -42,7 +39,6 @@ export const VariantTextField: React.FC<VariantTextFieldProps> = ({
         onChooseVariant(answer.id);
       }}
       disabled={isAnimating}
-      style={{ fontSize: `${fontSize}px` }}
     >
       <div>{answer.text}</div>
     </button>

@@ -5,39 +5,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
-
   .icon {
     position: absolute;
-    left: 16%;
-    top: 50%;
+    left: 18rem;
+    top: 15rem;
     animation: blinkAndGrow 2s infinite;
   }
   .scrollImage {
     position: absolute;
     right: -65px;
-    bottom: 0;
+    top: 420px;
     animation: pulse 2s infinite;
-  }
-  .textInfo {
-    position: absolute;
-    top: 0;
-    width: 80%;
-    height: 10rem;
-  }
-
-  .scrollImageDekstop {
-    position: absolute;
-    right: -12%;
-    bottom: -10%;
-    width: 30%;
-    height: 30%;
-    animation: pulse 2s infinite;
-  }
-
-  .scrollImageMobile {
-    width: 250;
-    height: 250;
   }
 }
 

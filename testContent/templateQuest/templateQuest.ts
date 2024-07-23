@@ -78,7 +78,7 @@ export const templateQuest: TemplateQuest = {
         },
         {
           id: "3",
-          text: "Очень хорошо. Теперь попробую угадать, какое, из твоих фото",
+          text: "09.06.2022",
           isCorrect: false,
         },
         {
@@ -101,7 +101,7 @@ export const templateQuest: TemplateQuest = {
       bgSrc: "/assets/bg-answer-with-out-present.jpg",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText:
-        "Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше первое фото?",
+        "You have a good memory my love! Your small prize is waiting under the pillow. By the way, it was your first message, crazy man.",
       framedPhotoSrc: "/templateQuest/answerWithImage/dateImg.png",
       framedPhotoText: "12.12.12",
     },

@@ -53,7 +53,7 @@ export const AnswerWithPicture: React.FC<Omit<IAnswerWithPicture, "type">> = ({
         </div>
       ) : (
         <div className={styles.wrapper_content}>
-          <div className={styles.textInfo}>
+          <div style={{ width: "80%" }}>
             <TextFieldInfo
               isMobileAnswer={isMobile}
               mainText={successText}
@@ -68,16 +68,12 @@ export const AnswerWithPicture: React.FC<Omit<IAnswerWithPicture, "type">> = ({
               <ConfettiIcon />
             </div>
           )}
-          <div
-            className={
-              isMobile ? styles.scrollImageMobile : styles.scrollImageDekstop
-            }
-          >
+          <div className={styles.scrollImage}>
             <Image
               src={scrollDownImg}
-              layout="fill"
+              width={isMobile ? 350 : 269}
+              height={isMobile ? 350 : 263}
               alt="scrollDown"
-              objectFit="contain"
             />
           </div>
         </div>
