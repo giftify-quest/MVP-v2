@@ -1,4 +1,5 @@
 @import "/app/variables.scss";
+
 @keyframes slideIn {
   from {
     transform: translateX(600%);
@@ -29,55 +30,49 @@
     opacity: 1;
   }
 }
+
 .wrapper {
   width: 50%;
   color: rgba(0, 0, 0, 1);
   font-weight: 700;
   display: flex;
   flex-direction: column;
-  gap: 5%;
+  gap: 36px;
   position: relative;
-  margin-top: calc(15vw - 10px);
+  margin-top: 225px;
 
   .line {
     position: absolute;
-    top: calc(-10vw - 100px);
+    bottom: 36rem;
     animation: slideIn 0.8s ease-in-out;
-    width: 20vw;
-    height: auto;
   }
 
   .mainText {
     font-family: "Montserrat", sans-serif;
-    font-size: calc(5vw - 10px);
-    line-height: 120%;
+    font-size: 108px;
+    line-height: 125px;
     animation: slideInTop 1s ease-in-out;
   }
 
   .secondaryText {
-    font-size: calc(3.5vw - 10px);
-    line-height: 120%;
+    font-size: 42px;
+    line-height: 52px;
     animation: slideIn 1.4s ease-in-out;
   }
 
   .pink_heart {
     position: absolute;
-    bottom: 1vh;
-    right: 10vw;
+    bottom: 40px;
+    right: 250px;
     z-index: 100;
     animation: slideInTop 0.5s ease-in-out;
-    width: 10vw;
-    height: auto;
   }
 
   .white_heart {
     position: absolute;
-    bottom: -5vh;
-    right: -2vw;
-    z-index: 99;
+    bottom: 5px;
+    right: 90px;
     animation: slideInTop 0.5s ease-in-out;
-    width: 18vw;
-    height: auto;
   }
 
   .line_mobile {
@@ -91,31 +86,25 @@
     padding: 20px;
     margin-top: 0px;
     gap: 18px;
-
     .line {
       display: none;
     }
-
     .pink_heart {
       display: none;
     }
-
     .white_heart {
       display: none;
     }
-
     .mainText {
       font-size: 35px;
       line-height: 42px;
       font-weight: 900;
     }
-
     .secondaryText {
       font-weight: 300;
       font-size: 20px;
       line-height: 24px;
     }
-
     .line_mobile {
       display: flex;
       position: relative;
@@ -128,7 +117,6 @@
         top: 32px;
         right: 34px;
         rotate: -10deg;
-
         span {
           text-align: center;
           font-weight: 400;

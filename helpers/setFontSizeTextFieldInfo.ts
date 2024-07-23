@@ -14,15 +14,7 @@ export const setFontSizeTextFieldInfo = (
       return 32;
     }
     if (value.length >= 98 && value.length <= 191) {
-      return 24;
-    }
-  }
-  if (sizeScreen >= 1980 && variant === "text") {
-    if (value.length <= 97) {
-      return 32;
-    }
-    if (value.length >= 98 && value.length <= 191) {
-      return 30;
+      return 27;
     }
   }
 
@@ -53,23 +45,6 @@ export const setFontSizeTextFieldInfo = (
     }
     if (value.length >= 21 && value.length <= 60) {
       return 14;
-    }
-  }
-
-  if (sizeScreen >= 1366 && variant === "variant") {
-    if (value.length <= 55) {
-      return 18;
-    }
-    if (value.length >= 56 && value.length <= 191) {
-      return 12;
-    }
-  }
-  if (sizeScreen >= 1980 && variant === "variant") {
-    if (value.length <= 55) {
-      return 18;
-    }
-    if (value.length >= 56 && value.length <= 191) {
-      return 18;
     }
   }
   return 22;

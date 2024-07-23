@@ -1,10 +1,9 @@
 .wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 8vh;
-  width: 80%;
+  margin-left: 20rem;
+  gap: 4rem;
+  width: 60%;
   :nth-child(1) {
     transform: rotate(2.5deg);
   }
