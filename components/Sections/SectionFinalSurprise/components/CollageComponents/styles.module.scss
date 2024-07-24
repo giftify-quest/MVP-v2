@@ -1,3 +1,23 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.photoItem {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+
+  @for $i from 1 through 13 {
+    &:nth-child(#{$i}) {
+      animation-delay: 1.4s * $i;
+    }
+  }
+}
+
 .masonryLayout {
   margin-top: 2rem;
 }

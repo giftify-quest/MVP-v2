@@ -1,3 +1,15 @@
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .wrapper {
   z-index: 100;
   display: flex;
@@ -6,11 +18,29 @@
   justify-content: flex-end;
   height: 85%;
   gap: 100px;
+
   .wrap_wishers {
+    opacity: 0;
+    animation: fadeInOut 1s ease-in;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
     display: flex;
     flex-direction: column;
     gap: 16px;
     width: 75%;
+
+    & > * {
+      opacity: 0;
+      animation: fadeInOut 1s ease-in forwards;
+    }
+
+    & > *:nth-child(1) {
+      animation-delay: 1s;
+    }
+
+    & > *:nth-child(2) {
+      animation-delay: 2s;
+    }
   }
 }
 
@@ -28,6 +58,7 @@
       width: 100%;
       margin-bottom: 35rem;
     }
+
     .buttonWrapper {
       position: absolute;
       top: 45rem;

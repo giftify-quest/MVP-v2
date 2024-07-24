@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { setFontSizeTextFieldInfo } from "@/helpers/setFontSizeTextFieldInfo";
-import Typewriter from "typewriter-effect";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
 
@@ -44,22 +43,7 @@ export const TextFieldInfo: React.FC<ITextFieldInfo> = ({
         })}
         style={{ fontSize: `${setFontSizeTextFieldInfo(mainText, variant)}px` }}
       >
-        <Typewriter
-          onInit={(typewriter) => {
-            typewriter
-              .typeString(mainText)
-              .start()
-              .callFunction(() => {
-                setIsTypingComplete(true);
-              });
-          }}
-          options={{
-            autoStart: true,
-            loop: false,
-            deleteSpeed: 0,
-            delay: 1,
-          }}
-        />
+        {mainText}
       </div>
       {secondaryText && (
         <div className={styles.secondary_text}>{secondaryText}</div>

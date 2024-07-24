@@ -1,5 +1,5 @@
 import { WrapperWithBackground } from "../../../../reusableComponent/WrapperWithBackground/WrapperWithBackground";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ButtonConfirm } from "../../../../reusableComponent/ButtonConfirm/ButtonConfirm";
 import { TextFieldInfo } from "../../../../reusableComponent/TextFieldInfo/TextFieldInfo";
 import { ImageQuestionProps } from "../../types";
@@ -38,6 +38,12 @@ export const ImageQuestion: React.FC<ImageQuestionProps> = ({
     setSelectedAnswerId(imageId);
     setIsCorrectChoose(correct);
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsExplanationShown(false);
+    }, 4000);
+  }, [isExplanationShown]);
 
   return (
     <WrapperWithBackground

@@ -17,9 +17,10 @@
 }
 
 .error_input {
-  box-shadow: 0px 4px 60px 0px rgba(255, 71, 71, 1);
   outline-width: 0px;
-  animation: animateElement 0.2s ease-in-out;
+  animation:
+    animateElement 0.2s ease-in-out,
+    keepBoxShadow 4s ease-in-out;
 }
 
 @keyframes animateElement {
@@ -30,7 +31,7 @@
     transform: translate(10px, 10px) rotate(5deg);
   }
   50% {
-    transform: translate(0, 0) rotate(0eg);
+    transform: translate(0, 0) rotate(0deg);
   }
   75% {
     transform: translate(-10px, 10px) rotate(-5deg);
@@ -40,6 +41,18 @@
   }
 }
 
+@keyframes keepBoxShadow {
+  0%,
+  100% {
+    box-shadow: 0px 4px 60px 0px rgba(255, 71, 71, 1);
+  }
+  99% {
+    box-shadow: 0px 4px 60px 0px rgba(255, 71, 71, 1);
+  }
+  100% {
+    box-shadow: none;
+  }
+}
 @media (max-width: 1366px) {
   .input {
     font-size: 27px;

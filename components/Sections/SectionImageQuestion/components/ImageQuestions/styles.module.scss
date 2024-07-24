@@ -1,3 +1,25 @@
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blinkText {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
 .wrapper {
   z-index: 100;
   display: flex;
@@ -15,8 +37,13 @@
     top: 6rem;
     rotate: 5deg;
     z-index: 100;
+    animation: blinkText 1s ease-in-out 2;
   }
   .question {
+    opacity: 0;
+    animation: fadeInOut 1s ease-in;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
   }
 }
 
@@ -30,6 +57,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  opacity: 0;
+  animation: fadeInOut 1s ease-in;
+  animation-delay: 1.7s;
+  animation-fill-mode: forwards;
 }
 
 @media (max-width: 768px) {
