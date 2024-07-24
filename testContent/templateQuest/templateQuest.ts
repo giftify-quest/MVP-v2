@@ -532,6 +532,7 @@ export const templateQuest: TemplateQuest = {
     title: {
       mainWord: "Final",
       secondWord: "surprise",
+      variant: "",
     },
     wishersData: {
       nextId: "collage",
