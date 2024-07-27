@@ -40,9 +40,13 @@ export const ImageQuestion: React.FC<ImageQuestionProps> = ({
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      setIsExplanationShown(false);
-    }, 4000);
+    if (isExplanationShown) {
+      const timer = setTimeout(() => {
+        setIsExplanationShown(false);
+        setSelectedAnswerId(null);
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
   }, [isExplanationShown]);
 
   return (

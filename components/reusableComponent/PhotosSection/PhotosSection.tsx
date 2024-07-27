@@ -9,16 +9,27 @@ interface IPhotosSection {
 }
 
 export const PhotosSection: React.FC<IPhotosSection> = ({ photos }) => {
-  const [isBlurred, setIsBlurred] = useState(true);
+  const [blurredImages, setBlurredImages] = useState<{
+    [key: string]: boolean;
+  }>(
+    photos.reduce(
+      (acc, photo) => {
+        acc[photo.path] = true;
+        return acc;
+      },
+      {} as { [key: string]: boolean },
+    ),
+  );
 
-  const handlePhotoClick = () => {
-    setIsBlurred(!isBlurred);
+  const handlePhotoClick = (path: string) => {
+    setBlurredImages((prev) => ({
+      ...prev,
+      [path]: false,
+    }));
   };
 
   return (
-    <div
-      className={`${styles.wrapper_photos} ${isBlurred ? "" : styles.unblurred}`}
-    >
+    <div className={styles.wrapper_photos}>
       {photos.map((photo) => (
         <Image
           key={photo.path}
@@ -27,8 +38,8 @@ export const PhotosSection: React.FC<IPhotosSection> = ({ photos }) => {
           width={0}
           height={0}
           sizes="100vw"
-          className={styles.photos}
-          onClick={handlePhotoClick}
+          className={`${styles.photos} ${blurredImages[photo.path] ? styles.blurred : styles.unblurred}`}
+          onClick={() => handlePhotoClick(photo.path)}
         />
       ))}
     </div>

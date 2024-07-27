@@ -55,7 +55,7 @@ export const WisherFinalSurprise: React.FC<IWishesFinalSurpriseProps> = ({
     setIsOpenCollage(true);
     setTimeout(() => {
       if (bottomRef.current) {
-        smoothScrollTo(bottomRef.current, 8000);
+        smoothScrollTo(bottomRef.current, 11000);
       }
     }, 100);
   };

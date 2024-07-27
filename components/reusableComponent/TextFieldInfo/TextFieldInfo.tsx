@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { setFontSizeTextFieldInfo } from "@/helpers/setFontSizeTextFieldInfo";
+import Typewriter from "typewriter-effect";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
 
@@ -21,13 +22,42 @@ export const TextFieldInfo: React.FC<ITextFieldInfo> = ({
   rotate = 0,
 }) => {
   const [isTypingComplete, setIsTypingComplete] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setIsTypingComplete(false);
   }, [mainText]);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      },
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
+
   return (
     <div
+      ref={ref}
       style={{ rotate: `${rotate}deg` }}
       className={classNames({
         [styles.wrapper_mobile]: isMobileAnswer,
@@ -43,7 +73,26 @@ export const TextFieldInfo: React.FC<ITextFieldInfo> = ({
         })}
         style={{ fontSize: `${setFontSizeTextFieldInfo(mainText, variant)}px` }}
       >
-        {mainText}
+        {isVisible && (
+          <Typewriter
+            onInit={(typewriter) => {
+              setTimeout(() => {
+                typewriter
+                  .typeString(mainText)
+                  .start()
+                  .callFunction(() => {
+                    setIsTypingComplete(true);
+                  });
+              }, 1000);
+            }}
+            options={{
+              autoStart: true,
+              loop: false,
+              deleteSpeed: 0,
+              delay: 1,
+            }}
+          />
+        )}
       </div>
       {secondaryText && (
         <div className={styles.secondary_text}>{secondaryText}</div>

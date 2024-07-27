@@ -80,7 +80,7 @@ export default function Home(): JSX.Element {
           onAllowNextSlide={onClick}
         />
       ),
-      isAllowed: false,
+      isAllowed: true,
     },
     {
       component: (onClick, key) => (

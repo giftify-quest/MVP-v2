@@ -1,12 +1,8 @@
+@import "/app/variables.scss";
+
 .wrapper_photos {
   display: flex;
   gap: 20px;
-  filter: blur(10px);
-  transition: filter 0.5s ease;
-}
-
-.wrapper_photos.unblurred {
-  filter: none;
 }
 
 .photos {
@@ -15,7 +11,35 @@
   height: auto;
   object-fit: cover;
   flex: 1;
+
+  transition:
+    filter 1s ease,
+    opacity 1s ease;
+}
+
+.blurred {
+  opacity: 0.5;
+  animation: blink 2s infinite;
   cursor: pointer;
+}
+
+.unblurred {
+  filter: none;
+  opacity: 1;
+  animation: none;
+  transition:
+    filter 1s ease,
+    opacity 1s ease;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    filter: blur(8px);
+  }
+  50% {
+    filter: blur(2px);
+  }
 }
 
 @media (max-width: 768px) {

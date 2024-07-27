@@ -53,7 +53,7 @@ export const AnswerWithPicture: React.FC<Omit<IAnswerWithPicture, "type">> = ({
         </div>
       ) : (
         <div className={styles.wrapper_content}>
-          <div style={{ width: "80%" }}>
+          <div className={styles.answer_text}>
             <TextFieldInfo
               isMobileAnswer={isMobile}
               mainText={successText}
