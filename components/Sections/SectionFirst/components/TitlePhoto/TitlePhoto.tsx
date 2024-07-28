@@ -12,16 +12,16 @@ export const TitlePhoto: React.FC<TitlePhotoProps> = ({
     <div className={styles.wrapper}>
       <div>
         <div className={styles.dating_date_minutes}>
-          <span>1 051 200 minutes</span>
+          <span>1 051 200 минут</span>
         </div>
         <div className={styles.dating_date_hours}>
-          <span>17 520 hours</span>
+          <span>17 520 часов</span>
         </div>
         <div className={styles.dating_date_days}>
-          <span>730 days</span>
+          <span>730 дней</span>
         </div>
         <div className={styles.dating_date_years}>
-          <span>2 years</span>
+          <span>2 года</span>
         </div>
       </div>
       <Image
