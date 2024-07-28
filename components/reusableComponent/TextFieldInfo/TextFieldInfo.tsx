@@ -73,7 +73,7 @@ export const TextFieldInfo: React.FC<ITextFieldInfo> = ({
         })}
         style={{ fontSize: `${setFontSizeTextFieldInfo(mainText, variant)}px` }}
       >
-        {isVisible && (
+        {isVisible && variant !== "errorMessage" ? (
           <Typewriter
             onInit={(typewriter) => {
               setTimeout(() => {
@@ -92,6 +92,8 @@ export const TextFieldInfo: React.FC<ITextFieldInfo> = ({
               delay: 1,
             }}
           />
+        ) : (
+          mainText
         )}
       </div>
       {secondaryText && (

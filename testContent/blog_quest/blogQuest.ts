@@ -90,10 +90,11 @@ export const blogQuest: TemplateQuest = {
       { path: "/blogQuest/photoGallery/photoGallery2.png" },
     ],
     answer: {
-      type: Answer.answerWithOutPicture,
+      type: Answer.answerWithPicture,
       bgSrc: "/assets/bg-answer-with-out-present.jpg",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText: "Мы",
+      framedPhotoSrc: "/blogQuest/firstAnswer.png",
     },
   },
   sectionVariantSecondQuestion: {
@@ -101,7 +102,7 @@ export const blogQuest: TemplateQuest = {
     nextSectionId: "next",
     title: {
       mainWord: "Тот",
-      secondWord: "самый лень",
+      secondWord: "самый день",
     },
     question: {
       bgSrcQuestion: setBackgroundDesktop(8),
@@ -139,11 +140,10 @@ export const blogQuest: TemplateQuest = {
       { path: "/blogQuest/photoGallery/photoGallery4.png" },
     ],
     answer: {
-      type: Answer.answerWithPicture,
-      bgSrc: "/assets/bg-answer-with-out-present.jpg",
+      type: Answer.answerWithOutPicture,
+      bgSrc: "/assets/bg-answer-with-out-present2.png",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
-      successText: "Мы",
-      framedPhotoSrc: "/blogQuest/firstAnswer.png",
+      successText: "Супер, это тот самый прекрасный день",
     },
   },
   sectionVariantThirdQuestion: {
@@ -160,7 +160,7 @@ export const blogQuest: TemplateQuest = {
       answers: [
         {
           id: "1",
-          text: "Кусочек торто",
+          text: "Кусочек тортa",
           isCorrect: true,
         },
         {
@@ -185,12 +185,12 @@ export const blogQuest: TemplateQuest = {
       multipleAnswer: true,
     },
     blockImage: [
-      { path: "/blogQuest/photoGallery/photoGallery7.png" },
-      { path: "/blogQuest/photoGallery/photoGallery8.png" },
+      { path: "/blogQuest/photoGallery/photoGallery5.png" },
+      { path: "/blogQuest/photoGallery/photoGallery6.png" },
     ],
     answer: {
       type: Answer.answerWithPicture,
-      bgSrc: "/blogQuest/answerBg/bgThirdAnswer.png",
+      bgSrc: "/assets/bg-answer-with-out-present2.png",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText: "Вот он)",
       framedPhotoSrc: "/blogQuest/answerThird.png",
@@ -234,13 +234,13 @@ export const blogQuest: TemplateQuest = {
       multipleAnswer: true,
     },
     blockImage: [
-      { path: "/blogQuest/photoGallery/photoGallery9.png" },
-      { path: "/blogQuest/photoGallery/photoGallery10.png" },
+      { path: "/blogQuest/photoGallery/photoGallery7.png" },
+      { path: "/blogQuest/photoGallery/photoGallery8.png" },
     ],
     answer: {
       type: Answer.answerWithOutPicture,
-      bgSrc: setBackgroundDesktop(5),
-      bgMobileSrc: setBackgroundMobile(5),
+      bgSrc: "/assets/bg-answer-with-out-present2.png",
+      bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText: "Да, именно трое",
     },
   },
@@ -252,8 +252,8 @@ export const blogQuest: TemplateQuest = {
     id: "1111",
     nextSectionId: "123",
     blockImage: [
-      { path: "/blogQuest/photoGallery/photoGallery11.png" },
-      { path: "/blogQuest/photoGallery/photoGallery12.png" },
+      { path: "/blogQuest/photoGallery/photoGallery9.png" },
+      { path: "/blogQuest/photoGallery/photoGallery10.png" },
     ],
     question: {
       bgSrcQuestion: setBackgroundDesktop(2),
@@ -284,7 +284,7 @@ export const blogQuest: TemplateQuest = {
     answer: {
       type: Answer.answerWithPicture,
       successText: "Над цветом я еще подумаю)",
-      bgSrc: "/blogQuest/answerBg/bgThirdAnswer.png",
+      bgSrc: "/assets/bg-answer-with-out-present2.png",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       framedPhotoSrc: "/blogQuest/fiveQuestion/fiveQuestionAnswer.png",
       framedPhotoText: "",
@@ -330,7 +330,7 @@ export const blogQuest: TemplateQuest = {
     answer: {
       type: Answer.answerWithPicture,
       successText: "Конечно, дом",
-      bgSrc: "/blogQuest/sixQuestion/bgAnswerSix.png",
+      bgSrc: "/assets/bg-answer-with-out-present2.png",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       framedPhotoSrc: "/blogQuest/sixQuestion/sixQuestionAnswer.png",
       framedPhotoText: "",
@@ -380,7 +380,7 @@ export const blogQuest: TemplateQuest = {
     ],
     answer: {
       type: Answer.answerWithPicture,
-      bgSrc: "/blogQuest/sixQuestion/bgAnswerSix.png",
+      bgSrc: "/assets/bg-answer-with-out-present2.png",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText: "Это то самое фото",
       framedPhotoSrc: "/blogQuest/sevenPhotoAnswer.png",
@@ -396,7 +396,7 @@ export const blogQuest: TemplateQuest = {
     question: {
       bgSrcQuestion: setBackgroundDesktop(8),
       bgMobile: setBackgroundMobile(1),
-      questionText: "Сколько детей я хотела до деторождения?)",
+      questionText: "Какие страны мы должны посетить вместе ?",
       answers: [
         {
           id: "1",
@@ -430,8 +430,8 @@ export const blogQuest: TemplateQuest = {
     ],
     answer: {
       type: Answer.answerWithOutPicture,
-      bgSrc: setBackgroundDesktop(5),
-      bgMobileSrc: setBackgroundMobile(5),
+      bgSrc: "/assets/bg-answer-with-out-present2.png",
+      bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText: "Ты молодец, все так.Какая страна будет нашей следующей?)",
     },
   },
@@ -465,7 +465,7 @@ export const blogQuest: TemplateQuest = {
         {
           id: "4",
           text: "Построить дом/квартиру",
-          isCorrect: false,
+          isCorrect: true,
         },
       ],
       buttonText: "Я уверен",
@@ -479,7 +479,7 @@ export const blogQuest: TemplateQuest = {
     ],
     answer: {
       type: Answer.answerWithPicture,
-      bgSrc: "/blogQuest/answerBg/bgThirdAnswer.png",
+      bgSrc: "/assets/bg-answer-with-out-present2.png",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText: "Вместе мы все сможем",
       framedPhotoSrc: "/blogQuest/sixQuestion/sixQuestionAnswer.png",
@@ -529,7 +529,7 @@ export const blogQuest: TemplateQuest = {
     ],
     answer: {
       type: Answer.answerWithPicture,
-      bgSrc: "/blogQuest/answerBg/bgThirdAnswer.png",
+      bgSrc: "/assets/bg-answer-with-out-present2.png",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText: "Танцы!",
       framedPhotoSrc: "/blogQuest/tenQuestionAnswer.png",

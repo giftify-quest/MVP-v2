@@ -97,7 +97,7 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
     if (showExplanatoryText) {
       const timer = setTimeout(() => {
         setShowExplanatoryText(false);
-      }, 2500);
+      }, 4000);
       return () => clearTimeout(timer);
     }
   }, [showExplanatoryText]);

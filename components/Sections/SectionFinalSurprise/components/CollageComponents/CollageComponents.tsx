@@ -51,6 +51,7 @@ const CollageComponents = forwardRef<HTMLDivElement, CollageComponentsProps>(
             borderRadius: "12px",
             width: "100%",
             height: "auto",
+            objectFit: "cover",
           }}
         />
       </div>

@@ -33,7 +33,7 @@ export const TitlePhoto: React.FC<TitlePhotoProps> = ({
         sizes="100vw"
       />
       <div className={styles.image_confetti}>
-        <ConfettiIcon width={124} height={124} />
+        <ConfettiIcon width={90} height={90} />
       </div>
       <div className={styles.wrap_date}>
         {transformDate(dateEvent).map((item) => {

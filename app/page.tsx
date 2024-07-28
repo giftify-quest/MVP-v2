@@ -211,7 +211,7 @@ export default function Home(): JSX.Element {
           wishersData={blogQuest.sectionFinalSurprise.wishersData}
         />
       ),
-      isAllowed: true,
+      isAllowed: false,
     },
   ]);
 

@@ -46,8 +46,8 @@ export const AnswerWithOutPicture: React.FC<
           <div className={styles.scrollImage}>
             <Image
               src={scrollDownImg}
-              width={isMobile ? 250 : 350}
-              height={isMobile ? 250 : 200}
+              width={isMobile ? 350 : 269}
+              height={isMobile ? 350 : 263}
               alt="scrollDown"
             />
           </div>
