@@ -18,16 +18,6 @@ export interface TemplateQuest {
     IQuestionWithFreeInput,
     TAnswerComponent
   >;
-  sectionInputFood: ISection<IQuestionWithFreeInput, TAnswerComponent>;
-  sectionVariantRelationShip: ISection<IQuestionVariant, TAnswerComponent>;
-  sectionVariantTheMost: ISection<IQuestionVariant, TAnswerComponent>;
-  sectionVariantMomentsTogether: ISection<IQuestionVariant, TAnswerComponent>;
-  sectionVariantAdventuresTogether: ISection<
-    IQuestionVariant,
-    TAnswerComponent
-  >;
-  sectionVariantTogetherWeCan: ISection<IQuestionVariant, TAnswerComponent>;
-  sectionVariantFinal: ISection<IQuestionVariant, TAnswerComponent>;
   sectionFinalSurprise: ISectionFinalSurprise;
   sectionImageQuestion: ISection<IQuestionImage, TAnswerComponent>;
 }
@@ -40,16 +30,16 @@ export const templateQuest: TemplateQuest = {
     nextId: "949494",
     titlePhoto: {
       imgSrc: "/templateQuest/hero/heroImg.png",
-      dateEvent: "09.06.24",
+      dateEvent: "23.07.24",
     },
     title: {
-      mainText: "Today is our day my love",
+      mainText: "Хочу, чтобы ты знала",
       secondaryText:
-        "To celebrate this special date I have a surprise for you.",
-      thirdText: "Are you ready?",
+        "Я счастлив быть каждый день с тобой и хочу признаться тебе в любви через этот квест",
+      thirdText: "Готова?",
     },
     bgImg: "/assets/bg-answer-with-present-photo.jpg",
-    buttonTitle: "Yes, I can’t wait 🎁!",
+    buttonTitle: "Да, интересно, что там дальше 🎁!",
     bgMobileSrc: "/assets/section-first/bg-mobile-section-first.png",
   },
   // !
@@ -57,14 +47,13 @@ export const templateQuest: TemplateQuest = {
     id: "949494",
     nextSectionId: "next",
     title: {
-      mainWord: "First",
-      secondWord: "provocative question",
+      mainWord: "Первый",
+      secondWord: "провокационный вопросы",
     },
     question: {
       bgSrcQuestion: setBackgroundDesktop(8),
       bgMobile: setBackgroundMobile(1),
-      questionText:
-        "Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? ",
+      questionText: "Когда мы сделали наше первое фото?",
       answers: [
         {
           id: "1",
@@ -87,9 +76,9 @@ export const templateQuest: TemplateQuest = {
           isCorrect: true,
         },
       ],
-      buttonText: "I am sure!",
-      wrongAnswerText: "Oups, not correct 😅",
-      wrongAnswerButtonText: "Teperto4no???",
+      buttonText: "Я уверена!",
+      wrongAnswerText: "Упс, не правильно!",
+      wrongAnswerButtonText: "sure???",
       multipleAnswer: true,
     },
     blockImage: [
@@ -101,17 +90,17 @@ export const templateQuest: TemplateQuest = {
       bgSrc: "/assets/bg-answer-with-out-present.jpg",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText:
-        "You have a good memory my love! Your small prize is waiting under the pillow. By the way, it was your first message, crazy man.",
+        "У тебя отличная память, любовь моя! Поищий свой сюрприз под подушкой.",
       framedPhotoSrc: "/templateQuest/answerWithImage/dateImg.png",
-      framedPhotoText: "12.12.12",
+      framedPhotoText: "",
     },
   },
   sectionFreeInputFirstPhoto: {
     id: "1222",
     nextSectionId: "Нужно обсудить???",
     title: {
-      mainWord: "Where",
-      secondWord: "did we go on our first trip?",
+      mainWord: "Куда",
+      secondWord: "мы поехали в наше первое путешествие?",
     },
     blockImage: [
       { path: "/templateQuest/photoGallery/photoGallery3.jpeg" },
@@ -122,24 +111,24 @@ export const templateQuest: TemplateQuest = {
       bgSrc: "/assets/bg-answer-with-out-present.jpg",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       successText:
-        "Right, and I wish to we explore much more new destinations together!",
-      framedPhotoSrc: "/templateQuest/answerWithImage/dateImg.png",
+        "Верно, ты уже точно знаешь, как мне важно в путешествии разделять эмоции с тобой! Хочу еще больше путешествий в нашей жизни.",
+      framedPhotoSrc: "/templateQuest/answerWithImage/germany.jpg",
       framedPhotoText: "",
     },
     question: {
       bgSrcQuestion: setBackgroundDesktop(1),
       bgMobile: setBackgroundMobile(1),
-      questionText: "Remember how we chose a hotel near the forest in .. ?",
-      buttonTitle: "Check",
-      errorMessage: "Not there  😅 ",
-      answers: "Germany",
+      questionText: "Помнишь, как много мы проехали тогда на машине!!",
+      buttonTitle: "Проверка",
+      errorMessage: "Это не первая поездка!",
+      answers: "Германия",
     },
   },
 
   sectionImageQuestion: {
     title: {
-      mainWord: "What",
-      secondWord: "is my favorite photo?",
+      mainWord: "Какое",
+      secondWord: "мое любимое фото?",
     },
     id: "1111",
     nextSectionId: "123",
@@ -152,9 +141,9 @@ export const templateQuest: TemplateQuest = {
       bgMobile: setBackgroundMobile(2),
       title: "hello",
       questionText:
-        "Amazing! Now choose one photo that shows our small crime 🤫",
-      buttonText: "Correct?",
-      wrongAnswerText: "Did not guess😆",
+        "Ты просто чудо! Теперь, выбери фото, с нашим мелким преступлением 🤫",
+      buttonText: "Надеюсь это оно?",
+      wrongAnswerText: "А ну не гадай😆",
       wrongAnswerButtonText: "error",
       images: [
         {
@@ -177,14 +166,14 @@ export const templateQuest: TemplateQuest = {
     answer: {
       type: Answer.answerWithPicture,
       successText:
-        "It was the most delicious stolen lemon in my life 😂🍋 The second gift you can find in the shelf next to bed. ",
+        "Это был самый вкусный, украденный лемон в моей жизни 😂🍋 Теперь ты готова ко второму подарку! Посмотри в тубме у кровати ",
       bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
       bgSrc: "/assets/bg-answer-with-out-present.jpg",
       framedPhotoSrc: "/templateQuest/answerWithImage/dateImg.png",
       framedPhotoText: "",
     },
   },
-  sectionInputFood: {
+  /*  sectionInputFood: {
     id: "1222",
     nextSectionId: "Нужно обсудить???",
     title: {
@@ -526,7 +515,7 @@ export const templateQuest: TemplateQuest = {
       framedPhotoSrc: "/templateQuest/answerWithImage/dateImg.png",
       framedPhotoText: "",
     },
-  },
+  },*/
   // !
   sectionFinalSurprise: {
     title: {
@@ -536,23 +525,20 @@ export const templateQuest: TemplateQuest = {
     wishersData: {
       nextId: "collage",
       musicSrc: "/firstQuest/music/music.mp3",
-      textConfirmButton: "Thank you ❤️",
+      textConfirmButton: "Спасибо ❤️",
       bgSrc: "/assets/bg-answer-with-present.jpg",
       wishers: [
         {
-          wisher:
-            "Congratulations, you have successfully completed this quest. Now it's time for hugs and kisses. ",
+          wisher: "Класс, ты справилась. Теперь давай обниматься и целоваться ",
         },
         {
-          wisher:
-            "But first, look under the bed, there's something waiting for you ",
+          wisher: "Но перед этим, повернись и прими от меня букет цветов 💐",
         },
       ],
       feedPhotos: {
         id: "collage",
-        title: "Look 🥰",
-        subTitle:
-          "Do you want to see how many beautiful moments and memories we have together?",
+        title: "Смотри какие мы 🥰",
+        subTitle: "У нас так много красивых моментов в жизни!",
         collage: [
           {
             id: "1",

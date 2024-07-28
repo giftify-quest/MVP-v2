@@ -93,7 +93,7 @@ export default function Home(): JSX.Element {
       },
       isAllowed: true,
     },
-    {
+    /*    {
       component: (onClick, key) => {
         return (
           <SectionFreeInput
@@ -235,7 +235,7 @@ export default function Home(): JSX.Element {
         );
       },
       isAllowed: true,
-    },
+    },*/
 
     {
       component: (onClick, key) => {

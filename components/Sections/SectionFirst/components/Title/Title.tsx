@@ -43,8 +43,8 @@ export const Title: React.FC<TitleProps> = ({
           height={96}
         />
         <div className={styles.block_text}>
-          <span>Just scroll down</span>
-          <span>and answer the questions</span>
+          <span>Скроль вниз</span>
+          <span>и отвечай на вопросы</span>
         </div>
       </div>
     </div>
