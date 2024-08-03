@@ -7,21 +7,25 @@ import { TitlePhotoProps } from "../../types";
 export const TitlePhoto: React.FC<TitlePhotoProps> = ({
   imgSrc,
   dateEvent,
+  dateDays,
+  dateHours,
+  dateMinutes,
+  dateYears,
 }) => {
   return (
     <div className={styles.wrapper}>
       <div>
         <div className={styles.dating_date_minutes}>
-          <span>1 051 200 минут</span>
+          <span>{dateMinutes}</span>
         </div>
         <div className={styles.dating_date_hours}>
-          <span>17 520 часов</span>
+          <span>{dateHours}</span>
         </div>
         <div className={styles.dating_date_days}>
-          <span>730 дней</span>
+          <span>{dateDays}</span>
         </div>
         <div className={styles.dating_date_years}>
-          <span>2 года</span>
+          <span>{dateYears}</span>
         </div>
       </div>
       <Image

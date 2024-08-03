@@ -39,6 +39,10 @@ export const SectionFirst: React.FC<ISectionFirstProps> = ({
         <TitlePhoto
           imgSrc={titlePhoto.imgSrc}
           dateEvent={titlePhoto.dateEvent}
+          dateMinutes={titlePhoto.dateMinutes}
+          dateHours={titlePhoto.dateHours}
+          dateDays={titlePhoto.dateDays}
+          dateYears={titlePhoto.dateYears}
         />
         <Title
           mainText={title.mainText}

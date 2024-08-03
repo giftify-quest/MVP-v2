@@ -70,8 +70,8 @@ export default function Home(): JSX.Element {
       component: (onClick, key) => (
         <SectionImageQuestion
           key={key}
-          name={blogQuest.name}
-          lang={blogQuest.lang}
+          name={templateQuest.name}
+          lang={templateQuest.lang}
           question={templateQuest.sectionImageQuestion.question}
           answer={templateQuest.sectionImageQuestion.answer}
           id={templateQuest.sectionImageQuestion.id}
@@ -106,8 +106,8 @@ export default function Home(): JSX.Element {
       component: (onClick, key) => (
         <SectionVariantQuestion
           key={key}
-          name={blogQuest.name}
-          lang={blogQuest.lang}
+          name={templateQuest.name}
+          lang={templateQuest.lang}
           question={templateQuest.sectionVariantAdventuresTogether.question}
           answer={templateQuest.sectionVariantAdventuresTogether.answer}
           id={templateQuest.sectionVariantAdventuresTogether.id}
@@ -135,23 +135,6 @@ export default function Home(): JSX.Element {
             templateQuest.sectionVariantTogetherWeCan.nextSectionId
           }
           title={templateQuest.sectionVariantTogetherWeCan.title}
-          onAllowNextSlide={onClick}
-        />
-      ),
-      isAllowed: false,
-    },
-    {
-      component: (onClick, key) => (
-        <SectionVariantQuestion
-          key={key}
-          name={blogQuest.name}
-          lang={blogQuest.lang}
-          question={blogQuest.sectionVariantEightQuestion.question}
-          answer={blogQuest.sectionVariantEightQuestion.answer}
-          id={blogQuest.sectionVariantEightQuestion.id}
-          blockImage={blogQuest.sectionVariantEightQuestion.blockImage}
-          nextSectionId={blogQuest.sectionVariantEightQuestion.nextSectionId}
-          title={blogQuest.sectionVariantEightQuestion.title}
           onAllowNextSlide={onClick}
         />
       ),

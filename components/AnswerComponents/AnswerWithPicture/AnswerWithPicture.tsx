@@ -62,7 +62,9 @@ export const AnswerWithPicture: React.FC<Omit<IAnswerWithPicture, "type">> = ({
               rotate={-2.53}
             />
           </div>
-          <FramedPhoto text={framedPhotoText} imageSrc={framedPhotoSrc} />
+          <div className={styles.photoWrapper}>
+            <FramedPhoto text={framedPhotoText} imageSrc={framedPhotoSrc} />
+          </div>
           {!isMobile && (
             <div className={styles.icon}>
               <ConfettiIcon />
