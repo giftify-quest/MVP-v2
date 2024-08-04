@@ -4,7 +4,7 @@ import { useIsMobile } from "@/hooks/useIsMobile";
 
 interface IFramedPhoto {
   imageSrc: string;
-  text: string;
+  text?: string;
 }
 export const FramedPhoto: React.FC<IFramedPhoto> = ({ imageSrc, text }) => {
   const { isMobile } = useIsMobile();

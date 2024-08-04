@@ -7,21 +7,25 @@ import { TitlePhotoProps } from "../../types";
 export const TitlePhoto: React.FC<TitlePhotoProps> = ({
   imgSrc,
   dateEvent,
+  dateDays,
+  dateHours,
+  dateMinutes,
+  dateYears,
 }) => {
   return (
     <div className={styles.wrapper}>
       <div>
         <div className={styles.dating_date_minutes}>
-          <span>1 051 200 minutes</span>
+          <span>{dateMinutes}</span>
         </div>
         <div className={styles.dating_date_hours}>
-          <span>17 520 hours</span>
+          <span>{dateHours}</span>
         </div>
         <div className={styles.dating_date_days}>
-          <span>730 days</span>
+          <span>{dateDays}</span>
         </div>
         <div className={styles.dating_date_years}>
-          <span>2 years</span>
+          <span>{dateYears}</span>
         </div>
       </div>
       <Image
@@ -33,7 +37,7 @@ export const TitlePhoto: React.FC<TitlePhotoProps> = ({
         sizes="100vw"
       />
       <div className={styles.image_confetti}>
-        <ConfettiIcon width={124} height={124} />
+        <ConfettiIcon width={90} height={90} />
       </div>
       <div className={styles.wrap_date}>
         {transformDate(dateEvent).map((item) => {

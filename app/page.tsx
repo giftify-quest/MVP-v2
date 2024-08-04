@@ -7,6 +7,7 @@ import SectionImageQuestion from "@/components/Sections/SectionImageQuestion";
 import { SectionVariantQuestion } from "@/components/Sections/SectionVariantQuestion/section/SectionVariantQuestion";
 import { useState } from "react";
 import { templateQuest } from "@/testContent/templateQuest/templateQuest";
+import { blogQuest } from "@/testContent/blog_quest/blogQuest";
 
 export interface Components {
   component: (onClick: () => void, key: number) => JSX.Element;
@@ -16,239 +17,139 @@ export interface Components {
 export default function Home(): JSX.Element {
   const [components, setComponents] = useState<Components[]>([
     {
-      component: (onClick, key) => {
-        return (
-          <SectionFirst
-            key={key}
-            titlePhoto={templateQuest.sectionFirst.titlePhoto}
-            title={templateQuest.sectionFirst.title}
-            bgImg={templateQuest.sectionFirst.bgImg}
-            bgMobileSrc={templateQuest.sectionFirst.bgMobileSrc}
-            buttonTitle={templateQuest.sectionFirst.buttonTitle}
-            onAllowNextSlide={onClick}
-            id={templateQuest.sectionFirst.id}
-            nextId={templateQuest.sectionFirst.nextId}
-          />
-        );
-      },
+      component: (onClick, key) => (
+        <SectionFirst
+          key={key}
+          titlePhoto={templateQuest.sectionFirst.titlePhoto}
+          title={templateQuest.sectionFirst.title}
+          bgImg={templateQuest.sectionFirst.bgImg}
+          bgMobileSrc={templateQuest.sectionFirst.bgMobileSrc}
+          buttonTitle={templateQuest.sectionFirst.buttonTitle}
+          onAllowNextSlide={onClick}
+          id={templateQuest.sectionFirst.id}
+          nextId={templateQuest.sectionFirst.nextId}
+        />
+      ),
       isAllowed: true,
     },
     {
-      component: (onClick, key) => {
-        return (
-          <SectionVariantQuestion
-            key={key}
-            name={templateQuest.name}
-            lang={templateQuest.lang}
-            question={templateQuest.sectionVariantFirstPhoto.question}
-            answer={templateQuest.sectionVariantFirstPhoto.answer}
-            id={templateQuest.sectionVariantFirstPhoto.id}
-            blockImage={templateQuest.sectionVariantFirstPhoto.blockImage}
-            nextSectionId={templateQuest.sectionVariantFirstPhoto.nextSectionId}
-            title={templateQuest.sectionVariantFirstPhoto.title}
-            onAllowNextSlide={onClick}
-          />
-        );
-      },
-      isAllowed: true,
+      component: (onClick, key) => (
+        <SectionVariantQuestion
+          key={key}
+          name={templateQuest.name}
+          lang={templateQuest.lang}
+          question={templateQuest.sectionVariantFirstPhoto.question}
+          answer={templateQuest.sectionVariantFirstPhoto.answer}
+          id={templateQuest.sectionVariantFirstPhoto.id}
+          blockImage={templateQuest.sectionVariantFirstPhoto.blockImage}
+          nextSectionId={templateQuest.sectionVariantFirstPhoto.nextSectionId}
+          title={templateQuest.sectionVariantFirstPhoto.title}
+          onAllowNextSlide={onClick}
+        />
+      ),
+      isAllowed: false,
     },
     {
-      component: (onClick, key) => {
-        return (
-          <SectionFreeInput
-            key={key}
-            name={templateQuest.name}
-            lang={templateQuest.lang}
-            question={templateQuest.sectionFreeInputFirstPhoto.question}
-            answer={templateQuest.sectionFreeInputFirstPhoto.answer}
-            id={templateQuest.sectionFreeInputFirstPhoto.id}
-            blockImage={templateQuest.sectionFreeInputFirstPhoto.blockImage}
-            nextSectionId={
-              templateQuest.sectionFreeInputFirstPhoto.nextSectionId
-            }
-            title={templateQuest.sectionFreeInputFirstPhoto.title}
-            onAllowNextSlide={onClick}
-          />
-        );
-      },
-      isAllowed: true,
-    },
-
-    {
-      component: (onClick, key) => {
-        return (
-          <SectionImageQuestion
-            key={key}
-            name={templateQuest.name}
-            lang={templateQuest.lang}
-            question={templateQuest.sectionImageQuestion.question}
-            answer={templateQuest.sectionImageQuestion.answer}
-            id={templateQuest.sectionImageQuestion.id}
-            blockImage={templateQuest.sectionImageQuestion.blockImage}
-            nextSectionId={templateQuest.sectionImageQuestion.nextSectionId}
-            title={templateQuest.sectionImageQuestion.title}
-            onAllowNextSlide={onClick}
-          />
-        );
-      },
-      isAllowed: true,
+      component: (onClick, key) => (
+        <SectionFreeInput
+          key={key}
+          name={templateQuest.name}
+          lang={templateQuest.lang}
+          question={templateQuest.sectionFreeInputFirstPhoto.question}
+          answer={templateQuest.sectionFreeInputFirstPhoto.answer}
+          id={templateQuest.sectionFreeInputFirstPhoto.id}
+          blockImage={templateQuest.sectionFreeInputFirstPhoto.blockImage}
+          nextSectionId={templateQuest.sectionFreeInputFirstPhoto.nextSectionId}
+          title={templateQuest.sectionFreeInputFirstPhoto.title}
+          onAllowNextSlide={onClick}
+        />
+      ),
+      isAllowed: false,
     },
     {
-      component: (onClick, key) => {
-        return (
-          <SectionFreeInput
-            key={key}
-            name={templateQuest.name}
-            lang={templateQuest.lang}
-            question={templateQuest.sectionInputFood.question}
-            answer={templateQuest.sectionInputFood.answer}
-            id={templateQuest.sectionInputFood.id}
-            blockImage={templateQuest.sectionInputFood.blockImage}
-            nextSectionId={templateQuest.sectionInputFood.nextSectionId}
-            title={templateQuest.sectionInputFood.title}
-            onAllowNextSlide={onClick}
-          />
-        );
-      },
-      isAllowed: true,
+      component: (onClick, key) => (
+        <SectionImageQuestion
+          key={key}
+          name={templateQuest.name}
+          lang={templateQuest.lang}
+          question={templateQuest.sectionImageQuestion.question}
+          answer={templateQuest.sectionImageQuestion.answer}
+          id={templateQuest.sectionImageQuestion.id}
+          blockImage={templateQuest.sectionImageQuestion.blockImage}
+          nextSectionId={templateQuest.sectionImageQuestion.nextSectionId}
+          title={templateQuest.sectionImageQuestion.title}
+          onAllowNextSlide={onClick}
+        />
+      ),
+      isAllowed: false,
     },
     {
-      component: (onClick, key) => {
-        return (
-          <SectionVariantQuestion
-            key={key}
-            name={templateQuest.name}
-            lang={templateQuest.lang}
-            question={templateQuest.sectionVariantRelationShip.question}
-            answer={templateQuest.sectionVariantRelationShip.answer}
-            id={templateQuest.sectionVariantRelationShip.id}
-            blockImage={templateQuest.sectionVariantRelationShip.blockImage}
-            nextSectionId={
-              templateQuest.sectionVariantRelationShip.nextSectionId
-            }
-            title={templateQuest.sectionVariantRelationShip.title}
-            onAllowNextSlide={onClick}
-          />
-        );
-      },
-      isAllowed: true,
+      component: (onClick, key) => (
+        <SectionVariantQuestion
+          key={key}
+          name={templateQuest.name}
+          lang={templateQuest.lang}
+          question={templateQuest.sectionVariantMomentsTogether.question}
+          answer={templateQuest.sectionVariantMomentsTogether.answer}
+          id={templateQuest.sectionVariantMomentsTogether.id}
+          blockImage={templateQuest.sectionVariantMomentsTogether.blockImage}
+          nextSectionId={
+            templateQuest.sectionVariantMomentsTogether.nextSectionId
+          }
+          title={templateQuest.sectionVariantMomentsTogether.title}
+          onAllowNextSlide={onClick}
+        />
+      ),
+      isAllowed: false,
     },
     {
-      component: (onClick, key) => {
-        return (
-          <SectionVariantQuestion
-            key={key}
-            name={templateQuest.name}
-            lang={templateQuest.lang}
-            question={templateQuest.sectionVariantTheMost.question}
-            answer={templateQuest.sectionVariantTheMost.answer}
-            id={templateQuest.sectionVariantTheMost.id}
-            blockImage={templateQuest.sectionVariantTheMost.blockImage}
-            nextSectionId={templateQuest.sectionVariantTheMost.nextSectionId}
-            title={templateQuest.sectionVariantTheMost.title}
-            onAllowNextSlide={onClick}
-          />
-        );
-      },
-      isAllowed: true,
+      component: (onClick, key) => (
+        <SectionVariantQuestion
+          key={key}
+          name={templateQuest.name}
+          lang={templateQuest.lang}
+          question={templateQuest.sectionVariantAdventuresTogether.question}
+          answer={templateQuest.sectionVariantAdventuresTogether.answer}
+          id={templateQuest.sectionVariantAdventuresTogether.id}
+          blockImage={templateQuest.sectionVariantAdventuresTogether.blockImage}
+          nextSectionId={
+            templateQuest.sectionVariantAdventuresTogether.nextSectionId
+          }
+          title={templateQuest.sectionVariantAdventuresTogether.title}
+          onAllowNextSlide={onClick}
+        />
+      ),
+      isAllowed: false,
     },
     {
-      component: (onClick, key) => {
-        return (
-          <SectionVariantQuestion
-            key={key}
-            name={templateQuest.name}
-            lang={templateQuest.lang}
-            question={templateQuest.sectionVariantMomentsTogether.question}
-            answer={templateQuest.sectionVariantMomentsTogether.answer}
-            id={templateQuest.sectionVariantMomentsTogether.id}
-            blockImage={templateQuest.sectionVariantMomentsTogether.blockImage}
-            nextSectionId={
-              templateQuest.sectionVariantMomentsTogether.nextSectionId
-            }
-            title={templateQuest.sectionVariantMomentsTogether.title}
-            onAllowNextSlide={onClick}
-          />
-        );
-      },
-      isAllowed: true,
+      component: (onClick, key) => (
+        <SectionVariantQuestion
+          key={key}
+          name={templateQuest.name}
+          lang={templateQuest.lang}
+          question={templateQuest.sectionVariantTogetherWeCan.question}
+          answer={templateQuest.sectionVariantTogetherWeCan.answer}
+          id={templateQuest.sectionVariantTogetherWeCan.id}
+          blockImage={templateQuest.sectionVariantTogetherWeCan.blockImage}
+          nextSectionId={
+            templateQuest.sectionVariantTogetherWeCan.nextSectionId
+          }
+          title={templateQuest.sectionVariantTogetherWeCan.title}
+          onAllowNextSlide={onClick}
+        />
+      ),
+      isAllowed: false,
     },
     {
-      component: (onClick, key) => {
-        return (
-          <SectionVariantQuestion
-            key={key}
-            name={templateQuest.name}
-            lang={templateQuest.lang}
-            question={templateQuest.sectionVariantAdventuresTogether.question}
-            answer={templateQuest.sectionVariantAdventuresTogether.answer}
-            id={templateQuest.sectionVariantAdventuresTogether.id}
-            blockImage={
-              templateQuest.sectionVariantAdventuresTogether.blockImage
-            }
-            nextSectionId={
-              templateQuest.sectionVariantAdventuresTogether.nextSectionId
-            }
-            title={templateQuest.sectionVariantAdventuresTogether.title}
-            onAllowNextSlide={onClick}
-          />
-        );
-      },
-      isAllowed: true,
-    },
-    {
-      component: (onClick, key) => {
-        return (
-          <SectionVariantQuestion
-            key={key}
-            name={templateQuest.name}
-            lang={templateQuest.lang}
-            question={templateQuest.sectionVariantTogetherWeCan.question}
-            answer={templateQuest.sectionVariantTogetherWeCan.answer}
-            id={templateQuest.sectionVariantTogetherWeCan.id}
-            blockImage={templateQuest.sectionVariantTogetherWeCan.blockImage}
-            nextSectionId={
-              templateQuest.sectionVariantTogetherWeCan.nextSectionId
-            }
-            title={templateQuest.sectionVariantTogetherWeCan.title}
-            onAllowNextSlide={onClick}
-          />
-        );
-      },
-      isAllowed: true,
-    },
-    {
-      component: (onClick, key) => {
-        return (
-          <SectionVariantQuestion
-            key={key}
-            name={templateQuest.name}
-            lang={templateQuest.lang}
-            question={templateQuest.sectionVariantFinal.question}
-            answer={templateQuest.sectionVariantFinal.answer}
-            id={templateQuest.sectionVariantFinal.id}
-            blockImage={templateQuest.sectionVariantFinal.blockImage}
-            nextSectionId={templateQuest.sectionVariantFinal.nextSectionId}
-            title={templateQuest.sectionVariantFinal.title}
-            onAllowNextSlide={onClick}
-          />
-        );
-      },
-      isAllowed: true,
-    },
-
-    {
-      component: (onClick, key) => {
-        return (
-          <SectionFinalSurprise
-            key={key}
-            name={templateQuest.name}
-            title={templateQuest.sectionFinalSurprise.title}
-            wishersData={templateQuest.sectionFinalSurprise.wishersData}
-          />
-        );
-      },
-      isAllowed: true,
+      component: (onClick, key) => (
+        <SectionFinalSurprise
+          key={key}
+          name={templateQuest.name}
+          title={templateQuest.sectionFinalSurprise.title}
+          wishersData={templateQuest.sectionFinalSurprise.wishersData}
+        />
+      ),
+      isAllowed: false,
     },
   ]);
 

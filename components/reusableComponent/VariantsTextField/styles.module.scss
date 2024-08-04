@@ -47,6 +47,14 @@
   }
 }
 
+@media (pointer: coarse) {
+  .wrapper {
+    &:hover:not(.selected) {
+      background: $purple-color;
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .wrapper {
     width: 162px;

@@ -2,11 +2,13 @@ import Collage from "@/components/Sections/SectionFinalSurprise/components/Colla
 import styles from "./style.module.scss";
 import { IFeedPhotosComponent } from "../../types";
 import { TitleFeedPhotosComponent } from "../TitleFeedPhotosComponent/TitleFeedPhotosComponent";
+import { useRef } from "react";
 
 export const FeedPhotosComponents: React.FC<IFeedPhotosComponent> = ({
   title,
   subTitle,
   collage,
+  bottomRef,
 }) => {
   return (
     <>
@@ -17,7 +19,7 @@ export const FeedPhotosComponents: React.FC<IFeedPhotosComponent> = ({
           secondWord={subTitle}
         />
       </div>
-      <Collage collage={collage} />
+      <Collage collage={collage} bottomRef={bottomRef} />
     </>
   );
 };

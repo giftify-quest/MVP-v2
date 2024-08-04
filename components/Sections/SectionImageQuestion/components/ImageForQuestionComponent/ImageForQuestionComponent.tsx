@@ -9,15 +9,17 @@ export const ImageForQuestionComponent: React.FC<
   ImageForQuestionComponentProps
 > = ({ image, onChooseVariant, isSelected, isCorrect, position }) => {
   const { isMobile } = useIsMobile();
+
   useEffect(() => {
     if (isSelected && isCorrect) {
       const timer = setTimeout(() => {
         onChooseVariant(image.id, image.correct, image.path);
-      }, 2000);
+      }, 4000);
 
       return () => clearTimeout(timer);
     }
   }, [isSelected, isCorrect, image, onChooseVariant]);
+
   return (
     <div
       className={classNames(style.container, {
