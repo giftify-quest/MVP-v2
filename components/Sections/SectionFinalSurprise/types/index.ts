@@ -1,5 +1,12 @@
 import { ITitleSection, Language } from "@/types";
 import { TypeSections } from "@/types/section";
+import { RefObject } from "react";
+
+// export interface ITitleSection {
+//   mainWord: string;
+//   secondWord: string;
+//   variant: string;
+// }
 
 export interface ICollage {
   collage: {
@@ -49,4 +56,5 @@ export interface IFeedPhotosComponent {
     width: number;
     height: number;
   }[];
+  bottomRef?: RefObject<HTMLDivElement>;
 }

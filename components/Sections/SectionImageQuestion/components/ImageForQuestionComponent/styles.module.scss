@@ -6,29 +6,11 @@
   background: $white-color;
   cursor: pointer;
   border: 5px solid transparent;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 15vw;
-  height: 16vw;
-}
 
-.imageWrapper {
-  border-radius: 25px;
-  padding: 2%;
-  object-fit: cover;
-}
-
-.wrapperMobile {
-  width: 150%;
-  height: 200px;
-  position: relative;
-}
-
-.wrapperDesktop {
-  width: 100%;
-  height: 100%;
+  .imageWrapper {
+    border-radius: 25px;
+    object-fit: cover;
+  }
 }
 
 .chosen {
@@ -82,9 +64,7 @@
 
 @media (max-width: 768px) {
   .container {
-    width: 220px;
-    height: 240px;
+    width: 270px;
     padding: 5px;
-    margin-top: 3rem;
   }
 }

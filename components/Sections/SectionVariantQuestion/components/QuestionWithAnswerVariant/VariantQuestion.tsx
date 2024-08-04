@@ -3,7 +3,7 @@ import { ButtonConfirm } from "@/components/reusableComponent/ButtonConfirm/Butt
 import { VariantAnswersField } from "@/components/reusableComponent/VariantsAnswerField/VariantAnswersField";
 import { WrapperWithBackground } from "@/components/reusableComponent/WrapperWithBackground/WrapperWithBackground";
 import styles from "./styles.module.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { VariantQuestionProps } from "../../types";
 
 type SelectedAnswer = {
@@ -93,6 +93,15 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
     }
   };
 
+  useEffect(() => {
+    if (showExplanatoryText) {
+      const timer = setTimeout(() => {
+        setShowExplanatoryText(false);
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [showExplanatoryText]);
+
   return (
     <WrapperWithBackground
       bgSrc={question.bgSrcQuestion}
@@ -125,12 +134,14 @@ export const VariantQuestion: React.FC<VariantQuestionProps> = ({
             />
           </div>
         )}
-        <ButtonConfirm
-          title={question.buttonText}
-          onClick={handleCheckVariant}
-          isActive={isActiveButton}
-          isDisabled={isDisabledButton}
-        />
+        <div className={styles.button}>
+          <ButtonConfirm
+            title={question.buttonText}
+            onClick={handleCheckVariant}
+            isActive={isActiveButton}
+            isDisabled={isDisabledButton}
+          />
+        </div>
       </div>
     </WrapperWithBackground>
   );

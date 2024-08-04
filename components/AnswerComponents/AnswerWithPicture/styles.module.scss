@@ -1,3 +1,15 @@
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .wrapper_content {
   width: 100%;
   position: relative;
@@ -5,39 +17,30 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
-
+  .photoWrapper {
+    border-radius: 20px;
+    background-color: white;
+    transform: rotate(3.25deg);
+  }
   .icon {
     position: absolute;
-    left: 16%;
-    top: 50%;
+    left: 18rem;
+    top: 15rem;
     animation: blinkAndGrow 2s infinite;
   }
   .scrollImage {
     position: absolute;
     right: -65px;
-    bottom: 0;
+    top: 420px;
     animation: pulse 2s infinite;
   }
-  .textInfo {
-    position: absolute;
-    top: 0;
+  .answer_text {
     width: 80%;
-    height: 10rem;
-  }
-
-  .scrollImageDekstop {
-    position: absolute;
-    right: -12%;
-    bottom: -10%;
-    width: 30%;
-    height: 30%;
-    animation: pulse 2s infinite;
-  }
-
-  .scrollImageMobile {
-    width: 250;
-    height: 250;
+    opacity: 0;
+    animation: fadeInOut 1s ease-in;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    z-index: 999;
   }
 }
 
@@ -45,19 +48,23 @@
   .wrapper_content {
     margin-bottom: 30rem;
     gap: 2rem;
+    .mobilePhotoWrapper {
+      position: absolute;
+      bottom: 12rem;
+      border-radius: 20px;
+      background-color: white;
+      transform: rotate(7deg);
+    }
+    .textFieldMobile {
+      width: 80%;
+      margin-top: 10rem;
+    }
     .scrollImage {
       position: absolute;
       right: -40px;
-      top: 12rem;
+      top: 20rem;
       animation: pulse 2s infinite;
     }
-  }
-  .mobilePhotoWrapper {
-    position: absolute;
-    bottom: 12rem;
-  }
-  .textFieldMobile {
-    width: 80%;
   }
 }
 

@@ -66,9 +66,14 @@ export const QuestionWithFreeInput: React.FC<IQuestionWithFreeInputProps> = ({
   useEffect(() => {
     setTimeout(() => {
       setIsTextFieldError(false);
-    }, 3000);
+    }, 4000);
   }, [isTextFieldError]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setIsErrorMessage(false);
+    }, 4000);
+  }, [isErrorMessage]);
   return (
     <WrapperWithBackground
       bgSrc={question.bgSrcQuestion}
@@ -92,19 +97,23 @@ export const QuestionWithFreeInput: React.FC<IQuestionWithFreeInputProps> = ({
             secondaryText={name}
           />
         </div>
-        <TextField
-          value={textValue}
-          onChange={onChangeValue}
-          isError={isTextFieldError}
-          onKeyDown={onKeyDown}
-          lang={lang}
-        />
-        <ButtonConfirm
-          title={question.buttonTitle}
-          isActive={!!textValue}
-          isDisabled={!textValue}
-          onClick={onConfirm}
-        />
+        <div className={styles.input}>
+          <TextField
+            value={textValue}
+            onChange={onChangeValue}
+            isError={isTextFieldError}
+            onKeyDown={onKeyDown}
+            lang={lang}
+          />
+        </div>
+        <div className={styles.button}>
+          <ButtonConfirm
+            title={question.buttonTitle}
+            isActive={!!textValue}
+            isDisabled={!textValue}
+            onClick={onConfirm}
+          />
+        </div>
       </div>
     </WrapperWithBackground>
   );

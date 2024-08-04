@@ -7,6 +7,29 @@ import { FeedPhotosComponents } from "../FeedPhotosComponent/FeedPhotoSection";
 import { IWishesFinalSurpriseProps } from "../../types";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
+const smoothScrollTo = (target: Element | null, duration: number) => {
+  if (!target) return;
+
+  const start = window.pageYOffset;
+  const end = target.getBoundingClientRect().top + start;
+  const distance = end - start;
+  const startTime = performance.now();
+
+  const scroll = (currentTime: number) => {
+    const timeElapsed = currentTime - startTime;
+    const progress = Math.min(timeElapsed / duration, 1);
+    const scrollY = start + distance * progress;
+
+    window.scrollTo(0, scrollY);
+
+    if (timeElapsed < duration) {
+      requestAnimationFrame(scroll);
+    }
+  };
+
+  requestAnimationFrame(scroll);
+};
+
 export const WisherFinalSurprise: React.FC<IWishesFinalSurpriseProps> = ({
   bgSrc,
   bgMobileSrc,
@@ -20,6 +43,7 @@ export const WisherFinalSurprise: React.FC<IWishesFinalSurpriseProps> = ({
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const { isMobile } = useIsMobile();
   const collageRef = useRef<HTMLDivElement>(null);
+  const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (audioRef.current) {
@@ -30,8 +54,8 @@ export const WisherFinalSurprise: React.FC<IWishesFinalSurpriseProps> = ({
   const handleClick = () => {
     setIsOpenCollage(true);
     setTimeout(() => {
-      if (collageRef.current) {
-        collageRef.current.scrollIntoView({ behavior: "smooth" });
+      if (bottomRef.current) {
+        smoothScrollTo(bottomRef.current, 11000);
       }
     }, 100);
   };
@@ -68,7 +92,8 @@ export const WisherFinalSurprise: React.FC<IWishesFinalSurpriseProps> = ({
             title={feedPhotos.title}
             subTitle={feedPhotos.subTitle}
             collage={feedPhotos.collage}
-            id={feedPhotos.id}
+            bottomRef={bottomRef}
+            id={""}
           />
         </div>
       )}

@@ -1,3 +1,25 @@
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blinkText {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
 .wrapper {
   z-index: 100;
   display: flex;
@@ -9,7 +31,7 @@
 
   .error_block {
     position: absolute;
-    bottom: 35vh;
+    bottom: 370px;
     left: 50%;
     transform: translate(-50%, 0%);
     animation: blinkText 1s ease-in-out 2;
@@ -17,16 +39,23 @@
 
   .question {
     width: 80%;
+    animation: fadeInOut 1s ease-in;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
   }
-}
 
-@keyframes blinkText {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
+  .input {
     opacity: 0;
+    animation: fadeInOut 1s ease-in;
+    animation-delay: 1.7s;
+    animation-fill-mode: forwards;
+  }
+
+  .button {
+    opacity: 0;
+    animation: fadeInOut 1s ease-in;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
   }
 }
 

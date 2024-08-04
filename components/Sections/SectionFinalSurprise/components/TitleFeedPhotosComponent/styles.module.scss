@@ -1,4 +1,15 @@
 @import "/app/variables.scss";
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 .wrapper {
   width: 100%;
@@ -16,6 +27,10 @@
     border-radius: 60px;
     width: fit-content;
     transform: rotate(-4deg);
+    opacity: 0;
+    animation: fadeInOut 1s ease-in;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
     .content {
       z-index: 10000;
       position: relative;
@@ -23,8 +38,12 @@
   }
 
   .second_word {
+    opacity: 0;
     display: inline-block;
     padding: 8px 14px;
+    animation: fadeInOut 1s ease-in;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
   }
 
   .bg_green {
@@ -41,6 +60,9 @@
 
   .blockImages {
     // position: relative;
+    animation: fadeInOut 1s ease-in;
+    animation-delay: 1.2s;
+    animation-fill-mode: forwards;
     .emoji_1 {
       position: absolute;
       left: 20rem;
