@@ -1,25 +1,16 @@
 import { ImageQuestion } from "@/components/Sections/SectionImageQuestion/components/ImageQuestions/ImageQuestion";
 import { PhotosSection } from "@/components/reusableComponent/PhotosSection/PhotosSection";
 import { SectionTitle } from "@/components/reusableComponent/SectionTitle/SectionTitle";
-import { ISectionProps } from "@/types/section";
 import { useRef, useState } from "react";
-import { IQuestionImage } from "../types";
+import { IQuestionImage, ISectionImageQuestionProps } from "../types";
 import { TAnswerComponent } from "@/types/answer";
 import style from "./styles.module.scss";
 import { AnswerComponent } from "@/components/AnswerComponents/AnswerComponent/AnswerComponent";
 
 export const SectionImageQuestion: React.FC<
-  ISectionProps<IQuestionImage, TAnswerComponent>
-> = ({
-  question,
-  answer,
-  blockImage,
-  title,
-  id,
-  nextSectionId,
-  name,
-  onAllowNextSlide,
-}) => {
+  ISectionImageQuestionProps<IQuestionImage, TAnswerComponent>
+> = ({ data, name, onAllowNextSlide }) => {
+  const { question, answer, blockImage, title, id, nextSectionId } = data;
   const [isReady, setIsReady] = useState(false);
 
   const sectionRef = useRef<HTMLDivElement>(null);

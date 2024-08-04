@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { setFontSizeTextFieldInfo } from "@/helpers/setFontSizeTextFieldInfo";
 import Typewriter from "typewriter-effect";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
