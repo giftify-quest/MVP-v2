@@ -1,7 +1,7 @@
-import { useCallback, useMemo } from "react";
+import { useCallback } from "react";
 import Particles from "react-tsparticles";
+import type { Container, Engine, ISourceOptions } from "tsparticles-engine";
 import { loadSlim } from "tsparticles-slim";
-import type { Engine, Container } from "tsparticles-engine";
 import style from "./styles.module.scss";
 
 interface ParticleContainerProps {
@@ -18,7 +18,7 @@ const ParticleContainer: React.FC<ParticleContainerProps> = ({ id }) => {
     [],
   );
 
-  const particlesOptions = {
+  const particlesOptions: ISourceOptions = {
     autoPlay: true,
     fullScreen: {
       enable: false,
@@ -40,10 +40,9 @@ const ParticleContainer: React.FC<ParticleContainerProps> = ({ id }) => {
       shape: {
         type: "character",
         character: {
-          value: ["🩷", "🫶🏻", "💖", "❤️‍🔥"],
+          value: ["🩷", "🫶🏻", "❤️‍🔥", "💞"],
           font: "Arial",
           style: "",
-          weight: 400,
           fill: true,
         },
       },
