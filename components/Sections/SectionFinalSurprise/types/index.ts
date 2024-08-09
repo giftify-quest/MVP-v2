@@ -1,10 +1,12 @@
+import { ITitleSection, Language } from "@/types";
+import { TypeSections } from "@/types/section";
 import { RefObject } from "react";
 
-export interface ITitleSection {
-  mainWord: string;
-  secondWord: string;
-  variant: string;
-}
+// export interface ITitleSection {
+//   mainWord: string;
+//   secondWord: string;
+//   variant: string;
+// }
 
 export interface ICollage {
   collage: {
@@ -16,12 +18,16 @@ export interface ICollage {
 }
 
 export interface ISectionFinalSurprise {
+  id: string;
   title: ITitleSection;
   wishersData: IWishesFinalSurprise;
+  type: TypeSections.sectionFinalSurprise;
 }
 
-export interface ISectionFinalSurpriseProps extends ISectionFinalSurprise {
+export interface ISectionFinalSurpriseProps {
+  data: ISectionFinalSurprise;
   name: string;
+  lang: Language;
 }
 
 export interface IWishesFinalSurprise {

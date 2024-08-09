@@ -6,10 +6,10 @@ import { ISectionFinalSurpriseProps } from "../types";
 import { SectionTitle } from "@/components/reusableComponent/SectionTitle/SectionTitle";
 
 export const SectionFinalSurprise: React.FC<ISectionFinalSurpriseProps> = ({
-  title,
-  wishersData,
+  data,
   name,
 }) => {
+  const { title, wishersData } = data;
   const [openSlide, setOpenSlide] = useState(false);
   return (
     <div className={styles.section}>
