@@ -8,144 +8,69 @@ import { TypeSections } from "@/types/section";
 export const testTemplateQuest: IQuest = {
   name: "Ivan",
   lang: Language.eng,
-  sectionFirst: {
-    id: "section1",
-    nextId: "949494",
-    titlePhoto: {
-      imgSrc: "/templateQuest/hero/heroImg.png",
-      dateEvent: "09.06.24",
-      dateYears: "0.5 years",
+  sections: [
+    {
+      type: TypeSections.firstSection,
+      id: "section1",
+      nextId: "949494",
+      titlePhoto: {
+        imgSrc: "/templateQuest/hero/heroImg.png",
+        dateEvent: "09.06.24",
+        dateYears: "1",
+      },
+      title: {
+        mainText: "Today is our day my love",
+        secondaryText:
+          "To celebrate this special date I have a surprise for you.",
+        thirdText: "Are you ready?",
+      },
+      bgImg: "/assets/bg-answer-with-present-photo.jpg",
+      buttonTitle: "Yes, I can’t wait 🎁!",
+      bgMobileSrc: "/assets/section-first/bg-mobile-section-first.png",
     },
-    title: {
-      mainText: "Today is our day my love",
-      secondaryText:
-        "To celebrate this special date I have a surprise for you.",
-      thirdText: "Are you ready?",
-    },
-    bgImg: "/assets/bg-answer-with-present-photo.jpg",
-    buttonTitle: "Yes, I can’t wait 🎁!",
-    bgMobileSrc: "/assets/section-first/bg-mobile-section-first.png",
-  },
-  // !
-  sectionVariantFirstPhoto: {
-    id: "949494",
-    nextSectionId: "next",
-    title: {
-      mainWord: "First",
-      secondWord: "provocative question",
-    },
-    question: {
-      bgSrcQuestion: setBackgroundDesktop(8),
-      bgMobile: setBackgroundMobile(1),
-      questionText:
-        "Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? ",
-      answers: [
-        {
-          id: "1",
-          text: "20.04.2022",
-          isCorrect: false,
-        },
-        {
-          id: "2",
-          text: "30.04.2023",
-          isCorrect: false,
-        },
-        {
-          id: "3",
-          text: "09.06.2022",
-          isCorrect: false,
-        },
-        {
-          id: "4",
-          text: "17.05.2022",
-          isCorrect: true,
-        },
-      ],
-      buttonText: "I am sure!",
-      wrongAnswerText: "Oups, not correct 😅",
-      wrongAnswerButtonText: "Teperto4no???",
-      multipleAnswer: true,
-    },
-    blockImage: [
-      { path: "/templateQuest/photoGallery/photoGallery1.jpeg" },
-      { path: "/templateQuest/photoGallery/photoGallery2.jpeg" },
-    ],
-    answer: {
-      type: Answer.answerWithPicture,
-      bgSrc: "/assets/bg-answer-with-out-present.jpg",
-      bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
-      successText:
-        "You have a good memory my love! Your small prize is waiting under the pillow. By the way, it was your first message, crazy man.",
-      framedPhotoSrc: "/templateQuest/answerWithImage/dateImg.png",
-      framedPhotoText: "12.12.12",
-    },
-  },
-  sectionFreeInputFirstPhoto: {
-    id: "1222",
-    nextSectionId: "Нужно обсудить???",
-    title: {
-      mainWord: "Where",
-      secondWord: "did we go on our first trip?",
-    },
-    blockImage: [
-      { path: "/templateQuest/photoGallery/photoGallery3.jpeg" },
-      { path: "/templateQuest/photoGallery/photoGallery4.jpeg" },
-    ],
-    answer: {
-      type: Answer.answerWithPicture,
-      bgSrc: "/assets/bg-answer-with-out-present.jpg",
-      bgMobileSrc: "/assets/adaptiveAnswerBckgImg.png",
-      successText:
-        "Right, and I wish to we explore much more new destinations together!",
-      framedPhotoSrc: "/templateQuest/answerWithImage/dateImg.png",
-      framedPhotoText: "",
-    },
-    question: {
-      bgSrcQuestion: setBackgroundDesktop(1),
-      bgMobile: setBackgroundMobile(1),
-      questionText: "Remember how we chose a hotel near the forest in .. ?",
-      buttonTitle: "Check",
-      errorMessage: "Not there  😅 ",
-      answers: "Germany",
-    },
-  },
-
-  sectionImageQuestion: {
-    title: {
-      mainWord: "What",
-      secondWord: "is my favorite photo?",
-    },
-    id: "1111",
-    nextSectionId: "123",
-    blockImage: [
-      { path: "/templateQuest/photoGallery/photoGallery5.jpeg" },
-      { path: "/templateQuest/photoGallery/photoGallery6.jpeg" },
-    ],
-    question: {
-      bgSrcQuestion: setBackgroundDesktop(2),
-      bgMobile: setBackgroundMobile(2),
-      title: "hello",
-      questionText:
-        "Amazing! Now choose one photo that shows our small crime 🤫",
-      buttonText: "Correct?",
-      wrongAnswerText: "Did not guess😆",
-      wrongAnswerButtonText: "error",
-      images: [
-        {
-          id: "1",
-          path: "/firstQuest/thirdQuestion/imageQuestion1.jpg",
-          correct: false,
-        },
-        {
-          id: "2",
-          path: "/firstQuest/thirdQuestion/imageQuestion2.jpg",
-          correct: true,
-        },
-        {
-          id: "3",
-          path: "/firstQuest/thirdQuestion/imageQuestion3.jpg",
-          correct: false,
-        },
+    {
+      id: "949494",
+      type: TypeSections.sectionVariant,
+      nextSectionId: "next",
+      title: {
+        mainWord: "First",
+        secondWord: "provocative question",
+      },
+      question: {
+        bgSrcQuestion: setBackgroundDesktop(8),
+        bgMobile: setBackgroundMobile(1),
+        questionText:
+          "Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? ",
+        answers: [
+          {
+            id: "1",
+            text: "20.04.2022",
+            isCorrect: false,
+          },
+          {
+            id: "2",
+            text: "30.04.2023",
+            isCorrect: false,
+          },
+          {
+            id: "3",
+            text: "Очень хорошо. Теперь попробую угадать, какое, из твоих фото",
+            isCorrect: false,
+          },
+          {
+            id: "4",
+            text: "17.05.2022",
+            isCorrect: true,
+          },
+        ],
+        buttonText: "I am sure!",
+        wrongAnswerText: "Oups, not correct 😅",
+        wrongAnswerButtonText: "Teperto4no???",
+        multipleAnswer: true,
+      },
+      blockImage: [
+        { path: "/templateQuest/photoGallery/photoGallery1.jpeg" },
+        { path: "/templateQuest/photoGallery/photoGallery2.jpeg" },
       ],
       answer: {
         type: Answer.answerWithPicture,
