@@ -17,3 +17,11 @@ export interface ISectionProps<TQuestion, TAnswer>
   name: string;
   lang: Language;
 }
+
+export enum TypeSections {
+  firstSection = "firstSection",
+  sectionVariant = "sectionVariant",
+  sectionWithFreeInput = "sectionWithFreeInput",
+  sectionImage = "sectionImage",
+  sectionFinalSurprise = "sectionFinalSurprise",
+}

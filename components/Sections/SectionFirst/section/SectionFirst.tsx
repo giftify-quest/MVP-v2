@@ -8,15 +8,11 @@ import { ISectionFirstProps } from "../types";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
 export const SectionFirst: React.FC<ISectionFirstProps> = ({
-  titlePhoto,
-  title,
-  bgImg,
-  buttonTitle,
+  data,
   onAllowNextSlide,
-  bgMobileSrc,
-  id,
-  nextId,
 }) => {
+  const { titlePhoto, title, bgImg, buttonTitle, bgMobileSrc, id, nextId } =
+    data;
   const { isMobile, isChecking } = useIsMobile();
 
   const handleClick = () => {

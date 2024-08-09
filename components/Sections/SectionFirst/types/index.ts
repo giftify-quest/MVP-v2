@@ -1,3 +1,6 @@
+import { Language } from "@/types";
+import { TypeSections } from "@/types/section";
+
 export interface TitleProps {
   mainText: string;
   secondaryText: string;
@@ -11,6 +14,7 @@ export interface TitlePhotoProps {
 }
 
 export interface ISectionFirst {
+  type: TypeSections.firstSection;
   id: string;
   nextId: string;
   titlePhoto: TitlePhotoProps;
@@ -20,6 +24,9 @@ export interface ISectionFirst {
   bgMobileSrc: string;
 }
 
-export interface ISectionFirstProps extends ISectionFirst {
+export interface ISectionFirstProps {
+  data: ISectionFirst;
+  name: string;
+  lang: Language;
   onAllowNextSlide?: () => void;
 }

@@ -1,25 +1,16 @@
 import { VariantQuestion } from "@/components/Sections/SectionVariantQuestion/components/QuestionWithAnswerVariant/VariantQuestion";
 import { SectionTitle } from "@/components/reusableComponent/SectionTitle/SectionTitle";
-import { ISectionProps } from "@/types/section";
 import { useRef, useState } from "react";
 import style from "./styles.module.scss";
 import { PhotosSection } from "@/components/reusableComponent/PhotosSection/PhotosSection";
-import { IQuestionVariant } from "../types";
+import { IQuestionVariant, ISectionVariantProps } from "../types";
 import { TAnswerComponent } from "@/types/answer";
 import { AnswerComponent } from "@/components/AnswerComponents/AnswerComponent/AnswerComponent";
 
 export const SectionVariantQuestion: React.FC<
-  ISectionProps<IQuestionVariant, TAnswerComponent>
-> = ({
-  question,
-  answer,
-  blockImage,
-  id,
-  nextSectionId,
-  title,
-  onAllowNextSlide,
-  name,
-}) => {
+  ISectionVariantProps<IQuestionVariant, TAnswerComponent>
+> = ({ data, onAllowNextSlide, name }) => {
+  const { question, answer, blockImage, id, nextSectionId, title } = data;
   const [isReady, setIsReady] = useState(false);
 
   const sectionRef = useRef<HTMLDivElement>(null);

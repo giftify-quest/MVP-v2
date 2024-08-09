@@ -2,25 +2,15 @@ import { SectionTitle } from "@/components/reusableComponent/SectionTitle/Sectio
 import { QuestionWithFreeInput } from "../components/QuestionWithFreeInput/QuestionWithFreeInput";
 import { useRef, useState } from "react";
 import { PhotosSection } from "@/components/reusableComponent/PhotosSection/PhotosSection";
-import { IQuestionWithFreeInput } from "../types/index";
-import { ISectionProps } from "@/types/section";
+import { IQuestionWithFreeInput, ISectionFreeInputProps } from "../types/index";
 import styles from "./styles.module.scss";
 import { TAnswerComponent } from "@/types/answer";
 import { AnswerComponent } from "@/components/AnswerComponents/AnswerComponent/AnswerComponent";
 
 export const SectionFreeInput: React.FC<
-  ISectionProps<IQuestionWithFreeInput, TAnswerComponent>
-> = ({
-  question,
-  answer,
-  blockImage,
-  title,
-  id,
-  nextSectionId,
-  name,
-  lang,
-  onAllowNextSlide,
-}) => {
+  ISectionFreeInputProps<IQuestionWithFreeInput, TAnswerComponent>
+> = ({ data, name, lang, onAllowNextSlide }) => {
+  const { question, answer, blockImage, title, id, nextSectionId } = data;
   const [isReady, setIsReady] = useState(false);
 
   const sectionRef = useRef<HTMLDivElement>(null);

@@ -1,4 +1,6 @@
+import { Language } from "@/types";
 import { IQuestionProps } from "@/types/question";
+import { ISection, TypeSections } from "@/types/section";
 
 export interface Images {
   path: string;
@@ -21,4 +23,16 @@ export interface IQuestionImage {
 
 export interface ImageQuestionProps extends IQuestionProps {
   question: IQuestionImage;
+}
+
+export interface ISectionImageQuestion<TQuestion, TAnswer>
+  extends ISection<TQuestion, TAnswer> {
+  type: TypeSections.sectionImage;
+}
+
+export interface ISectionImageQuestionProps<TQuestion, TAnswer> {
+  data: ISectionImageQuestion<TQuestion, TAnswer>;
+  onAllowNextSlide: () => void;
+  name: string;
+  lang: Language;
 }
