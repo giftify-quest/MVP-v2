@@ -41,10 +41,7 @@ export const templateQuest: TemplateQuest = {
     titlePhoto: {
       imgSrc: "/templateQuest/hero/heroImg.png",
       dateEvent: "09.06.24",
-      dateMinutes: "1 051 200 minutes",
-      dateHours: "17 520 hours",
-      dateDays: "730 days",
-      dateYears: "2 years",
+      dateYears: "0.5 years",
     },
     title: {
       mainText: "Today is our day my love",
