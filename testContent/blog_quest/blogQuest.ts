@@ -35,9 +35,6 @@ export const blogQuest: TemplateQuest = {
     titlePhoto: {
       imgSrc: "/blogQuest/titleComponent/titlePhoto.png",
       dateEvent: "30.07.24",
-      dateMinutes: "",
-      dateHours: "",
-      dateDays: "",
       dateYears: "",
     },
     title: {
