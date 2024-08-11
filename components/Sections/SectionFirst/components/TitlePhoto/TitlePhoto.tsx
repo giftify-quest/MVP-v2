@@ -4,29 +4,49 @@ import { transformDate } from "../../helpers/transformDate";
 import { ConfettiIcon } from "@/components/reusableComponent/ConfettiIcon/ConfettiIcon";
 import { TitlePhotoProps } from "../../types";
 
+const calculateTimeValues = (years: number) => {
+  const days = Math.floor(years * 365);
+  const hours = days * 24;
+  const minutes = hours * 60;
+
+  return {
+    days,
+    hours,
+    minutes,
+    yearsLabel: years === 1 ? `${years} year` : `${years} years`,
+  };
+};
+
 export const TitlePhoto: React.FC<TitlePhotoProps> = ({
   imgSrc,
   dateEvent,
-  dateDays,
-  dateHours,
-  dateMinutes,
   dateYears,
 }) => {
+  const shouldShowCircles = !!dateYears && parseFloat(dateYears) > 0;
+
+  const { days, hours, minutes, yearsLabel } = shouldShowCircles
+    ? calculateTimeValues(parseFloat(dateYears))
+    : { days: 0, hours: 0, minutes: 0, yearsLabel: "" };
+
   return (
     <div className={styles.wrapper}>
       <div>
-        <div className={styles.dating_date_minutes}>
-          <span>{dateMinutes}</span>
-        </div>
-        <div className={styles.dating_date_hours}>
-          <span>{dateHours}</span>
-        </div>
-        <div className={styles.dating_date_days}>
-          <span>{dateDays}</span>
-        </div>
-        <div className={styles.dating_date_years}>
-          <span>{dateYears}</span>
-        </div>
+        {shouldShowCircles && (
+          <>
+            <div className={styles.dating_date_minutes}>
+              <span>{minutes} minutes</span>
+            </div>
+            <div className={styles.dating_date_hours}>
+              <span>{hours} hours</span>
+            </div>
+            <div className={styles.dating_date_days}>
+              <span>{days} days</span>
+            </div>
+            <div className={styles.dating_date_years}>
+              <span>{yearsLabel}</span>
+            </div>
+          </>
+        )}
       </div>
       <Image
         src={imgSrc}

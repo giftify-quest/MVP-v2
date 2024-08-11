@@ -10,10 +10,7 @@ export interface TitleProps {
 export interface TitlePhotoProps {
   imgSrc: string;
   dateEvent: string;
-  dateMinutes: string;
-  dateHours: string;
-  dateDays: string;
-  dateYears: string;
+  dateYears?: string;
 }
 
 export interface ISectionFirst {

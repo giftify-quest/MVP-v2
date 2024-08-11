@@ -1,3 +1,5 @@
+import { useRef, useEffect } from "react";
+import confetti from "canvas-confetti";
 import styles from "./styles.module.scss";
 import { WrapperWithBackground } from "../../reusableComponent/WrapperWithBackground/WrapperWithBackground";
 import { FramedPhoto } from "@/components/reusableComponent/FramedPhoto/FramedPhoto";
@@ -17,10 +19,56 @@ export const AnswerWithPicture: React.FC<Omit<IAnswerWithPicture, "type">> = ({
   framedPhotoText,
 }) => {
   const { isMobile, isChecking } = useIsMobile();
+  const confettiRef = useRef<HTMLDivElement>(null);
+
+  const shootConfetti = (side: "left" | "right") => {
+    const originX = side === "left" ? 0 : 1;
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      angle: side === "left" ? 55 : 125,
+      origin: { x: originX, y: 0.5 },
+      shapes: [
+        confetti.shapeFromText({ text: "🩷", scalar: 10 }),
+        confetti.shapeFromText({ text: "❤️‍🔥", scalar: 10 }),
+        confetti.shapeFromText({ text: "🫶🏻", scalar: 20 }),
+        confetti.shapeFromText({ text: "💞", scalar: 20 }),
+        confetti.shapeFromText({ text: "❤️‍🔥", scalar: 20 }),
+      ],
+      ticks: 300,
+    });
+  };
+  useEffect(() => {
+    if (!isChecking) {
+      shootConfetti("left");
+      shootConfetti("right");
+    }
+  }, [isChecking]);
 
   if (isChecking) {
     return null;
   }
+
+  const handleConfetti = () => {
+    if (confettiRef.current) {
+      confetti({
+        particleCount: 200,
+        spread: 80,
+        angle: 65,
+        origin: {
+          x:
+            (confettiRef.current.offsetLeft +
+              confettiRef.current.offsetWidth / 2) /
+            window.innerWidth,
+          y:
+            (confettiRef.current.offsetTop +
+              confettiRef.current.offsetHeight / 1) /
+            window.innerHeight,
+        },
+      });
+    }
+  };
+
   return (
     <WrapperWithBackground bgSrc={bgSrc} bgMobileSrc={bgMobileSrc}>
       {isMobile ? (
@@ -38,7 +86,11 @@ export const AnswerWithPicture: React.FC<Omit<IAnswerWithPicture, "type">> = ({
             />
           </div>
           {!isMobile && (
-            <div className={styles.icon}>
+            <div
+              className={styles.icon}
+              ref={confettiRef}
+              onClick={handleConfetti}
+            >
               <ConfettiIcon />
             </div>
           )}
@@ -66,7 +118,11 @@ export const AnswerWithPicture: React.FC<Omit<IAnswerWithPicture, "type">> = ({
             <FramedPhoto text={framedPhotoText} imageSrc={framedPhotoSrc} />
           </div>
           {!isMobile && (
-            <div className={styles.icon}>
+            <div
+              className={styles.icon}
+              ref={confettiRef}
+              onClick={handleConfetti}
+            >
               <ConfettiIcon />
             </div>
           )}

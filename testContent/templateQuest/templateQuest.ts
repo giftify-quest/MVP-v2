@@ -16,10 +16,7 @@ export const testTemplateQuest: IQuest = {
       titlePhoto: {
         imgSrc: "/templateQuest/hero/heroImg.png",
         dateEvent: "09.06.24",
-        dateMinutes: "",
-        dateHours: "",
-        dateDays: "",
-        dateYears: "",
+        dateYears: "1",
       },
       title: {
         mainText: "Today is our day my love",

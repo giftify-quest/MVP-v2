@@ -15,6 +15,7 @@
 //     title: {
 //       mainText: "Годовщина нашей свадьбы",
 //       secondaryText:
+// eslint-disable-next-line no-irregular-whitespace
 //         " Чтобы мы стали друг к другу ближе, предлагаю пройти квест.",
 //       thirdText: "Готов?",
 //     },
