@@ -14,7 +14,7 @@ export const testTemplateQuest: IQuest = {
       id: "section1",
       nextId: "949494",
       titlePhoto: {
-        imgSrc: "/templateQuest/hero/heroImg.png",
+        imgSrc: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILXWbXRg1GI6SmxBL-apoCtaBnkkt2AAIm6jEb9zq5SjPuooxVepzzAQADAgADeAADNQQ",
         dateEvent: "09.09.24",
         dateYears: "1.5",
       },
@@ -121,8 +121,8 @@ export const testTemplateQuest: IQuest = {
         secondWord: "is my favorite photo?",
       },
       blockImage: [
-        { path: "/templateQuest/photoGallery/photoGallery5.jpeg" },
-        { path: "/templateQuest/photoGallery/photoGallery6.jpeg" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILLWbXRbRVEZV3v-VXJk35hQJhzWp2AAIZ6jEb9zq5ShKAw2aJT0PKAQADAgADeAADNQQ" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILNmbXRcWL1LXjCln7AQpaJ0lktxv1AAIb6jEb9zq5SvbZAu2XC0edAQADAgADbQADNQQ" },
       ],
       question: {
         bgSrcQuestion: setBackgroundDesktop(2),
@@ -170,8 +170,8 @@ export const testTemplateQuest: IQuest = {
         secondWord: "",
       },
       blockImage: [
-        { path: "/templateQuest/photoGallery/photoGallery1.jpeg" },
-        { path: "/templateQuest/photoGallery/photoGallery2.jpeg" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILP2bXRdSDUpxFImRaXKrcA0LCxpPrAAIe6jEb9zq5SvWzStVjWUrEAQADAgADeAADNQQ" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILSGbXReKR2ZnEF-ySiTIokfpXVunvAAIg6jEb9zq5Snnd8cjBurUNAQADAgADeAADNQQ" },
       ],
       answer: {
         type: Answer.answerWithPicture,
@@ -231,8 +231,8 @@ export const testTemplateQuest: IQuest = {
         multipleAnswer: true,
       },
       blockImage: [
-        { path: "/templateQuest/photoGallery/photoGallery3.jpeg" },
-        { path: "/templateQuest/photoGallery/photoGallery4.jpeg" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILUWbXRfXZxhWRXVHJNBrnN-KV1_qiAAIj6jEb9zq5SoOc0TZsFW15AQADAgADbQADNQQ" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILWmbXRgfxVMKWoR6xacXsRQaC1dCDAAIl6jEb9zq5Sm4EE24rEIdbAQADAgADeAADNQQ" },
       ],
       answer: {
         type: Answer.answerWithPicture,
@@ -283,8 +283,8 @@ export const testTemplateQuest: IQuest = {
         multipleAnswer: true,
       },
       blockImage: [
-        { path: "/templateQuest/photoGallery/photoGallery5.jpeg" },
-        { path: "/templateQuest/photoGallery/photoGallery6.jpeg" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILDGbXRXAdvrIHdCkSFk78DrDzVKJWAAIS6jEb9zq5SkxH4h8QEXZkAQADAgADeAADNQQ" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILFWbXRYTqQOXb6h2Rxjn7M4pFKdJxAAIU6jEb9zq5Sq9c1eCEZFz0AQADAgADeAADNQQ" },
       ],
       answer: {
         type: Answer.answerWithPicture,
@@ -338,8 +338,8 @@ export const testTemplateQuest: IQuest = {
         multipleAnswer: true,
       },
       blockImage: [
-        { path: "/templateQuest/photoGallery/photoGallery1.jpeg" },
-        { path: "/templateQuest/photoGallery/photoGallery2.jpeg" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILHmbXRZco7ukFSqRLLg8hRXAHspHUAAIW6jEb9zq5SuKc3YLYZJrdAQADAgADbQADNQQ" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILJ2bXRajKrelUnrUBPQZIdWf192lOAAIY6jEb9zq5SpR2EeEcUSNnAQADAgADbQADNQQ" },
       ],
       answer: {
         type: Answer.answerWithPicture,
@@ -391,8 +391,8 @@ export const testTemplateQuest: IQuest = {
         multipleAnswer: true,
       },
       blockImage: [
-        { path: "/templateQuest/photoGallery/photoGallery4.jpeg" },
-        { path: "/templateQuest/photoGallery/photoGallery3.jpeg" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILMGbXRbl-4o_qFKkUu1EJlZTM4lElAAIa6jEb9zq5SingFWlv5buKAQADAgADeAADNQQ" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILOWbXRcqMI8v8UdYZkLwHtWjqy0yFAAId6jEb9zq5SmqZ0EhZFZqXAQADAgADeAADNQQ" },
       ],
       answer: {
         type: Answer.answerWithPicture,
@@ -445,8 +445,8 @@ export const testTemplateQuest: IQuest = {
         multipleAnswer: true,
       },
       blockImage: [
-        { path: "/templateQuest/photoGallery/photoGallery5.jpeg" },
-        { path: "/templateQuest/photoGallery/photoGallery6.jpeg" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILQmbXRdk2PUkXPXJ7WWrmQXuq82fgAAIf6jEb9zq5ShzlFtDKit4GAQADAgADeAADNQQ" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILS2bXRedAZrzfz29zA4IU4UBpMptsAAIh6jEb9zq5ShtcmNSdOL2uAQADAgADeAADNQQ" },
       ],
       answer: {
         type: Answer.answerWithPicture,
@@ -499,8 +499,8 @@ export const testTemplateQuest: IQuest = {
         multipleAnswer: true,
       },
       blockImage: [
-        { path: "/templateQuest/photoGallery/photoGallery1.jpeg" },
-        { path: "/templateQuest/photoGallery/photoGallery2.jpeg" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILVGbXRfttFL-NHBqKZZjp3r87G8O-AAIk6jEb9zq5Shqtrx0rYOT9AQADAgADeAADNQQ" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILXWbXRg1GI6SmxBL-apoCtaBnkkt2AAIm6jEb9zq5SjPuooxVepzzAQADAgADeAADNQQ" },
       ],
       answer: {
         type: Answer.answerWithPicture,
@@ -597,31 +597,31 @@ export const testTemplateQuest: IQuest = {
               id: "12",
               src: "/templateQuest/feedPhoto/photo10.png",
               width: 440,
-              height: 822,
+              height: 649,
             },
             {
               id: "14",
               src: "/templateQuest/feedPhoto/photo11.png",
               width: 440,
-              height: 609,
+              height: 525,
             },
             {
               id: "15",
               src: "/templateQuest/feedPhoto/photo12.png",
               width: 440,
-              height: 609,
+              height: 648,
             },
             {
               id: "15",
               src: "/templateQuest/feedPhoto/photo13.png",
               width: 440,
-              height: 609,
+              height: 649,
             },
             {
               id: "16",
               src: "/templateQuest/feedPhoto/photo14.png",
               width: 440,
-              height: 609,
+              height: 649,
             },
           ],
         },
