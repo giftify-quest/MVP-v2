@@ -40,7 +40,8 @@ export const testTemplateQuest: IQuest = {
         bgSrcQuestion: setBackgroundDesktop(8),
         bgMobile: setBackgroundMobile(1),
         questionText:
-          "Вспомни ваше первое свидание, как бы ты его описал 1 фразой?: [
+          "Вспомни ваше первое свидание, как бы ты его описал 1 фразой?",
+          answers: [
           {
             id: "1",
             text: "20.04.2022",
