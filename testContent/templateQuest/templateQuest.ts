@@ -7,16 +7,16 @@ import { TypeSections } from "@/types/section";
 
 export const testTemplateQuest: IQuest = {
   name: "Ivan",
-  lang: Language.eng,
+  lang: Language.rus,
   sections: [
     {
       type: TypeSections.firstSection,
       id: "section1",
       nextId: "949494",
       titlePhoto: {
-        imgSrc: "/templateQuest/hero/heroImg.png",
-        dateEvent: "09.06.24",
-        dateYears: "1",
+        imgSrc: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILXWbXRg1GI6SmxBL-apoCtaBnkkt2AAIm6jEb9zq5SjPuooxVepzzAQADAgADeAADNQQ",
+        dateEvent: "09.09.24",
+        dateYears: "1.5",
       },
       title: {
         mainText: "Today is our day my love",
@@ -40,8 +40,8 @@ export const testTemplateQuest: IQuest = {
         bgSrcQuestion: setBackgroundDesktop(8),
         bgMobile: setBackgroundMobile(1),
         questionText:
-          "Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? Когда мы сделали наше первое фото? ",
-        answers: [
+          "Вспомни ваше первое свидание, как бы ты его описал 1 фразой?",
+          answers: [
           {
             id: "1",
             text: "20.04.2022",
@@ -69,8 +69,8 @@ export const testTemplateQuest: IQuest = {
         multipleAnswer: true,
       },
       blockImage: [
-        { path: "/templateQuest/photoGallery/photoGallery1.jpeg" },
-        { path: "/templateQuest/photoGallery/photoGallery2.jpeg" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILCWbXRO3MJwNC2BSYZ7MUI_VD0a1gAAIO6jEb9zq5StlzFwkXUNZ4AQADAgADeQADNQQ" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILEmbXRX3aBP7R_SnRcnpFklWrHII8AAIT6jEb9zq5SnKu41meE7JKAQADAgADbQADNQQ" },
       ],
       answer: {
         type: Answer.answerWithPicture,
@@ -91,8 +91,8 @@ export const testTemplateQuest: IQuest = {
         secondWord: "did we go on our first trip?",
       },
       blockImage: [
-        { path: "/templateQuest/photoGallery/photoGallery3.jpeg" },
-        { path: "/templateQuest/photoGallery/photoGallery4.jpeg" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILG2bXRZIbaRGaJnxQzLjm0MEpBA57AAIV6jEb9zq5SikhT6BGleodAQADAgADeAADNQQ" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILJGbXRaOJ9pb3W61UjTcUEUgTwezxAAIX6jEb9zq5SkBY6s0U3Y6WAQADAgADbQADNQQ" },
       ],
       answer: {
         type: Answer.answerWithPicture,
@@ -106,7 +106,7 @@ export const testTemplateQuest: IQuest = {
       question: {
         bgSrcQuestion: setBackgroundDesktop(1),
         bgMobile: setBackgroundMobile(1),
-        questionText: "Remember how we chose a hotel near the forest in .. ?",
+        questionText: "Что больше всего ты ценишь в твоем человеке, для которого мы готовим квест?",
         buttonTitle: "Check",
         errorMessage: "Not there  😅 ",
         answers: "Germany",
@@ -121,15 +121,15 @@ export const testTemplateQuest: IQuest = {
         secondWord: "is my favorite photo?",
       },
       blockImage: [
-        { path: "/templateQuest/photoGallery/photoGallery5.jpeg" },
-        { path: "/templateQuest/photoGallery/photoGallery6.jpeg" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILLWbXRbRVEZV3v-VXJk35hQJhzWp2AAIZ6jEb9zq5ShKAw2aJT0PKAQADAgADeAADNQQ" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILNmbXRcWL1LXjCln7AQpaJ0lktxv1AAIb6jEb9zq5SvbZAu2XC0edAQADAgADbQADNQQ" },
       ],
       question: {
         bgSrcQuestion: setBackgroundDesktop(2),
         bgMobile: setBackgroundMobile(2),
         title: "hello",
         questionText:
-          "Amazing! Now choose one photo that shows our small crime 🤫",
+          "В какой момент ваших отношений ты бы хотел(а) вернуться?",
         buttonText: "Correct?",
         wrongAnswerText: "Did not guess😆",
         wrongAnswerButtonText: "error",
@@ -170,8 +170,8 @@ export const testTemplateQuest: IQuest = {
         secondWord: "",
       },
       blockImage: [
-        { path: "/templateQuest/photoGallery/photoGallery1.jpeg" },
-        { path: "/templateQuest/photoGallery/photoGallery2.jpeg" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILP2bXRdSDUpxFImRaXKrcA0LCxpPrAAIe6jEb9zq5SvWzStVjWUrEAQADAgADeAADNQQ" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILSGbXReKR2ZnEF-ySiTIokfpXVunvAAIg6jEb9zq5Snnd8cjBurUNAQADAgADeAADNQQ" },
       ],
       answer: {
         type: Answer.answerWithPicture,
@@ -185,7 +185,7 @@ export const testTemplateQuest: IQuest = {
         bgSrcQuestion: setBackgroundDesktop(3),
         bgMobile: setBackgroundMobile(3),
         questionText:
-          "The main gift is so close… Few more tricky questions.What fruit did you bring to our first picnic in Napoleon park?",
+          "Какое самое необычное приключение вы пережили вместе ?",
         buttonTitle: "Check",
         errorMessage: "You didn't guess😆",
         answers: "Watermelon",
@@ -202,7 +202,7 @@ export const testTemplateQuest: IQuest = {
       question: {
         bgSrcQuestion: setBackgroundDesktop(4),
         bgMobile: setBackgroundMobile(4),
-        questionText: "Guess how would I describe our relationship in 3 words…",
+        questionText: "Как бы ты описал ваши отношения в трех словах?",
         answers: [
           {
             id: "1",
@@ -231,8 +231,8 @@ export const testTemplateQuest: IQuest = {
         multipleAnswer: true,
       },
       blockImage: [
-        { path: "/templateQuest/photoGallery/photoGallery3.jpeg" },
-        { path: "/templateQuest/photoGallery/photoGallery4.jpeg" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILUWbXRfXZxhWRXVHJNBrnN-KV1_qiAAIj6jEb9zq5SoOc0TZsFW15AQADAgADbQADNQQ" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILWmbXRgfxVMKWoR6xacXsRQaC1dCDAAIl6jEb9zq5Sm4EE24rEIdbAQADAgADeAADNQQ" },
       ],
       answer: {
         type: Answer.answerWithPicture,
@@ -254,7 +254,7 @@ export const testTemplateQuest: IQuest = {
       question: {
         bgSrcQuestion: setBackgroundDesktop(5),
         bgMobile: setBackgroundMobile(5),
-        questionText: "The most I love in you...",
+        questionText: "Какие цели ты обязательно хочешь достичь вместе с твоим близким человеком?",
         answers: [
           {
             id: "1",
@@ -283,8 +283,8 @@ export const testTemplateQuest: IQuest = {
         multipleAnswer: true,
       },
       blockImage: [
-        { path: "/templateQuest/photoGallery/photoGallery5.jpeg" },
-        { path: "/templateQuest/photoGallery/photoGallery6.jpeg" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILDGbXRXAdvrIHdCkSFk78DrDzVKJWAAIS6jEb9zq5SkxH4h8QEXZkAQADAgADeAADNQQ" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILFWbXRYTqQOXb6h2Rxjn7M4pFKdJxAAIU6jEb9zq5Sq9c1eCEZFz0AQADAgADeAADNQQ" },
       ],
       answer: {
         type: Answer.answerWithPicture,
@@ -308,7 +308,7 @@ export const testTemplateQuest: IQuest = {
         bgSrcQuestion: setBackgroundDesktop(6),
         bgMobile: setBackgroundMobile(6),
         questionText:
-          "If we could go back in time, what moment of our history do you think I would choose? ",
+          "Если бы вы могли провести целый день вместе, не ограничиваясь временем, чем бы вы занялись?",
         answers: [
           {
             id: "1",
@@ -338,8 +338,8 @@ export const testTemplateQuest: IQuest = {
         multipleAnswer: true,
       },
       blockImage: [
-        { path: "/templateQuest/photoGallery/photoGallery1.jpeg" },
-        { path: "/templateQuest/photoGallery/photoGallery2.jpeg" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILHmbXRZco7ukFSqRLLg8hRXAHspHUAAIW6jEb9zq5SuKc3YLYZJrdAQADAgADbQADNQQ" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILJ2bXRajKrelUnrUBPQZIdWf192lOAAIY6jEb9zq5SpR2EeEcUSNnAQADAgADbQADNQQ" },
       ],
       answer: {
         type: Answer.answerWithPicture,
@@ -362,7 +362,7 @@ export const testTemplateQuest: IQuest = {
         bgSrcQuestion: setBackgroundDesktop(7),
         bgMobile: setBackgroundMobile(7),
         questionText:
-          "What is the most unusual adventure we have been through together?",
+          "Какого цвета твои глаза?",
         answers: [
           {
             id: "1",
@@ -391,8 +391,8 @@ export const testTemplateQuest: IQuest = {
         multipleAnswer: true,
       },
       blockImage: [
-        { path: "/templateQuest/photoGallery/photoGallery4.jpeg" },
-        { path: "/templateQuest/photoGallery/photoGallery3.jpeg" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILMGbXRbl-4o_qFKkUu1EJlZTM4lElAAIa6jEb9zq5SingFWlv5buKAQADAgADeAADNQQ" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILOWbXRcqMI8v8UdYZkLwHtWjqy0yFAAId6jEb9zq5SmqZ0EhZFZqXAQADAgADeAADNQQ" },
       ],
       answer: {
         type: Answer.answerWithPicture,
@@ -416,7 +416,7 @@ export const testTemplateQuest: IQuest = {
         bgSrcQuestion: setBackgroundDesktop(8),
         bgMobile: setBackgroundMobile(8),
         questionText:
-          "What goals we will definitely achieve together in the future?",
+          "Как ты понял(а), что твой партнер - это твой, тот самый человек?",
         answers: [
           {
             id: "1",
@@ -445,8 +445,8 @@ export const testTemplateQuest: IQuest = {
         multipleAnswer: true,
       },
       blockImage: [
-        { path: "/templateQuest/photoGallery/photoGallery5.jpeg" },
-        { path: "/templateQuest/photoGallery/photoGallery6.jpeg" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILQmbXRdk2PUkXPXJ7WWrmQXuq82fgAAIf6jEb9zq5ShzlFtDKit4GAQADAgADeAADNQQ" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILS2bXRedAZrzfz29zA4IU4UBpMptsAAIh6jEb9zq5ShtcmNSdOL2uAQADAgADeAADNQQ" },
       ],
       answer: {
         type: Answer.answerWithPicture,
@@ -470,7 +470,7 @@ export const testTemplateQuest: IQuest = {
         bgSrcQuestion: setBackgroundDesktop(0),
         bgMobile: setBackgroundMobile(9),
         questionText:
-          "If you could only choose ONE ‘bulochka’ for the rest of your life, it would be …  ",
+          "Как думаешь, какой ваш волшебный ингредиент в отношениях?",
         answers: [
           {
             id: "1",
@@ -499,8 +499,8 @@ export const testTemplateQuest: IQuest = {
         multipleAnswer: true,
       },
       blockImage: [
-        { path: "/templateQuest/photoGallery/photoGallery1.jpeg" },
-        { path: "/templateQuest/photoGallery/photoGallery2.jpeg" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILVGbXRfttFL-NHBqKZZjp3r87G8O-AAIk6jEb9zq5Shqtrx0rYOT9AQADAgADeAADNQQ" },
+        { path: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILXWbXRg1GI6SmxBL-apoCtaBnkkt2AAIm6jEb9zq5SjPuooxVepzzAQADAgADeAADNQQ" },
       ],
       answer: {
         type: Answer.answerWithPicture,
@@ -541,87 +541,87 @@ export const testTemplateQuest: IQuest = {
           collage: [
             {
               id: "1",
-              src: "/templateQuest/feedPhoto/photo1.png",
+              src: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILCWbXRO3MJwNC2BSYZ7MUI_VD0a1gAAIO6jEb9zq5StlzFwkXUNZ4AQADAgADeQADNQQ",
               width: 440,
               height: 649,
             },
             {
               id: "2",
-              src: "/templateQuest/feedPhoto/photo2.png",
+              src: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILEmbXRX3aBP7R_SnRcnpFklWrHII8AAIT6jEb9zq5SnKu41meE7JKAQADAgADbQADNQQ",
               width: 440,
               height: 525,
             },
             {
               id: "4",
-              src: "/templateQuest/feedPhoto/photo3.png",
+              src: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILG2bXRZIbaRGaJnxQzLjm0MEpBA57AAIV6jEb9zq5SikhT6BGleodAQADAgADeAADNQQ",
               width: 440,
               height: 648,
             },
             {
               id: "5",
-              src: "/templateQuest/feedPhoto/photo4.png",
+              src: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILJGbXRaOJ9pb3W61UjTcUEUgTwezxAAIX6jEb9zq5SkBY6s0U3Y6WAQADAgADbQADNQQ",
               width: 440,
               height: 649,
             },
             {
               id: "7",
-              src: "/templateQuest/feedPhoto/photo5.png",
+              src: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILLWbXRbRVEZV3v-VXJk35hQJhzWp2AAIZ6jEb9zq5ShKAw2aJT0PKAQADAgADeAADNQQ",
               width: 440,
               height: 649,
             },
             {
               id: "8",
-              src: "/templateQuest/feedPhoto/photo6.png",
+              src: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILNmbXRcWL1LXjCln7AQpaJ0lktxv1AAIb6jEb9zq5SvbZAu2XC0edAQADAgADbQADNQQ",
               width: 440,
               height: 649,
             },
             {
               id: "9",
-              src: "/templateQuest/feedPhoto/photo7.png",
+              src: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILP2bXRdSDUpxFImRaXKrcA0LCxpPrAAIe6jEb9zq5SvWzStVjWUrEAQADAgADeAADNQQ",
               width: 440,
               height: 648,
             },
             {
               id: "10",
-              src: "/templateQuest/feedPhoto/photo8.png",
+              src: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILSGbXReKR2ZnEF-ySiTIokfpXVunvAAIg6jEb9zq5Snnd8cjBurUNAQADAgADeAADNQQ",
               width: 440,
               height: 648,
             },
             {
               id: "11",
-              src: "/templateQuest/feedPhoto/photo9.png",
+              src: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILUWbXRfXZxhWRXVHJNBrnN-KV1_qiAAIj6jEb9zq5SoOc0TZsFW15AQADAgADbQADNQQ",
               width: 440,
               height: 648,
             },
             {
               id: "12",
-              src: "/templateQuest/feedPhoto/photo10.png",
+              src: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILWmbXRgfxVMKWoR6xacXsRQaC1dCDAAIl6jEb9zq5Sm4EE24rEIdbAQADAgADeAADNQQ",
               width: 440,
-              height: 822,
+              height: 649,
             },
             {
               id: "14",
-              src: "/templateQuest/feedPhoto/photo11.png",
+              src: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILUWbXRfXZxhWRXVHJNBrnN-KV1_qiAAIj6jEb9zq5SoOc0TZsFW15AQADAgADbQADNQQ",
               width: 440,
-              height: 609,
+              height: 525,
             },
             {
               id: "15",
-              src: "/templateQuest/feedPhoto/photo12.png",
+              src: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILDGbXRXAdvrIHdCkSFk78DrDzVKJWAAIS6jEb9zq5SkxH4h8QEXZkAQADAgADeAADNQQ",
               width: 440,
-              height: 609,
+              height: 648,
             },
             {
               id: "15",
-              src: "/templateQuest/feedPhoto/photo13.png",
+              src: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILQmbXRdk2PUkXPXJ7WWrmQXuq82fgAAIf6jEb9zq5ShzlFtDKit4GAQADAgADeAADNQQ",
               width: 440,
-              height: 609,
+              height: 649,
             },
             {
               id: "16",
-              src: "/templateQuest/feedPhoto/photo14.png",
+              src: "https://login.sendpulse.com/api/telegram-service/guest/messages/media/?bot_id=66a51f1e70b785b77d05e416&file_id=AgACAgIAAxkBAAILXWbXRg1GI6SmxBL-apoCtaBnkkt2AAIm6jEb9zq5SjPuooxVepzzAQADAgADeAADNQQ",
               width: 440,
-              height: 609,
+              height: 649,
             },
           ],
         },
