@@ -9,6 +9,7 @@ interface IWrapperWithBackground {
   bgMobileSrc: string;
   className?: string;
   children: React.ReactNode;
+  fullHeight?: boolean;
 }
 
 export const WrapperWithBackground: React.FC<IWrapperWithBackground> = ({
@@ -16,6 +17,7 @@ export const WrapperWithBackground: React.FC<IWrapperWithBackground> = ({
   bgMobileSrc,
   className,
   children,
+  fullHeight = false,
 }) => {
   const { isMobile, isChecking } = useIsMobile();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -25,7 +27,11 @@ export const WrapperWithBackground: React.FC<IWrapperWithBackground> = ({
   }
 
   return (
-    <div className={classNames(className, styles.wrapper)}>
+    <div
+      className={classNames(className, styles.wrapper, {
+        [styles.fullHeight]: fullHeight,
+      })}
+    >
       <Image
         src={isMobile ? bgMobileSrc : bgSrc}
         alt="background"
@@ -33,7 +39,7 @@ export const WrapperWithBackground: React.FC<IWrapperWithBackground> = ({
         className={classNames(styles.bg_img, {
           [styles.bg_img_loaded]: isLoaded,
         })}
-        object-fit="cover"
+        objectFit="cover"
         onLoadingComplete={() => setIsLoaded(true)}
       />
       {children}

@@ -24,6 +24,7 @@ export type TypeSectionsQuest =
 
 export interface IQuest {
   name: string;
+  password: string;
   lang: Language;
   sections: TypeSectionsQuest[];
 }

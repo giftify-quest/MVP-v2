@@ -11,6 +11,7 @@ export interface ITextFieldInfo {
   variant: TextFieldInfoVariantType;
   secondaryText?: string;
   isMobileAnswer?: boolean;
+  isAuth?: boolean;
   rotate?: -4.3 | -1.8 | 1.8 | 2.34 | 2.53 | 3.6 | -2.53 | -3.6;
 }
 
@@ -19,6 +20,7 @@ export const TextFieldInfo: React.FC<ITextFieldInfo> = ({
   secondaryText,
   variant,
   isMobileAnswer,
+  isAuth,
   rotate = 0,
 }) => {
   const [isTypingComplete, setIsTypingComplete] = useState(false);
@@ -62,8 +64,9 @@ export const TextFieldInfo: React.FC<ITextFieldInfo> = ({
       className={classNames({
         [styles.wrapper_mobile]: isMobileAnswer,
         [styles.wrapper]: !isMobileAnswer,
-        [styles.mobile_answer]: isMobileAnswer && variant === "text",
-        [styles.question]: !isMobileAnswer && variant === "text",
+        [styles.question]: isMobileAnswer && isAuth,
+        [styles.mobile_answer]:
+          (isMobileAnswer && variant === "text") || isAuth,
         [styles.error_message]: variant === "errorMessage",
       })}
     >

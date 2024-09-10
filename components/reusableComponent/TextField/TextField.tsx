@@ -9,7 +9,7 @@ interface ITextField {
   isError: boolean;
   placeholder?: string;
   onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void;
-  lang: Language;
+  lang?: Language;
 }
 
 export const TextField: React.FC<ITextField> = ({
