@@ -7,6 +7,7 @@ import { TypeSections } from "@/types/section";
 
 export const testTemplateQuest: IQuest = {
   name: "Ivan",
+  password: "09-06-2024",
   lang: Language.eng,
   sections: [
     {

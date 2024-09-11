@@ -11,6 +11,7 @@ export interface ITextFieldInfo {
   variant: TextFieldInfoVariantType;
   secondaryText?: string;
   isMobileAnswer?: boolean;
+  isAuth?: boolean;
   rotate?: -4.3 | -1.8 | 1.8 | 2.34 | 2.53 | 3.6 | -2.53 | -3.6;
 }
 
@@ -19,6 +20,7 @@ export const TextFieldInfo: React.FC<ITextFieldInfo> = ({
   secondaryText,
   variant,
   isMobileAnswer,
+  isAuth,
   rotate = 0,
 }) => {
   const [isTypingComplete, setIsTypingComplete] = useState(false);
@@ -55,6 +57,8 @@ export const TextFieldInfo: React.FC<ITextFieldInfo> = ({
     };
   }, []);
 
+  const fontSize = isAuth ? 24 : setFontSizeTextFieldInfo(mainText, variant);
+
   return (
     <div
       ref={ref}
@@ -71,7 +75,7 @@ export const TextFieldInfo: React.FC<ITextFieldInfo> = ({
         className={classNames({
           [styles.main_text]: variant === "text",
         })}
-        style={{ fontSize: `${setFontSizeTextFieldInfo(mainText, variant)}px` }}
+        style={{ fontSize: `${fontSize}px` }}
       >
         {isVisible && variant !== "errorMessage" ? (
           <Typewriter

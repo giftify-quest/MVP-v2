@@ -1,7 +1,7 @@
 "use client";
 
-import { testTemplateQuest } from "@/testContent/templateQuest/templateQuest";
 import { CreateQuest } from "@/components/reusableComponent/CreateQuest/CreateQuest";
+import { testTemplateQuest } from "@/testContent/templateQuest/templateQuest";
 
 export interface Components {
   component: (onClick: () => void, key: number) => JSX.Element;

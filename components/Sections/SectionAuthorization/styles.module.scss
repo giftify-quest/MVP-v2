@@ -1,0 +1,83 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  text-align: start;
+}
+
+.headerText {
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 48px;
+  color: rgba(254, 77, 162, 1);
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 25px;
+  color: rgba(0, 0, 0, 1);
+  gap: 5rem;
+}
+
+.adviceText {
+  top: 10rem;
+  right: -15rem;
+  position: absolute;
+  font-weight: 400;
+  font-size: 24px;
+  rotate: 7.8deg;
+}
+
+.errorText {
+  position: absolute;
+  top: 16rem;
+}
+
+.info {
+  cursor: pointer;
+}
+
+.inputBlock {
+  margin-top: 5rem;
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    gap: 0;
+    margin-top: 15rem;
+    padding-inline: 1rem;
+  }
+  .headerText {
+    font-size: 26px;
+    line-height: 30px;
+  }
+  .textBlock {
+    font-size: 16px;
+    gap: 2rem;
+  }
+  .errorText {
+    top: 45%;
+    left: 25%;
+  }
+  .inputBlock {
+    margin-top: 7rem;
+  }
+  .adviceText {
+    top: -20%;
+    left: 10%;
+    width: 281px;
+  }
+}
