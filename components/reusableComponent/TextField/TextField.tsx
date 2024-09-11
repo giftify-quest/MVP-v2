@@ -10,6 +10,7 @@ interface ITextField {
   placeholder?: string;
   onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void;
   lang?: Language;
+  maxLength?: number;
 }
 
 export const TextField: React.FC<ITextField> = ({
@@ -19,6 +20,7 @@ export const TextField: React.FC<ITextField> = ({
   placeholder,
   onKeyDown,
   lang,
+  maxLength,
 }) => {
   const text = lang === Language.eng ? "Your answer" : "Твой ответ";
   return (
@@ -30,6 +32,7 @@ export const TextField: React.FC<ITextField> = ({
       className={classNames(styles.input, {
         [styles.error_input]: isError,
       })}
+      maxLength={maxLength}
       onKeyDown={onKeyDown}
     />
   );

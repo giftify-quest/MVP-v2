@@ -57,6 +57,8 @@ export const TextFieldInfo: React.FC<ITextFieldInfo> = ({
     };
   }, []);
 
+  const fontSize = isAuth ? 24 : setFontSizeTextFieldInfo(mainText, variant);
+
   return (
     <div
       ref={ref}
@@ -64,9 +66,8 @@ export const TextFieldInfo: React.FC<ITextFieldInfo> = ({
       className={classNames({
         [styles.wrapper_mobile]: isMobileAnswer,
         [styles.wrapper]: !isMobileAnswer,
-        [styles.question]: isMobileAnswer && isAuth,
-        [styles.mobile_answer]:
-          (isMobileAnswer && variant === "text") || isAuth,
+        [styles.mobile_answer]: isMobileAnswer && variant === "text",
+        [styles.question]: !isMobileAnswer && variant === "text",
         [styles.error_message]: variant === "errorMessage",
       })}
     >
@@ -74,7 +75,7 @@ export const TextFieldInfo: React.FC<ITextFieldInfo> = ({
         className={classNames({
           [styles.main_text]: variant === "text",
         })}
-        style={{ fontSize: `${setFontSizeTextFieldInfo(mainText, variant)}px` }}
+        style={{ fontSize: `${fontSize}px` }}
       >
         {isVisible && variant !== "errorMessage" ? (
           <Typewriter
